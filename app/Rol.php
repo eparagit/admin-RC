@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Rol extends Model
 {
   //Table Name
-  public $table = 'usuario';
+  public $table = 'rol';
   // Primary Key
-  public $primaryKey = 'ID_Usuario';
+  public $primaryKey = 'ID_Rol';
     //
 }
