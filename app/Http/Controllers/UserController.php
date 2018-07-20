@@ -22,7 +22,7 @@ class UserController extends Controller
       $password = $request['password'];
       $rolID = $request['rol'];
 
-      $result= DB::select('select * from usuario where NumeroIdentificacion='.$idNumber);
+      $result= DB::select("select * from usuario where NumeroIdentificacion='".$idNumber."'");
       $array = json_decode(json_encode($result), True);
         if(!empty($array)){
           return 1;

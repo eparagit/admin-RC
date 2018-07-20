@@ -8,7 +8,16 @@ class PagesController extends Controller
 {
     //
     public function Admin(){
-      return view('Admin.admin');
+    //  $userName = Session::get('userName');
+      if(!empty($userName)){
+
+        return view('Admin.admin')->with('datos',$_Session);
+      }else{
+        return view('Admin.admin');
+      }
+    }
+    public function Internal(){
+      return view('Internal.taup');
     }
     public function GoReg(){
       return view('Admin.register');
@@ -41,6 +50,9 @@ class PagesController extends Controller
       $products = Product::select('ID_Producto','nombre','descripcion')
       ->get();
       return response($products);
+    }
+    public function Login(){
+      return view('Login.login');
     }
 
 

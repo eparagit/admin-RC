@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+
     <!-- Vendor: Bootstrap 4 Stylesheets  -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -15,16 +17,23 @@
     <link rel="stylesheet" href="css/icons.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/responsive.css" type="text/css">
-
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css" type="text/css">
     <!-- Color Scheme -->
     <link rel="stylesheet" href="css/color-schemes/color.css" type="text/css" title="color3">
     <link rel="alternate stylesheet" href="css/color-schemes/color1.css" title="color1">
     <link rel="alternate stylesheet" href="css/color-schemes/color2.css" title="color2">
     <link rel="alternate stylesheet" href="css/color-schemes/color4.css" title="color4">
     <link rel="alternate stylesheet" href="css/color-schemes/color5.css" title="color5">
+
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
 </head>
 
 <body class="expand-data panel-data">
+
+
     <div class="topbar">
         <div class="logo">
             <h1>
@@ -35,9 +44,7 @@
         </div>
         <div class="topbar-data">
             <div class="usr-act">
-              @foreach(Session::get('datos') as $data)
-                <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
-                @endforeach
+                <i>HELLO, JOHN SMITH!</i>
                 <span>
                     <img src="images/resource/topbar-usr1.jpg" alt="" />
                     <i class="sts away"></i>
@@ -51,14 +58,10 @@
                         </a>
                     </div>
                     <h5>
-                        @foreach(Session::get('datos') as $data)
-                        <a href="#" title="">{{$data['CorreoElectronico']}}</a>
-                        @endforeach
+                        <a href="#" title="">John Smith</a>
                     </h5>
-                    <span>TI</span>
-
-                    <i>83</i>
-
+                    <span>Co Worker</span>
+                    <i>076 9477 4896</i>
                     <div class="act-pst-lk-stm">
                         <a class="brd-rd5 green-bg-hover" href="#" title="">
                             <i class="ion-heart"></i> Love</a>
@@ -374,7 +377,7 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoRol" title="">Administración</a>
+                            <a href="font-awesome-icons.html" title="">Administración</a>
                         </li>
                     </ul>
                 </li>
@@ -409,21 +412,121 @@
         </div>
     </div>
     <!-- Options Panel -->
-<label>Admin</labbel>
+    <body>
+
+   <div class="pg-tp">
+     <i class="ion-cube"></i>
+     <div class="pr-tp-inr">
+       <h4>Ruta a la Cima</h4>
+       <span>Administración de Viajes</span>
+     </div>
+   </div>
+   <!-- Page Top -->
+   <div class="panel-content">
+     <div class="widget pad50-65">
+       <div class="widget-title2">
+         <h4>Registro de Viajes</h4>
+         <span>Por favor llene el siguiente formulario.</span>
+       </div>
+       <form class="form-wrp">
+         <div class="row mrg20">
+           <div class="col-md-6 col-sm-6 col-lg-6">
+             <textarea id="con_titulo" class="brd-rd5" type="text" placeholder="Título*" ></textarea>
+           </div>
+           <div class="col-md-6 col-sm-6 col-lg-6">
+             <textarea id="con_descripcion" class="brd-rd5" type="text" placeholder="descripcion*" ></textarea>
+           </div>
+ 		   <div class="col-md-6 col-sm-6 col-lg-6">
+             <textarea id="con_requisitos" class="brd-rd5" type="text" placeholder="Requisitos*" ></textarea>
+           </div>
+           <div class="col-md-6 col-sm-6 col-lg-6">
+                 <textarea id="con_incluye" class="brd-rd5" type="text" placeholder="Incluye*" ></textarea>
+               </div>
+
+           <div class="col-md-6 col-sm-6 col-lg-6">
+             <input id="con_cupo" class="brd-rd5" type="number" placeholder="Cupo*" />
+           </div>
+           <div class="col-md-6 col-sm-6 col-lg-6">
+             <input id="con_costo" class="brd-rd5" type="text" placeholder="Costo*" />
+           </div>
+           <div class='col-md-6 col-sm-6 col-lg-6'>
+             <div class="container">
+              <input type="text" id="con_dtfhs" class="form-control" placeholder="Fecha y Hora de Salida*" />
+             </div>
+           </div>
+           <div class='col-sm-6'>
+             <div class="container">
+                <input type="text" id="con_dtfhr" class="form-control" placeholder="Fecha y Hora de Regreso*" />
+             </div>
+           </div>
+           <div class='col-sm-6'>
+             <div class="container">
+              <input type="text" id="con_dtfhp" class="form-control" placeholder="Fecha de Publicación*" />
+             </div>
+           </div>
+           <div class='col-sm-6'>
+             <div class="container">
+              <input type="text" id="con_dtfhv" class="form-control" placeholder="Vencimiento*" />
+             </div>
+           </div>
+          <div class="container">
+           <div class="col-md-6 col-sm-6 col-lg-6">
+          <label>Tipo Viaje:</label>
+             <div  class="slct-bx">
+               <span>
+               <select id="rol" >
+                   <option value="0">Seleccione</option>
+                 </select>
+               </span>
+                 <button>Agregar Nuevo Tipo</button>
+             </div>
+           </div>
+           <div class="col-md-6 col-sm-6 col-lg-6">
+               <label> Categoría:</label>
+                        <div  class="slct-bx" >
+                          <span>
+                          <select id="rol" >
+                              <option value="0">Seleccione</option>
+                            </select>
+                          </span>
+                          <button>Agregar Nueva Categoría</button>
+                        </div>
+                      </div>
+                      <div>
+           <div class="col-md-12 col-sm-12 col-lg-12">
+             <div class="file-upload-box">
+               <strong>Agregue una foto del viaje:</strong>
+               <div class="file-box">
+                 <label class="fileContainer">
+                   <span class="blue-bg brd-rd5">Browse</span>
+                   No se ha seleccionado archivo.
+                   <input type="file" />
+                 </label>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-12 col-sm-12 col-lg-12">
+             <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
+               <i class="fa fa-paper-plane"></i>Registrar</button>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+   <!-- Panel Content -->
+ </body>
     <!-- Page Top -->
-
-
     <!-- Panel Content -->
     <footer>
         <p>Kinesis
             <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
         <span></span>
     </footer>
-
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <!-- Vendor: Followed by our custom Javascripts -->
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
     <script src="js/select2.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
 
@@ -449,6 +552,15 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="ProjectJs/dt.js" type="text/javascript"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+    <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -785,6 +897,9 @@
             if ($.isFunction($.fn.tooltip)) {
                 $('[data-toggle="tooltip"]').tooltip();
             }
+
+
+
         });
     </script>
 </body>

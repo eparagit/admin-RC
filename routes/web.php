@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 Route::get('/Admin','PagesController@Admin');
 
+Route::get('/Login','PagesController@Login');
+
+Route::get('/Internal','PagesController@Internal');
+
 Route::get('/GoReg','PagesController@GoReg');
 
 Route::get('/GoRol','PagesController@GoRol');
@@ -64,3 +68,18 @@ Route::get('/GoNProduct','PagesController@GoNProduct');
 Route::get('/addproduct','ProductController@AddProduct');
 
 Route::get('/Product/readProducts','PagesController@readProducts');
+
+Route::get('redirectPath','AuthController@redirectPath');
+
+Route::get('login', ['as'=>'login','uses'=>'PagesController@Login']);
+
+
+Route::group(['middleware' => 'roles'], function () {
+    Route::get('admin', ['as'=>'admin','uses'=>'PagesController@Admin']);
+});
+
+//Session Routes -Start//
+Route::get('session/get','SessionController@accessSessionData');
+Route::get('session/set','SessionController@storeSessionData');
+Route::get('session/remove','SessionController@deleteSessionData');
+//Session Routes -End//
