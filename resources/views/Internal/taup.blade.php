@@ -44,7 +44,10 @@
         </div>
         <div class="topbar-data">
             <div class="usr-act">
-                <i>HELLO, JOHN SMITH!</i>
+              @foreach(Session::get('datos') as $data)
+                <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label>
+                <label id="con_iduse">{{$data['ID_Usuario']}}</label></i>
+                @endforeach
                 <span>
                     <img src="images/resource/topbar-usr1.jpg" alt="" />
                     <i class="sts away"></i>
@@ -470,29 +473,32 @@
              </div>
            </div>
           <div class="container">
-           <div class="col-md-6 col-sm-6 col-lg-6">
-          <label>Tipo Viaje:</label>
-             <div  class="slct-bx">
-               <span>
-               <select id="rol" >
-                   <option value="0">Seleccione</option>
-                 </select>
-               </span>
-                 <button>Agregar Nuevo Tipo</button>
-             </div>
+            <!--Tipo Viaje-->
+            <div class="col-md-6 col-sm-6 col-lg-6">
+                <label>Tipo Viaje:</label>
+                         <div  class="slct-bx">
+                           <span>
+                             <select id="tviaje">
+                               <option value="0">Seleccione</option>
+                             </select>
+                           </span>
+                         </div>
+                       </div>
+                       <div class="col-md-6 col-sm-6 col-lg-6">
+                           <label>Categoría:</label>
+                                    <div  class="slct-bx">
+                                      <span>
+                                        <select id="cviaje">
+                                          <option value="0">Seleccione</option>
+                                        </select>
+                                      </span>
+                                        <button>Agregar Nueva Categoría</button>
+                                    </div>
+                                  </div>
+
            </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-               <label> Categoría:</label>
-                        <div  class="slct-bx" >
-                          <span>
-                          <select id="rol" >
-                              <option value="0">Seleccione</option>
-                            </select>
-                          </span>
-                          <button>Agregar Nueva Categoría</button>
-                        </div>
-                      </div>
-                      <div>
+
+
            <div class="col-md-12 col-sm-12 col-lg-12">
              <div class="file-upload-box">
                <strong>Agregue una foto del viaje:</strong>
@@ -500,13 +506,13 @@
                  <label class="fileContainer">
                    <span class="blue-bg brd-rd5">Browse</span>
                    No se ha seleccionado archivo.
-                   <input type="file" />
+                   <input type="file" id="con_img"/>
                  </label>
                </div>
              </div>
            </div>
            <div class="col-md-12 col-sm-12 col-lg-12">
-             <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
+             <button id="con_regv" name="con_regist" class="green-bg brd-rd5" type="button">
                <i class="fa fa-paper-plane"></i>Registrar</button>
            </div>
          </div>
@@ -552,7 +558,7 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
-    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="ProjectJs/trip.js" type="text/javascript"></script>
     <script src="ProjectJs/dt.js" type="text/javascript"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

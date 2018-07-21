@@ -24,6 +24,8 @@ Route::get('/GoReg','PagesController@GoReg');
 
 Route::get('/GoRol','PagesController@GoRol');
 
+Route::get('/GoTaup','PagesController@GoTaup');
+
 Route::get('/GoAdminU','PagesController@GoAdminU');
 
 Route::get('/GoSIU','PagesController@GoSIU');
@@ -37,6 +39,12 @@ Route::get('/GoProfile','PagesController@GoProfile');
 
 
 Route::get('selectRol','RolController@selectRol');
+
+Route::get('selectTripType','TripTypeController@selectTripType');
+
+//Select Trip Category-Start//
+Route::get('selectTripCat','TripCatController@selectTripCat');
+//Select Trip Category-End//
 
 Route::get('selectAllRol','RolController@selectAllRol');
 

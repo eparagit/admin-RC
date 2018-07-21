@@ -17,7 +17,7 @@ class PagesController extends Controller
       }
     }
     public function Internal(){
-      return view('Internal.taup');
+      return view('Internal.adminI');
     }
     public function GoReg(){
       return view('Admin.register');
@@ -36,6 +36,9 @@ class PagesController extends Controller
     }
     public function GoProfile(){
       return view('Admin.profile');
+    }
+    public function GoTaup(){
+      return view('Internal.taup');
     }
    public function Product(){
       return view('Product.index');

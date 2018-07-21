@@ -25,7 +25,7 @@ alert('Digite el nombre de usuario');
           }
           if(data == 1){
             window.location.href = "/Admin-RC/public/Admin";
-          
+
           }
           if(data == 2){
             window.location.href = "/Admin-RC/public/Internal";
