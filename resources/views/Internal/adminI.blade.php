@@ -338,7 +338,7 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoTaup" title="">Publicación</a>
+                            <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
                         </li>
                         <li>
                             <a href="dashboard2.html" title="">Aprobación</a>

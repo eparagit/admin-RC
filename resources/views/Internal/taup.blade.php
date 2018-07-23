@@ -46,7 +46,7 @@
             <div class="usr-act">
               @foreach(Session::get('datos') as $data)
                 <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label>
-                <label id="con_iduse">{{$data['ID_Usuario']}}</label></i>
+                <input type="text" value="{{$data['ID_Usuario']}}" id="con_iduse" style="display:none;" /></i>
                 @endforeach
                 <span>
                     <img src="images/resource/topbar-usr1.jpg" alt="" />
@@ -425,98 +425,57 @@
      </div>
    </div>
    <!-- Page Top -->
+    <!--Start Wizard-->
+
    <div class="panel-content">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Registro de Viajes</h4>
-         <span>Por favor llene el siguiente formulario.</span>
+         <h4>Calendario</h4>
+         <span>Seleccione las siguientes fechas para finalizar el registro</span>
+
        </div>
-       <form class="form-wrp">
-         <div class="row mrg20">
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <textarea id="con_titulo" class="brd-rd5" type="text" placeholder="Título*" ></textarea>
-           </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <textarea id="con_descripcion" class="brd-rd5" type="text" placeholder="descripcion*" ></textarea>
-           </div>
- 		   <div class="col-md-6 col-sm-6 col-lg-6">
-             <textarea id="con_requisitos" class="brd-rd5" type="text" placeholder="Requisitos*" ></textarea>
-           </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-                 <textarea id="con_incluye" class="brd-rd5" type="text" placeholder="Incluye*" ></textarea>
-               </div>
 
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <input id="con_cupo" class="brd-rd5" type="number" placeholder="Cupo*" />
-           </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <input id="con_costo" class="brd-rd5" type="text" placeholder="Costo*" />
-           </div>
-           <div class='col-md-6 col-sm-6 col-lg-6'>
-             <div class="container">
-              <input type="text" id="con_dtfhs" class="form-control" placeholder="Fecha y Hora de Salida*" />
-             </div>
-           </div>
-           <div class='col-sm-6'>
-             <div class="container">
-                <input type="text" id="con_dtfhr" class="form-control" placeholder="Fecha y Hora de Regreso*" />
-             </div>
-           </div>
-           <div class='col-sm-6'>
-             <div class="container">
-              <input type="text" id="con_dtfhp" class="form-control" placeholder="Fecha de Publicación*" />
-             </div>
-           </div>
-           <div class='col-sm-6'>
-             <div class="container">
-              <input type="text" id="con_dtfhv" class="form-control" placeholder="Vencimiento*" />
-             </div>
-           </div>
-          <div class="container">
-            <!--Tipo Viaje-->
-            <div class="col-md-6 col-sm-6 col-lg-6">
-                <label>Tipo Viaje:</label>
-                         <div  class="slct-bx">
-                           <span>
-                             <select id="tviaje">
-                               <option value="0">Seleccione</option>
-                             </select>
-                           </span>
-                         </div>
-                       </div>
-                       <div class="col-md-6 col-sm-6 col-lg-6">
-                           <label>Categoría:</label>
-                                    <div  class="slct-bx">
-                                      <span>
-                                        <select id="cviaje">
-                                          <option value="0">Seleccione</option>
-                                        </select>
-                                      </span>
-                                        <button>Agregar Nueva Categoría</button>
-                                    </div>
-                                  </div>
+     <form  class="form-wrp" enctype="multipart/form-data">
+           <div class="row mrg20">
 
-           </div>
-
-
-           <div class="col-md-12 col-sm-12 col-lg-12">
-             <div class="file-upload-box">
-               <strong>Agregue una foto del viaje:</strong>
-               <div class="file-box">
-                 <label class="fileContainer">
-                   <span class="blue-bg brd-rd5">Browse</span>
-                   No se ha seleccionado archivo.
-                   <input type="file" id="con_img"/>
-                 </label>
+             <div class='col-md-6 col-sm-6 col-lg-6'>
+               <div class="container">
+                <input type="text" id="con_dtfhs" class="form-control" placeholder="Fecha y Hora de Salida*" />
                </div>
              </div>
-           </div>
-           <div class="col-md-12 col-sm-12 col-lg-12">
-             <button id="con_regv" name="con_regist" class="green-bg brd-rd5" type="button">
-               <i class="fa fa-paper-plane"></i>Registrar</button>
-           </div>
-         </div>
-       </form>
+             <div class='col-sm-6'>
+               <div class="container">
+                  <input type="text" id="con_dtfhr" class="form-control" placeholder="Fecha y Hora de Regreso*" />
+               </div>
+             </div>
+             <div class='col-sm-6'>
+               <div class="container">
+                <input type="text" id="con_dtfhp" class="form-control" placeholder="Fecha de Publicación*" />
+               </div>
+             </div>
+             <div class='col-sm-6'>
+               <div class="container">
+                <input type="text" id="con_dtfhv" class="form-control" placeholder="Vencimiento*" />
+               </div>
+             </div>
+             <div class="col-md-12 col-sm-12 col-lg-12">
+               <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
+                 <i class="fa fa-paper-plane"></i>Registrar Viaje</button>
+             </div>
+
+
+
+
+
+           <!--  <div class="col-md-12 col-sm-12 col-lg-12">
+               <button id="con_regv" name="con_regist" class="green-bg brd-rd5" type="button">
+                 <i class="fa fa-paper-plane"></i>Registrar</button>
+             </div>
+           </div>-->
+     </form>
+<!-- TEST -->
+
+<!--END  TEST -->
      </div>
    </div>
    <!-- Panel Content -->

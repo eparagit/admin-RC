@@ -40,6 +40,11 @@ class PagesController extends Controller
     public function GoTaup(){
       return view('Internal.taup');
     }
+    //Start Go tourU
+    public function GoTourU(){
+      return view('Internal.tourU');
+    }
+    //End Go tourU
    public function Product(){
       return view('Product.index');
     }

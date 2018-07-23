@@ -36,6 +36,9 @@ Route::get('/GoProfile','PagesController@GoProfile');
 
 //Route::get('selectRol','RolController@selectRol');
 
+//Start tourU
+Route::get('/GoTourU','PagesController@GoTourU');
+//End tourU
 
 
 Route::get('selectRol','RolController@selectRol');
@@ -45,6 +48,11 @@ Route::get('selectTripType','TripTypeController@selectTripType');
 //Select Trip Category-Start//
 Route::get('selectTripCat','TripCatController@selectTripCat');
 //Select Trip Category-End//
+
+//Insert Trip Category-Start//
+Route::get('insertTrip','TripController@insertTrip');
+//Insert Trip Category-End//
+
 
 Route::get('selectAllRol','RolController@selectAllRol');
 
@@ -91,3 +99,9 @@ Route::get('session/get','SessionController@accessSessionData');
 Route::get('session/set','SessionController@storeSessionData');
 Route::get('session/remove','SessionController@deleteSessionData');
 //Session Routes -End//
+
+
+Route::post('fileUpload', [
+  'as'=>'image.add',
+  'uses' => 'TripController@fileUpload'
+]);
