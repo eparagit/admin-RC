@@ -344,13 +344,18 @@
                 <li class="has-drp">
                     <a href="#" title="">
                         <i class="ion-home"></i>
-                        <span>Registro</span>
+                        <span>Viajes</span>
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoReg" title="">Usuarios</a>
+                            <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
                         </li>
-
+                        <li>
+                            <a href="/Admin-RC/public//GoTourAprl" title="">Aprobación</a>
+                        </li>
+                        <li>
+                            <a href="dashboard3.html" title="">Mantenimientos</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -432,12 +437,9 @@
        <div class="widget-title2">
          <h4>Calendario</h4>
          <span>Seleccione las siguientes fechas para finalizar el registro</span>
-
-       </div>
-
-     <form  class="form-wrp" enctype="multipart/form-data">
+        </div>
+        <form  class="form-wrp">
            <div class="row mrg20">
-
              <div class='col-md-6 col-sm-6 col-lg-6'>
                <div class="container">
                 <input type="text" id="con_dtfhs" class="form-control" placeholder="Fecha y Hora de Salida*" />
@@ -458,25 +460,17 @@
                 <input type="text" id="con_dtfhv" class="form-control" placeholder="Vencimiento*" />
                </div>
              </div>
-             <div class="col-md-12 col-sm-12 col-lg-12">
-               <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
-                 <i class="fa fa-paper-plane"></i>Registrar Viaje</button>
-             </div>
-
-
-
-
-
-           <!--  <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="col-md-12 col-sm-12 col-lg-12">
                <button id="con_regv" name="con_regist" class="green-bg brd-rd5" type="button">
                  <i class="fa fa-paper-plane"></i>Registrar</button>
              </div>
-           </div>-->
+           </div>
+           </div>
      </form>
 <!-- TEST -->
 
 <!--END  TEST -->
-     </div>
+
    </div>
    <!-- Panel Content -->
  </body>

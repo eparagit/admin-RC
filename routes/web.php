@@ -39,6 +39,9 @@ Route::get('/GoProfile','PagesController@GoProfile');
 //Start tourU
 Route::get('/GoTourU','PagesController@GoTourU');
 //End tourU
+//Start tourAprl
+Route::get('/GoTourAprl','PagesController@GoTourAprl');
+//End tourAprl
 
 
 Route::get('selectRol','RolController@selectRol');

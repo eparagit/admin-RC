@@ -45,6 +45,11 @@ class PagesController extends Controller
       return view('Internal.tourU');
     }
     //End Go tourU
+    //Start Go tourAprl
+    public function GoTourAprl(){
+      return view('Internal.tourAprl');
+    }
+    //End Go tourAprl
    public function Product(){
       return view('Product.index');
     }

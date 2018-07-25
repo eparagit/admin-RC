@@ -341,7 +341,7 @@
                             <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
                         </li>
                         <li>
-                            <a href="dashboard2.html" title="">Aprobación</a>
+                            <a href="/Admin-RC/public//GoTourAprl" title="">Aprobación</a>
                         </li>
                         <li>
                             <a href="dashboard3.html" title="">Mantenimientos</a>
