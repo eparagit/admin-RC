@@ -32,6 +32,9 @@ Route::get('/GoSIU','PagesController@GoSIU');
 
 Route::get('/GoSEU','PagesController@GoSEU');
 
+Route::get('/GoUserbyr','PagesController@GoUserbyr');
+
+
 Route::get('/GoProfile','PagesController@GoProfile');
 
 //Route::get('selectRol','RolController@selectRol');
@@ -42,6 +45,9 @@ Route::get('/GoTourU','PagesController@GoTourU');
 //Start tourAprl
 Route::get('/GoTourAprl','PagesController@GoTourAprl');
 //End tourAprl
+//Start tourAprl-id
+Route::get('/GoTourAprlid','PagesController@GoTourAprlid');
+//End tourAprl-id
 
 
 Route::get('selectRol','RolController@selectRol');
@@ -55,6 +61,12 @@ Route::get('selectTripCat','TripCatController@selectTripCat');
 //Insert Trip Category-Start//
 Route::get('insertTrip','TripController@insertTrip');
 //Insert Trip Category-End//
+
+//selectTuorToApr-Start//
+Route::get('selectTuorToApr','TripController@selectTuorToApr');
+//selectTuorToApr-End//
+
+
 
 
 Route::get('selectAllRol','RolController@selectAllRol');
@@ -70,8 +82,15 @@ Route::get('selectESUser','UserController@selectESUser');
 Route::get('selectUserByEmail','UserController@selectUserByEmail');
 
 Route::get('updateUser','UserController@updateUser');
+//Update User Rol -Start
+Route::get('updateURol','UserController@updateURol');
+//Update User Rol -End
 
 
+
+Route::get('selectUserByRol','UserController@selectUserByRol');
+
+Route::get('selectUserByID','UserController@selectUserByID');
 
 Route::get('validateNewUser','UserController@validateNewUser');
 
@@ -88,7 +107,10 @@ Route::get('/addproduct','ProductController@AddProduct');
 
 Route::get('/Product/readProducts','PagesController@readProducts');
 
+//Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');
+Route::get('logoutS','AuthController@logoutS');
+//Login and Logout Routes-End
 
 Route::get('login', ['as'=>'login','uses'=>'PagesController@Login']);
 

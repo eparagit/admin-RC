@@ -5,92 +5,84 @@ $(document).ready(function(){
           data:{},
           url:"selectAdUser",
           success:function(data)
-          {
-            var tab="";
+              {
+              var tab="";
               $.each(data,function(v){
-                var val=data[v];
-                tab+="<tr>";
-                tab+="<td>"+val['NombreCompleto']+"</td>";
-                tab+="<td>"+val['PrimerApellido']+"</td>";
-                tab+="<td>"+val['SegundoApellido']+"</td>";
-                tab+="<td>"+val['CorreoElectronico']+"</td>";
-                tab+="<td>"+val['NombreUsuario']+"</td>";
-                tab+="<td>"+'<a id="con_getprof"  data-id="'+val['CorreoElectronico']+'" class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>'+"</td>";
-                tab+="<tr>";
-            });
-               $("#tuser").append(tab);
-
-               $("#con_getprof").click(function(){
-                 $("#allUsers").hide();
-                 $("#selectedUser").show();
-                 var email = $(this).data('id');
-                 var cname="";
-                 $.ajax({
-                       type:'GET',
-                       data: {'email':email},
-                       url:'selectUserByEmail',
-                       success: function(data) {
-
-                      console.log(data);
-                      var cnam ="";
-                      var fln="";
-                      var sln="";
-                      var ag="";
-                      var cid ="";
-                      var rn ="";
-                      var corr ="";
-                      var tel="";
-                      var una="";
-                      var idus="";
-                  $.each(data,function(v){
                     var val=data[v];
+                    tab+="<tr>";
+                    tab+="<td>"+val['NombreCompleto']+"</td>";
+                    tab+="<td>"+val['PrimerApellido']+"</td>";
+                    tab+="<td>"+val['SegundoApellido']+"</td>";
+                    tab+="<td>"+val['CorreoElectronico']+"</td>";
+                    tab+="<td>"+val['NombreUsuario']+"</td>";
+                    tab+="<td>"+'<button id="con_getprof" class="btn btn-success"  data-id="'+val['CorreoElectronico']+'" type="button">Editar</button>'+"</td>";
+                    tab+="<tr>";
+                });
+                   $("#tuser").append(tab);
 
-                  cnam = val['NombreCompleto'];
-                  fln=val['PrimerApellido'];
-                  sln=val['SegundoApellido'];
-                  ag=val['Edad'];
-                  cid = val['NumeroIdentificacion'];
-                  corr=val['CorreoElectronico'];
-                  tel=val['NumeroTelefonico'];
-                  una=val['NombreUsuario'];
-                  rn=val['Descripcion'];
-                  idus=val['ID_Usuario'];
+                 }
+                });
+              $("#tusers").on('click','#con_getprof',function(){
+                var email = $(this).data('id');
 
+                alert(email);
+                $("#allUsers").hide();
+                $("#selectedUser").show();
 
-                  });
-                  $("#con_cname").val(cnam);
-                  $("#con_cname").prop('disabled',true);
-                  $("#con_flastn").val(fln);
-                  $("#con_flastn").prop('disabled',true);
-                  $("#con_slastn").val(sln);
-                  $("#con_slastn").prop('disabled',true);
-                  $("#con_age").val(ag);
-                  $("#con_age").prop('disabled',true);
-                  $("#con_idn").val(cid);
-                  $("#con_idn").prop('disabled',true);
-                  $("#con_email").val(corr);
-                  $("#con_email").prop('disabled',true);
-                  $("#con_uphone").val(tel);
-                  $("#con_uphone").prop('disabled',true);
-                  $("#con_unam").val(una);
-                  $("#con_unam").prop('disabled',true);
-                  $("#con_urol").val(rn);
-                  $("#con_urol").prop('disabled',true);
-                  $("#con_idu").val(idus);
-                  $("#con_idu").prop('disabled',true);
-                  $("#con_idu").prop('hidden',true);
+                $.ajax({
+                      type:'GET',
+                      data: {'email':email},
+                      url:'selectUserByEmail',
+                      success: function(data){
+                           console.log(data);
+                           var cnam ="";
+                           var fln="";
+                           var sln="";
+                           var ag="";
+                           var cid ="";
+                           var rn ="";
+                           var corr ="";
+                           var tel="";
+                           var una="";
+                           var idus="";
+                 $.each(data,function(v){
+                   var val=data[v];
+                     cnam = val['NombreCompleto'];
+                     fln=val['PrimerApellido'];
+                     sln=val['SegundoApellido'];
+                     ag=val['Edad'];
+                     cid = val['NumeroIdentificacion'];
+                     corr=val['CorreoElectronico'];
+                     tel=val['NumeroTelefonico'];
+                     una=val['NombreUsuario'];
+                     rn=val['Descripcion'];
+                     idus=val['ID_Usuario'];
+                 });
+                     $("#con_cname").val(cnam);
+                     $("#con_cname").prop('disabled',true);
+                     $("#con_flastn").val(fln);
+                     $("#con_flastn").prop('disabled',true);
+                     $("#con_slastn").val(sln);
+                     $("#con_slastn").prop('disabled',true);
+                     $("#con_age").val(ag);
+                     $("#con_age").prop('disabled',true);
+                     $("#con_idn").val(cid);
+                     $("#con_idn").prop('disabled',true);
+                     $("#con_email").val(corr);
+                     $("#con_email").prop('disabled',true);
+                     $("#con_uphone").val(tel);
+                     $("#con_uphone").prop('disabled',true);
+                     $("#con_unam").val(una);
+                     $("#con_unam").prop('disabled',true);
+                     $("#con_urol").val(rn);
+                     $("#con_urol").prop('disabled',true);
+                     $("#con_idu").val(idus);
+                     $("#con_idu").prop('disabled',true);
+                     $("#con_idu").prop('hidden',true);
+                 }
+               });
+             });
 
-
-
-                      }
-
-});
-
-
-});
-}
-
- });
 
   $("#con_regist").click(function(){
       var name = $("#con_nombrecompleto").val();
@@ -286,5 +278,5 @@ $(document).ready(function(){
             }
           });
           });
-        
+
 });

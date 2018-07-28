@@ -52,21 +52,23 @@
                     </div>
                     <h5>
                         @foreach(Session::get('datos') as $data)
-                        <a href="#" title="">{{$data['CorreoElectronico']}}</a>
+                        <a href="#" title="">{{$data['NombreUsuario']}}</a>
                         @endforeach
                     </h5>
-                    <span>TI</span>
+                    <span>
+                      @foreach(Session::get('datos') as $data)
+                      <label>{{$data['NumeroTelefonico']}}</label>
+                      @endforeach
+                    </span>
 
-                    <i>83</i>
+
 
                     <div class="act-pst-lk-stm">
-                        <a class="brd-rd5 green-bg-hover" href="#" title="">
-                            <i class="ion-heart"></i> Love</a>
                         <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                            <i class="ion-forward"></i> Reply</a>
+                            <i class="ion-forward"></i>Mi perfil</a>
                     </div>
                     <div class="usr-ft">
-                        <a class="btn-danger" href="#" title="">
+                        <a id="con_logout" class="btn-danger" href="#" title="">
                             <i class="fa fa-sign-out"></i> Logout</a>
                     </div>
                 </div>
@@ -374,7 +376,10 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoRol" title="">Administración</a>
+                            <a href="/Admin-RC/public//GoRol" title="">Descripción</a>
+                        </li>
+                        <li>
+                            <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
                         </li>
                     </ul>
                 </li>
@@ -449,7 +454,7 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
-
+    <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

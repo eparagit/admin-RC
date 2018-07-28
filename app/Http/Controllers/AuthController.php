@@ -35,4 +35,9 @@ class AuthController extends Controller
     //var_dump($_Session);
         return $response;
     }
+
+    public function logoutS(Request $request){
+      $request->session()->flush();
+      return 1;
+    }
 }

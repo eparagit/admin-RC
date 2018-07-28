@@ -34,6 +34,10 @@ class PagesController extends Controller
     public function GoSEU(){
       return view('Admin.seuser');
     }
+    public function GoUserbyr(){
+      return view('Admin.userByrol');
+    }
+
     public function GoProfile(){
       return view('Admin.profile');
     }
@@ -48,6 +52,11 @@ class PagesController extends Controller
     //Start Go tourAprl
     public function GoTourAprl(){
       return view('Internal.tourAprl');
+    }
+    //End Go tourAprl
+    //Start Go tourAprl
+    public function GoTourAprlid(){
+      return view('Internal.tourAprl-id');
     }
     //End Go tourAprl
    public function Product(){

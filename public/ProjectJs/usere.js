@@ -15,12 +15,13 @@ $(document).ready(function(){
                 tab+="<td>"+val['SegundoApellido']+"</td>";
                 tab+="<td>"+val['CorreoElectronico']+"</td>";
                 tab+="<td>"+val['NombreUsuario']+"</td>";
-                tab+="<td>"+'<a id="con_getprof"  data-id="'+val['CorreoElectronico']+'" class="button button-small edit" title="Edit"><i class="fa fa-pencil"></i></a>'+"</td>";
+                tab+="<td>"+'<button id="con_getprof" class="btn btn-success"  data-id="'+val['CorreoElectronico']+'" type="button">Editar</button>'+"</td>";
                 tab+="<tr>";
             });
                $("#tuser").append(tab);
-
-               $("#con_getprof").click(function(){
+             }
+           });
+               $("#tusers").on('click','#con_getprof',function(){
                  $("#allUsers").hide();
                  $("#selectedUser").show();
                  var email = $(this).data('id');
@@ -77,14 +78,9 @@ $(document).ready(function(){
                   $("#con_idu").val(idus);
                   $("#con_idu").prop('disabled',true);
                   $("#con_idu").prop('hidden',true);
-
-                      }
-
-});
-});
-}
-
- });
+                }
+              });
+            });
  $("#con_edcn").click(function(){
    $("#con_cname").prop('disabled',false);
    $("#con_flastn").prop('disabled',true);
@@ -166,9 +162,6 @@ $(document).ready(function(){
    $("#con_uphone").prop('disabled',true);
    $("#con_unam").prop('disabled',true);
  });
-
-
-
   $("#con_save").click(function(){
     var id=$("#con_idu").val();
     var name = $("#con_cname").val();
@@ -179,6 +172,7 @@ $(document).ready(function(){
     var email = $("#con_email").val();
     var telephone=$("#con_uphone").val();
     var userName = $("#con_unam").val();
+
   $.ajax({
     type:'GET',
     data: {'id':id,

@@ -376,7 +376,7 @@
                     </a>
                     <ul class="sb-drp">
                       <li>
-                          <a href="/Admin-RC/public//GoRol" title="">Descripcón</a>
+                          <a href="/Admin-RC/public//GoRol" title="">Descripción</a>
                       </li>
                       <li>
                           <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
@@ -425,49 +425,8 @@
    </div>
    <!-- Page Top -->
 
-   <div class="panel-content" id="allUsers">
-     <div class="widget pad50-65">
-       <div class="widget-title2">
-         <h4>Administración de Usuarios Estándar Externo</h4>
-       </div>
-       <form class="form-wrp">
-         <div class="row mrg20">
-
-           <div class="col-md-12 col-sm-12 col-lg-12">
-               <div>
-                   <h4>Usuarios</h4>
-                 <table class="table" id="tusers">
-                     <thead>
-                         <tr>
-                            <th>Nombre</th>
-                             <th>Primer Apellido</th>
-                             <th>Segundo Apellido</th>
-                             <th>Correo Electrónico</th>
-                             <th>Nombre Usuario</th>
-                             <th>Acción</th>                          
-                           </tr>
-                     </thead>
-                   <tbody id="tuser">
-                   </tbody>
-                 </table>
-               </div>
-           </div>
-           <div class="widget pad50-65">
-            <div class="widget-title2">
-
-            </div>
-
-        </div>
-
-         </div>
-       </form>
-     </div>
-
-   </div>
-
 
    <div class="panel-content" id="selectedUser" style="display:none;">
-
      <div class="panel-content">
         <div class="widget pad50-65">
           <div class="profile-wrp">
@@ -476,152 +435,161 @@
                 <div class="profile-info-wrp">
                   <div class="insta-wrp">
                       <h1>Perfil</h1>
-                    <div class="insta-inf">
-                      <table>
-                        <tr>
-                          <td>
-                              Nombre:
-                          </td>
-                          <td>
-                            <span>
-                          <input type="text" id="con_cname" value="">
-                            <a id="con_edcn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              Primer Apellido:
-                          </td>
-                          <td>
-                            <span>
-                        <input type="text" id="con_flastn" value="">
-                            <a id="con_edfln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Segundo Apellido:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_slastn" value="">
-                            <a id="con_edsln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Edad:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_age" value="">
-                              <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                        <div class="insta-inf">
+                          <table>
+                          <tr>
+                            <td>
+                                Nombre:
+                            </td>
+                            <td>
+                              <span>
+                            <input type="text" id="con_cname" value="">
+                              <a id="con_edcn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
                             </span>
-                          </td>
-                        </tr>
-                      </table>
-                      <div  class="usr-gnrl-inf">
-                    <h5 class="prf-edit-tl">Identificación:
-                      <a id="con_iden"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <div class="grn-inf-lst">
-                      <i class="ion-card" ></i> Cédula u Otro:
-                      <span class="green-clr" >
-                          <input type="text" id="con_idn" value="">
-                      </span>
-                    </div>
-                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Primer Apellido:
+                              </td>
+                              <td>
+                              <span>
+                                <input type="text" id="con_flastn" value="">
+                              <a id="con_edfln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                              </span>
+                              </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                Segundo Apellido:
+                                </td>
+                                <td>
+                                <span>
+                                <input type="text" id="con_slastn" value="">
+                                <a id="con_edsln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                Edad:
+                                </td>
+                                <td>
+                                <span>
+                                  <input type="text" id="con_age" value="">
+                                <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </span>
+                                </td>
+                                </tr>
+                                </table>
+                               <!--<i class="fa fa-pencil edit-btn" id="con_edcn"></i>-->
+                                <div  class="usr-gnrl-inf">
+                                 <h5 class="prf-edit-tl">Identificación:
+                                <a id="con_iden"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </h5>
+                                <div class="grn-inf-lst">
+                                <i class="ion-card" ></i> Cédula u Otro:
+                                <span class="green-clr" ></span>
+                                <span>
+                                <input type="text" id="con_idn" value="">
+                                </span>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-lg-4">
+                                <div class="profile-info-wrp">
+                                <div class="usr-gnrl-inf">
+                                <h5 class="prf-edit-tl">Empresa y Rol
+                                </h5>
+                                <div class="grn-inf-lst">
+                                <i class="fa fa-home"></i> Empresa:
+                                <span class="green-clr">Kinesis-Ruta a la Cima</span>
+                                </div>
+                                <div class="grn-inf-lst" >
+                                <i  class="fa fa-graduation-cap" ></i> Rol:
+                                <span >
+                                <input type="text" id="con_urol" value="">
+                                </span>
+                                </div>
+                                </div>
+                                <div class="usr-cnt-inf">
+                                <h5 class="prf-edit-tl">Correo Electrónico:
+                                <a id="con_ema"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </h5>
+                                <ul class="usr-cnt-inf-lst">
+                                <li>
+                                <i class="fa fa-envelope"></i>
+                                <strong >Correo:</strong>
+                                <span>
+                                <input type="text" id="con_email" value="">
+                                </span>
+                                </li>
+                                </ul>
+                                </div>
+                                <div class="usr-gnrl-inf">
+                                <h5 class="prf-edit-tl">Teléfono
+                                <a id="con_pho"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </h5>
+                                <div class="grn-inf-lst">
+                                <i class="fa fa-phone" ></i> Número Teléfonico:
+                                <span class="green-clr">
+                                <input type="text" id="con_uphone" value="">
+                                </span>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                  <!--//start//-->
+                                <div class="col-md-4 col-sm-12 col-lg-4">
+                                <div class="profile-info-wrp">
+                                <div class="usr-cnt-inf">
+                                <h5 class="prf-edit-tl">Usuario y Contraseña
+                                <a id="con_usn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                                </h5>
+                                <ul class="usr-cnt-inf-lst">
+                                  <li>
+                                <i class="ion-android-contacts"></i>
+                                <strong >Nombre de Usuario:</strong>
+                                <span>
+                                <input type="text" id="con_unam" value="">
+                                </span>
+                                </li>
+                                </ul>
+                                </div>
+                                <div class="usr-cnt-inf">
+                                <h5 class="prf-edit-tl">Refrescar Contraseña:
+                                </h5>
+                                <ul class="usr-cnt-inf-lst">
+                                <li>
+                                <strong >Contraseña Temporal:</strong>
+                                <span>
+                                <input type="text" id="con_email" value="">
+                                </span>
+                                </li>
+                                </ul>
+                                </div>
+                                <div class="usr-gnrl-inf">
+                                <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                <button id="con_save" name="con_regist" class="green-bg brd-rd5" type="button">
+                                <i class="fa fa-paper-plane"></i>Guardar</button>
+                                </div>
+                                </div>
+                                <div>
+                              <input type="text" id="con_idu" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <!--//end//-->
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
-                 <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Correo Electrónico:
-                      <a id="con_ema"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-                        <i class="fa fa-envelope"></i>
-                        <strong >Correo:</strong>
-                        <span>
-                        <input type="text" id="con_email" value="">
-                      </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usr-gnrl-inf">
-                    <h5 class="prf-edit-tl">Teléfono
-                      <a id="con_pho"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <div class="grn-inf-lst">
-                      <i class="fa fa-phone" ></i> Número Teléfonico:
-                      <span class="green-clr">
-                        <input type="text" id="con_uphone" value="">
-                      </span>
-                    </div>
-                  </div>
-                  <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Usuario y Contraseña
-                      <a id="con_usn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-                        <i class="ion-android-contacts"></i>
-                        <strong >Nombre de Usuario:</strong>
-                        <span>
-                        <input type="text" id="con_unam" value="">
-                      </span>
-                      </li>
-
-                    </ul>
-                  </div>
-
-                </div>
-              </div>
-              <!--//start//-->
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
-                 <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Refrescar Contraseña:
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-
-                        <strong >Contraseña Temporal:</strong>
-                        <span>
-                        <input type="text" id="con_email" value="">
-                      </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="usr-gnrl-inf">
-                    <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
-                    <div class="col-md-12 col-sm-12 col-lg-12">
-                      <button id="con_guard" name="con_regist" class="green-bg brd-rd5" type="button">
-                        <i class="fa fa-paper-plane"></i>Guardar</button>
-                    </div>
-                    </div>
-                    <div>
-                      <input type="text" id="con_idu" value="">
-                    </div>
-                </div>
-              </div>
-              <!--//end//-->
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-   </div>
-   <!-- Panel Content -->
+              <!-- Panel Content -->
 
  </body>
     <!-- Page Top -->
@@ -664,7 +632,7 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
-    <script src="ProjectJs/usere.js" type="text/javascript"></script>
+    <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {

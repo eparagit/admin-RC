@@ -12,7 +12,7 @@ class RolController extends Controller
   public function selectRol(){
 
 
-    $result= DB::select("select ID_Rol, Descripcion from rol where ID_Rol < 3");
+    $result= DB::select("select ID_Rol, Descripcion from rol where ID_Rol < '3'");
           $array = json_decode(json_encode($result), True);
 return $array;
 

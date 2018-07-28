@@ -66,6 +66,7 @@ class TripController extends Controller
             $quot=$data['Cupo'];
             $cost=$data['Costo'];
             $i_path=$data['ImgPath'];
+            $i_name=$data['Img_Name'];
 
 
 
@@ -77,7 +78,7 @@ class TripController extends Controller
             if(!empty($array)){
                  return 0;
             }else{
-              DB::insert('insert into viaje (usuario_ID,tipo_viaje_ID,categoria_viaje_ID,estadoViaje_ID,Titulo,Descripcion,Requisitos,Cupo,Costo,FechaHora_Salida,FechaHora_Regreso,Publicacion,Vencimiento,Incluye,Ruta_Imagen) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[$us_id,$t_type,$t_cat,$ev_id,$title,$desc,$req,$quot,$cost,$fhs,$fhr,$publ,$venc,$incl,$i_path]);
+              DB::insert('insert into viaje (usuario_ID,tipo_viaje_ID,categoria_viaje_ID,estadoViaje_ID,Titulo,Descripcion,Requisitos,Cupo,Costo,FechaHora_Salida,FechaHora_Regreso,Publicacion,Vencimiento,Incluye,Ruta_Imagen,Imagen_Name) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[$us_id,$t_type,$t_cat,$ev_id,$title,$desc,$req,$quot,$cost,$fhs,$fhr,$publ,$venc,$incl,$i_path,$i_name]);
                   //DB::insert('insert into viaje (usuario_ID,tipo_viaje_ID,categoria_viaje_ID,estadoViaje_ID,Titulo,Descripcion,Requisitos,Cupo,Costo,FechaHora_Salida,FechaHora_Regreso,Publicacion,Vencimiento,Incluye,Ruta_Imagen) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$us_id,$tv_id,$ctv_id,$ev_id,$tit,$desc,$req,$cup,$cost,$fhs,$fhr,$publ,$venc,$incl,$imagen]);
                   return 1;
                 }
@@ -86,12 +87,18 @@ class TripController extends Controller
 
       public function fileUpload(Request $request){
 
+    //  $image = $request->file('image')->store('Tours','storage');
+
         $image = $request->file('image');
         $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/Tours');
+        $destinationPath = public_path('storage\Tours');
+        //$destinationPath = public_path('Tours');
         $image->move($destinationPath, $input['imagename']);
 
-        $image_path=$destinationPath.$input['imagename'];
+        //$r_pathn=str_replace('\\','/',$destinationPath);
+        $image_path=$destinationPath.'\\'.$input['imagename'];
+        $image_name=$input['imagename'];
+        //.$input['imagename'];
 
      //$tv =Input::get('s_tviaje');
      //var_dump($tv);die;
@@ -99,7 +106,7 @@ class TripController extends Controller
        $viaje = ["Titulo"=>Input::get('con_titulo'),"Descripcion"=>Input::get('con_descripcion'),
                   "TipoViaje"=>Input::get('s_tviaje'),"CategoriaViaje"=>Input::get('s_cviaje'),
                   "Requisitos"=>Input::get('con_requisitos'),"Incluye"=>Input::get('con_incluye'),
-                  "Cupo"=>Input::get('con_cupo'),"Costo"=>Input::get('con_costo'),"ImgPath"=>$image_path];
+                  "Cupo"=>Input::get('con_cupo'),"Costo"=>Input::get('con_costo'),"ImgPath"=>$image_path,"Img_Name"=>$image_name];
     //var_dump($viaje); die;
         Session::put('viaje',$viaje);
 
@@ -109,11 +116,13 @@ class TripController extends Controller
 
         $result= DB::select("select v.ID_Viaje,v.usuario_ID,u.NombreCompleto,u.PrimerApellido,v.tipo_viaje_ID,t.Descripcion TV_Descripcion,
                               v.categoria_viaje_ID,c.Descripcion CV_Descripcion,v.Titulo,v.Descripcion V_Descripcion,v.Requisitos,v.Cupo,
-                              v.Costo,v.FechaHora_Salida,v.FechaHora_Regreso,v.Publicacion,v.Vencimiento,v.Incluye,v.Ruta_Imagen from viaje v,
+                              v.Costo,v.FechaHora_Salida,v.FechaHora_Regreso,v.Publicacion,v.Vencimiento,v.Incluye,v.Ruta_Imagen,v.Imagen_Name from viaje v,
                                 usuario u,tipo_viaje t,categoria_viaje c  where v.estadoViaje_ID=1  and v.usuario_ID = u.ID_Usuario and
                                 v.tipo_viaje_ID=t.ID_Tipo_Viaje and v.categoria_viaje_ID=c.ID_Categoria");
+
         $array = json_decode(json_encode($result), True);
 
+        return $array;
 
       }
 

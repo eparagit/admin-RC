@@ -376,7 +376,7 @@
                     </a>
                     <ul class="sb-drp">
                       <li>
-                          <a href="/Admin-RC/public//GoRol" title="">Descripcón</a>
+                          <a href="/Admin-RC/public//GoRol" title="">Descripción</a>
                       </li>
                       <li>
                           <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
@@ -425,33 +425,36 @@
    </div>
    <!-- Page Top -->
 
-   <div class="panel-content" id="allUsers">
+   <div class="panel-content">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Administración de Usuarios Estándar Externo</h4>
+         <h4>Usuarios por Rol</h4>
        </div>
        <form class="form-wrp">
          <div class="row mrg20">
 
            <div class="col-md-12 col-sm-12 col-lg-12">
                <div>
-                   <h4>Usuarios</h4>
-                 <table class="table" id="tusers">
+                   <h4>Roles</h4>
+                 <table class="table" id="t_ubr">
                      <thead>
                          <tr>
-                            <th>Nombre</th>
+                             <th>#</th>
+                             <th>Nombre</th>
                              <th>Primer Apellido</th>
                              <th>Segundo Apellido</th>
-                             <th>Correo Electrónico</th>
-                             <th>Nombre Usuario</th>
-                             <th>Acción</th>                          
-                           </tr>
+                             <th>Correo</th>
+                             <th>Rol</th>
+                             <th>Acción</th>
+                         </tr>
                      </thead>
-                   <tbody id="tuser">
+                   <tbody id="tusxrol">
                    </tbody>
+
                  </table>
                </div>
            </div>
+
            <div class="widget pad50-65">
             <div class="widget-title2">
 
@@ -465,162 +468,45 @@
 
    </div>
 
-
-   <div class="panel-content" id="selectedUser" style="display:none;">
-
-     <div class="panel-content">
-        <div class="widget pad50-65">
-          <div class="profile-wrp">
-            <div class="row">
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
-                  <div class="insta-wrp">
-                      <h1>Perfil</h1>
-                    <div class="insta-inf">
-                      <table>
-                        <tr>
-                          <td>
-                              Nombre:
-                          </td>
-                          <td>
-                            <span>
-                          <input type="text" id="con_cname" value="">
-                            <a id="con_edcn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              Primer Apellido:
-                          </td>
-                          <td>
-                            <span>
-                        <input type="text" id="con_flastn" value="">
-                            <a id="con_edfln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Segundo Apellido:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_slastn" value="">
-                            <a id="con_edsln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                          </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Edad:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_age" value="">
-                              <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                            </span>
-                          </td>
-                        </tr>
-                      </table>
-                      <div  class="usr-gnrl-inf">
-                    <h5 class="prf-edit-tl">Identificación:
-                      <a id="con_iden"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <div class="grn-inf-lst">
-                      <i class="ion-card" ></i> Cédula u Otro:
-                      <span class="green-clr" >
-                          <input type="text" id="con_idn" value="">
-                      </span>
-                    </div>
-                  </div>
-                    </div>
-                  </div>
+     <!--Modal-->
+     <div class="modal fade" id="rolChange" role="dialog">
+       <div class="modal-dialog">
+          <!-- Modal content-->
+            <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Cambio de Rol</h4>
+                 <input type="text" id="id_iuser"/>
+             </div>
+           <form action=""  id="fp-insert">
+             <div class="modal-body">
+               <div class="col-4-md">
+                         <div class="form-group">
+                            <input type="text" id="c_name"/>
+                        </div>
+               </div>
+                <div class="col-4-md">
+                          <div class="form-group">
+                             Rol Actual:<input type="text" id="curr_r"/>
+                         </div>
                 </div>
-              </div>
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
-                 <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Correo Electrónico:
-                      <a id="con_ema"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-                        <i class="fa fa-envelope"></i>
-                        <strong >Correo:</strong>
-                        <span>
-                        <input type="text" id="con_email" value="">
-                      </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usr-gnrl-inf">
-                    <h5 class="prf-edit-tl">Teléfono
-                      <a id="con_pho"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <div class="grn-inf-lst">
-                      <i class="fa fa-phone" ></i> Número Teléfonico:
-                      <span class="green-clr">
-                        <input type="text" id="con_uphone" value="">
-                      </span>
-                    </div>
-                  </div>
-                  <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Usuario y Contraseña
-                      <a id="con_usn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-                        <i class="ion-android-contacts"></i>
-                        <strong >Nombre de Usuario:</strong>
-                        <span>
-                        <input type="text" id="con_unam" value="">
-                      </span>
-                      </li>
-
-                    </ul>
-                  </div>
-
-                </div>
-              </div>
-              <!--//start//-->
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
-                 <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Refrescar Contraseña:
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
-
-                        <strong >Contraseña Temporal:</strong>
-                        <span>
-                        <input type="text" id="con_email" value="">
-                      </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="usr-gnrl-inf">
-                    <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
-                    <div class="col-md-12 col-sm-12 col-lg-12">
-                      <button id="con_guard" name="con_regist" class="green-bg brd-rd5" type="button">
-                        <i class="fa fa-paper-plane"></i>Guardar</button>
-                    </div>
-                    </div>
-                    <div>
-                      <input type="text" id="con_idu" value="">
-                    </div>
-                </div>
-              </div>
-              <!--//end//-->
+            <div class="col-4-md">
+                      <div class="form-group">
+                        Nuevo Rol:<select id="con_rols">
+                                  <option value="0">Seleccione</option>
+                                </select>
+                       </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-
-
+            </div>
+             <div class="modal-footer">
+               <button  type="button" class="btn btn-default" id="con_addp">Modificar</button>
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+             </div>
+       </form>
+       </div>
+     </div>
    </div>
+
    <!-- Panel Content -->
 
  </body>
@@ -664,8 +550,9 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
-    <script src="ProjectJs/usere.js" type="text/javascript"></script>
+    <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
+    <script src="ProjectJs/updRol.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

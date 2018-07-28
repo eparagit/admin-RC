@@ -34,35 +34,43 @@
             </h1>
         </div>
         <div class="topbar-data">
-            <div class="usr-act">
-                <i>HELLO, JOHN SMITH!</i>
-                <span>
-                    <img src="images/resource/topbar-usr1.jpg" alt="" />
-                    <i class="sts away"></i>
-                </span>
-                <div class="usr-inf">
-                    <div class="usr-thmb brd-rd50">
-                        <img class="brd-rd50" src="images/resource/usr.jpg" alt="" />
-                        <i class="sts away"></i>
-                        <a class="green-bg brd-rd5" href="#" title="">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </div>
-                    <h5>
-                        <a href="#" title="">John Smith</a>
-                    </h5>
-                    <span>Co Worker</span>
-                    <i>076 9477 4896</i>
-                    <div class="act-pst-lk-stm">
-                        <a class="brd-rd5 green-bg-hover" href="#" title="">
-                            <i class="ion-heart"></i> Love</a>
-                        <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                            <i class="ion-forward"></i> Reply</a>
-                    </div>
-                    <div class="usr-ft">
-                        <a class="btn-danger" href="#" title="">
-                            <i class="fa fa-sign-out"></i> Logout</a>
-                    </div>
+          <div class="usr-act">
+            @foreach(Session::get('datos') as $data)
+              <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
+              @endforeach
+              <span>
+                  <img src="images/resource/topbar-usr1.jpg" alt="" />
+                  <i class="sts away"></i>
+              </span>
+              <div class="usr-inf">
+                  <div class="usr-thmb brd-rd50">
+                      <img class="brd-rd50" src="images/resource/usr.jpg" alt="" />
+                      <i class="sts away"></i>
+                      <a class="green-bg brd-rd5" href="#" title="">
+                          <i class="fa fa-envelope"></i>
+                      </a>
+                  </div>
+                  <h5>
+                      @foreach(Session::get('datos') as $data)
+                      <a href="#" title="">{{$data['NombreUsuario']}}</a>
+                      @endforeach
+                  </h5>
+                  <span>
+                    @foreach(Session::get('datos') as $data)
+                    <label>{{$data['NumeroTelefonico']}}</label>
+                    @endforeach
+                  </span>
+
+
+
+                  <div class="act-pst-lk-stm">
+                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
+                          <i class="ion-forward"></i>Mi perfil</a>
+                  </div>
+                  <div class="usr-ft">
+                      <a id="con_logout" class="btn-danger" href="#" title="">
+                          <i class="fa fa-sign-out"></i> Logout</a>
+                  </div>
                 </div>
             </div>
             <form class="topbar-search">
@@ -367,9 +375,12 @@
                         <span>Roles</span>
                     </a>
                     <ul class="sb-drp">
-                        <li>
-                            <a href="font-awesome-icons.html" title="">Administración</a>
-                        </li>
+                      <li>
+                          <a href="/Admin-RC/public//GoRol" title="">Descripción</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
+                      </li>
                     </ul>
                 </li>
 
@@ -417,21 +428,12 @@
    <div class="panel-content">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Administración de Roles</h4>
-         <span>Por favor llene el siguiente formulario.</span>
+         <h4>Descripción de Roles</h4>
        </div>
        <form class="form-wrp">
          <div class="row mrg20">
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <input id="con_codigorol" class="brd-rd5" type="text" placeholder="Código del Rol*" />
-           </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-             <input id="con_nombrerol" class="brd-rd5" type="text" placeholder="Nombre del Rol*" />
-           </div>
 
            <div class="col-md-12 col-sm-12 col-lg-12">
-             <button id="con_arol" name="con_regist" class="green-bg brd-rd5" type="button">
-               <i class="fa fa-paper-plane"></i>Agregar</button>
                <div>
                    <h4>Roles</h4>
                  <table class="table">
@@ -504,6 +506,7 @@
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
     <script src="ProjectJs/user.js" type="text/javascript"></script>
+    <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';
