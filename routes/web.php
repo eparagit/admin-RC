@@ -49,6 +49,11 @@ Route::get('/GoTourAprl','PagesController@GoTourAprl');
 Route::get('/GoTourAprlid','PagesController@GoTourAprlid');
 //End tourAprl-id
 
+//Start UpdateTourAp-Start
+Route::get('/GoUpdateTwAp','PagesController@GoUpdateTwAp');
+//Start UpdateTourAp-End
+
+
 
 Route::get('selectRol','RolController@selectRol');
 
@@ -58,13 +63,31 @@ Route::get('selectTripType','TripTypeController@selectTripType');
 Route::get('selectTripCat','TripCatController@selectTripCat');
 //Select Trip Category-End//
 
-//Insert Trip Category-Start//
+//Insert Trip -Start//
 Route::get('insertTrip','TripController@insertTrip');
+//Insert Trip -End//
+
+//Insert Trip Category-Start//
+Route::get('insertNewCategory','TripCatController@insertNewCategory');
 //Insert Trip Category-End//
+
+
+//Approve Tour-Start//
+Route::get('ApproveTour','TripController@ApproveTour');
+//Approve Tour-End//
+
+//Reject Tour-Start//
+Route::get('deleteTour','TripController@deleteTour');
+//Reject Tour-End//
+
 
 //selectTuorToApr-Start//
 Route::get('selectTuorToApr','TripController@selectTuorToApr');
 //selectTuorToApr-End//
+
+//selectTuorAprToUpdate-Start//
+Route::get('selectTuorToUpdateApp','TripController@selectTuorToUpdateApp');
+//selectTuorAprToUpdate-End//
 
 
 

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Vendor: Bootstrap 4 Stylesheets  -->
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
   <!-- Our Website CSS Styles -->
   <link rel="stylesheet" href="css/icons.min.css" type="text/css">
@@ -631,22 +631,200 @@
     </div>
   </div>
   <!-- Page Top -->
+
+
+
   <div class="panel-content">
     <div class="widget pad50-65">
-    <div class="col-md-12 col-sm-12 col-lg-12">
-      <div id="t_toursc">
-      </div>
-      <table class="table" id="t_tours">
-         <thead>
-         </thead>
-            <tbody id="tb_tuors">
 
-            </tbody>
-        </table>
-    </div>
+      <form class="form-wrp" id="info-form" method="POST" enctype="multipart/form-data"  id="formImgInp" action="{{route('image.add')}}">
+        <!--action="{{route('image.add')}}"-->
+        {!! csrf_field() !!}
+        <fieldset>
+          <legend class="blue-bg">Imagen y Datos principales
+            <span class="blue-bg brd-rd50">1.</span>
+          </legend>
+           <div class="row mrg20">
+                <span class="chck-bx">
+                 <input type="checkbox" id="ff_cimage" enabled/>
+                 <label for="ff_cimage">Marque para habilitar el cambio de imágen</label>
+                 </span>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      @foreach(Session::get('act_viaje') as $viajed)
+                  <img name="imagel" id="iamgel" src="<?=$viajed['Ruta_Imagen']?>" alt="" width="350" height="350"/>
+                    @endforeach
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-lg-6" id="img_replace" style="display:none">
+                    <span>Selccione una imágen</span>
+                    <input type="file" name="image" id="iamge" accept="image/*" class="brd-rd5 validate[required]"  multiple >
+                  </div>
+                      <div>
+                        <span class="chck-bx">
+                         <input type="checkbox" id="ff_tldd" enabled/>
+                         <label for="ff_tldd">Marque para habilitar la edición en los campos Título, Lugar de Salida, Destino y Descripción</label>
+                         </span>
+                      </div>
+                         @foreach(Session::get('act_viaje') as $viajed)
+                          <div class="col-md-12 col-sm-12 col-lg-12">
+
+                          Título:<input class="brd-rd5 validate[required]" name="con_titulo" id="con_titulo" value="<?=$viajed['Titulo']?>" type="text" placeholder="" disabled/>
+
+                          <input type="checkbox" id="chk_tit" />
+                          <span class="error-box"></span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6">
+
+                        Lugar de Salida:<input class="brd-rd5 validate[required]" name="con_lsalida" id="con_lsalida" value="<?=$viajed['Lugar_Salida']?>" type="text" placeholder="" disabled/>
+
+                          <span class="error-box"></span>
+                        </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+
+                          Destino:<input class="brd-rd5 validate[required]" name="con_destino" id="con_destino" value="<?=$viajed['Destino']?>"  type="text" placeholder="" disabled/>
+
+                              <span class="error-box"></span>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+
+                          Descripción:<textarea class="brd-rd5 validate[required]" name="con_descripcion" id="con_descripcion" type="text" placeholder="" disabled><?=$viajed['V_Descripcion']?></textarea>
+
+                            <span class="error-box"></span>
+                            </div>
+
+
+
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                              <span class="chck-bx">
+                               <input type="checkbox" id="ff_tv" enabled/>
+                               <label for="ff_tv">Marque para habilitar el cambio de Tipo de Viaje</label>
+                               </span>
+                            Tipo Viaje:<input class="brd-rd5 validate[required]" name="con_tvTemp" id="con_tvTemp" value="<?=$viajed['TV_Descripcion']?>" type="text" placeholder="" disabled/>
+
+                              <span class="error-box"></span>
+                            </div>
+
+
+
+                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                  <span class="chck-bx">
+                                   <input type="checkbox" id="ff_cv" enabled/>
+                                   <label for="ff_cv">Marque para habilitar el cambio de Categoría de Viaje</label>
+                                   </span>
+                              Categoría Viaje:<input class="brd-rd5 validate[required]" name="con_tvTemp" id="con_cvTemp" value="<?=$viajed['CV_Descripcion']?>"  type="text" placeholder="" disabled/>
+
+                                  <span class="error-box"></span>
+                                </div>
+                            @endforeach
+                      <div class="col-md-6 col-sm-6 col-lg-6" id="selectTV" style="display:none">
+                      <label>Tipo Viaje:</label>
+                         <div  class="slct-bx">
+                           <span>
+                     <select  id="tviaje" name="s_tviaje">
+                       <option value="0">Seleccione</option>
+                     </select>
+                       <input type="submit"  value="Viaje">
+                     </span>
+                      </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-lg-6" id="selectCV" style="display:none">
+                        <label>Categoría:</label>
+                          <div  class="slct-bx">
+                            <span>
+                              <select  id="cviaje" name="s_cviaje">
+                                <option value="0">Seleccione</option>
+                              </select>
+                              <input type="submit"  value="Categoria">
+                            </span>
+                              <button class="btn btn-info" data-toggle="modal" data-target="#cat-Modal" type="button">Agregar Nueva Categoría</button>
+                          </div>
+                    </div>
+
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="blue-bg">Requisitos, costos y otros
+            <span class="blue-bg brd-rd50">2.</span>
+          </legend>
+          <div class="row mrg20">
+            <span class="chck-bx">
+             <input type="checkbox" id="fs_change" enabled/>
+             <label for="fs_change">Marque para habilitar la edición en este formulario</label>
+             </span>
+               @foreach(Session::get('act_viaje') as $viajed)
+            <div class="col-md-12 col-sm-12 col-lg-12">
+              <textarea class="brd-rd5 validate[required]" name="con_requisitos" type="text" placeholder="Requisitos*" disabled><?=$viajed['Requisitos']?></textarea>
+              <span class="error-box"></span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+              <textarea class="brd-rd5 validate[email],required]" name="con_incluye"  type="email" placeholder="Incluye*" disabled><?=$viajed['Incluye']?></textarea>
+              <span class="error-box"></span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-6">
+              <input class="brd-rd5 validate[required]" name="con_cupo" type="number" placeholder="Cupo*" value="<?=$viajed['Cupo']?>" disabled/>
+              <span class="error-box"></span>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6">
+              <input class="brd-rd5 validate[required]" name="con_costo"  type="Text" placeholder="Costo*" value="<?=$viajed['Costo']?>"  disabled/>
+              <span class="error-box"></span>
+            </div>
+              @endforeach
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="blue-bg3">Fechas
+            <span class="blue-bg3 brd-rd50">3.</span>
+          </legend>
+          <span class="chck-bx">
+
+            <label for="terms-policy">Agregue las fechas de salida, regreso y vencimiento del viaje
+              <div class="col-md-12 col-sm-12 col-lg-12">
+                <button id="con_regist" name="con_fech" class="green-bg brd-rd5" type="submit" >
+                  <i class="fa fa-paper-plane"></i>Agregar Fechas</button>
+              </div>
+              <a class="blue-clr" href="/Admin-RC/public//GoTaup" title="">Agregar Fechas</a>
+            </label>
+          </span>
+
+        </fieldset>
+        <div id="smartwizard">
+          <!-- <ul>
+                    <li><a class="blue-bg" href="#step-1" title="">Personal Information <span class="blue-bg brd-rd50">1.</span></a></li>
+                    <li><a class="blue-bg" href="#step-2" title="">Account Information <span class="blue-bg brd-rd50">2.</span></a></li>
+                    <li><a class="blue-bg3" href="#step-3" title="">Finish <span class="blue-bg3 brd-rd50">3.</span></a></li>
+                </ul> -->
+        </div>
+      </form>
     </div>
   </div>
   <!-- Panel Content -->
+  <!--Modal-->
+ <div class="modal fade" id="cat-Modal" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Nueva Categoría</h4>
+       </div>
+       <form action="" method="POST" id="fp-insert">
+         <div class="modal-body">
+         <div class="col-4-md">
+             <div class="form-group">
+               <label>Nombre:</label>
+               <input type="text" name="nombre" id="con_cat_name">
+             </div>
+         </div>
+         <div class="modal-footer">
+           <input type="button" class="btn btn-success pull-left" value="Agregar" id="con_addct">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+         </div>
+       </form>
+
+     </div>
+
+   </div>
+ </div>
   <footer>
     <p>Copyright
       <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
@@ -683,9 +861,10 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-<script src="ProjectJs/trip.js" type="text/javascript"></script>
-<script src="ProjectJs/tourblade.js" type="text/javascript"></script>
-<script src="ProjectJs/logout.js" type="text/javascript"></script>
+  <script src="ProjectJs/trip.js" type="text/javascript"></script>
+  <script src="ProjectJs/logout.js" type="text/javascript"></script>
+  <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
+  <script src="ProjectJs/tourblade.js" type="text/javascript"></script>
 <!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
   <script type="text/javascript">
     $(document).ready(function () {

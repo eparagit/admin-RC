@@ -32,8 +32,11 @@ $(document).ready(function(){
 
 
     $("#con_regv").click(function(){
+
      var t_id = "";//this.id;
-     var usuario_id = $("#con_iduse").val();
+      var usuario_id = $("#con_iduse").val();
+
+      alert(usuario_id);
      //var tipo_viaje_id = $("#tviaje").val();
      //var cat_viaje_id = $("#cviaje").val();
     var est_viaje_id = 1;

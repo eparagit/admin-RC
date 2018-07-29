@@ -16,4 +16,11 @@ class TripCatController extends Controller
   return $array;
 
     }
+    public function insertNewCategory(Request $request){
+      $n_cat=$request['n_cat'];
+
+      DB::insert('insert categoria_viaje (Descripcion) values (?)',[$n_cat]);
+      return 1;
+
+    }
 }

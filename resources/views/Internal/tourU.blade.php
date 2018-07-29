@@ -53,6 +53,7 @@
               <h5>
                   @foreach(Session::get('datos') as $data)
                   <a href="#" title="">{{$data['NombreUsuario']}}</a>
+                    <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>                          
                   @endforeach
               </h5>
               <span>
@@ -652,8 +653,16 @@
               <input class="brd-rd5 validate[required]" name="con_titulo" id="con_titulo"  type="text" placeholder="Titulo*" />
               <span class="error-box"></span>
             </div>
-            <div class="col-md-12 col-sm-6 col-lg-12">
-              <textarea class="brd-rd5 validate[required]" name="con_descripcion"  type="text" placeholder="Descripción*" ></textarea>
+            <div class="col-md-6 col-sm-6 col-lg-6">
+            <input class="brd-rd5 validate[required]" name="con_lsalida" id="con_lsalida"  type="text" placeholder="Lugar de Salida*" />
+            <span class="error-box"></span>
+          </div>
+          <div class="col-md-6 col-sm-6 col-lg-6">
+          <input class="brd-rd5 validate[required]" name="con_destino" id="con_destino"  type="text" placeholder="Destino*" />
+          <span class="error-box"></span>
+        </div>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+              <textarea class="brd-rd5 validate[required]" name="con_descripcion" id="con_descripcion" type="text" placeholder="Descripción*" ></textarea>
               <span class="error-box"></span>
             </div>
             <div class="col-md-6 col-sm-6 col-lg-6">
@@ -663,7 +672,7 @@
                      <select  id="tviaje" name="s_tviaje">
                        <option value="0">Seleccione</option>
                      </select>
-                       <input type="submit" value="Viaje">
+                       <input type="submit"  value="Viaje">
                    </span>
                  </div>
             </div>
@@ -674,9 +683,9 @@
                       <select  id="cviaje" name="s_cviaje">
                         <option value="0">Seleccione</option>
                       </select>
-                      <input type="submit" value="Categoria">
+                      <input type="submit"  value="Categoria">
                     </span>
-                      <button>Agregar Nueva Categoría</button>
+                      <button class="btn btn-info" data-toggle="modal" data-target="#cat-Modal" type="button">Agregar Nueva Categoría</button>
                   </div>
             </div>
 
@@ -735,6 +744,34 @@
     </div>
   </div>
   <!-- Panel Content -->
+  <!--Modal-->
+ <div class="modal fade" id="cat-Modal" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Nueva Categoría</h4>
+       </div>
+       <form action="" method="POST" id="fp-insert">
+         <div class="modal-body">
+         <div class="col-4-md">
+             <div class="form-group">
+               <label>Nombre:</label>
+               <input type="text" name="nombre" id="con_cat_name">
+             </div>
+         </div>
+         <div class="modal-footer">
+           <input type="button" class="btn btn-success pull-left" value="Agregar" id="con_addct">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+         </div>
+       </form>
+
+     </div>
+
+   </div>
+ </div>
   <footer>
     <p>Copyright
       <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
@@ -773,6 +810,7 @@
   <script src="js/main.js" type="text/javascript"></script>
   <script src="ProjectJs/trip.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
+  <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
 <!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
   <script type="text/javascript">
     $(document).ready(function () {

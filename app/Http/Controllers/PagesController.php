@@ -53,6 +53,9 @@ class PagesController extends Controller
     public function GoTourAprl(){
       return view('Internal.tourAprl');
     }
+    public function GoUpdateTwAp(){
+      return view('Internal.updateTw');
+    }
     //End Go tourAprl
     //Start Go tourAprl
     public function GoTourAprlid(){

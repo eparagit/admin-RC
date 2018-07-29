@@ -62,6 +62,7 @@
                   <h5>
                       @foreach(Session::get('datos') as $data)
                       <a href="#" title="">{{$data['NombreUsuario']}}</a>
+                      <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>
                       @endforeach
                   </h5>
                   <span>
