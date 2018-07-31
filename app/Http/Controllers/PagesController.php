@@ -79,6 +79,9 @@ class PagesController extends Controller
     public function Login(){
       return view('Login.login');
     }
+    public function GoProductUpload(){
+       return view('Product.productUpload');
+     }
 
 
 

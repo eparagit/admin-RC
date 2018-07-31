@@ -96,26 +96,26 @@ class TripController extends Controller
 
       public function fileUpload(Request $request){
 
-    //  $image = $request->file('image')->store('Tours','storage');
 
-        $image = $request->file('image');
+
+        $path=$request->file('image')->store('Tours','public');
+
+      /* $image = $request->file('image');
         $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('storage\Tours');
-        //$destinationPath = public_path('Tours');
+        $destinationPath = public_path('Tours');
+        var_dump($path);
+
         $image->move($destinationPath, $input['imagename']);
 
-        //$r_pathn=str_replace('\\','/',$destinationPath);
-        $image_path=$destinationPath.'\\'.$input['imagename'];
-        $image_name=$input['imagename'];
-        //.$input['imagename'];
 
-     //$tv =Input::get('s_tviaje');
-     //var_dump($tv);die;
+        $image_path=$destinationPath.'\\'.$input['imagename'];
+        $image_name=$input['imagename'];*/
+
 
        $viaje = ["Titulo"=>Input::get('con_titulo'),"Descripcion"=>Input::get('con_descripcion'),
                   "TipoViaje"=>Input::get('s_tviaje'),"CategoriaViaje"=>Input::get('s_cviaje'),
                   "Requisitos"=>Input::get('con_requisitos'),"Incluye"=>Input::get('con_incluye'),
-                  "Cupo"=>Input::get('con_cupo'),"Costo"=>Input::get('con_costo'),"ImgPath"=>$image_path,"Img_Name"=>$image_name,"L_Salida"=>Input::get('con_lsalida'),"Destino"=>Input::get('con_destino')];
+                  "Cupo"=>Input::get('con_cupo'),"Costo"=>Input::get('con_costo'),"ImgPath"=> $path,"Img_Name"=> $path,"L_Salida"=>Input::get('con_lsalida'),"Destino"=>Input::get('con_destino')];
     //var_dump($viaje); die;
         Session::put('viaje',$viaje);
 
@@ -126,7 +126,7 @@ class TripController extends Controller
         $result= DB::select("select v.ID_Viaje,v.usuario_ID,u.NombreCompleto,u.PrimerApellido,u.NombreUsuario,v.tipo_viaje_ID,t.Descripcion TV_Descripcion,
                               v.categoria_viaje_ID,c.Descripcion CV_Descripcion,v.Titulo,v.Descripcion V_Descripcion,v.Requisitos,v.Cupo,
                               v.Costo,v.FechaHora_Salida,v.FechaHora_Regreso,v.Publicacion,v.Vencimiento,v.Lugar_Salida,v.Destino,v.Incluye,v.Ruta_Imagen,v.Imagen_Name from viaje v,
-                                usuario u,tipo_viaje t,categoria_viaje c  where v.estadoViaje_ID='1'  and v.usuario_ID = u.ID_Usuario and
+                                usuario u,tipo_viaje t,categoria_viaje c  where v.estadoViaje_ID=1  and v.usuario_ID = u.ID_Usuario and
                                 v.tipo_viaje_ID=t.ID_Tipo_Viaje and v.categoria_viaje_ID=c.ID_Categoria");
 
         $array = json_decode(json_encode($result), True);
@@ -152,17 +152,49 @@ class TripController extends Controller
       public function selectTuorToUpdateApp(Request $request){
         $id_t =$request['id'];
 
-        $result= DB::select("select v.ID_Viaje,v.usuario_ID,u.NombreCompleto,u.PrimerApellido,u.NombreUsuario,v.tipo_viaje_ID,t.Descripcion TV_Descripcion,
-                              v.categoria_viaje_ID,c.Descripcion CV_Descripcion,v.Titulo,v.Descripcion V_Descripcion,v.Requisitos,v.Cupo,
+        $result= DB::select("select v.ID_Viaje,v.usuario_ID,u.NombreCompleto,u.PrimerApellido,u.NombreUsuario,v.tipo_viaje_ID,t.ID_Tipo_Viaje,t.Descripcion TV_Descripcion,
+                              v.categoria_viaje_ID,c.ID_Categoria,c.Descripcion CV_Descripcion,v.Titulo,v.Descripcion V_Descripcion,v.Requisitos,v.Cupo,
                               v.Costo,v.FechaHora_Salida,v.FechaHora_Regreso,v.Publicacion,v.Vencimiento,v.Lugar_Salida,v.Destino,v.Incluye,v.Ruta_Imagen,v.Imagen_Name from viaje v,
                                 usuario u,tipo_viaje t,categoria_viaje c  where v.estadoViaje_ID='1'  and v.usuario_ID = u.ID_Usuario and
                                 v.tipo_viaje_ID=t.ID_Tipo_Viaje and v.categoria_viaje_ID=c.ID_Categoria and v.ID_Viaje='".$id_t."'");
 
         $array = json_decode(json_encode($result), True);
-        
+
         Session::put('act_viaje',$array);
         return 1;
 
       }
+
+     public function updateFormsNoimgdate(Request $request){
+
+       $id_tv = Input::get('tviaje'); //$request['tviaje'];
+       $id_ct = Input::get('cviaje'); //$request['cviaje'];
+       $tit = Input::get('con_titulo'); //$request['con_titulo'];
+       $desc = Input::get('con_descripcion'); //$request['con_descripcion'];
+       $req = Input::get('con_requisitos'); //$request['con_requisitos'];
+       $qu = Input::get('con_cupo'); //$request['con_cupo'];
+       $co = Input::get('con_costo'); //$request['con_costo'];
+       $lsal = Input::get('con_lsalida'); //$request['con_lsalida'];
+       $dest = Input::get('con_destino'); //$request['con_destino'];
+       $incl = Input::get('con_incluye'); //$request['con_incluye'];
+       $id_viaj = Input::get('con_id_via'); //$request['con_id_via'];
+       $viaje_id=Session::get('act_viaje');
+       $id_v=$viaje_id[0]['ID_Viaje'];
+
+      var_dump("update viaje set tipo_viaje_ID='".$id_tv."',categoria_viaje_ID='".$id_ct."',Titulo='".$tit."',Descripcion='".$desc."',Requisitos='".$req."',Cupo='".$qu."',
+      Costo='".$co."',Lugar_Salida='".$lsal."',Destino='".$dest."',Incluye='".$incl."' where ID_Viaje='".$id_v."'"); die;
+
+        $result=DB::update("update viaje set tipo_viaje_ID='".$id_tv."',categoria_viaje_ID='".$id_ct."',Titulo='".$tit."',Descripcion='".$desc."',Requisitos='".$req."',Cupo='".$qu."',
+        Costo='".$co."',Lugar_Salida='".$lsal."',Destino='".$dest."',Incluye='".$incl."' where ID_Viaje='".$id_v."'");
+
+          $array = json_decode(json_encode($result), True);
+
+        return 1;
+
+      }
+
+
+
+
 
   }

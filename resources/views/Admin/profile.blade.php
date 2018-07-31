@@ -29,7 +29,7 @@
         <div class="logo">
             <h1>
                 <a href="#" title="">
-                    <img src="images/logo1.png" alt="" />
+                    <img src="images/rutacima.png" alt="" />
                 </a>
             </h1>
         </div>
@@ -73,12 +73,7 @@
                   </div>
                 </div>
             </div>
-            <form class="topbar-search">
-                <button type="submit">
-                    <i class="ion-ios-search-strong"></i>
-                </button>
-                <input type="text" placeholder="Type and Hit Enter" />
-            </form>
+          
             <ul class="tobar-links">
                 <li>
                     <a href="#" title="">

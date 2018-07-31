@@ -31,6 +31,17 @@ return $array;
          return 0;
 
    }
-
- }
+public function imagesUpload(){
+  return view('productUpload');
 }
+public function imagesUploadPost(Request $request){
+  request()-validate([
+    'uploadFile'=>'required',
+  ]);
+  foreach($request->file('uploadFile')as $key=>$value){
+    $imageName=time().$key.'.'.$value->getClientOriginalExtension();
+    $value->move(public_path('images'),$imageName);
+  }
+  return response()->json(['success'=>'Images Uploaded Successfully.']);
+}
+ }

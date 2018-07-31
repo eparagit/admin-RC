@@ -70,6 +70,9 @@ Route::get('insertTrip','TripController@insertTrip');
 //Insert Trip Category-Start//
 Route::get('insertNewCategory','TripCatController@insertNewCategory');
 //Insert Trip Category-End//
+//Select by Name Trip Category-Start//
+Route::get('selectCatbyName','TripCatController@selectCatbyName');
+//Select by Name Category-End//
 
 
 //Approve Tour-Start//
@@ -79,6 +82,9 @@ Route::get('ApproveTour','TripController@ApproveTour');
 //Reject Tour-Start//
 Route::get('deleteTour','TripController@deleteTour');
 //Reject Tour-End//
+//Update No image nor date Tour-Start//
+Route::get('updateFormsNoimgdate','TripController@updateFormsNoimgdate');
+//Update No image nor dateTour-End//
 
 
 //selectTuorToApr-Start//
@@ -153,3 +159,16 @@ Route::post('fileUpload', [
   'as'=>'image.add',
   'uses' => 'TripController@fileUpload'
 ]);
+
+Route::post('updateFormsNoimgdate', [
+  'as'=>'updatewimgdate',
+  'uses' => 'TripController@updateFormsNoimgdate'
+]);
+
+//Product images upload-Start
+Route::get('images-upload','ProductController@imagesUpload');
+Route::get('images-upload','ProductController@imagesUploadPost')->name('images.upload');
+Route::get('/GoProductUpload','PagesController@GoProductUpload');
+//Product images upload-End
+
+URL::asset('c:\xampp\htdocs\Admin-RC\public\Tours');

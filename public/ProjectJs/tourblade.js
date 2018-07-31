@@ -17,13 +17,10 @@ $(document).ready(function(){
                 $.each(data,function(v){
                   var val=data[v];
 
-                    //table_t+="<table>";
-                    //table_t+="<thead>";
-                  //  table_t+="</thead>";
-                  //  table_t+="<tbody>";
+
                   table_t+="<tr>";
-                  // table_t+="<td rowspan='7'>"+'<img src="{{url('+val['Ruta_Imagen']+')}}"/>'+"</td>";
-                  table_t+="<td rowspan='7' colspan='4'>"+'<img  src="'+val["Ruta_Imagen"]+'" alt="" width="350" height="350"/>'+"</td>";
+                    // table_t+="<td rowspan='7'>"+'<img src="{{url('+val['Ruta_Imagen']+')}}"/>'+"</td>";
+                  table_t+="<td rowspan='7' colspan='4'>"+'<img class="Tours"  src="'+val["Ruta_Imagen"]+'" alt="" width="50" height="50"/>'+"</td>";
                   table_t+="<td>Reg."+'<input type="text" id="con_id_v" value="'+val['ID_Viaje']+'">'+"</td>";
                   table_t+="<td>"+val['NombreUsuario']+"</td>";
                   table_t+="<td></td>";
@@ -264,4 +261,5 @@ $(document).ready(function(){
             });
 
         });
+
 });

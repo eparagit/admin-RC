@@ -5,7 +5,7 @@ $(document).ready(function(){
           type:"GET",
           data: {},
           url:"selectProduct",
-        
+
   $.each(data,function(i,value){
     var tr =$("<tr/>");
         tr.append($("<td/>",{
@@ -48,4 +48,20 @@ $("#con_addp").click(function(){
                   }
                 });
                 });
-              });
+                $("#uploadFile").change(function(){
+         $('#image_preview').html("");
+         var total_file=document.getElementById("uploadFile").files.length;
+
+         for(var i=0;i<total_file;i++)
+         {
+          $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");
+         }
+
+      });
+
+      $('form').ajaxForm(function()
+       {
+        alert("Uploaded SuccessFully");
+       });
+  
+    });

@@ -38,7 +38,7 @@
         <div class="logo">
             <h1>
                 <a href="#" title="">
-                    <img src="images/logo1.png" alt="" />
+                    <img src="images/rutacima.png" alt="" />
                 </a>
             </h1>
         </div>

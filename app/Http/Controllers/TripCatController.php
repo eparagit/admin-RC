@@ -23,4 +23,13 @@ class TripCatController extends Controller
       return 1;
 
     }
+    public function selectCatbyName(Request $request){
+
+      $name = $request['name'];
+
+      $result= DB::select("select ID_Categoria from categoria_viaje where Descripcion='".$name."'");
+
+      $array = json_decode(json_encode($result), True);
+  return $array;
+    }
 }

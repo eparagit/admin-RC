@@ -29,7 +29,7 @@
     <div class="logo">
       <h1>
         <a href="#" title="">
-          <img src="images/logo1.png" alt="" />
+          <img src="images/rutacima.png" alt="" />
         </a>
       </h1>
     </div>
@@ -619,7 +619,7 @@
   <!-- Options Panel -->
   <div class="panel-content">
     <div class="lgn-wrp grysh">
-      <div class="bg-img" style="background-image: url(images/resource/bg-img1.png);"></div>
+      <div class="bg-img" style="background-image: url(images/resource/rcimapost.jpg);"></div>
       <div class="lgn-innr">
         <div class="widget lgn-frm">
           <div class="frm-tl">
