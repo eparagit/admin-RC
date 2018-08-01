@@ -42,6 +42,25 @@ Route::get('/GoProfile','PagesController@GoProfile');
 //Start tourU
 Route::get('/GoTourU','PagesController@GoTourU');
 //End tourU
+//Go tour Status-Start
+Route::get('/GoTourStatus','PagesController@GoTourStatus');
+//Go Tour Status-End
+//Go BC Status-Start
+Route::get('/GoBCStatus','PagesController@GoBCStatus');
+//Go BC Status-End
+//Go EventType-Start
+Route::get('/GoEventType','PagesController@GoEventType');
+//Go EventType-End
+//Go ServiceType-Start
+Route::get('/GoServiceType','PagesController@GoServiceType');
+//Go ServiceType-End
+//Go TourCategory-Start
+Route::get('/GoTourCategory','PagesController@GoTourCategory');
+//Go TourCategory-End
+//Go No Internal Object-Start
+Route::get('/GoNoObjectI','PagesController@GoNoObjectI');
+//Go No Internal Object-End
+
 //Start tourAprl
 Route::get('/GoTourAprl','PagesController@GoTourAprl');
 //End tourAprl
@@ -62,6 +81,9 @@ Route::get('selectTripType','TripTypeController@selectTripType');
 //Select Trip Category-Start//
 Route::get('selectTripCat','TripCatController@selectTripCat');
 //Select Trip Category-End//
+//Delete Trip Category-Start//
+Route::get('deleteTourCategory','TripCatController@deleteTourCategory');
+//Delete Trip Category-End//
 
 //Insert Trip -Start//
 Route::get('insertTrip','TripController@insertTrip');
@@ -74,6 +96,33 @@ Route::get('insertNewCategory','TripCatController@insertNewCategory');
 Route::get('selectCatbyName','TripCatController@selectCatbyName');
 //Select by Name Category-End//
 
+//Insert New BCStatus-Start//
+Route::get('insertNewBCSatus','BCStatusController@insertNewBCSatus');
+//Insert New BCStatus-End//
+//Delete BCStatus-Start//
+Route::get('deleteBCStatus','BCStatusController@deleteBCStatus');
+//Delete BCStatus-End//
+
+//Insert New EventType-Start//
+Route::get('insertNewEventType','EventTypeController@insertNewEventType');
+//Insert New EventType-End//
+//Delete EventType-Start//
+Route::get('deleteEventType','EventTypeController@deleteEventType');
+//Delete EventType-End//
+
+//Insert New ServiceType-Start//
+Route::get('insertNewServiceType','ServiceTypeController@insertNewServiceType');
+//Insert New ServiceType-End//
+//Delete ServiceType-Start//
+Route::get('deleteServiceType','ServiceTypeController@deleteServiceType');
+//Delete ServiceType-End//
+
+//Insert New TourStatus-Start//
+Route::get('insertNewTourStatus','TourStatusController@insertNewTourStatus');
+//Insert New TourStatus-End//
+//Delete TourStatus-Start//
+Route::get('deleteTourStatus','TourStatusController@deleteTourStatus');
+//Delete TourStatus-End//
 
 //Approve Tour-Start//
 Route::get('ApproveTour','TripController@ApproveTour');
@@ -172,3 +221,14 @@ Route::get('/GoProductUpload','PagesController@GoProductUpload');
 //Product images upload-End
 
 URL::asset('c:\xampp\htdocs\Admin-RC\public\Tours');
+
+//Several Maintenance Routes-Start
+
+Route::get('selectTourStatus','TourStatusController@selectTourStatus');
+
+Route::get('selectServiceType','ServiceTypeController@selectServiceType');
+
+Route::get('selectEventType','EventTypeController@selectEventType');
+
+Route::get('selectBCStatus','BCStatusController@selectBCStatus');
+//Several Maintenance Routes-End

@@ -68,6 +68,24 @@ class PagesController extends Controller
     public function GoNProduct(){
        return view('Product.nproduct');
      }
+     public function GoTourStatus(){
+        return view('Internal.tourStatus');
+      }
+      public function GoBCStatus(){
+         return view('Internal.bcStatus');
+   }
+  public function GoEventType(){
+    return view('Internal.eventType');
+    }
+public function GoServiceType(){
+  return view('Internal.serviceType');
+  }
+  public function GoTourCategory(){
+    return view('Internal.tourCategory');
+    }
+      public function GoNoObjectI(){
+         return view('Internal.GoNoObjectI');
+       }
     public function index(){
       return view('Product.index');
     }

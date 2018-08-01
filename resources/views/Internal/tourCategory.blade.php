@@ -53,7 +53,6 @@
                   <h5>
                       @foreach(Session::get('datos') as $data)
                       <a href="#" title="">{{$data['NombreUsuario']}}</a>
-                        <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>
                       @endforeach
                   </h5>
                   <span>
@@ -139,6 +138,8 @@
                         </div>
                     </div>
                 </li>
+
+
 
             </ul>
         </div>
@@ -412,23 +413,74 @@
         </div>
     </div>
     <!-- Options Panel -->
-    <div class="pg-tp">
-        <i class="ion-cube"></i>
-        <div class="pr-tp-inr">
-            <h4>Welcome to
-                <strong>FUZEN</strong>
-                <span></span> Panel</h4>
-            <span>Admin Template for medium and large web applications with ery clean and aesthetic style.</span>
+    <body>
+
+   <div class="pg-tp">
+     <i class="ion-cube"></i>
+     <div class="pr-tp-inr">
+       <h4>Ruta a la Cima</h4>
+       <span>Administración de Sistemas.</span>
+     </div>
+   </div>
+   <!-- Page Top -->
+
+   <div class="panel-content" id="allUsers">
+     <div class="widget pad50-65">
+       <div class="widget-title2">
+         <h4>Administración de Categorías de Viajes</h4>
+       </div>
+       <form class="form-wrp">
+         <div class="row mrg20">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                Nueva Categoría: <input id="con_ncat" class="brd-rd5" type="text" placeholder="Categoría*" />
+                 <button id="con_addncat" name="con_addncat" class="green-bg brd-rd5" type="button">
+                 <i class="fa fa-paper-plane"></i>Agregar</button>
+               </div>
+               <div class="col-md-6 col-sm-6 col-lg-6">
+
+               </div>
+           <div class="col-md-8 col-sm-8 col-lg-8">
+               <div>
+                   <h4>Categoría Tour</h4>
+                 <table class="table" id="t_caT">
+                     <thead>
+                         <tr>
+                            <th>#</th>
+                             <th>Descripción</th>
+                             <th>Acción</th>
+                           </tr>
+                     </thead>
+                   <tbody id="t_caB">
+                   </tbody>
+                 </table>
+               </div>
+           </div>
+           <div class="widget pad50-65">
+            <div class="widget-title2">
+
+            </div>
+
         </div>
-    </div>
+
+         </div>
+       </form>
+     </div>
+
+   </div>
+
+
+
+   <!-- Panel Content -->
+
+ </body>
     <!-- Page Top -->
 
 
     <!-- Panel Content -->
     <footer>
-        <p>Copyright
-            <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-        <span>10GB of 250GB Free.</span>
+        <p>Kinesis
+            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
+        <span></span>
     </footer>
 
     <!-- Vendor: Javascripts -->
@@ -460,7 +512,10 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
+    <script src="ProjectJs/maintenance.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';
@@ -796,6 +851,9 @@
             if ($.isFunction($.fn.tooltip)) {
                 $('[data-toggle="tooltip"]').tooltip();
             }
+
+
+
         });
     </script>
 </body>

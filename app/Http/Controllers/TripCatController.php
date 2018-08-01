@@ -13,7 +13,7 @@ class TripCatController extends Controller
 
       $result= DB::select("select * from categoria_viaje");
             $array = json_decode(json_encode($result), True);
-  return $array;
+      return $array;
 
     }
     public function insertNewCategory(Request $request){
@@ -31,5 +31,11 @@ class TripCatController extends Controller
 
       $array = json_decode(json_encode($result), True);
   return $array;
+    }
+    public function deleteTourCategory(Request $request){
+      $id_tcat=$request['id'];
+
+      $result=DB::delete("delete from categoria_viaje where ID_Categoria='".$id_tcat."' ");
+      return 1;
     }
 }
