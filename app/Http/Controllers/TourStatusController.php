@@ -30,4 +30,19 @@ class TourStatusController extends Controller
       $result=DB::delete("delete from estado_viaje where ID_Estado_Viaje='".$id_ts."' ");
       return 1;
     }
+    public function selectTourStatusByID(Request $request){
+      $id_ts=$request['id'];
+      $result= DB::select("select * from estado_viaje where ID_Estado_Viaje='".$id_ts."'");
+            $array = json_decode(json_encode($result), True);
+      return $array;
+
+    }
+    public function updateTourStatus(Request $request){
+      $id_ts=$request['id'];
+      $desc_ts=$request['des'];
+
+      $result=DB::update("update estado_viaje set Descripcion='".$desc_ts."' where ID_Estado_Viaje='".$id_ts."'");
+
+      return 1;
+    }
 }

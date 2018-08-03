@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 
 
-          Route::get('/GoTaup','PagesController@GoTaup');
+          Route::get('/GetTourDates','PagesController@GetTourDates');
 
           Route::get('/GetAdminUserView','PagesController@GetAdminUserView');
 
@@ -109,7 +109,12 @@ Route::get('/', function () {
           //Select BCStatusByID-Start//
           Route::get('selectBCStatusByID','BookingContractController@selectBCStatusByID');
           //Select BCStatusByID-End//
+          //Update BCStatus-Start//
+          Route::get('updateBCStatus','BookingContractController@updateBCStatus');
+          //Update BCStatus-End//
           Route::get('selectBCStatus','BookingContractController@selectBCStatus');
+
+
 //______________
 //TourCategoryController
           //Insert Trip Category-Start//
@@ -148,6 +153,10 @@ Route::get('/', function () {
           //selectTuorAprToUpdate-Start//
           Route::get('selectTuorToUpdateApp','TourController@selectTuorToUpdateApp');
           //selectTuorAprToUpdate-End//
+          Route::post('fileUpload', [
+            'as'=>'image.add',
+            'uses' => 'TourController@fileUpload'
+          ]);
 //______________
 //EventTypeController
           //Insert New EventType-Start//
@@ -174,7 +183,14 @@ Route::get('/', function () {
           //Delete TourStatus-Start//
           Route::get('deleteTourStatus','TourStatusController@deleteTourStatus');
           //Delete TourStatus-End//
+          //Select selectTourStatusByID-Start//
+          Route::get('selectTourStatusByID','TourStatusController@selectTourStatusByID');
+          //Select selectTourStatusByID-End//
+          //Update TourStatus-Start//
+          Route::get('updateTourStatus','TourStatusController@updateTourStatus');
+          //Update TourStatus-End//
           Route::get('selectTourStatus','TourStatusController@selectTourStatus');
+
 //______________
 //SessionController
 //Session Routes -Start//
@@ -187,13 +203,6 @@ Route::get('/', function () {
 //______________
 
 //Route::get('selectRol','RolController@selectRol');
-
-
-
-
-
-
-
 
 
 
@@ -214,21 +223,8 @@ Route::group(['middleware' => 'roles'], function () {
     Route::get('admin', ['as'=>'admin','uses'=>'PagesController@Admin']);
 });
 
-
-
-
-Route::post('fileUpload', [
-  'as'=>'image.add',
-  'uses' => 'TripController@fileUpload'
-]);
-
+//Esta ultima probablemente no se use
 Route::post('updateFormsNoimgdate', [
   'as'=>'updatewimgdate',
-  'uses' => 'TripController@updateFormsNoimgdate'
+  'uses' => 'TourController@updateFormsNoimgdate'
 ]);
-
-//Product images upload-Start
-Route::get('images-upload','ProductController@imagesUpload');
-Route::get('images-upload','ProductController@imagesUploadPost')->name('images.upload');
-Route::get('/GoProductUpload','PagesController@GoProductUpload');
-//Product images upload-End

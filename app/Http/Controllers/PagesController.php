@@ -46,6 +46,9 @@ class PagesController extends Controller
     public function GetTourUpload(){
       return view('Internal.tourUpload');
     }
+    public function GetTourDates(){
+      return view('Internal.tourDates');
+    }
     public function GetTourToApprove(){
       return view('Internal.tourToApprove');
     }
@@ -76,23 +79,6 @@ class PagesController extends Controller
       return view('Login.login');
     }
     //______________________
-
-
-
-
-
-
-
-    public function GoTaup(){
-      return view('Internal.taup');
-    }
-    //Start Go tourU
-
-
-
-
-
-
 
 
 }

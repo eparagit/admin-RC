@@ -36,4 +36,12 @@ class BookingContractController extends Controller
     $result=DB::delete("delete from estado_rc where ID_EstadoRC='".$id_rcs."' ");
     return 1;
   }
+  public function updateBCStatus(Request $request){
+    $id_bcs=$request['id'];
+    $desc_bcs=$request['des'];
+
+    $result=DB::update("update estado_rc set Descripcion='".$desc_bcs."' where ID_EstadoRC='".$id_bcs."'");
+
+    return 1;
+  }
 }

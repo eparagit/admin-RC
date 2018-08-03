@@ -293,6 +293,69 @@ $(document).ready(function(){
   });
   $("#bcsModal").on('click','#btnUpBCS',function(){
     var id=$(this).data('id');
-    alert(id);
+    var desc=$("#con_desBcs").val();
+            $.ajax({
+                type:"GET",
+                data: {'id':id,
+                        'des':desc},
+                url:"updateBCStatus",
+                success:function(data){
+                  if(data==1){
+                    alert("Estado actualizado satisfactoriamente!");
+                    window.location.replace("GetBookingContractStatus");
+                  }else{
+                    alert("No se logró actualizar el estado!");
+                    window.location.replace("GetBookingContractStatus");
+                  }
+                }
   });
+});
+$("#t_statusT").on('click','#con_updateTS',function(){
+  var id = $(this).data('id');
+
+  $.ajax({
+      type:"GET",
+      data: {'id':id},
+      url:"selectTourStatusByID",
+      success:function(data){
+
+        var id_ts="";
+        var desc_ts="";
+        $.each(data,function(v){
+            var val=data[v];
+            id_ts=val['ID_Estado_Viaje'];
+            desc_ts=val['Descripcion'];
+
+
+        })
+        $("#con_desTs").val(desc_ts);
+        $("#btnUpTs").data('id',id_ts);
+
+        $('#TourStatusModal').modal('show');
+        $('#TourStatusModal').modal('toggle');
+
+
+      }
+
+  });
+});
+$("#TourStatusModal").on('click','#btnUpTs',function(){
+  var id=$(this).data('id');
+  var desc=$("#con_desTs").val();
+          $.ajax({
+              type:"GET",
+              data: {'id':id,
+                      'des':desc},
+              url:"updateTourStatus",
+              success:function(data){
+                if(data==1){
+                  alert("Estado actualizado satisfactoriamente!");
+                  window.location.replace("GetTourStatus");
+                }else{
+                  alert("No se logró actualizar el estado!");
+                  window.location.replace("GetTourStatus");
+                }
+              }
+});
+});
 });
