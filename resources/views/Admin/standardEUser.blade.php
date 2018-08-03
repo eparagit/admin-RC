@@ -167,7 +167,7 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoReg" title="">Usuarios</a>
+                            <a href="/Admin-RC/public//GetRegisterUserAI" title="">Usuarios</a>
                         </li>
 
                     </ul>
@@ -182,13 +182,13 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoAdminU" title="">Administradores</a>
+                            <a href="/Admin-RC/public//GetAdminUserView" title="">Administradores</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSIU" title="">Estándar Interno</a>
+                            <a href="/Admin-RC/public//GetStandardIUser" title="">Estándar Interno</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSEU" title="">Estandar Externo</a>
+                            <a href="/Admin-RC/public//GetStandardEUser" title="">Estandar Externo</a>
                         </li>
                     </ul>
                 </li>
@@ -199,10 +199,10 @@
                     </a>
                     <ul class="sb-drp">
                       <li>
-                          <a href="/Admin-RC/public//GoRol" title="">Descripcón</a>
+                          <a href="/Admin-RC/public//GetRol" title="">Descripcón</a>
                       </li>
                       <li>
-                          <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
+                          <a href="/Admin-RC/public//GetUserByRol" title="">Usuarios por Rol</a>
                       </li>
                     </ul>
                 </li>

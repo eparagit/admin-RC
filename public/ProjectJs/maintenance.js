@@ -11,7 +11,7 @@ $(document).ready(function(){
               tsatus+="<td>"+'<label id="con_iduser">'+val['ID_Estado_Viaje']+'</label>'+"</td>";
               tsatus+="<td>"+val['Descripcion']+"</td>";
               tsatus+="<td>"+'<button id="con_updateTS" class="btn btn-primary" data-id="'+val['ID_Estado_Viaje']+'" type="button">Modificar</button>'+' '+'<button id="con_delTS" class="btn btn-danger" data-id="'+val['ID_Estado_Viaje']+'" type="button">Eliminar</button>'+"</td>";
-          
+
               tsatus+="<tr>";
             });
               $("#t_statusB").append(tsatus);
@@ -62,8 +62,9 @@ $(document).ready(function(){
               bcsatus+="<tr>";
               bcsatus+="<td>"+'<label id="con_iduser">'+val['ID_EstadoRC']+'</label>'+"</td>";
               bcsatus+="<td>"+val['Descripcion']+"</td>";
-              bcsatus+="<td>"+'<button id="con_updateBCS" class="btn btn-primary" data-id="'+val['ID_EstadoRC']+'" type="button">Modificar</button>'+' '+'<button id="con_delBCS" class="btn btn-danger" data-id="'+val['ID_EstadoRC']+'" type="button">Eliminar</button>'+"</td>";
+              bcsatus+="<td>"+'<button id="con_updateBCS"  class="btn btn-primary" data-id="'+val['ID_EstadoRC']+'" type="button">Modificar</button>'+' '+'<button id="con_delBCS" class="btn btn-danger" data-id="'+val['ID_EstadoRC']+'" type="button">Eliminar</button>'+"</td>";
               bcsatus+="<tr>";
+              //data-toggle="modal" data-target="#bcsModal"
             });
               $("#t_statusBCB").append(bcsatus);
           }
@@ -260,5 +261,38 @@ $(document).ready(function(){
           }
         }
       });
+  });
+  $("#t_statusBCB").on('click','#con_updateBCS',function(){
+    var id = $(this).data('id');
+
+    $.ajax({
+        type:"GET",
+        data: {'id':id},
+        url:"selectBCStatusByID",
+        success:function(data){
+
+          var id_bcs="";
+          var desc_bcs="";
+          $.each(data,function(v){
+              var val=data[v];
+              id_bcs=val['ID_EstadoRC'];
+              desc_bcs=val['Descripcion'];
+
+
+          })
+          $("#con_desBcs").val(desc_bcs);
+          $("#btnUpBCS").data('id',id_bcs);
+
+          $('#bcsModal').modal('show');
+          $('#bcsModal').modal('toggle');
+
+
+        }
+
+    });
+  });
+  $("#bcsModal").on('click','#btnUpBCS',function(){
+    var id=$(this).data('id');
+    alert(id);
   });
 });
