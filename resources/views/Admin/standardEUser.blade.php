@@ -8,8 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
     <!-- Vendor: Bootstrap 4 Stylesheets  -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -17,23 +15,16 @@
     <link rel="stylesheet" href="css/icons.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/responsive.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.css" type="text/css">
+
     <!-- Color Scheme -->
     <link rel="stylesheet" href="css/color-schemes/color.css" type="text/css" title="color3">
     <link rel="alternate stylesheet" href="css/color-schemes/color1.css" title="color1">
     <link rel="alternate stylesheet" href="css/color-schemes/color2.css" title="color2">
     <link rel="alternate stylesheet" href="css/color-schemes/color4.css" title="color4">
     <link rel="alternate stylesheet" href="css/color-schemes/color5.css" title="color5">
-
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-
-
 </head>
 
 <body class="expand-data panel-data">
-
-
     <div class="topbar">
         <div class="logo">
             <h1>
@@ -62,7 +53,6 @@
                   <h5>
                       @foreach(Session::get('datos') as $data)
                       <a href="#" title="">{{$data['NombreUsuario']}}</a>
-                      <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>
                       @endforeach
                   </h5>
                   <span>
@@ -83,12 +73,7 @@
                   </div>
                 </div>
             </div>
-            <form class="topbar-search">
-                <button type="submit">
-                    <i class="ion-ios-search-strong"></i>
-                </button>
-                <input type="text" placeholder="Type and Hit Enter" />
-            </form>
+
             <ul class="tobar-links">
                 <li>
                     <a href="#" title="">
@@ -153,179 +138,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <a href="#" title="">
-                        <i class="ion-android-drafts"></i>
-                        <span class="green-bg">10</span>
-                    </a>
-                    <div class="nti-drp-wrp">
-                        <h5 class="green-bg">
-                            <span>You Have</span> 7 New Messages</h5>
-                        <div class="nti-lst">
-                            <div class="nti-usr">
-                                <img class="brd-rd50" src="images/resource/acti-thmb2.jpg" alt="" />
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Sadi Orlaf</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Privacy settings changed</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <img class="brd-rd50" src="images/resource/acti-thmb1.jpg" alt="" />
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Katti Smith</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Mike has added you as friend</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <img class="brd-rd50" src="images/resource/acti-thmb3.jpg" alt="" />
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Willimes Domson</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>like your timeline photo</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <img class="brd-rd50" src="images/resource/acti-thmb4.jpg" alt="" />
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Holli Doe</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Curabitur id eros limes suscipit blandit.</i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nt-ftr">
-                            <a href="#" title="">View All</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="">
-                        <i class="ion-android-settings"></i>
-                    </a>
-                    <div class="set-lst">
-                        <div class="set-bd">
-                            <h4>General Settings</h4>
-                            <ul class="sett-lst">
-                                <li>
-                                    <span class="chck-bx">
-                                        <input id="set1" type="checkbox">
-                                        <label for="set1">Report Panel Usage</label>
-                                    </span>
-                                    <i>General Settings information</i>
-                                </li>
-                                <li>
-                                    <span class="chck-bx">
-                                        <input id="set2" type="checkbox">
-                                        <label for="set2">Mail Redirect</label>
-                                    </span>
-                                    <i>General Settings information</i>
-                                </li>
-                                <li>
-                                    <span class="chck-bx">
-                                        <input id="set3" type="checkbox">
-                                        <label for="set3">Expose Author Name</label>
-                                    </span>
-                                    <i>General Settings information</i>
-                                </li>
-                            </ul>
-                            <h4>Chat Settings</h4>
-                            <ul>
-                                <li>
-                                    <span class="chck-bx">
-                                        <input id="set4" type="checkbox">
-                                        <label for="set4">Show Me As Online</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="chck-bx">
-                                        <input id="set5" type="checkbox">
-                                        <label for="set5">Turn Off Notifications</label>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="set-ft">
-                            <a class="btn-danger" href="#" title="">
-                                <i class="fa fa-trash"></i> Delete Chat History</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="">
-                        <i class="ion-android-contacts"></i>
-                    </a>
-                    <div class="cnt-lst">
-                        <ul>
-                            <li>
-                                <div class="usr">
-                                    <img class="brd-rd50" src="images/resource/acti-thmb1.jpg" alt="" />
-                                    <div class="usr-innr">
-                                        <h5>
-                                            <a href="#" title="">Smith Doe</a>
-                                        </h5>
-                                        <span>Co Worker</span>
-                                        <a class="green-bg brd-rd5" href="#" title="">
-                                            <i class="fa fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="usr">
-                                    <img class="brd-rd50" src="images/resource/acti-thmb2.jpg" alt="" />
-                                    <div class="usr-innr">
-                                        <h5>
-                                            <a href="#" title="">Katti Smith</a>
-                                        </h5>
-                                        <span>Graphic Designer</span>
-                                        <a class="green-bg brd-rd5" href="#" title="">
-                                            <i class="fa fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="usr">
-                                    <img class="brd-rd50" src="images/resource/acti-thmb3.jpg" alt="" />
-                                    <div class="usr-innr">
-                                        <h5>
-                                            <a href="#" title="">Willimes Domson</a>
-                                        </h5>
-                                        <span>Family Adviser</span>
-                                        <a class="green-bg brd-rd5" href="#" title="">
-                                            <i class="fa fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="usr">
-                                    <img class="brd-rd50" src="images/resource/acti-thmb4.jpg" alt="" />
-                                    <div class="usr-innr">
-                                        <h5>
-                                            <a href="#" title="">Holli Doe</a>
-                                        </h5>
-                                        <span>Company CEO</span>
-                                        <a class="green-bg brd-rd5" href="#" title="">
-                                            <i class="fa fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+              </ul>
         </div>
         <div class="topbar-bottom-colors">
             <i style="background-color: #2c3e50;"></i>
@@ -350,18 +163,13 @@
                 <li class="has-drp">
                     <a href="#" title="">
                         <i class="ion-home"></i>
-                        <span>Viajes</span>
+                        <span>Registro</span>
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+                            <a href="/Admin-RC/public//GetRegisterUserAI" title="">Usuarios</a>
                         </li>
-                        <li>
-                            <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
-                        </li>
-                        <li>
-                            <a href="dashboard3.html" title="">Mantenimientos</a>
-                        </li>
+
                     </ul>
                 </li>
             </ul>
@@ -374,13 +182,13 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoAdminU" title="">Administradores</a>
+                            <a href="/Admin-RC/public//GetAdminUserView" title="">Administradores</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSIU" title="">Estándar Interno</a>
+                            <a href="/Admin-RC/public//GetStandardIUser" title="">Estándar Interno</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSEU" title="">Estandar Externo</a>
+                            <a href="/Admin-RC/public//GetStandardEUser" title="">Estandar Externo</a>
                         </li>
                     </ul>
                 </li>
@@ -390,9 +198,12 @@
                         <span>Roles</span>
                     </a>
                     <ul class="sb-drp">
-                        <li>
-                            <a href="font-awesome-icons.html" title="">Administración</a>
-                        </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetRol" title="">Descripcón</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetUserByRol" title="">Usuarios por Rol</a>
+                      </li>
                     </ul>
                 </li>
 
@@ -432,66 +243,224 @@
      <i class="ion-cube"></i>
      <div class="pr-tp-inr">
        <h4>Ruta a la Cima</h4>
-       <span>Administración de Viajes</span>
+       <span>Administración de Sistemas.</span>
      </div>
    </div>
    <!-- Page Top -->
-    <!--Start Wizard-->
 
-   <div class="panel-content">
+   <div class="panel-content" id="allUsers">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Calendario</h4>
-         <span>Seleccione las siguientes fechas para finalizar el registro</span>
-        </div>
-        <form  class="form-wrp">
-           <div class="row mrg20">
-             <div class='col-md-6 col-sm-6 col-lg-6'>
-               <div class="container">
-                <input type="text" id="con_dtfhs" class="form-control" placeholder="Fecha y Hora de Salida*" />
-               </div>
-             </div>
-             <div class='col-sm-6'>
-               <div class="container">
-                  <input type="text" id="con_dtfhr" class="form-control" placeholder="Fecha y Hora de Regreso*" />
-               </div>
-             </div>
-             <div class='col-sm-6'>
-               <div class="container">
-                <input type="text" id="con_dtfhp" class="form-control" placeholder="Fecha de Publicación*" />
-               </div>
-             </div>
-             <div class='col-sm-6'>
-               <div class="container">
-                <input type="text" id="con_dtfhv" class="form-control" placeholder="Vencimiento*" />
-               </div>
-             </div>
-            <div class="col-md-12 col-sm-12 col-lg-12">
-               <button id="con_regv" name="con_regist" class="green-bg brd-rd5" type="button">
-                 <i class="fa fa-paper-plane"></i>Registrar</button>
-             </div>
-           </div>
-           </div>
-     </form>
-<!-- TEST -->
+         <h4>Administración de Usuarios Estándar Externo</h4>
+       </div>
+       <form class="form-wrp">
+         <div class="row mrg20">
 
-<!--END  TEST -->
+           <div class="col-md-12 col-sm-12 col-lg-12">
+               <div>
+                   <h4>Usuarios</h4>
+                 <table class="table" id="tusers">
+                     <thead>
+                         <tr>
+                            <th>Nombre</th>
+                             <th>Primer Apellido</th>
+                             <th>Segundo Apellido</th>
+                             <th>Correo Electrónico</th>
+                             <th>Nombre Usuario</th>
+                             <th>Acción</th>
+                           </tr>
+                     </thead>
+                   <tbody id="tuser">
+                   </tbody>
+                 </table>
+               </div>
+           </div>
+           <div class="widget pad50-65">
+            <div class="widget-title2">
+
+            </div>
+
+        </div>
+
+         </div>
+       </form>
+     </div>
+
+   </div>
+
+
+   <div class="panel-content" id="selectedUser" style="display:none;">
+
+     <div class="panel-content">
+        <div class="widget pad50-65">
+          <div class="profile-wrp">
+            <div class="row">
+              <div class="col-md-4 col-sm-12 col-lg-4">
+                <div class="profile-info-wrp">
+                  <div class="insta-wrp">
+                      <h1>Perfil</h1>
+                    <div class="insta-inf">
+                      <table>
+                        <tr>
+                          <td>
+                              Nombre:
+                          </td>
+                          <td>
+                            <span>
+                          <input type="text" id="con_cname" value="">
+                            <a id="con_edcn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                          </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              Primer Apellido:
+                          </td>
+                          <td>
+                            <span>
+                        <input type="text" id="con_flastn" value="">
+                            <a id="con_edfln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                          </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Segundo Apellido:
+                          </td>
+                          <td>
+                            <span>
+                            <input type="text" id="con_slastn" value="">
+                            <a id="con_edsln"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                          </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Edad:
+                          </td>
+                          <td>
+                            <span>
+                            <input type="text" id="con_age" value="">
+                              <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                      <div  class="usr-gnrl-inf">
+                    <h5 class="prf-edit-tl">Identificación:
+                      <a id="con_iden"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                    </h5>
+                    <div class="grn-inf-lst">
+                      <i class="ion-card" ></i> Cédula u Otro:
+                      <span class="green-clr" >
+                          <input type="text" id="con_idn" value="">
+                      </span>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-4">
+                <div class="profile-info-wrp">
+                 <div class="usr-cnt-inf">
+                    <h5 class="prf-edit-tl">Correo Electrónico:
+                      <a id="con_ema"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                    </h5>
+                    <ul class="usr-cnt-inf-lst">
+                      <li>
+                        <i class="fa fa-envelope"></i>
+                        <strong >Correo:</strong>
+                        <span>
+                        <input type="text" id="con_email" value="">
+                      </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usr-gnrl-inf">
+                    <h5 class="prf-edit-tl">Teléfono
+                      <a id="con_pho"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                    </h5>
+                    <div class="grn-inf-lst">
+                      <i class="fa fa-phone" ></i> Número Teléfonico:
+                      <span class="green-clr">
+                        <input type="text" id="con_uphone" value="">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="usr-cnt-inf">
+                    <h5 class="prf-edit-tl">Usuario y Contraseña
+                      <a id="con_usn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
+                    </h5>
+                    <ul class="usr-cnt-inf-lst">
+                      <li>
+                        <i class="ion-android-contacts"></i>
+                        <strong >Nombre de Usuario:</strong>
+                        <span>
+                        <input type="text" id="con_unam" value="">
+                      </span>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+              <!--//start//-->
+              <div class="col-md-4 col-sm-12 col-lg-4">
+                <div class="profile-info-wrp">
+                 <div class="usr-cnt-inf">
+                    <h5 class="prf-edit-tl">Refrescar Contraseña:
+                    </h5>
+                    <ul class="usr-cnt-inf-lst">
+                      <li>
+
+                        <strong >Contraseña Temporal:</strong>
+                        <span>
+                        <input type="text" id="con_email" value="">
+                      </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="usr-gnrl-inf">
+                    <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <button id="con_guard" name="con_regist" class="green-bg brd-rd5" type="button">
+                        <i class="fa fa-paper-plane"></i>Guardar</button>
+                    </div>
+                    </div>
+                    <div>
+                      <input type="text" id="con_idu" value="">
+                    </div>
+                </div>
+              </div>
+              <!--//end//-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
    </div>
    <!-- Panel Content -->
+
  </body>
     <!-- Page Top -->
+
+
     <!-- Panel Content -->
     <footer>
         <p>Kinesis
             <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
         <span></span>
     </footer>
+
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <!-- Vendor: Followed by our custom Javascripts -->
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-
     <script src="js/select2.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
 
@@ -517,16 +486,9 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
-    <script src="ProjectJs/trip.js" type="text/javascript"></script>
-    <script src="ProjectJs/dt.js" type="text/javascript"></script>
+    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="ProjectJs/usere.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
-    <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
-
-
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

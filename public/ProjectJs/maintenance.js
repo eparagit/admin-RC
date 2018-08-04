@@ -11,7 +11,7 @@ $(document).ready(function(){
               tsatus+="<td>"+'<label id="con_iduser">'+val['ID_Estado_Viaje']+'</label>'+"</td>";
               tsatus+="<td>"+val['Descripcion']+"</td>";
               tsatus+="<td>"+'<button id="con_updateTS" class="btn btn-primary" data-id="'+val['ID_Estado_Viaje']+'" type="button">Modificar</button>'+' '+'<button id="con_delTS" class="btn btn-danger" data-id="'+val['ID_Estado_Viaje']+'" type="button">Eliminar</button>'+"</td>";
-          
+
               tsatus+="<tr>";
             });
               $("#t_statusB").append(tsatus);
@@ -62,8 +62,9 @@ $(document).ready(function(){
               bcsatus+="<tr>";
               bcsatus+="<td>"+'<label id="con_iduser">'+val['ID_EstadoRC']+'</label>'+"</td>";
               bcsatus+="<td>"+val['Descripcion']+"</td>";
-              bcsatus+="<td>"+'<button id="con_updateBCS" class="btn btn-primary" data-id="'+val['ID_EstadoRC']+'" type="button">Modificar</button>'+' '+'<button id="con_delBCS" class="btn btn-danger" data-id="'+val['ID_EstadoRC']+'" type="button">Eliminar</button>'+"</td>";
+              bcsatus+="<td>"+'<button id="con_updateBCS"  class="btn btn-primary" data-id="'+val['ID_EstadoRC']+'" type="button">Modificar</button>'+' '+'<button id="con_delBCS" class="btn btn-danger" data-id="'+val['ID_EstadoRC']+'" type="button">Eliminar</button>'+"</td>";
               bcsatus+="<tr>";
+              //data-toggle="modal" data-target="#bcsModal"
             });
               $("#t_statusBCB").append(bcsatus);
           }
@@ -261,4 +262,100 @@ $(document).ready(function(){
         }
       });
   });
+  $("#t_statusBCB").on('click','#con_updateBCS',function(){
+    var id = $(this).data('id');
+
+    $.ajax({
+        type:"GET",
+        data: {'id':id},
+        url:"selectBCStatusByID",
+        success:function(data){
+
+          var id_bcs="";
+          var desc_bcs="";
+          $.each(data,function(v){
+              var val=data[v];
+              id_bcs=val['ID_EstadoRC'];
+              desc_bcs=val['Descripcion'];
+
+
+          })
+          $("#con_desBcs").val(desc_bcs);
+          $("#btnUpBCS").data('id',id_bcs);
+
+          $('#bcsModal').modal('show');
+          $('#bcsModal').modal('toggle');
+
+
+        }
+
+    });
+  });
+  $("#bcsModal").on('click','#btnUpBCS',function(){
+    var id=$(this).data('id');
+    var desc=$("#con_desBcs").val();
+            $.ajax({
+                type:"GET",
+                data: {'id':id,
+                        'des':desc},
+                url:"updateBCStatus",
+                success:function(data){
+                  if(data==1){
+                    alert("Estado actualizado satisfactoriamente!");
+                    window.location.replace("GetBookingContractStatus");
+                  }else{
+                    alert("No se logró actualizar el estado!");
+                    window.location.replace("GetBookingContractStatus");
+                  }
+                }
+  });
+});
+$("#t_statusT").on('click','#con_updateTS',function(){
+  var id = $(this).data('id');
+
+  $.ajax({
+      type:"GET",
+      data: {'id':id},
+      url:"selectTourStatusByID",
+      success:function(data){
+
+        var id_ts="";
+        var desc_ts="";
+        $.each(data,function(v){
+            var val=data[v];
+            id_ts=val['ID_Estado_Viaje'];
+            desc_ts=val['Descripcion'];
+
+
+        })
+        $("#con_desTs").val(desc_ts);
+        $("#btnUpTs").data('id',id_ts);
+
+        $('#TourStatusModal').modal('show');
+        $('#TourStatusModal').modal('toggle');
+
+
+      }
+
+  });
+});
+$("#TourStatusModal").on('click','#btnUpTs',function(){
+  var id=$(this).data('id');
+  var desc=$("#con_desTs").val();
+          $.ajax({
+              type:"GET",
+              data: {'id':id,
+                      'des':desc},
+              url:"updateTourStatus",
+              success:function(data){
+                if(data==1){
+                  alert("Estado actualizado satisfactoriamente!");
+                  window.location.replace("GetTourStatus");
+                }else{
+                  alert("No se logró actualizar el estado!");
+                  window.location.replace("GetTourStatus");
+                }
+              }
+});
+});
 });

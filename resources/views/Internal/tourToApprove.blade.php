@@ -105,9 +105,57 @@
                         <a href="#" title="">View All</a>
                     </div>
                 </div>
+<<<<<<< HEAD:resources/views/Internal/tourAprl-id.blade.php
             </li>
 
         </ul>
+=======
+              </div>
+              <div class="nti-usr">
+                <span class="brd-rd50 drkblu-bg">
+                  <i class="ion-ios-personadd"></i>
+                </span>
+                <div class="nti-usr-inr">
+                  <h5>
+                    <a href="#" title="">Katti Smith</a>
+                  </h5>
+                  <span class="pst-tm">Just Now</span>
+                  <i>Mike has added you as friend</i>
+                </div>
+              </div>
+              <div class="nti-usr">
+                <span class="brd-rd50 orng-bg">
+                  <i class="ion-thumbsup"></i>
+                </span>
+                <div class="nti-usr-inr">
+                  <h5>
+                    <a href="#" title="">Willimes Domson</a>
+                  </h5>
+                  <span class="pst-tm">Just Now</span>
+                  <i>like your timeline photo</i>
+                </div>
+              </div>
+              <div class="nti-usr">
+                <span class="brd-rd50 grn-bg">
+                  <i class="ion-information-circled"></i>
+                </span>
+                <div class="nti-usr-inr">
+                  <h5>
+                    <a href="#" title="">Holli Doe</a>
+                  </h5>
+                  <span class="pst-tm">Just Now</span>
+                  <i>Curabitur id eros limes suscipit blandit.</i>
+                </div>
+              </div>
+            </div>
+            <div class="nt-ftr">
+              <a href="#" title="">View All</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+>>>>>>> 4e53a95c0eaebe7f14b4cdff2bb77c0a8765787e:resources/views/Internal/tourToApprove.blade.php
     </div>
     <div class="topbar-bottom-colors">
       <i style="background-color: #2c3e50;"></i>
@@ -122,6 +170,7 @@
   <!-- Topbar -->
 
   <header class="side-header expand-header">
+<<<<<<< HEAD:resources/views/Internal/tourAprl-id.blade.php
     <div class="nav-head">Menu Principal
       <span class="menu-trigger">
         <i class="ion-android-menu"></i>
@@ -142,13 +191,65 @@
           <ul class="sb-drp">
               <li>
                   <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+=======
+      <div class="nav-head">Main Navigation
+          <span class="menu-trigger">
+              <i class="ion-android-menu"></i>
+          </span>
+      </div>
+      <nav class="custom-scrollbar">
+          <ul class="drp-sec">
+              <li class="has-drp">
+                  <a href="#" title="">
+                      <i class="ion-home"></i>
+                      <span>Viajes</span>
+                  </a>
+                  <ul class="sb-drp">
+                      <li>
+                          <a href="/Admin-RC/public//GetTourUpload" title="">Publicación</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
+                      </li>
+                      <li>
+                          <a href="dashboard3.html" title="">Mantenimientos</a>
+                      </li>
+                  </ul>
+>>>>>>> 4e53a95c0eaebe7f14b4cdff2bb77c0a8765787e:resources/views/Internal/tourToApprove.blade.php
               </li>
-              <li>
-                  <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
+          </ul>
+
+          <ul class="drp-sec">
+              <li class="has-drp">
+                  <a href="#" title="">
+                      <i class="ion-briefcase"></i>
+                      <span>Administración</span>
+                  </a>
+                  <ul class="sb-drp">
+                      <li>
+                          <a href="pricing-plan.html" title="">Reservaciones</a>
+                      </li>
+                      <li>
+                          <a href="grids.html" title="">Contrataciones</a>
+                      </li>
+
+                  </ul>
               </li>
-              <li>
-                  <a href="dashboard3.html" title="">Mantenimientos</a>
+              <li class="has-drp">
+                  <a href="#" title="">
+                      <i class="ion-fireball"></i>
+                      <span>Tienda</span>
+                  </a>
+                  <ul class="sb-drp">
+                      <li>
+                          <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
+                      </li>
+                      <li>
+                          <a href="themify-icons.html" title="">Mantenimientos</a>
+                      </li>
+                  </ul>
               </li>
+<<<<<<< HEAD:resources/views/Internal/tourAprl-id.blade.php
           </ul>
         </li>
       </ul>
@@ -224,6 +325,51 @@
           </li>
       </ul>
     </nav>
+=======
+              <li class="has-drp">
+                  <a href="#" title="">
+                      <i class="ion-images"></i>
+                      <span>Estádistica</span>
+                  </a>
+                  <ul class="sb-drp">
+                      <li>
+                          <a href="gallery1.html" title="">Viajes por Calificación</a>
+                      </li>
+                      <li>
+                          <a href="gallery2.html" title="">Viajes más Visitados</a>
+                      </li>
+                      <li>
+                          <a href="gallery3.html" title="">Más Visitados X Temporada</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="has-drp">
+                  <a href="#" title="">
+                      <i class="ion-android-settings"></i>
+                      <span>Mantenimientos</span>
+                  </a>
+                  <ul class="sb-drp">
+                      <li>
+                          <a href="/Admin-RC/public//GetBookingContractStatus" title="">Estado RC</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetTourStatus" title="">Estado Viaje</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetTourCategory" title="">Categoría Viaje</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetEventType" title="">Tipo Evento</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetServiceType" title="">Tipo Servicio</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>      
+
+      </nav>
+>>>>>>> 4e53a95c0eaebe7f14b4cdff2bb77c0a8765787e:resources/views/Internal/tourToApprove.blade.php
   </header>
 
   <!-- Page Top -->

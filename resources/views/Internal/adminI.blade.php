@@ -141,10 +141,10 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+                            <a href="/Admin-RC/public//GetTourUpload" title="">Publicación</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
+                            <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
                         </li>
                         <li>
                             <a href="dashboard3.html" title="">Mantenimientos</a>
@@ -207,23 +207,32 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoBCStatus" title="">Estado RC</a>
+                            <a href="/Admin-RC/public//GetBookingContractStatus" title="">Estado RC</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoTourStatus" title="">Estado Viaje</a>
+                            <a href="/Admin-RC/public//GetTourStatus" title="">Estado Viaje</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoTourCategory" title="">Categoría Viaje</a>
+                            <a href="/Admin-RC/public//GetTourCategory" title="">Categoría Viaje</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoEventType" title="">Tipo Evento</a>
+                            <a href="/Admin-RC/public//GetEventType" title="">Tipo Evento</a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
                         </li>
                     </ul>
                 </li>
+=======
+                            <a href="/Admin-RC/public//GetServiceType" title="">Tipo Servicio</a>
+                        </li>
+                    </ul>
+                </li>
+
+>>>>>>> 4e53a95c0eaebe7f14b4cdff2bb77c0a8765787e
             </ul>
+          
         </nav>
     </header>
     <!-- Side Header -->

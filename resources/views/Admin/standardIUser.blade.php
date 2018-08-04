@@ -138,7 +138,8 @@
                         </div>
                     </div>
                 </li>
-              </ul>
+
+            </ul>
         </div>
         <div class="topbar-bottom-colors">
             <i style="background-color: #2c3e50;"></i>
@@ -167,7 +168,7 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoReg" title="">Usuarios</a>
+                            <a href="/Admin-RC/public//GetRegisterUserAI" title="">Usuarios</a>
                         </li>
 
                     </ul>
@@ -182,13 +183,13 @@
                     </a>
                     <ul class="sb-drp">
                         <li>
-                            <a href="/Admin-RC/public//GoAdminU" title="">Administradores</a>
+                            <a href="/Admin-RC/public//GetAdminUserView" title="">Administradores</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSIU" title="">Estándar Interno</a>
+                            <a href="/Admin-RC/public//GetStandardIUser" title="">Estándar Interno</a>
                         </li>
                         <li>
-                            <a href="/Admin-RC/public//GoSEU" title="">Estandar Externo</a>
+                            <a href="/Admin-RC/public//GetStandardEUser" title="">Estandar Externo</a>
                         </li>
                     </ul>
                 </li>
@@ -199,10 +200,10 @@
                     </a>
                     <ul class="sb-drp">
                       <li>
-                          <a href="/Admin-RC/public//GoRol" title="">Descripcón</a>
+                          <a href="/Admin-RC/public//GetRol" title="">Descripción</a>
                       </li>
                       <li>
-                          <a href="/Admin-RC/public//GoUserbyr" title="">Usuarios por Rol</a>
+                          <a href="/Admin-RC/public//GetUserByRol" title="">Usuarios por Rol</a>
                       </li>
                     </ul>
                 </li>
@@ -251,7 +252,7 @@
    <div class="panel-content" id="allUsers">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Administración de Usuarios Estándar Externo</h4>
+         <h4>Administración de Usuarios Estándar Interno</h4>
        </div>
        <form class="form-wrp">
          <div class="row mrg20">
@@ -298,7 +299,7 @@
               <div class="col-md-4 col-sm-12 col-lg-4">
                 <div class="profile-info-wrp">
                   <div class="insta-wrp">
-                      <h1>Perfil</h1>
+                    <h1>Perfil</h1>
                     <div class="insta-inf">
                       <table>
                         <tr>
@@ -353,16 +354,32 @@
                     <div class="grn-inf-lst">
                       <i class="ion-card" ></i> Cédula u Otro:
                       <span class="green-clr" >
-                          <input type="text" id="con_idn" value="">
+                        <input type="text" id="con_idn" value="">
                       </span>
                     </div>
                   </div>
                     </div>
                   </div>
+
                 </div>
               </div>
               <div class="col-md-4 col-sm-12 col-lg-4">
                 <div class="profile-info-wrp">
+                  <div class="usr-gnrl-inf">
+                    <h5 class="prf-edit-tl">Empresa y Rol
+                    </h5>
+                    <div class="grn-inf-lst">
+                      <i class="fa fa-home"></i> Empresa:
+                      <span class="green-clr">Kinesis-Ruta a la Cima</span>
+                    </div>
+                    <div class="grn-inf-lst" >
+                      <i  class="fa fa-graduation-cap" ></i> Rol:
+                      <span >
+                          <input type="text" id="con_urol" value="">
+                      </span>
+
+                    </div>
+                  </div>
                  <div class="usr-cnt-inf">
                     <h5 class="prf-edit-tl">Correo Electrónico:
                       <a id="con_ema"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
@@ -377,6 +394,7 @@
                       </li>
                     </ul>
                   </div>
+
                   <div class="usr-gnrl-inf">
                     <h5 class="prf-edit-tl">Teléfono
                       <a id="con_pho"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
@@ -384,10 +402,16 @@
                     <div class="grn-inf-lst">
                       <i class="fa fa-phone" ></i> Número Teléfonico:
                       <span class="green-clr">
-                        <input type="text" id="con_uphone" value="">
+                          <input type="text" id="con_uphone" value="">
                       </span>
                     </div>
                   </div>
+
+                </div>
+              </div>
+              <!--//start//-->
+              <div class="col-md-4 col-sm-12 col-lg-4">
+                <div class="profile-info-wrp">
                   <div class="usr-cnt-inf">
                     <h5 class="prf-edit-tl">Usuario y Contraseña
                       <a id="con_usn"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
@@ -400,15 +424,8 @@
                         <input type="text" id="con_unam" value="">
                       </span>
                       </li>
-
                     </ul>
                   </div>
-
-                </div>
-              </div>
-              <!--//start//-->
-              <div class="col-md-4 col-sm-12 col-lg-4">
-                <div class="profile-info-wrp">
                  <div class="usr-cnt-inf">
                     <h5 class="prf-edit-tl">Refrescar Contraseña:
                     </h5>
@@ -426,7 +443,7 @@
                   <div class="usr-gnrl-inf">
                     <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
                     <div class="col-md-12 col-sm-12 col-lg-12">
-                      <button id="con_guard" name="con_regist" class="green-bg brd-rd5" type="button">
+                      <button id="con_save" name="con_regist" class="green-bg brd-rd5" type="button">
                         <i class="fa fa-paper-plane"></i>Guardar</button>
                     </div>
                     </div>
@@ -487,7 +504,7 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
-    <script src="ProjectJs/usere.js" type="text/javascript"></script>
+    <script src="ProjectJs/useri.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {

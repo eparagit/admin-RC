@@ -235,156 +235,26 @@
                         <span>Mantenimientos</span>
                     </a>
                     <ul class="sb-drp">
-                        <li>
-                            <a href="/Admin-RC/public//GoBCStatus" title="">Estado RC</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GoTourStatus" title="">Estado Viaje</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GoTourCategory" title="">Categoría Viaje</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GoEventType" title="">Tipo Evento</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="tables.html" title="">
-                        <i class="ion-crop"></i> Tables</a>
-                </li>
-                <li>
-                    <a href="charts.html" title="">
-                        <i class="ion-podium"></i> Charts</a>
-                </li>
-            </ul>
-            <h4>Pages</h4>
-            <ul class="drp-sec">
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-clipboard"></i>
-                        <span>General</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="404.html" title="">404</a>
-                        </li>
-                        <li>
-                            <a href="505.html" title="">505</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" title="">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="coming-soon.html" title="">Coming Soon</a>
-                        </li>
-                        <li>
-                            <a href="under-maintenance.html" title="">User Maintenance</a>
-                        </li>
-                        <li>
-                            <a href="login.html" title="">Login</a>
-                        </li>
-                        <li>
-                            <a href="register.html" title="">Register</a>
-                        </li>
-                        <li>
-                            <a href="search-result.html" title="">Search Result</a>
-                        </li>
-                        <li>
-                            <a href="faq.html" title="">Faq's</a>
-                        </li>
-                        <li>
-                            <a href="services.html" title="">Services</a>
-                        </li>
-                        <li>
-                            <a href="invoice.html" title="">Invoice Page</a>
-                        </li>
-                        <li>
-                            <a href="typography.html" title="">Typography</a>
-                        </li>
-                        <li>
-                            <a href="live-chat.html" title="">Live Chat</a>
-                        </li>
-                        <li>
-                            <a href="timeline.html" title="">Timeline</a>
-                        </li>
-                        <li>
-                            <a href="cropbox.html" title="">Cropbox</a>
-                        </li>
-                        <li>
-                            <a href="calculator.html" title="">Calculator</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-contact"></i>
-                        <span>User</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="profile.html" title="">Profile Page</a>
-                        </li>
-                        <li>
-                            <a href="profile-edit.html" title="">Profile Edit</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-bag"></i>
-                        <span>eCommerce</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="products.html" title="">Products</a>
-                        </li>
-                        <li>
-                            <a href="product-details.html" title="">Product Details</a>
-                        </li>
-                        <li>
-                            <a href="checkout.html" title="">Checkout</a>
-                        </li>
-                        <li>
-                            <a href="order-received.html" title="">Order Received</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-map"></i>
-                        <span>Maps</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="google-map.html" title="">Google Map</a>
-                        </li>
-                        <li>
-                            <a href="vector-map.html" title="">Vector map</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-email"></i>
-                        <span>Email's</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="email-composer.html" title="">Email Compose</a>
-                        </li>
-                        <li>
-                            <a href="inbox.html" title="">Inbox</a>
-                        </li>
-                        <li>
-                            <a href="email.html" title="">Email</a>
-                        </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetBookingContractStatus" title="">Estado RC</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetTourStatus" title="">Estado Viaje</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetTourCategory" title="">Categoría Viaje</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetEventType" title="">Tipo Evento</a>
+                      </li>
+                      <li>
+                          <a href="/Admin-RC/public//GetServiceType" title="">Tipo Servicio</a>
+                      </li>
                     </ul>
                 </li>
             </ul>
+
+          
         </nav>
     </header>
     <!-- Side Header -->
@@ -472,6 +342,28 @@
 
 
    <!-- Panel Content -->
+   <div class="modal fade" id="TourStatusModal" tabindex="-1" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Estado Tour</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="col-md-6 col-sm-6 col-lg-6" id="id_desbcsd">
+             <input class="brd-rd5 validate[required]" name="con_desTs" id="con_desTs"  type="text"  />
+             <span class="error-box"></span>
+           </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary" id="btnUpTs" data-id="">Save changes</button>
+           </div>
+         </div>
+       </div>
+     </div>
 
  </body>
     <!-- Page Top -->
