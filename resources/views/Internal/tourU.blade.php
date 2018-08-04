@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta a la cima Interno</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,109 +38,76 @@
         @foreach(Session::get('datos') as $data)
           <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
           @endforeach
-          <span>
-              <img src="images/resource/topbar-usr1.jpg" alt="" />
-              <i class="sts away"></i>
-          </span>
-          <div class="usr-inf">
-              <div class="usr-thmb brd-rd50">
-                  <img class="brd-rd50" src="images/resource/usr.jpg" alt="" />
-                  <i class="sts away"></i>
-                  <a class="green-bg brd-rd5" href="#" title="">
-                      <i class="fa fa-envelope"></i>
-                  </a>
-              </div>
-              <h5>
-                  @foreach(Session::get('datos') as $data)
-                  <a href="#" title="">{{$data['NombreUsuario']}}</a>
-                    <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>
-                  @endforeach
-              </h5>
-              <span>
-                @foreach(Session::get('datos') as $data)
-                <label>{{$data['NumeroTelefonico']}}</label>
-                @endforeach
-              </span>
-
-
-
-              <div class="act-pst-lk-stm">
-                  <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                      <i class="ion-forward"></i>Mi perfil</a>
-              </div>
-              <div class="usr-ft">
-                  <a id="con_logout" class="btn-danger" href="#" title="">
-                      <i class="fa fa-sign-out"></i> Logout</a>
-              </div>
+          <a id="con_logout" class="btn-danger" href="#" title="">
+              <i class="fa fa-sign-out"></i> Cerrar Sesión</a>
         </div>
-      </div>
 
-      <ul class="tobar-links">
-        <li>
-          <a href="#" title="">
-            <i class="ion-ios-bell"></i>
-            <span class="blue-bg">02</span>
-          </a>
-          <div class="nti-drp-wrp">
-            <h5 class="blue-bg">
-              <span>You Have</span> 7 Notifications</h5>
-            <div class="nti-lst">
-              <div class="nti-usr">
-                <span class="brd-rd50 rd-bg">
-                  <i class="fa fa-cog"></i>
-                </span>
-                <div class="nti-usr-inr">
-                  <h5>
-                    <a href="#" title="">Sadi Orlaf</a>
-                  </h5>
-                  <span class="pst-tm">Just Now</span>
-                  <i>Privacy settings changed</i>
+        <ul class="tobar-links">
+            <li>
+                <a href="#" title="">
+                    <i class="ion-ios-bell"></i>
+                    <span class="blue-bg">02</span>
+                </a>
+                <div class="nti-drp-wrp">
+                    <h5 class="blue-bg">
+                        <span>You Have</span> 7 Notifications</h5>
+                    <div class="nti-lst">
+                        <div class="nti-usr">
+                            <span class="brd-rd50 rd-bg">
+                                <i class="fa fa-cog"></i>
+                            </span>
+                            <div class="nti-usr-inr">
+                                <h5>
+                                    <a href="#" title="">Sadi Orlaf</a>
+                                </h5>
+                                <span class="pst-tm">Just Now</span>
+                                <i>Privacy settings changed</i>
+                            </div>
+                        </div>
+                        <div class="nti-usr">
+                            <span class="brd-rd50 drkblu-bg">
+                                <i class="ion-ios-personadd"></i>
+                            </span>
+                            <div class="nti-usr-inr">
+                                <h5>
+                                    <a href="#" title="">Katti Smith</a>
+                                </h5>
+                                <span class="pst-tm">Just Now</span>
+                                <i>Mike has added you as friend</i>
+                            </div>
+                        </div>
+                        <div class="nti-usr">
+                            <span class="brd-rd50 orng-bg">
+                                <i class="ion-thumbsup"></i>
+                            </span>
+                            <div class="nti-usr-inr">
+                                <h5>
+                                    <a href="#" title="">Willimes Domson</a>
+                                </h5>
+                                <span class="pst-tm">Just Now</span>
+                                <i>like your timeline photo</i>
+                            </div>
+                        </div>
+                        <div class="nti-usr">
+                            <span class="brd-rd50 grn-bg">
+                                <i class="ion-information-circled"></i>
+                            </span>
+                            <div class="nti-usr-inr">
+                                <h5>
+                                    <a href="#" title="">Holli Doe</a>
+                                </h5>
+                                <span class="pst-tm">Just Now</span>
+                                <i>Curabitur id eros limes suscipit blandit.</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nt-ftr">
+                        <a href="#" title="">View All</a>
+                    </div>
                 </div>
-              </div>
-              <div class="nti-usr">
-                <span class="brd-rd50 drkblu-bg">
-                  <i class="ion-ios-personadd"></i>
-                </span>
-                <div class="nti-usr-inr">
-                  <h5>
-                    <a href="#" title="">Katti Smith</a>
-                  </h5>
-                  <span class="pst-tm">Just Now</span>
-                  <i>Mike has added you as friend</i>
-                </div>
-              </div>
-              <div class="nti-usr">
-                <span class="brd-rd50 orng-bg">
-                  <i class="ion-thumbsup"></i>
-                </span>
-                <div class="nti-usr-inr">
-                  <h5>
-                    <a href="#" title="">Willimes Domson</a>
-                  </h5>
-                  <span class="pst-tm">Just Now</span>
-                  <i>like your timeline photo</i>
-                </div>
-              </div>
-              <div class="nti-usr">
-                <span class="brd-rd50 grn-bg">
-                  <i class="ion-information-circled"></i>
-                </span>
-                <div class="nti-usr-inr">
-                  <h5>
-                    <a href="#" title="">Holli Doe</a>
-                  </h5>
-                  <span class="pst-tm">Just Now</span>
-                  <i>Curabitur id eros limes suscipit blandit.</i>
-                </div>
-              </div>
-            </div>
-            <div class="nt-ftr">
-              <a href="#" title="">View All</a>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
+            </li>
+
+        </ul>
     </div>
     <div class="topbar-bottom-colors">
       <i style="background-color: #2c3e50;"></i>
@@ -155,305 +122,112 @@
   <!-- Topbar -->
 
   <header class="side-header expand-header">
-    <div class="nav-head">Main Navigation
+    <div class="nav-head">Menú Interno
       <span class="menu-trigger">
         <i class="ion-android-menu"></i>
       </span>
     </div>
     <nav class="custom-scrollbar">
-      <ul class="drp-sec">
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-home"></i>
-            <span>Viajes</span>
-          </a>
-          <ul class="sb-drp">
-              <li>
-                  <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
-              </li>
-              <li>
-                  <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
-              </li>
-              <li>
-                  <a href="dashboard3.html" title="">Mantenimientos</a>
-              </li>
-          </ul>
-        </li>
-      </ul>
-      <h4>Features</h4>
-      <ul class="drp-sec">
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-briefcase"></i>
-            <span>UI Elements</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="pricing-plan.html" title="">Pricing Plan</a>
+      <ul class="sb-drp">
+         <li>
+             <a href="/Admin-RC/public//Internal" title="">Inicio</a>
+         </li>
+       </ul>
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-home"></i>
+                    <span>Viajes</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
+                    </li>
+                    <li>
+                        <a href="dashboard3.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="grids.html" title="">Grids</a>
+        </ul>
+
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-briefcase"></i>
+                    <span>Administración</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="pricing-plan.html" title="">Reservaciones</a>
+                    </li>
+                    <li>
+                        <a href="grids.html" title="">Contrataciones</a>
+                    </li>
+
+                </ul>
             </li>
-            <li>
-              <a href="calendar.html" title="">Calendar</a>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-fireball"></i>
+                    <span>Tienda</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
+                    </li>
+                    <li>
+                        <a href="themify-icons.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="pagination.html" title="">Pagination</a>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-images"></i>
+                    <span>Estádistica</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="gallery1.html" title="">Viajes por Calificación</a>
+                    </li>
+                    <li>
+                        <a href="gallery2.html" title="">Viajes más Visitados</a>
+                    </li>
+                    <li>
+                        <a href="gallery3.html" title="">Más Visitados X Temporada</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="buttons.html" title="">Button Styles</a>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-android-settings"></i>
+                    <span>Mantenimientos</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoBCStatus" title="">Estado RC</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourStatus" title="">Estado Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourCategory" title="">Categoría Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoEventType" title="">Tipo Evento</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="dropdowns.html" title="">Dropdown Styles</a>
-            </li>
-            <li>
-              <a href="tabs&accordians.html" title="">Tabs & Accordians</a>
-            </li>
-            <li>
-              <a href="progressbars.html" title="">Progress Bars</a>
-            </li>
-            <li>
-              <a href="tooltips.html" title="">Tooltips</a>
-            </li>
-            <li>
-              <a href="popovers.html" title="">Popovers</a>
-            </li>
-            <li>
-              <a href="alerts.html" title="">Alerts</a>
-            </li>
-            <li>
-              <a href="list-group.html" title="">List Group</a>
-            </li>
-            <li>
-              <a href="models.html" title="">Models</a>
-            </li>
-            <li>
-              <a href="loaders.html" title="">CSS Loaders</a>
-            </li>
-            <li>
-              <a href="cards.html" title="">Cards</a>
-            </li>
-            <li>
-              <a href="range-slider.html" title="">Range Slider</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-fireball"></i>
-            <span>Icons</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="font-awesome-icons.html" title="">Font Awesome Icons</a>
-            </li>
-            <li>
-              <a href="themify-icons.html" title="">Themify Icons</a>
-            </li>
-            <li>
-              <a href="ionicons.html" title="">Ionicons</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-images"></i>
-            <span>Gallery Styles</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="gallery1.html" title="">Gallery Style 1</a>
-            </li>
-            <li>
-              <a href="gallery2.html" title="">Gallery Style 2</a>
-            </li>
-            <li>
-              <a href="gallery3.html" title="">Gallery Style 3</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-android-settings"></i>
-            <span>Form Stuff</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="form-layouts.html" title="">Form Layouts</a>
-            </li>
-            <li>
-              <a href="form-wizard.html" title="">Form Wizard</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="tables.html" title="">
-            <i class="ion-crop"></i> Tables</a>
-        </li>
-        <li>
-          <a href="charts.html" title="">
-            <i class="ion-podium"></i> Charts</a>
-        </li>
-      </ul>
-      <h4>Pages</h4>
-      <ul class="drp-sec">
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-android-clipboard"></i>
-            <span>General</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="404.html" title="">404</a>
-            </li>
-            <li>
-              <a href="505.html" title="">505</a>
-            </li>
-            <li>
-              <a href="contact.html" title="">Contact Us</a>
-            </li>
-            <li>
-              <a href="coming-soon.html" title="">Coming Soon</a>
-            </li>
-            <li>
-              <a href="under-maintenance.html" title="">User Maintenance</a>
-            </li>
-            <li>
-              <a href="login.html" title="">Login</a>
-            </li>
-            <li>
-              <a href="register.html" title="">Register</a>
-            </li>
-            <li>
-              <a href="search-result.html" title="">Search Result</a>
-            </li>
-            <li>
-              <a href="faq.html" title="">Faq's</a>
-            </li>
-            <li>
-              <a href="services.html" title="">Services</a>
-            </li>
-            <li>
-              <a href="invoice.html" title="">Invoice Page</a>
-            </li>
-            <li>
-              <a href="typography.html" title="">Typography</a>
-            </li>
-            <li>
-              <a href="live-chat.html" title="">Live Chat</a>
-            </li>
-            <li>
-              <a href="timeline.html" title="">Timeline</a>
-            </li>
-            <li>
-              <a href="cropbox.html" title="">Cropbox</a>
-            </li>
-            <li>
-              <a href="calculator.html" title="">Calculator</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-android-contact"></i>
-            <span>User</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="profile.html" title="">Profile Page</a>
-            </li>
-            <li>
-              <a href="profile-edit.html" title="">Profile Edit</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-bag"></i>
-            <span>eCommerce</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="products.html" title="">Products</a>
-            </li>
-            <li>
-              <a href="product-details.html" title="">Product Details</a>
-            </li>
-            <li>
-              <a href="checkout.html" title="">Checkout</a>
-            </li>
-            <li>
-              <a href="order-received.html" title="">Order Received</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-android-map"></i>
-            <span>Maps</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="google-map.html" title="">Google Map</a>
-            </li>
-            <li>
-              <a href="vector-map.html" title="">Vector map</a>
-            </li>
-          </ul>
-        </li>
-        <li class="has-drp">
-          <a href="#" title="">
-            <i class="ion-email"></i>
-            <span>Email's</span>
-          </a>
-          <ul class="sb-drp">
-            <li>
-              <a href="email-composer.html" title="">Email Compose</a>
-            </li>
-            <li>
-              <a href="inbox.html" title="">Inbox</a>
-            </li>
-            <li>
-              <a href="email.html" title="">Email</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        </ul>
     </nav>
   </header>
   <!-- Side Header -->
 
-  <div class="option-panel">
-    <span class="panel-btn">
-      <i class="fa ion-android-settings fa-spin"></i>
-    </span>
-    <div class="color-panel">
-      <h4>Text Color</h4>
-      <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
-        <i></i>
-      </span>
-      <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
-        <i></i>
-      </span>
-      <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
-        <i></i>
-      </span>
-      <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
-        <i></i>
-      </span>
-      <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
-        <i></i>
-      </span>
-    </div>
-  </div>
-  <!-- Options Panel -->
-  <div class="pg-tp">
-    <i class="ion-cube"></i>
-    <div class="pr-tp-inr">
-      <h4>Form Wizard</h4>
-      <span>Some of extra awesome Form Wizard page.</span>
-    </div>
-  </div>
   <!-- Page Top -->
 
 
@@ -596,11 +370,10 @@
 
    </div>
  </div>
-  <footer>
-    <p>Copyright
-      <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-    <span>10GB of 250GB Free.</span>
-  </footer>
+ <footer>
+     <p>Todos los derechos a
+       Ruta a la Cima 2018</p>
+ </footer>
 
 
   <!-- Vendor: Javascripts -->
@@ -645,8 +418,8 @@
       $info_form.formToWizard({
         submitButton: 'SaveAccount',
         showProgress: true,
-        nextBtnName: 'Next',
-        prevBtnName: 'Previous',
+        nextBtnName: 'Siguiente',
+        prevBtnName: 'Anterior',
         showStepNo: false,
         validateBeforeNext: function () {
           return $info_form.validationEngine('validate');

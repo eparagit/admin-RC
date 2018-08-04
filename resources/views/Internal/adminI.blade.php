@@ -3,7 +3,7 @@
 
 <head>
     <!-- Meta-Information -->
-    <title>Fuzen Admin Panel</title>
+    <title>Ruta a la cima Interno</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,41 +38,8 @@
             @foreach(Session::get('datos') as $data)
               <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
               @endforeach
-              <span>
-                  <img src="images/resource/topbar-usr1.jpg" alt="" />
-                  <i class="sts away"></i>
-              </span>
-              <div class="usr-inf">
-                  <div class="usr-thmb brd-rd50">
-                      <img class="brd-rd50" src="images/resource/usr.jpg" alt="" />
-                      <i class="sts away"></i>
-                      <a class="green-bg brd-rd5" href="#" title="">
-                          <i class="fa fa-envelope"></i>
-                      </a>
-                  </div>
-                  <h5>
-                      @foreach(Session::get('datos') as $data)
-                      <a href="#" title="">{{$data['NombreUsuario']}}</a>
-                        <input type="text" id="con_iduse" value="<?=$data['ID_Usuario']?>"/>
-                      @endforeach
-                  </h5>
-                  <span>
-                    @foreach(Session::get('datos') as $data)
-                    <label>{{$data['NumeroTelefonico']}}</label>
-                    @endforeach
-                  </span>
-
-
-
-                  <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                          <i class="ion-forward"></i>Mi perfil</a>
-                  </div>
-                  <div class="usr-ft">
-                      <a id="con_logout" class="btn-danger" href="#" title="">
-                          <i class="fa fa-sign-out"></i> Logout</a>
-                  </div>
-                </div>
+              <a id="con_logout" class="btn-danger" href="#" title="">
+                  <i class="fa fa-sign-out"></i> Cerrar Sesión</a>
             </div>
 
             <ul class="tobar-links">
@@ -155,12 +122,17 @@
     <!-- Topbar -->
 
     <header class="side-header expand-header">
-        <div class="nav-head">Main Navigation
+        <div class="nav-head">Menú Principal
             <span class="menu-trigger">
                 <i class="ion-android-menu"></i>
             </span>
         </div>
         <nav class="custom-scrollbar">
+          <ul class="sb-drp">
+             <li>
+                 <a href="/Admin-RC/public//Internal" title="">Inicio</a>
+             </li>
+           </ul>
             <ul class="drp-sec">
                 <li class="has-drp">
                     <a href="#" title="">
@@ -251,174 +223,20 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="tables.html" title="">
-                        <i class="ion-crop"></i> Tables</a>
-                </li>
-                <li>
-                    <a href="charts.html" title="">
-                        <i class="ion-podium"></i> Charts</a>
-                </li>
-            </ul>
-            <h4>Pages</h4>
-            <ul class="drp-sec">
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-clipboard"></i>
-                        <span>General</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="404.html" title="">404</a>
-                        </li>
-                        <li>
-                            <a href="505.html" title="">505</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" title="">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="coming-soon.html" title="">Coming Soon</a>
-                        </li>
-                        <li>
-                            <a href="under-maintenance.html" title="">User Maintenance</a>
-                        </li>
-                        <li>
-                            <a href="login.html" title="">Login</a>
-                        </li>
-                        <li>
-                            <a href="register.html" title="">Register</a>
-                        </li>
-                        <li>
-                            <a href="search-result.html" title="">Search Result</a>
-                        </li>
-                        <li>
-                            <a href="faq.html" title="">Faq's</a>
-                        </li>
-                        <li>
-                            <a href="services.html" title="">Services</a>
-                        </li>
-                        <li>
-                            <a href="invoice.html" title="">Invoice Page</a>
-                        </li>
-                        <li>
-                            <a href="typography.html" title="">Typography</a>
-                        </li>
-                        <li>
-                            <a href="live-chat.html" title="">Live Chat</a>
-                        </li>
-                        <li>
-                            <a href="timeline.html" title="">Timeline</a>
-                        </li>
-                        <li>
-                            <a href="cropbox.html" title="">Cropbox</a>
-                        </li>
-                        <li>
-                            <a href="calculator.html" title="">Calculator</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-contact"></i>
-                        <span>User</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="profile.html" title="">Profile Page</a>
-                        </li>
-                        <li>
-                            <a href="profile-edit.html" title="">Profile Edit</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-bag"></i>
-                        <span>eCommerce</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="products.html" title="">Products</a>
-                        </li>
-                        <li>
-                            <a href="product-details.html" title="">Product Details</a>
-                        </li>
-                        <li>
-                            <a href="checkout.html" title="">Checkout</a>
-                        </li>
-                        <li>
-                            <a href="order-received.html" title="">Order Received</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-map"></i>
-                        <span>Maps</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="google-map.html" title="">Google Map</a>
-                        </li>
-                        <li>
-                            <a href="vector-map.html" title="">Vector map</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-email"></i>
-                        <span>Email's</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="email-composer.html" title="">Email Compose</a>
-                        </li>
-                        <li>
-                            <a href="inbox.html" title="">Inbox</a>
-                        </li>
-                        <li>
-                            <a href="email.html" title="">Email</a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </nav>
     </header>
     <!-- Side Header -->
 
-    <div class="option-panel">
-        <span class="panel-btn">
-            <i class="fa ion-android-settings fa-spin"></i>
-        </span>
-        <div class="color-panel">
-            <h4>Text Color</h4>
-            <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
-                <i></i>
-            </span>
-            <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
-                <i></i>
-            </span>
-            <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
-                <i></i>
-            </span>
-            <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
-                <i></i>
-            </span>
-            <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
-                <i></i>
-            </span>
-        </div>
-    </div>
     <!-- Options Panel -->
     <div class="pg-tp">
         <i class="ion-cube"></i>
         <div class="pr-tp-inr">
-            <h4>Welcome to
-                <strong>FUZEN</strong>
-                <span></span> Panel</h4>
-            <span>Admin Template for medium and large web applications with ery clean and aesthetic style.</span>
+            <h4>Bienvenido
+                <strong>@foreach(Session::get('datos') as $data)
+                  {{$data['NombreCompleto']}}
+                  @endforeach</strong>
+                <span></span> Al Modulo Interno</h4>
         </div>
     </div>
     <!-- Page Top -->
@@ -426,9 +244,8 @@
 
     <!-- Panel Content -->
     <footer>
-        <p>Copyright
-            <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-        <span>10GB of 250GB Free.</span>
+        <p>Todos los derechos a
+          Ruta a la Cima 2018</p>
     </footer>
 
     <!-- Vendor: Javascripts -->
