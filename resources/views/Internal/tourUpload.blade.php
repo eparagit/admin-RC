@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta a la cima Interno</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,6 +45,123 @@
 
           <ul class="tobar-links">
               <li>
+    </div>
+    <div class="topbar-bottom-colors">
+      <i style="background-color: #2c3e50;"></i>
+      <i style="background-color: #9857b2;"></i>
+      <i style="background-color: #2c81ba;"></i>
+      <i style="background-color: #5dc12e;"></i>
+      <i style="background-color: #feb506;"></i>
+      <i style="background-color: #e17c21;"></i>
+      <i style="background-color: #bc382a;"></i>
+    </div>
+  </div>
+  <!-- Topbar -->
+
+  <header class="side-header expand-header">
+    <div class="nav-head">Menú Interno
+      <span class="menu-trigger">
+        <i class="ion-android-menu"></i>
+      </span>
+    </div>
+    <nav class="custom-scrollbar">
+      <ul class="sb-drp">
+         <li>
+             <a href="/Admin-RC/public//Internal" title="">Inicio</a>
+         </li>
+       </ul>
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-home"></i>
+                    <span>Viajes</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
+                    </li>
+                    <li>
+                        <a href="dashboard3.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-briefcase"></i>
+                    <span>Administración</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="pricing-plan.html" title="">Reservaciones</a>
+                    </li>
+                    <li>
+                        <a href="grids.html" title="">Contrataciones</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-fireball"></i>
+                    <span>Tienda</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
+                    </li>
+                    <li>
+                        <a href="themify-icons.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-images"></i>
+                    <span>Estádistica</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="gallery1.html" title="">Viajes por Calificación</a>
+                    </li>
+                    <li>
+                        <a href="gallery2.html" title="">Viajes más Visitados</a>
+                    </li>
+                    <li>
+                        <a href="gallery3.html" title="">Más Visitados X Temporada</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-android-settings"></i>
+                    <span>Mantenimientos</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoBCStatus" title="">Estado RC</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourStatus" title="">Estado Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourCategory" title="">Categoría Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoEventType" title="">Tipo Evento</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
                   <a href="#" title="">
                       <i class="ion-ios-bell"></i>
                       <span class="blue-bg">02</span>
@@ -123,6 +240,8 @@
   <!-- Topbar -->
 
   @include('Ilayout.headerI')
+  </header>
+
   <!-- Side Header -->
 
   <!-- Page Top -->

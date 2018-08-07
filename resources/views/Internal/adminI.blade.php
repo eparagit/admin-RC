@@ -3,7 +3,7 @@
 
 <head>
     <!-- Meta-Information -->
-    <title>Fuzen Admin Panel</title>
+    <title>Ruta a la cima Interno</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,31 +29,13 @@
     <!-- Topbar -->
    @include('Ilayout.headerI')
 
+            </ul>
+
+        </nav>
+    </header>
+
     <!-- Side Header -->
 
-    <div class="option-panel">
-        <span class="panel-btn">
-            <i class="fa ion-android-settings fa-spin"></i>
-        </span>
-        <div class="color-panel">
-            <h4>Text Color</h4>
-            <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
-                <i></i>
-            </span>
-            <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
-                <i></i>
-            </span>
-            <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
-                <i></i>
-            </span>
-            <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
-                <i></i>
-            </span>
-            <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
-                <i></i>
-            </span>
-        </div>
-    </div>
     <!-- Options Panel -->
     <div class="pg-tp">
         <i class="ion-cube"></i>

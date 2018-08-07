@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta a la cima Interno</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,6 +45,40 @@
 
           <ul class="tobar-links">
               <li>
+    </div>
+    <div class="topbar-bottom-colors">
+      <i style="background-color: #2c3e50;"></i>
+      <i style="background-color: #9857b2;"></i>
+      <i style="background-color: #2c81ba;"></i>
+      <i style="background-color: #5dc12e;"></i>
+      <i style="background-color: #feb506;"></i>
+      <i style="background-color: #e17c21;"></i>
+      <i style="background-color: #bc382a;"></i>
+    </div>
+  </div>
+  <!-- Topbar -->
+
+  <header class="side-header expand-header">
+    <div class="nav-head">Menu Principal
+      <span class="menu-trigger">
+        <i class="ion-android-menu"></i>
+      </span>
+    </div>
+    <nav class="custom-scrollbar">
+      <ul class="sb-drp">
+         <li>
+             <a href="/Admin-RC/public//Internal" title="">Inicio</a>
+         </li>
+       </ul>
+      <ul class="drp-sec">
+        <li class="has-drp">
+          <a href="#" title="">
+            <i class="ion-home"></i>
+            <span>Viajes</span>
+          </a>
+          <ul class="sb-drp">
+              <li>
+                  <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
                   <a href="#" title="">
                       <i class="ion-ios-bell"></i>
                       <span class="blue-bg">02</span>
@@ -106,6 +140,7 @@
                           <a href="#" title="">View All</a>
                       </div>
                   </div>
+
               </li>
 
           </ul>
@@ -124,6 +159,9 @@
 
   @include('Ilayout.headerI')
   <!-- Side Header -->
+
+
+  </header>
 
 
   <!-- Page Top -->
