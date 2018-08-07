@@ -18,9 +18,9 @@
                     <li>
                         <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="dashboard3.html" title="">Mantenimientos</a>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
         </ul>

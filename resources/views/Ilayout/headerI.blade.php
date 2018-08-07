@@ -1,5 +1,5 @@
 <header class="side-header expand-header">
-    <div class="nav-head">Main Navigation
+    <div class="nav-head">Menú Principal
         <span class="menu-trigger">
             <i class="ion-android-menu"></i>
         </span>
@@ -18,9 +18,9 @@
                     <li>
                         <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="dashboard3.html" title="">Mantenimientos</a>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
         </ul>

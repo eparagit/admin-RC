@@ -121,7 +121,7 @@ return [
 
     'providers' => [
 
-      ConsoleTVs\Charts\ChartsServiceProvider::class,
+      //ConsoleTVs\Charts\ChartsServiceProvider::class,
 
 
         /*
@@ -179,7 +179,7 @@ return [
 
     'aliases' => [
 
-        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        //'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

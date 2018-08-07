@@ -44,9 +44,9 @@
           </div>
 
           <ul class="tobar-links">
-<<<<<<< HEAD
+
               <li>
-=======
+
               <li>
     </div>
     <div class="topbar-bottom-colors">
@@ -82,7 +82,7 @@
           <ul class="sb-drp">
               <li>
                   <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
                   <a href="#" title="">
                       <i class="ion-ios-bell"></i>
                       <span class="blue-bg">02</span>
@@ -144,14 +144,14 @@
                           <a href="#" title="">View All</a>
                       </div>
                   </div>
-<<<<<<< HEAD
-              </li>
-
-=======
 
               </li>
 
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
+
+              </li>
+
+
           </ul>
       </div>
       <div class="topbar-bottom-colors">
@@ -165,19 +165,19 @@
       </div>
   </div>
   <!-- Topbar -->
-<<<<<<< HEAD
+
 
   @include('Ilayout.headerI')
   <!-- Side Header -->
 
-=======
+
 
   @include('Ilayout.headerI')
   <!-- Side Header -->
 
 
   </header>
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
 
 
   <!-- Page Top -->

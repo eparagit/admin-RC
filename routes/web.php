@@ -18,6 +18,8 @@ Route::get('/', function () {
 
           Route::get('/GetTourUpload','PagesController@GetTourUpload');
 
+          Route::get('/GetTourToApprove','PagesController@GetTourToApprove');
+
           Route::get('/GetTourStatus','PagesController@GetTourStatus');
 
           Route::get('/Admin','PagesController@Admin');

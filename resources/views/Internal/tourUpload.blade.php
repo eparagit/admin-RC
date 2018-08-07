@@ -45,8 +45,6 @@
 
           <ul class="tobar-links">
               <li>
-<<<<<<< HEAD
-=======
     </div>
     <div class="topbar-bottom-colors">
       <i style="background-color: #2c3e50;"></i>
@@ -164,7 +162,7 @@
             </li>
         </ul>
     </nav>
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
                   <a href="#" title="">
                       <i class="ion-ios-bell"></i>
                       <span class="blue-bg">02</span>
@@ -243,32 +241,19 @@
   <!-- Topbar -->
 
   @include('Ilayout.headerI')
-<<<<<<< HEAD
-=======
+
+
   </header>
 
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
   <!-- Side Header -->
 
 
-<<<<<<< HEAD
   <!-- Page Top -->
   <div class="panel-content">
     <div class="widget pad50-65">
-    <div class="col-md-12 col-sm-12 col-lg-12" >
-          <div id="toursDiv">
-            <table class="table" id="t_tours">
-               <thead>
-               </thead>
-                  <tbody id="tb_tuors">
+    
 
-
-
-                </tbody>
-            </table>
-         </div>
-    </div>
-=======
   <div class="panel-content" style="background-color:white">
     <div class="pad50-65">
 
@@ -395,7 +380,7 @@
       </form>
 
 
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
     </div>
   </div>
   <!-- Panel Content -->
@@ -454,18 +439,18 @@
   <script src="ProjectJs/trip.js" type="text/javascript"></script>
   <script src="ProjectJs/tourblade.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
-<<<<<<< HEAD
+
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
 
-=======
+
   <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
 <!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
->>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
+
 </body>
 
 </html>
