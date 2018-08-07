@@ -30,48 +30,49 @@
 
     @include('Ilayout.headerI')
     <!-- Side Header -->
+
+    <div class="option-panel">
+        <span class="panel-btn">
+            <i class="fa ion-android-settings fa-spin"></i>
+        </span>
+        <div class="color-panel">
+            <h4>Text Color</h4>
+            <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
+                <i></i>
+            </span>
+            <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
+                <i></i>
+            </span>
+            <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
+                <i></i>
+            </span>
+            <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
+                <i></i>
+            </span>
+            <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
+                <i></i>
+            </span>
+        </div>
+    </div>
     <!-- Options Panel -->
     <body>
 
+   <div class="pg-tp">
+     <i class="ion-cube"></i>
+     <div class="pr-tp-inr">
+       <h4>Ruta a la Cima</h4>
+       <span>Solicitudes de Contratación de Servicios</span>
+     </div>
+   </div>
    <!-- Page Top -->
 
-   <div class="panel-content" id="allUsers">
+   <div class="panel-content" id="frm_contract">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Administración de Categorías de Viajes</h4>
+         <h4>Contrataciones</h4>
        </div>
        <form class="form-wrp">
-         <div class="row mrg20">
-                <div class="col-md-6 col-sm-6 col-lg-6">
-                Nueva Categoría: <input id="con_ncat" class="brd-rd5" type="text" placeholder="Categoría*" />
-                 <button id="con_addncat" name="con_addncat" class="green-bg brd-rd5" type="button">
-                 <i class="fa fa-paper-plane"></i>Agregar</button>
-               </div>
-               <div class="col-md-6 col-sm-6 col-lg-6">
-
-               </div>
-           <div class="col-md-8 col-sm-8 col-lg-8">
-               <div>
-                   <h4>Categoría Tour</h4>
-                 <table class="table" id="t_caT">
-                     <thead>
-                         <tr>
-                            <th>#</th>
-                             <th>Descripción</th>
-                             <th>Acción</th>
-                           </tr>
-                     </thead>
-                   <tbody id="t_caB">
-                   </tbody>
-                 </table>
-               </div>
-           </div>
-           <div class="widget pad50-65">
-            <div class="widget-title2">
-
-            </div>
-
-        </div>
+         <div class="row mrg20" id="con_content">
 
          </div>
        </form>
@@ -79,28 +80,51 @@
 
    </div>
 
-   <div class="modal fade" id="tourcatModal" tabindex="-1" aria-hidden="true">
+   <div class="modal fade" id="processModal" tabindex="-1" aria-hidden="true">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Categoría Tours</h5>
+             <h5 class="modal-title" id="exampleModalLabel">Justifique el cambio</h5>
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
            </div>
            <div class="modal-body">
-             <div class="col-md-6 col-sm-6 col-lg-6" id="id_desevnt">
-             <input class="brd-rd5 validate[required]" name="con_tourcatdes" id="con_tourcatdes"  type="text"  />
+             <div class="col-md-6 col-sm-6 col-lg-6" id="p_contJust">
+             <textarea class="brd-rd5 validate[required]" name="p_justDesc" id="p_justDesc"  type="text"></textarea>
              <span class="error-box"></span>
            </div>
            </div>
            <div class="modal-footer">
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary" id="btntourcat" data-id="">Save changes</button>
+             <button type="button" class="btn btn-primary" id="btn_proNC" data-id="">Save changes</button>
            </div>
          </div>
        </div>
      </div>
+
+     <div class="modal fade" id="rejectModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Tipo de Evento</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="col-md-6 col-sm-6 col-lg-6" id="r_conJust">
+               <input class="brd-rd5 validate[required]" name="r_justDesc" id="r_justDesc"  type="text"  />
+               <span class="error-box"></span>
+             </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary" id="btn_rejNC" data-id="">Save changes</button>
+             </div>
+           </div>
+         </div>
+       </div>
 
    <!-- Panel Content -->
 
@@ -110,8 +134,9 @@
 
     <!-- Panel Content -->
     <footer>
-        <p>Todos los derechos a
-          Ruta a la Cima 2018</p>
+        <p>Kinesis
+            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
+        <span></span>
     </footer>
 
     <!-- Vendor: Javascripts -->
@@ -146,7 +171,8 @@
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
-    <script src="ProjectJs/tourCategory.js" type="text/javascript"></script>
+    <script src="ProjectJs/contract.js" type="text/javascript"></script>
+      <script src="ProjectJs/headerData.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

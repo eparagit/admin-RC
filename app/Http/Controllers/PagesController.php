@@ -62,7 +62,7 @@ class PagesController extends Controller
       return view('Internal.tourCategory');
     }
     public function GetNoObjectInternal(){
-       return view('Internal.GoNoObjectI');
+       return view('Internal.noObjectI');
     }
     public function GetNewContract(){
        return view('Internal.newContract');

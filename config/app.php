@@ -121,6 +121,9 @@ return [
 
     'providers' => [
 
+      ConsoleTVs\Charts\ChartsServiceProvider::class,
+
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -159,7 +162,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-      
+
 
     ],
 
@@ -175,6 +178,8 @@ return [
     */
 
     'aliases' => [
+
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

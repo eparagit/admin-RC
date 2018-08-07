@@ -29,6 +29,14 @@
     <!-- Topbar -->
    @include('Ilayout.headerI')
 
+<<<<<<< HEAD
+=======
+            </ul>
+
+        </nav>
+    </header>
+
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
     <!-- Side Header -->
 
     <div class="option-panel">

@@ -174,6 +174,8 @@ $(document).ready(function(){
     var email = $("#con_email").val();
     var telephone=$("#con_uphone").val();
     var userName = $("#con_unam").val();
+    var userid=$("#con_iduse").val();
+    var chang="Actualizar perfil de usuario estandar interno";
   $.ajax({
     type:'GET',
     data: {'id':id,
@@ -189,6 +191,17 @@ $(document).ready(function(){
     success: function(data) {
       if(data = 1){
         alert("Usuario actualizado exitosamente!");
+        $.ajax({
+        type:"GET",
+        data: {'u_id':userid,
+        'chg':chang},
+        url:"SystemLogRegistry",
+         success:function(data){
+         if(data==1){
+
+          }
+          }
+  });
       }else{
         alert("Error al actualizar!");
 

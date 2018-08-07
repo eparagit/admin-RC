@@ -95,7 +95,8 @@ $(document).ready(function(){
       var username = $("#con_nombreusuario").val();
       var password = $("#con_contrasena").val();
       var rol = $("#rol").val();
-
+      var userid=$("#con_iduse").val();
+      var chang="Registrar Usuario de tipo estandar administrador o interno";
             if(name == ""){
               alert('Digite el nombre');
              return false;
@@ -157,6 +158,17 @@ $(document).ready(function(){
                       alert("El usuario que intenta ingresar ya existe!");
                     }else{
                       alert("Usuario Ingresado con éxito!");
+                      $.ajax({
+                              type:"GET",
+                              data: {'u_id':userid,
+                              'chg':chang},
+                              url:"SystemLogRegistry",
+                               success:function(data){
+                               if(data==1){
+                                                              
+                                }
+                                }
+                        });
 
                     }
                   }

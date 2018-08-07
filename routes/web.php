@@ -155,9 +155,15 @@ Route::get('/', function () {
           Route::get('ApproveTour','TourController@ApproveTour');
 
           Route::get('deleteTour','TourController@deleteTour');
+<<<<<<< HEAD
 
           Route::get('selectTourForUpdate','TourController@selectTourForUpdate');
 
+=======
+
+          Route::get('selectTourForUpdate','TourController@selectTourForUpdate');
+
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
           Route::post('updateTour','TourController@updateTour');
 
           Route::get('selectNewTours','TourController@selectNewTours');
@@ -192,13 +198,18 @@ Route::get('/', function () {
           Route::get('selectApprovedStatus','StatusController@selectApprovedStatus');
           Route::get('selectRejectedStatus','StatusController@selectRejectedStatus');
           Route::get('selectRemainingStatus','StatusController@selectRemainingStatus');
+<<<<<<< HEAD
 //_____________
+=======
+//______________
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
 //BookingController
           Route::get('selectNewBooking','BookingController@selectNewBooking');
 
           Route::get('selectRemainingBooking','BookingController@selectRemainingBooking');
 
           Route::get('updateIDStatusB','BookingController@updateIDStatusB');
+<<<<<<< HEAD
 
           Route::get('NotifyBookingRejected','BookingController@NotifyBookingRejected');
 
@@ -214,6 +225,23 @@ Route::get('/', function () {
 
           Route::get('countRemainingBooking','BookingController@countRemainingBooking');
 //_____________
+=======
+
+          Route::get('NotifyBookingRejected','BookingController@NotifyBookingRejected');
+
+          Route::get('NotifyBookingProcess','BookingController@NotifyBookingProcess');
+
+          Route::get('NotifyBookingApproval','BookingController@NotifyBookingApproval');
+
+          Route::get('RejectBooking','BookingController@RejectBooking');
+
+          Route::get('ProcessBooking','BookingController@ProcessBooking');
+
+          Route::get('ApproveBooking','BookingController@ApproveBooking');
+
+          Route::get('countRemainingBooking','BookingController@countRemainingBooking');
+//______________
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
 //______________

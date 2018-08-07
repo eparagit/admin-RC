@@ -45,6 +45,126 @@
 
           <ul class="tobar-links">
               <li>
+<<<<<<< HEAD
+=======
+    </div>
+    <div class="topbar-bottom-colors">
+      <i style="background-color: #2c3e50;"></i>
+      <i style="background-color: #9857b2;"></i>
+      <i style="background-color: #2c81ba;"></i>
+      <i style="background-color: #5dc12e;"></i>
+      <i style="background-color: #feb506;"></i>
+      <i style="background-color: #e17c21;"></i>
+      <i style="background-color: #bc382a;"></i>
+    </div>
+  </div>
+  <!-- Topbar -->
+
+  <header class="side-header expand-header">
+    <div class="nav-head">Menú Interno
+      <span class="menu-trigger">
+        <i class="ion-android-menu"></i>
+      </span>
+    </div>
+    <nav class="custom-scrollbar">
+      <ul class="sb-drp">
+         <li>
+             <a href="/Admin-RC/public//Internal" title="">Inicio</a>
+         </li>
+       </ul>
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-home"></i>
+                    <span>Viajes</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoTourU" title="">Publicación</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourAprlid" title="">Aprobación</a>
+                    </li>
+                    <li>
+                        <a href="dashboard3.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="drp-sec">
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-briefcase"></i>
+                    <span>Administración</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="pricing-plan.html" title="">Reservaciones</a>
+                    </li>
+                    <li>
+                        <a href="grids.html" title="">Contrataciones</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-fireball"></i>
+                    <span>Tienda</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
+                    </li>
+                    <li>
+                        <a href="themify-icons.html" title="">Mantenimientos</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-images"></i>
+                    <span>Estádistica</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="gallery1.html" title="">Viajes por Calificación</a>
+                    </li>
+                    <li>
+                        <a href="gallery2.html" title="">Viajes más Visitados</a>
+                    </li>
+                    <li>
+                        <a href="gallery3.html" title="">Más Visitados X Temporada</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-android-settings"></i>
+                    <span>Mantenimientos</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GoBCStatus" title="">Estado RC</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourStatus" title="">Estado Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoTourCategory" title="">Categoría Viaje</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoEventType" title="">Tipo Evento</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
                   <a href="#" title="">
                       <i class="ion-ios-bell"></i>
                       <span class="blue-bg">02</span>
@@ -123,9 +243,15 @@
   <!-- Topbar -->
 
   @include('Ilayout.headerI')
+<<<<<<< HEAD
+=======
+  </header>
+
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
   <!-- Side Header -->
 
 
+<<<<<<< HEAD
   <!-- Page Top -->
   <div class="panel-content">
     <div class="widget pad50-65">
@@ -142,6 +268,134 @@
             </table>
          </div>
     </div>
+=======
+  <div class="panel-content" style="background-color:white">
+    <div class="pad50-65">
+
+      <form class="form-group" accept-charset="UTF-8" action="insertTour" method="POST" enctype="multipart/form-data">
+              <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Imagen y Datos principales</label>
+                       <input type="file" name="image" id="image" accept="image/*"  class="form-control" required>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Titulo</label>
+                       <input class="form-control" name="con_titulo" id="con_titulo"  type="text" required />
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Lugar de Salida</label>
+                       <input class="form-control" name="con_lsalida" id="con_lsalida"  type="text" required />
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Destino</label>
+                       <input class="form-control" name="con_destino" id="con_destino"  type="text" required />
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Descripción del tour</label>
+                       <textarea class="form-control" name="con_descripcion" id="con_descripcion" type="text" required ></textarea>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Tipo de viaje</label>
+                       <select class="form-control" id="tviaje" name="tviaje">
+                        <option value="0">Seleccione</option>
+                       </select>
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Categoría</label>
+                       <select class="form-control"  id="cviaje" name="cviaje">
+                        <option value="0">Seleccione</option>
+                       </select>
+                       <button class="btn btn-info" data-toggle="modal" data-target="#cat-Modal" type="button">Agregar Nueva Categoría</button>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Requisitos</label>
+                       <textarea  class="form-control" id="con_requisitos" name="con_requisitos" type="text" required></textarea>
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Incluye</label>
+                        <textarea class="form-control" id="con_incluye"  name="con_incluye"  type="email" required /></textarea>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Cupo</label>
+                       <input class="form-control"  id="con_cupo" name="con_cupo" type="number" required />
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Costo en colones</label>
+                       <input class="form-control" name="con_costo" id="con_costo" type="number" required>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Fecha de salida</label>
+                       <input type="text" id="con_dtfhs" name="con_dtfhs" class="form-control" required />
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                        <label>Fecha de regreso</label>
+                         <input type="text" id="con_dtfhr"  name="con_dtfhr" class="form-control" required />
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                        <label>Fecha de vencimiento del tour</label>
+                        <input type="text" id="con_dtfhv"  name="con_dtfhv" class="form-control" required />
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-12">
+                   <button class="btn btn-success" type="submit" style=" position:relative;top:50%;left:50%;">Guardar</button>
+                </div>
+              </div>
+
+      </form>
+
+
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
     </div>
   </div>
   <!-- Panel Content -->
@@ -200,10 +454,18 @@
   <script src="ProjectJs/trip.js" type="text/javascript"></script>
   <script src="ProjectJs/tourblade.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
+<<<<<<< HEAD
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
 
+=======
+  <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
+  <script src="ProjectJs/dt.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+<!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
+>>>>>>> bf352d0e6f8f291550eb99d7d09c3486a1292779
 </body>
 
 </html>
