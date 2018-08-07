@@ -15,12 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 //PagesController
-          //Start tourU
+
           Route::get('/GetTourUpload','PagesController@GetTourUpload');
-          //End tourU
-          //Go tour Status-Start
+
           Route::get('/GetTourStatus','PagesController@GetTourStatus');
-          //Go Tour Status-End
+
           Route::get('/Admin','PagesController@Admin');
 
           Route::get('/Login','PagesController@Login');
@@ -28,10 +27,6 @@ Route::get('/', function () {
           Route::get('/Internal','PagesController@Internal');
 
           Route::get('/GetRegisterUserAI','PagesController@GetRegisterUserAI');
-
-
-
-          Route::get('/GetTourDates','PagesController@GetTourDates');
 
           Route::get('/GetAdminUserView','PagesController@GetAdminUserView');
 
@@ -41,33 +36,39 @@ Route::get('/', function () {
 
           Route::get('/GetUserByRol','PagesController@GetUserByRol');
 
-
           Route::get('/GetProfile','PagesController@GetProfile');
-          Route::get('/GetBookingContractStatus','PagesController@GetBookingContractStatus');
-          //Go BC Status-End
-          //Go EventType-Start
-          Route::get('/GetEventType','PagesController@GetEventType');
-          //Go EventType-End
-          //Go ServiceType-Start
-          Route::get('/GetServiceType','PagesController@GetServiceType');
-          //Go ServiceType-End
-          //Go TourCategory-Start
-          Route::get('/GetTourCategory','PagesController@GetTourCategory');
-          //Go TourCategory-End
-          //Go No Internal Object-Start
-          Route::get('/GetNoObjectInternal','PagesController@GetNoObjectInternal');
-          //Go No Internal Object-End
 
-          //Start tourAprl
-          Route::get('/GoTourAprl','PagesController@GoTourAprl');
-          //End tourAprl
-          //Start tourAprl-id
-          Route::get('/GetTourToApprove','PagesController@GetTourToApprove');
-          //End tourAprl-id
-          //Start UpdateTourAp-Start
-          Route::get('/GoUpdateTwAp','PagesController@GoUpdateTwAp');
-          //Start UpdateTourAp-End
+          Route::get('/GetEventType','PagesController@GetEventType');
+
+          Route::get('/GetServiceType','PagesController@GetServiceType');
+
+          Route::get('/GetTourCategory','PagesController@GetTourCategory');
+
+          Route::get('/GetNoObjectInternal','PagesController@GetNoObjectInternal');
+
           Route::get('/GetRol','PagesController@GetRol');
+
+          Route::get('/GetNewContract','PagesController@GetNewContract');
+
+          Route::get('/GetRemainingContract','PagesController@GetRemainingContract');
+
+          Route::get('/GetNewBooking','PagesController@GetNewBooking');
+
+          Route::get('/GetRemainingBooking','PagesController@GetRemainingBooking');
+
+          Route::get('/GetInternalLayout','PagesController@GetInternalLayout');
+
+          Route::get('/GetInternalHeadLayout','PagesController@GetInternalHeadLayout');
+
+          Route::get('/GetInternalHeaderLayout','PagesController@GetInternalHeaderLayout');
+
+          Route::get('/GetInternalFooterLayout','PagesController@GetInternalFooterLayout');
+
+          Route::get('/GetInternalSidebarLayout','PagesController@GetInternalSidebarLayout');
+
+          Route::get('/GetMailBlade','PagesController@GetMailBlade');
+
+          Route::get('/GetTheMostVisited','PagesController@GetTheMostVisited');
 //______________
 //AuthController
 //______________
@@ -89,108 +90,77 @@ Route::get('/', function () {
           Route::get('createUser', 'UsersController@validateNewUser');
 //______________
 //RolController
-
           Route::get('selectRol','RolController@selectRol');
+
           Route::get('selectAllRol','RolController@selectAllRol');
 
           Route::get('selectRolByID','RolController@selectRolByID');
-          //Update User Rol -Start
+
           Route::get('updateURol','UserController@updateURol');
-          //Update User Rol -End
+
           Route::get('selectUserByRol','UserController@selectUserByRol');
 //______________
-//BookingContractController
-          //Insert New BCStatus-Start//
-          Route::get('insertNewBCSatus','BookingContractController@insertNewBCSatus');
-          //Insert New BCStatus-End//
-          //Delete BCStatus-Start//
-          Route::get('deleteBCStatus','BookingContractController@deleteBCStatus');
-          //Delete BCStatus-End//
-          //Select BCStatusByID-Start//
-          Route::get('selectBCStatusByID','BookingContractController@selectBCStatusByID');
-          //Select BCStatusByID-End//
-          //Update BCStatus-Start//
-          Route::get('updateBCStatus','BookingContractController@updateBCStatus');
-          //Update BCStatus-End//
-          Route::get('selectBCStatus','BookingContractController@selectBCStatus');
-
-
-//______________
 //TourCategoryController
-          //Insert Trip Category-Start//
           Route::get('insertNewCategory','TourCategoryController@insertNewCategory');
-          //Insert Trip Category-End//
-          //Select by Name Trip Category-Start//
+
           Route::get('selectCatbyName','TourCategoryController@selectCatbyName');
-          //Select by Name Category-End//
-          //Select TourCategory-Start//
+
           Route::get('selectTripCat','TourCategoryController@selectTripCat');
-          //Select TourCategory-End//
-          //Delete TourCategory-Start//
+
           Route::get('deleteTourCategory','TourCategoryController@deleteTourCategory');
-          //Delete TourCategory-End//
+
+          Route::get('selectTourCategoryByID','TourCategoryController@selectTourCategoryByID');
+
+          Route::get('updateTourCategory','TourCategoryController@updateTourCategory');
 //______________
 //TourTypeController
-          //Select TourType-Start//
           Route::get('selectTripType','TourTypeController@selectTripType');
-          //Select TourType-End//
-
-//______________
-//TuorController
-          //Insert Tour-Start//
-          Route::get('insertTrip','TourController@insertTrip');
-          //Insert Tour-End//
-          //Approve Tour-Start//
-          Route::get('ApproveTour','TourController@ApproveTour');
-          //Approve Tour-End//
-          //Reject Tour-Start//
-          Route::get('deleteTour','TourController@deleteTour');
-          //Reject Tour-End//
-          //selectTuorToApr-Start//
-          Route::get('selectTuorToApr','TourController@selectTuorToApr');
-          //selectTuorToApr-End//
-
-          //selectTuorAprToUpdate-Start//
-          Route::get('selectTuorToUpdateApp','TourController@selectTuorToUpdateApp');
-          //selectTuorAprToUpdate-End//
-          Route::post('fileUpload', [
-            'as'=>'image.add',
-            'uses' => 'TourController@fileUpload'
-          ]);
 //______________
 //EventTypeController
-          //Insert New EventType-Start//
           Route::get('insertNewEventType','EventTypeController@insertNewEventType');
-          //Insert New EventType-End//
-          //Delete EventType-Start//
+
           Route::get('deleteEventType','EventTypeController@deleteEventType');
-          //Delete EventType-End//
+
           Route::get('selectEventType','EventTypeController@selectEventType');
+
+          Route::get('selectEventTypeByID','EventTypeController@selectEventTypeByID');
+
+          Route::get('updateEventType','EventTypeController@updateEventType');
 //______________
 //ServiceTypeController
-          //Insert New ServiceType-Start//
           Route::get('insertNewServiceType','ServiceTypeController@insertNewServiceType');
-          //Insert New ServiceType-End//
-          //Delete ServiceType-Start//
+
           Route::get('deleteServiceType','ServiceTypeController@deleteServiceType');
-          //Delete ServiceType-End//
+
           Route::get('selectServiceType','ServiceTypeController@selectServiceType');
+
+          Route::get('selectServiceTypeByID','ServiceTypeController@selectServiceTypeByID');
+
+          Route::get('updateServiceType','ServiceTypeController@updateServiceType');
 //______________
 //TourStatusController
-          //Insert New TourStatus-Start//
           Route::get('insertNewTourStatus','TourStatusController@insertNewTourStatus');
-          //Insert New TourStatus-End//
-          //Delete TourStatus-Start//
-          Route::get('deleteTourStatus','TourStatusController@deleteTourStatus');
-          //Delete TourStatus-End//
-          //Select selectTourStatusByID-Start//
-          Route::get('selectTourStatusByID','TourStatusController@selectTourStatusByID');
-          //Select selectTourStatusByID-End//
-          //Update TourStatus-Start//
-          Route::get('updateTourStatus','TourStatusController@updateTourStatus');
-          //Update TourStatus-End//
-          Route::get('selectTourStatus','TourStatusController@selectTourStatus');
 
+          Route::get('deleteTourStatus','TourStatusController@deleteTourStatus');
+
+          Route::get('selectTourStatusByID','TourStatusController@selectTourStatusByID');
+
+          Route::get('updateTourStatus','TourStatusController@updateTourStatus');
+
+          Route::get('selectTourStatus','TourStatusController@selectTourStatus');
+//______________
+//TourController
+          Route::post('insertTour','TourController@insertTour');
+
+          Route::get('ApproveTour','TourController@ApproveTour');
+
+          Route::get('deleteTour','TourController@deleteTour');
+
+          Route::get('selectTourForUpdate','TourController@selectTourForUpdate');
+
+          Route::post('updateTour','TourController@updateTour');
+
+          Route::get('selectNewTours','TourController@selectNewTours');
 //______________
 //SessionController
 //Session Routes -Start//
@@ -199,17 +169,54 @@ Route::get('/', function () {
           Route::get('session/remove','SessionController@deleteSessionData');
 //Session Routes -End//
 //______________
-//AuthController
+//contractController
+          Route::get('selectNewContract','ContractController@selectNewContract');
+
+          Route::get('selectRemainingContract','ContractController@selectRemainingContract');
+
+          Route::get('updateIDStatus','ContractController@updateIDStatus');
+
+          Route::get('ApproveContract','ContractController@ApproveContract');
+
+          Route::get('ProcessContract','ContractController@ProcessContract');
+
+          Route::get('RejectContract','ContractController@ProcessContract');
+
+          Route::get('NotifyContractApproval','ContractController@NotifyContractApproval');
+
+          Route::get('NotifyContractProcess','ContractController@NotifyContractProcess');
+
+          Route::get('NotifyContractRejected','ContractController@NotifyContractRejected');
 //______________
+//StatusController
+          Route::get('selectApprovedStatus','StatusController@selectApprovedStatus');
+          Route::get('selectRejectedStatus','StatusController@selectRejectedStatus');
+          Route::get('selectRemainingStatus','StatusController@selectRemainingStatus');
+//_____________
+//BookingController
+          Route::get('selectNewBooking','BookingController@selectNewBooking');
 
-//Route::get('selectRol','RolController@selectRol');
+          Route::get('selectRemainingBooking','BookingController@selectRemainingBooking');
 
+          Route::get('updateIDStatusB','BookingController@updateIDStatusB');
 
+          Route::get('NotifyBookingRejected','BookingController@NotifyBookingRejected');
 
+          Route::get('NotifyBookingProcess','BookingController@NotifyBookingProcess');
 
-//Update No image nor date Tour-Start//
-Route::get('updateFormsNoimgdate','TripController@updateFormsNoimgdate');
-//Update No image nor dateTour-End//
+          Route::get('NotifyBookingApproval','BookingController@NotifyBookingApproval');
+
+          Route::get('RejectBooking','BookingController@RejectBooking');
+
+          Route::get('ProcessBooking','BookingController@ProcessBooking');
+
+          Route::get('ApproveBooking','BookingController@ApproveBooking');
+
+          Route::get('countRemainingBooking','BookingController@countRemainingBooking');
+//_____________
+//SystemLogController
+          Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
+//______________
 
 //Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');
@@ -218,13 +225,6 @@ Route::get('logoutS','AuthController@logoutS');
 
 Route::get('login', ['as'=>'login','uses'=>'PagesController@Login']);
 
-
 Route::group(['middleware' => 'roles'], function () {
     Route::get('admin', ['as'=>'admin','uses'=>'PagesController@Admin']);
 });
-
-//Esta ultima probablemente no se use
-Route::post('updateFormsNoimgdate', [
-  'as'=>'updatewimgdate',
-  'uses' => 'TourController@updateFormsNoimgdate'
-]);

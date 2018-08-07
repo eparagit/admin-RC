@@ -46,23 +46,14 @@ class PagesController extends Controller
     public function GetTourUpload(){
       return view('Internal.tourUpload');
     }
-    public function GetTourDates(){
-      return view('Internal.tourDates');
-    }
     public function GetTourToApprove(){
       return view('Internal.tourToApprove');
-    }
-    public function GetNotApprovedTourToUpdate(){
-      return view('Internal.notApprovedTourUpdate');
     }
     public function GetServiceType(){
       return view('Internal.serviceType');
     }
     public function GetTourStatus(){
        return view('Internal.tourStatus');
-    }
-    public function GetBookingContractStatus(){
-       return view('Internal.bookingContractStatus');
     }
     public function GetEventType(){
       return view('Internal.eventType');
@@ -73,6 +64,43 @@ class PagesController extends Controller
     public function GetNoObjectInternal(){
        return view('Internal.GoNoObjectI');
     }
+    public function GetNewContract(){
+       return view('Internal.newContract');
+    }
+    public function GetNewBooking(){
+       return view('Internal.newBooking');
+    }
+    public function GetRemainingBooking(){
+       return view('Internal.remainingBooking');
+    }
+    public function GetRemainingContract(){
+       return view('Internal.remainingContract');
+
+    }
+    public function GetTheMostVisited(){
+       return view('Internal.theMostVisited');
+
+    }
+    //Layouts
+    public function GetInternalLayout(){
+       return view('Internal.defaultLayoutI');
+    }
+    public function GetInternalHeadLayout(){
+       return view('Internal.headI');
+    }
+    public function GetInternalHeaderLayout(){
+       return view('Internal.headerI');
+    }
+    public function GetInternalFooterLayout(){
+       return view('Internal.footerI');
+    }
+    public function GetInternalSidebarLayout(){
+       return view('Internal.sidebarI');
+    }
+    public function GetMailBlade(){
+       return view('sections.mail');
+    }
+
     //______________________
     //Login Views
     public function Login(){

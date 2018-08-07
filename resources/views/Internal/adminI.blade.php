@@ -3,7 +3,7 @@
 
 <head>
     <!-- Meta-Information -->
-    <title>Ruta a la cima Interno</title>
+    <title>Fuzen Admin Panel</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,237 +25,50 @@
 </head>
 
 <body class="expand-data panel-data">
-    <div class="topbar">
-        <div class="logo">
-            <h1>
-                <a href="#" title="">
-                    <img src="images/rutacima.png" alt="" />
-                </a>
-            </h1>
-        </div>
-        <div class="topbar-data">
-          <div class="usr-act">
-            @foreach(Session::get('datos') as $data)
-              <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
-              @endforeach
-              <a id="con_logout" class="btn-danger" href="#" title="">
-                  <i class="fa fa-sign-out"></i> Cerrar Sesión</a>
-            </div>
-
-            <ul class="tobar-links">
-                <li>
-                    <a href="#" title="">
-                        <i class="ion-ios-bell"></i>
-                        <span class="blue-bg">02</span>
-                    </a>
-                    <div class="nti-drp-wrp">
-                        <h5 class="blue-bg">
-                            <span>You Have</span> 7 Notifications</h5>
-                        <div class="nti-lst">
-                            <div class="nti-usr">
-                                <span class="brd-rd50 rd-bg">
-                                    <i class="fa fa-cog"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Sadi Orlaf</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Privacy settings changed</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 drkblu-bg">
-                                    <i class="ion-ios-personadd"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Katti Smith</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Mike has added you as friend</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 orng-bg">
-                                    <i class="ion-thumbsup"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Willimes Domson</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>like your timeline photo</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 grn-bg">
-                                    <i class="ion-information-circled"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Holli Doe</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Curabitur id eros limes suscipit blandit.</i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nt-ftr">
-                            <a href="#" title="">View All</a>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-        <div class="topbar-bottom-colors">
-            <i style="background-color: #2c3e50;"></i>
-            <i style="background-color: #9857b2;"></i>
-            <i style="background-color: #2c81ba;"></i>
-            <i style="background-color: #5dc12e;"></i>
-            <i style="background-color: #feb506;"></i>
-            <i style="background-color: #e17c21;"></i>
-            <i style="background-color: #bc382a;"></i>
-        </div>
-    </div>
+  @include('Ilayout.rightHeader')
     <!-- Topbar -->
+   @include('Ilayout.headerI')
 
-    <header class="side-header expand-header">
-        <div class="nav-head">Menú Principal
-            <span class="menu-trigger">
-                <i class="ion-android-menu"></i>
-            </span>
-        </div>
-        <nav class="custom-scrollbar">
-          <ul class="sb-drp">
-             <li>
-                 <a href="/Admin-RC/public//Internal" title="">Inicio</a>
-             </li>
-           </ul>
-            <ul class="drp-sec">
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-home"></i>
-                        <span>Viajes</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="/Admin-RC/public//GetTourUpload" title="">Publicación</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
-                        </li>
-                        <li>
-                            <a href="dashboard3.html" title="">Mantenimientos</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <ul class="drp-sec">
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-briefcase"></i>
-                        <span>Administración</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="pricing-plan.html" title="">Reservaciones</a>
-                        </li>
-                        <li>
-                            <a href="grids.html" title="">Contrataciones</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-fireball"></i>
-                        <span>Tienda</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
-                        </li>
-                        <li>
-                            <a href="themify-icons.html" title="">Mantenimientos</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-images"></i>
-                        <span>Estádistica</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="gallery1.html" title="">Viajes por Calificación</a>
-                        </li>
-                        <li>
-                            <a href="gallery2.html" title="">Viajes más Visitados</a>
-                        </li>
-                        <li>
-                            <a href="gallery3.html" title="">Más Visitados X Temporada</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-drp">
-                    <a href="#" title="">
-                        <i class="ion-android-settings"></i>
-                        <span>Mantenimientos</span>
-                    </a>
-                    <ul class="sb-drp">
-                        <li>
-                            <a href="/Admin-RC/public//GetBookingContractStatus" title="">Estado RC</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GetTourStatus" title="">Estado Viaje</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GetTourCategory" title="">Categoría Viaje</a>
-                        </li>
-                        <li>
-                            <a href="/Admin-RC/public//GetEventType" title="">Tipo Evento</a>
-                        </li>
-                        <li>
-<<<<<<< HEAD
-                            <a href="/Admin-RC/public//GoServiceType" title="">Tipo Servicio</a>
-                        </li>
-                    </ul>
-                </li>
-=======
-                            <a href="/Admin-RC/public//GetServiceType" title="">Tipo Servicio</a>
-                        </li>
-                    </ul>
-                </li>
-
->>>>>>> 4e53a95c0eaebe7f14b4cdff2bb77c0a8765787e
-            </ul>
-          
-        </nav>
-    </header>
     <!-- Side Header -->
 
+    <div class="option-panel">
+        <span class="panel-btn">
+            <i class="fa ion-android-settings fa-spin"></i>
+        </span>
+        <div class="color-panel">
+            <h4>Text Color</h4>
+            <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
+                <i></i>
+            </span>
+            <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
+                <i></i>
+            </span>
+            <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
+                <i></i>
+            </span>
+            <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
+                <i></i>
+            </span>
+            <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
+                <i></i>
+            </span>
+        </div>
+    </div>
     <!-- Options Panel -->
     <div class="pg-tp">
         <i class="ion-cube"></i>
         <div class="pr-tp-inr">
-            <h4>Bienvenido
-                <strong>@foreach(Session::get('datos') as $data)
-                  {{$data['NombreCompleto']}}
-                  @endforeach</strong>
-                <span></span> Al Modulo Interno</h4>
+            <h4>Bienvenido a
+                <strong>Ruta a la Cima</strong>
+                <span></span></h4>
+            <span>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</span>
         </div>
     </div>
     <!-- Page Top -->
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Todos los derechos a
-          Ruta a la Cima 2018</p>
-    </footer>
+    @include('Ilayout.footerI')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -287,6 +100,7 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
+      <script src="ProjectJs/headerData.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';
