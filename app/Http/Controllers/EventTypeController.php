@@ -29,4 +29,19 @@ class EventTypeController extends Controller
       $result=DB::delete("delete from tipo_evento where ID_Tipo_Evento='".$id_et."' ");
       return 1;
     }
+    public function selectEventTypeByID(Request $request){
+      $id_et=$request['id'];
+      $result= DB::select("select * from tipo_evento where ID_Tipo_Evento='".$id_et."'");
+            $array = json_decode(json_encode($result), True);
+      return $array;
+
+    }
+    public function updateEventType(Request $request){
+      $id_et=$request['id'];
+      $desc_et=$request['des'];
+
+      $result=DB::update("update tipo_evento set Descripcion='".$desc_et."' where ID_Tipo_Evento='".$id_et."'");
+
+      return 1;
+    }
 }

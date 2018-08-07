@@ -37,4 +37,19 @@ return $array;
     $result=DB::delete("delete from categoria_viaje where ID_Categoria='".$id_tcat."' ");
     return 1;
   }
+  public function selectTourCategoryByID(Request $request){
+    $id_tc=$request['id'];
+    $result= DB::select("select * from categoria_viaje where ID_Categoria='".$id_tc."'");
+          $array = json_decode(json_encode($result), True);
+    return $array;
+
+  }
+  public function updateTourCategory(Request $request){
+    $id_tc=$request['id'];
+    $desc_tc=$request['des'];
+
+    $result=DB::update("update categoria_viaje set Descripcion='".$desc_tc."' where ID_Categoria='".$id_tc."'");
+
+    return 1;
+  }
 }

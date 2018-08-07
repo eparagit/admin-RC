@@ -2,36 +2,20 @@
 <html>
 
 <head>
-    <!-- Meta-Information -->
-    <title>Fuzen Admin Panel</title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Vendor: Bootstrap 4 Stylesheets  -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Our Website CSS Styles -->
-    <link rel="stylesheet" href="css/icons.min.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive.css" type="text/css">
-
-    <!-- Color Scheme -->
-    <link rel="stylesheet" href="css/color-schemes/color.css" type="text/css" title="color3">
-    <link rel="alternate stylesheet" href="css/color-schemes/color1.css" title="color1">
-    <link rel="alternate stylesheet" href="css/color-schemes/color2.css" title="color2">
-    <link rel="alternate stylesheet" href="css/color-schemes/color4.css" title="color4">
-    <link rel="alternate stylesheet" href="css/color-schemes/color5.css" title="color5">
+    @include('Internal.headI')
 </head>
 
 <body class="expand-data panel-data">
-  @include('Ilayout.rightHeader')
+
     <!-- Topbar -->
-   @include('Ilayout.headerI')
+
+
+          @include('Internal.headerI')
 
     <!-- Side Header -->
 
     <div class="option-panel">
+      @yield('content')
         <span class="panel-btn">
             <i class="fa ion-android-settings fa-spin"></i>
         </span>
@@ -56,20 +40,24 @@
     </div>
     <!-- Options Panel -->
     <div class="pg-tp">
+      @yield('content')
         <i class="ion-cube"></i>
         <div class="pr-tp-inr">
-            <h4>Bienvenido a
-                <strong>Ruta a la Cima</strong>
-                <span></span></h4>
-            <span>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</span>
+          @yield('content')
+            <h4>Welcome to
+                <strong>FUZEN</strong>
+                <span></span> Panel</h4>
+            <span>Admin Template for medium and large web applications with ery clean and aesthetic style.</span>
         </div>
     </div>
     <!-- Page Top -->
 
 
     <!-- Panel Content -->
-    @include('Ilayout.footerI')
-
+    <footer>
+        @include('Internal.footerI')
+    </footer>
+  @yield('content')
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <!-- Vendor: Followed by our custom Javascripts -->
@@ -100,7 +88,6 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
-      <script src="ProjectJs/headerData.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

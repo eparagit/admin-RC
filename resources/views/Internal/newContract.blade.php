@@ -27,8 +27,8 @@
 <body class="expand-data panel-data">
   @include('Ilayout.rightHeader')
     <!-- Topbar -->
-   @include('Ilayout.headerI')
 
+    @include('Ilayout.headerI')
     <!-- Side Header -->
 
     <div class="option-panel">
@@ -55,20 +55,89 @@
         </div>
     </div>
     <!-- Options Panel -->
-    <div class="pg-tp">
-        <i class="ion-cube"></i>
-        <div class="pr-tp-inr">
-            <h4>Bienvenido a
-                <strong>Ruta a la Cima</strong>
-                <span></span></h4>
-            <span>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</span>
-        </div>
-    </div>
+    <body>
+
+   <div class="pg-tp">
+     <i class="ion-cube"></i>
+     <div class="pr-tp-inr">
+       <h4>Ruta a la Cima</h4>
+       <span>Solicitudes de Contratación de Servicios</span>
+     </div>
+   </div>
+   <!-- Page Top -->
+
+   <div class="panel-content" id="frm_contract">
+     <div class="widget pad50-65">
+       <div class="widget-title2">
+         <h4>Contrataciones</h4>
+       </div>
+       <form class="form-wrp">
+         <div class="row mrg20" id="con_content">
+
+         </div>
+       </form>
+     </div>
+
+   </div>
+
+   <div class="modal fade" id="processModal" tabindex="-1" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Justifique el cambio</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="col-md-6 col-sm-6 col-lg-6" id="p_contJust">
+             <textarea class="brd-rd5 validate[required]" name="p_justDesc" id="p_justDesc"  type="text"></textarea>
+             <span class="error-box"></span>
+           </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary" id="btn_proNC" data-id="">Save changes</button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="modal fade" id="rejectModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Tipo de Evento</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="col-md-6 col-sm-6 col-lg-6" id="r_conJust">
+               <input class="brd-rd5 validate[required]" name="r_justDesc" id="r_justDesc"  type="text"  />
+               <span class="error-box"></span>
+             </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary" id="btn_rejNC" data-id="">Save changes</button>
+             </div>
+           </div>
+         </div>
+       </div>
+
+   <!-- Panel Content -->
+
+ </body>
     <!-- Page Top -->
 
 
     <!-- Panel Content -->
-    @include('Ilayout.footerI')
+    <footer>
+        <p>Kinesis
+            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
+        <span></span>
+    </footer>
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -99,7 +168,10 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
+    <script src="ProjectJs/contract.js" type="text/javascript"></script>
       <script src="ProjectJs/headerData.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -436,6 +508,9 @@
             if ($.isFunction($.fn.tooltip)) {
                 $('[data-toggle="tooltip"]').tooltip();
             }
+
+
+
         });
     </script>
 </body>

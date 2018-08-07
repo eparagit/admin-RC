@@ -95,11 +95,12 @@ $(document).ready(function(){
 
                       });
                     });
-                  
+
                     $("#rolChange").on('click','#con_addp',function(){
                       var id_u=$("#id_iuser").val();
                       var nr=$("#con_rols").val();
-
+                      var userid=$("#con_iduse").val();
+                      var chang="Cambio de Rol";
                       $.ajax({
                         type:"GET",
                         data: {'id_us':id_u,
@@ -108,6 +109,17 @@ $(document).ready(function(){
                         success: function(data) {
                           if(data = 1){
                             alert("Rol actualizado exitosamente!");
+                            $.ajax({
+                                    type:"GET",
+                                    data: {'u_id':userid,
+                                    'chg':chang},
+                                    url:"SystemLogRegistry",
+                                     success:function(data){
+                                     if(data==1){
+
+                                      }
+                                      }
+                              });
                             $('#rolChange').modal('hide');
                             return false;
 
