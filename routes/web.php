@@ -20,6 +20,12 @@ Route::get('/', function () {
 
           Route::get('/GetTourToApprove','PagesController@GetTourToApprove');
 
+          Route::get('/GetProductInsertBlade','PagesController@GetProductInsertBlade');
+
+          Route::get('/GetProductUpdate','PagesController@GetProductUpdate');
+
+          Route::get('/GetTourToApprove','PagesController@GetTourToApprove');
+
           Route::get('/GetTourStatus','PagesController@GetTourStatus');
 
           Route::get('/Admin','PagesController@Admin');
@@ -71,6 +77,14 @@ Route::get('/', function () {
           Route::get('/GetMailBlade','PagesController@GetMailBlade');
 
           Route::get('/GetTheMostVisited','PagesController@GetTheMostVisited');
+
+          Route::get('/GetTourReport','PagesController@GetTourReport');
+
+          Route::get('/GetBookingReport','PagesController@GetBookingReport');
+
+          Route::get('/GetHiringReport','PagesController@GetHiringReport');
+
+          Route::get('/GetProductReport','PagesController@GetProductReport');
 //______________
 //AuthController
 //______________
@@ -233,7 +247,17 @@ Route::get('/', function () {
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
 //______________
+//ProductsController
+          Route::post('insertProduct','ProductsController@insertProduct');
 
+          Route::get('showProducts','ProductsController@showProducts');
+
+          Route::post('updateProduct','ProductsController@updateProduct');
+
+          Route::get('deleteProduct','ProductsController@deleteProduct');
+
+          Route::get('selectProductForUpdate','ProductsController@selectProductForUpdate');
+//______________
 //Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');
 Route::get('logoutS','AuthController@logoutS');

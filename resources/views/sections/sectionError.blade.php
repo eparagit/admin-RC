@@ -8,9 +8,6 @@
 <!-- Page Top -->
  <div class="panel-content">
      <div class="widget pad50-65">
-       <div class="widget-title2">
-         <h4>Aviso</h4>
-       </div>
        <div class="alerts">
          <div class="alert alert-success">
            <strong>Saludos!</strong> No existe nigún objecto relacionado con su consulta.</div>

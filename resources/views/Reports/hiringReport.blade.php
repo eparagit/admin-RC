@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta a la cima Administrador</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,45 +77,25 @@
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
          <h4>Ruta a la Cima</h4>
-         <span>Mantenimiento de Viaje</span>
+         <span>Reporte de Contrataciones</span>
        </div>
      </div>
   <!-- Page Top -->
   <div class="panel-content">
     <div class="widget pad50-65">
     <div class="col-md-12 col-sm-12 col-lg-12" >
-          <div id="toursDiv">
-            <table class="table" id="t_tours">
+
+            <table class="table" width="100%" id="hiringTableReport">
                <thead>
                </thead>
-                  <tbody id="tb_tuors">
-
-
-
+                <tbody id="tb_hiringTableReport">
                 </tbody>
             </table>
-         </div>
+
     </div>
     </div>
   </div>
   <!-- Panel Content -->
-
-  <!--Modal-->
- <div class="modal fade" id="updateTour-Modal" role="dialog">
-   <div class="modal-dialog">
-
-     <!-- Modal content-->
-     <div class="modal-content" style="width:600px;">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Actualización del Tour</h4>
-       </div>
-         <div class="modal-body" id="modalBodyTour">
-
-        </div>
-   </div>
- </div>
-</div>
   <footer>
       <p>Todos los derechos a
         Ruta a la Cima 2018</p>
@@ -151,8 +131,7 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/trip.js" type="text/javascript"></script>
-  <script src="ProjectJs/tourblade.js" type="text/javascript"></script>
+  <script src="ProjectJs/reports.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>

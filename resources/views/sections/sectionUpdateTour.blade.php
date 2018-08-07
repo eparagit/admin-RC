@@ -6,6 +6,7 @@
                 <label >Imagen del Tour</label>
                 <input type="hidden" value="{{$array['array'][0]['Ruta_Imagen']}}" name="imagenVieja_modal" id="imagenVieja_modal"/>
                 <input type="hidden" value="{{$array['array'][0]['ID_Viaje']}}" name="idtour_modal" id="idtour_modal"/>
+                <input type="hidden" value="{{$array['array'][0]['usuario_ID']}}" name="idusuarioTour_modal" id="idusuarioTour_modal"/>
                 <img type="file" style="width:300px; height:200px;" src={{url('images/'.$array['array'][0]['Ruta_Imagen'])}} >
               </div>
           </div>

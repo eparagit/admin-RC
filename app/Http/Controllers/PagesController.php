@@ -79,7 +79,12 @@ class PagesController extends Controller
     }
     public function GetTheMostVisited(){
        return view('Internal.theMostVisited');
-
+    }
+    public function GetProductInsertBlade(){
+       return view('Internal.insertProduct');
+    }
+    public function GetProductUpdate(){
+       return view('Internal.updateProduct');
     }
     //Layouts
     public function GetInternalLayout(){
@@ -101,7 +106,21 @@ class PagesController extends Controller
        return view('sections.mail');
     }
 
+    //Reports
+    public function GetTourReport(){
+       return view('Reports.tourReport');
+    }
+    public function GetBookingReport(){
+       return view('Reports.bookingReport');
+    }
+    public function GetHiringReport(){
+       return view('Reports.hiringReport');
+    }
+    public function GetProductReport(){
+       return view('Reports.productReport');
+    }
     //______________________
+
     //Login Views
     public function Login(){
       return view('Login.login');

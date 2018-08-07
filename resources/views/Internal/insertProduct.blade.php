@@ -44,9 +44,6 @@
           </div>
 
           <ul class="tobar-links">
-
-              <li>
-
               <li>
     </div>
     <div class="topbar-bottom-colors">
@@ -60,62 +57,68 @@
     </div>
   </div>
   <!-- Topbar -->
+  @include('Ilayout.rightHeader')
 
   @include('Ilayout.headerI')
-  <!-- Side Header -->
-
-
-
-  @include('Ilayout.headerI')
-  <!-- Side Header -->
 
 
   </header>
 
 
+  <!-- Side Header -->
   <div class="pg-tp">
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
          <h4>Ruta a la Cima</h4>
-         <span>Mantenimiento de Viaje</span>
+         <span>Publicación de Producto</span>
        </div>
      </div>
+
   <!-- Page Top -->
   <div class="panel-content">
     <div class="widget pad50-65">
-    <div class="col-md-12 col-sm-12 col-lg-12" >
-          <div id="toursDiv">
-            <table class="table" id="t_tours">
-               <thead>
-               </thead>
-                  <tbody id="tb_tuors">
+  <div class="panel-content" style="background-color:white">
+    <div class="pad50-65">
+
+      <form class="form-group" accept-charset="UTF-8" action="insertProduct" method="POST" enctype="multipart/form-data">
+              <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+              <div class="row">
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Imagen del producto</label>
+                       <input type="file" name="image_Producto" id="image_Producto" accept="image/*"  class="form-control" required>
+                     </div>
+                 </div>
+                 <div class="col-lg-6">
+                     <div class="form-group">
+                       <label>Titulo</label>
+                       <input class="form-control" name="con_titulo_Producto" id="con_titulo_Producto"  type="text" required />
+                     </div>
+                 </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                      <label>Descripción del Producto</label>
+                      <textarea class="form-control" name="con_descripcion_Producto" id="con_descripcion_Producto" type="text" required ></textarea>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-12">
+                   <button class="btn btn-success" type="submit" style=" position:relative;top:50%;left:50%;">Guardar</button>
+                </div>
+              </div>
+      </form>
 
 
 
-                </tbody>
-            </table>
-         </div>
-    </div>
     </div>
   </div>
   <!-- Panel Content -->
-
-  <!--Modal-->
- <div class="modal fade" id="updateTour-Modal" role="dialog">
-   <div class="modal-dialog">
-
-     <!-- Modal content-->
-     <div class="modal-content" style="width:600px;">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Actualización del Tour</h4>
-       </div>
-         <div class="modal-body" id="modalBodyTour">
-
-        </div>
-   </div>
- </div>
-</div>
   <footer>
       <p>Todos los derechos a
         Ruta a la Cima 2018</p>
@@ -151,12 +154,19 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/trip.js" type="text/javascript"></script>
-  <script src="ProjectJs/tourblade.js" type="text/javascript"></script>
+  <script src="ProjectJs/product.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
+
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
+
+
+  <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
+  <script src="ProjectJs/dt.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+<!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
 
 </body>
 

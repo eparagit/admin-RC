@@ -49,11 +49,6 @@ class TourController extends Controller
          $fechaRegreso =date('Y-m-d h:m:s', strtotime(str_replace('/','-',$fechaRegreso)));
          $fechaVencimiento = date('Y-m-d h:m:s', strtotime(str_replace('/','-',$fechaVencimiento)));
 
-          $result= DB::select("select * from viaje where Titulo='".$titulo."'");
-          $array = json_decode(json_encode($result), True);
-            if(!empty($array)){
-                 return view('Internal.noObjectl');
-            }else{
                   //file upload
                   $image = $request->file('image');
                   if($image){
@@ -69,7 +64,7 @@ class TourController extends Controller
                   [$usuarioID,$tipoViaje,$categoriaViaje,$titulo,$descripcion,$requisitos,$cupo,$costo,$fechaSalida,$fechaRegreso,
                   $fechaVencimiento,$incluye,$fileName,$fileName,$lugarSalida,$lugarDestino,$fecha_publicacion,$estado]);
                   return view('Internal.tourToApprove');
-                }
+
 
   }
 
@@ -110,10 +105,8 @@ class TourController extends Controller
     $fechaSalida = $request->input('con_dtfhs_modal');
     $fechaRegreso = $request->input('con_dtfhr_modal');
     $fechaVencimiento = $request->input('con_dtfhv_modal');
-    $usuarioID = "";
+    $usuarioID = $request->input('idusuarioTour_modal');
     $rutaImagen = "";
-    $sesion = Session::get('datos');
-    $usuarioID = $sesion[0]['ID_Usuario'];
     $estado = 1;
     $fecha_publicacion = date("Y/m/d");
     $fechaSalida =date('Y-m-d h:m:s', strtotime(str_replace('/','-',$fechaSalida)));
@@ -165,7 +158,6 @@ class TourController extends Controller
     $data = array(
        "array" => $array
     );
-
     return view('sections.sectionUpdateTour')->with("array", $data);
   }
 

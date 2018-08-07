@@ -18,9 +18,9 @@
                     <li>
                         <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
                     </li>
-                    <!--<li>
-                        <a href="dashboard3.html" title="">Mantenimientos</a>
-                    </li>-->
+                    <li>
+                        <a href="/Admin-RC/public//GetTourReport" title="">Reporte</a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -40,6 +40,10 @@
                       <a href="/Admin-RC/public//GetRemainingBooking" title="">Pendientes <label id="count_r"></label></a>
                   </li>
 
+                  <li>
+                      <a href="/Admin-RC/public//GetBookingReport" title="">Reporte</a>
+                  </li>
+
               </ul>
           </li>
             <li class="has-drp">
@@ -56,6 +60,10 @@
                         <a href="/Admin-RC/public//GetRemainingContract" title="">Pendientes</a>
                     </li>
 
+                    <li>
+                        <a href="/Admin-RC/public//GetHiringReport" title="">Reporte</a>
+                    </li>
+
                 </ul>
             </li>
             <li class="has-drp">
@@ -65,10 +73,13 @@
                 </a>
                 <ul class="sb-drp">
                     <li>
-                        <a href="/Admin-RC/public//GoProductUpload" title="">Publicar</a>
+                        <a href="/Admin-RC/public//GetProductInsertBlade" title="">Publicar</a>
                     </li>
                     <li>
-                        <a href="themify-icons.html" title="">Mantenimientos</a>
+                        <a href="/Admin-RC/public//GetProductUpdate" title="">Mantenimientos</a>
+                    </li>
+                    <li>
+                        <a href="/Admin-RC/public//GetProductReport" title="">Reporte</a>
                     </li>
                 </ul>
             </li>
