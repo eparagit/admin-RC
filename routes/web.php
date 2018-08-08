@@ -265,6 +265,8 @@ Route::get('/', function () {
           Route::get('selectApprovedBookingByCustomer','BookingController@selectApprovedBookingByCustomer');
 
           Route::get('selectRemainingBookingByCustomer','BookingController@selectRemainingBookingByCustomer');
+
+          Route::get('selectStatisticsForRating','BookingController@selectStatisticsForRating');
 //______________
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
