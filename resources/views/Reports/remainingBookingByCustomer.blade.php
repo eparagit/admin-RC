@@ -81,14 +81,14 @@
     <div class="widget">
 
 
-            <table class="table table-striped table-bordered table-hover" width="100%" id="bookingTableReport">
+            <table class="table table-striped table-bordered table-hover" width="100%" id="RbookingTableReport">
                  <thead>
                    <tr>
                       <th>#</th>
                       <th>Viaje</th>
-                      <th>Fecha y Hora de Salida</th>
-                      <th>Lugar de Salida</th>
-                      <th>Encargado</th>
+                      <th>Cliente</th>
+                      <th>Cantidad de Personas</th>
+                      <th>Estado</th>
                    </tr>
                  </thead>
             </table>

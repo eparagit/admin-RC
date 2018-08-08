@@ -39,7 +39,12 @@
                   <li>
                       <a href="/Admin-RC/public//GetRemainingBooking" title="">Pendientes <label id="count_r"></label></a>
                   </li>
-
+                  <li>
+                      <a href="/Admin-RC/public//GetBookingReport" title="">Reporte Aprobaciones</a>
+                  </li>
+                  <li>
+                      <a href="/Admin-RC/public//GetRemainingBookingReport" title="">Reporte Pendientes</a>
+                  </li>
                   <li>
                       <a href="/Admin-RC/public//GetBookingReport" title="">Reporte</a>
                   </li>
@@ -115,6 +120,17 @@
                     </li>
                     <li>
                         <a href="/Admin-RC/public//GetServiceType" title="">Tipo Servicio</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-android-settings"></i>
+                    <span>Empleados</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GetEmployeesReport" title="">Reporte</a>
                     </li>
                 </ul>
             </li>

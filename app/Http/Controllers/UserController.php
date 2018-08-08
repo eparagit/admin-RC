@@ -81,7 +81,7 @@ return $array;
       return 1;
     }
 
-    public function selectUserByRol(Request $request){
+    public function selectUserByRol(){
 
           $result= DB::select("select u.ID_Usuario,u.rol_ID,u.NombreCompleto,u.PrimerApellido,u.SegundoApellido,
           u.CorreoElectronico,u.NombreUsuario,r.ID_RoL ID_Rol, r.Descripcion Descripcion_Rol, r.Codigo_Rol from usuario u, rol r where u.rol_ID=r.ID_RoL and u.rol_ID<'3'");
@@ -109,6 +109,16 @@ return $array;
       $result=DB::update("update usuario set rol_ID='".$n_rol."' where ID_Usuario='".$id_user."'");
 
       return 1;
+
+    }
+    public function selectUsersReportByRol(){
+
+      $result= DB::select("select u.NumeroIdentificacion,u.rol_ID,u.NombreCompleto,u.PrimerApellido,
+       u.SegundoApellido,r.Descripcion Descripcion_Rol from usuario u, rol r where  u.rol_ID=r.ID_RoL and u.rol_ID<'3'");
+
+      $array = json_decode(json_encode($result), True);
+
+ return $array;
 
     }
 }

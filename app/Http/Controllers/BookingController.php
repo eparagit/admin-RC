@@ -179,9 +179,30 @@ class BookingController extends Controller
 
     public function selectReportForBooking(Request $request){
 
-        $result= DB::select("select v.Titulo,r.Cantidad_Personas,r.estadoRC_ID, r.CostoTotal,u.NombreUsuario
-        from reservacion r, usuario u,viaje v where  r.viaje_ID=v.ID_Viaje");
-        $array = json_decode(json_encode($result), True);
-      return $array;
+        $result= DB::select("select r.ID_Reservacion, v.Titulo,v.FechaHora_Salida,v.Lugar_Salida,u.NombreCompleto,
+         r.Cantidad_Personas from viaje v, usuario u, reservacion r where r.usuario_ID=u.ID_Usuario and r.viaje_ID=ID_Viaje");
+         $array = json_decode(json_encode($result), True);
+
+         return $array;
   }
+  public function selectApprovedBookingByCustomer(){
+    $result= DB::select("select r.ID_Reservacion, v.Titulo,u.NombreCompleto,
+     r.Cantidad_Personas, e.Descripcion Estado_Descripcion from viaje v, usuario u, estados e, reservacion r where r.usuario_ID=u.ID_Usuario and r.viaje_ID=ID_Viaje and r.estado_ID=e.ID_Estado and e.Descripcion='Aprobado'");
+     $array = json_decode(json_encode($result), True);
+
+     return $array;
+  }
+  public function selectRemainingBookingByCustomer(){
+      $result= DB::select("select r.ID_Reservacion, v.Titulo,u.NombreCompleto,
+       r.Cantidad_Personas, e.Descripcion Estado_Descripcion from viaje v, usuario u, estados e, reservacion r where r.usuario_ID=u.ID_Usuario and r.viaje_ID=ID_Viaje and r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
+       $array = json_decode(json_encode($result), True);
+
+       return $array;
+  }
+  public function selectStatisticsForRating(Request $request){
+
+      $result= DB::select(" select v.Titulo, c.Valor FROM calificacion c, viaje v where c.viaje_ID=v.ID_Viaje ");
+      $array = json_decode(json_encode($result), True);
+      return $array;
+}
 }

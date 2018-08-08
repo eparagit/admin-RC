@@ -81,14 +81,14 @@
     <div class="widget">
 
 
-            <table class="table table-striped table-bordered table-hover" width="100%" id="bookingTableReport">
+            <table class="table table-striped table-bordered table-hover" width="100%" id="employeesTableReport">
                  <thead>
                    <tr>
-                      <th>#</th>
-                      <th>Viaje</th>
-                      <th>Fecha y Hora de Salida</th>
-                      <th>Lugar de Salida</th>
-                      <th>Encargado</th>
+                      <th>Cédula</th>
+                      <th>Nombre</th>
+                      <th>Primer Apellido</th>
+                      <th>Segundo Apellido</th>
+                      <th>Rol en Sistema</th>
                    </tr>
                  </thead>
             </table>
@@ -116,7 +116,7 @@
   <!-- Our Website Javascripts -->
 
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/reportsBooking.js" type="text/javascript"></script>
+  <script src="ProjectJs/employees.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
 
 </body>
