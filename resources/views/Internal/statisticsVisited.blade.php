@@ -3,21 +3,24 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Ruta a la cima Administrador</title>
+  <title>Estadisticas</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Vendor: Bootstrap 4 Stylesheets  -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/dataTables.bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" type="text/css">
+
   <!-- Our Website CSS Styles -->
   <link rel="stylesheet" href="css/icons.min.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <link rel="stylesheet" href="css/responsive.css" type="text/css">
 
+  <!-- Color Scheme -->
+  <link rel="stylesheet" href="css/color-schemes/color.css" type="text/css" title="color3">
+  <link rel="alternate stylesheet" href="css/color-schemes/color1.css" title="color1">
+  <link rel="alternate stylesheet" href="css/color-schemes/color2.css" title="color2">
+  <link rel="alternate stylesheet" href="css/color-schemes/color4.css" title="color4">
   <link rel="alternate stylesheet" href="css/color-schemes/color5.css" title="color5">
 </head>
 
@@ -72,31 +75,22 @@
   <div class="pg-tp">
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
-         <h4>Ruta a la Cima</h4>
-         <span>Reporte de Reservaciones</span>
+         <h4>Mas visitados</h4>
+         <span>Estadisticas de Viajes mas visitados</span>
        </div>
      </div>
   <!-- Page Top -->
   <div class="panel-content">
-    <div class="widget">
+    <div class="widget pad50-65">
+    <div class="col-md-12 col-sm-12 col-lg-12" >
+          <div >
 
-
-            <table class="table table-striped table-bordered table-hover" width="100%" id="bookingTableReport">
-                 <thead>
-                   <tr>
-                      <th>Viaje</th>
-                      <th>Cantidad de Personas</th>
-                      <th>Estado</th>
-                      <th>Costo Total</th>
-                      <th>Usuario que ingreso el viaje</th>
-                   </tr>
-                 </thead>
-            </table>
-
-
+         </div>
+    </div>
     </div>
   </div>
   <!-- Panel Content -->
+
   <footer>
       <p>Todos los derechos a
         Ruta a la Cima 2018</p>
@@ -107,16 +101,32 @@
   <script src="js/jquery.min.js" type="text/javascript"></script>
   <!-- Vendor: Followed by our custom Javascripts -->
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-  <script src="js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js" type="text/javascript"></script>
+  <script src="js/select2.min.js" type="text/javascript"></script>
+  <script src="js/slick.min.js" type="text/javascript"></script>
 
   <!-- Our Website Javascripts -->
-
+  <script src="js/isotope.min.js" type="text/javascript"></script>
+  <script src="js/isotope-int.js" type="text/javascript"></script>
+  <script src="js/jquery.counterup.js" type="text/javascript"></script>
+  <script src="js/waypoints.min.js" type="text/javascript"></script>
+  <script src="js/highcharts.js" type="text/javascript"></script>
+  <script src="js/exporting.js" type="text/javascript"></script>
+  <script src="js/highcharts-more.js" type="text/javascript"></script>
+  <script src="js/moment.min.js" type="text/javascript"></script>
+  <script src="js/jquery.circliful.min.js" type="text/javascript"></script>
+  <script src="js/fullcalendar.min.js" type="text/javascript"></script>
+  <script src="js/jquery.downCount.js" type="text/javascript"></script>
+  <script src="js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+  <script src="js/jquery.formtowizard.js" type="text/javascript"></script>
+  <script src="js/form-validator.min.js" type="text/javascript"></script>
+  <script src="js/form-validator-lang-en.min.js" type="text/javascript"></script>
+  <script src="js/cropbox-min.js" type="text/javascript"></script>
+  <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+  <script src="js/ion.rangeSlider.min.js" type="text/javascript"></script>
+  <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
+  <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/reportsBooking.js" type="text/javascript"></script>
+  <script src="ProjectJs/statistics.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
 
 </body>

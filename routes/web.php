@@ -85,6 +85,12 @@ Route::get('/', function () {
           Route::get('/GetHiringReport','PagesController@GetHiringReport');
 
           Route::get('/GetProductReport','PagesController@GetProductReport');
+
+          Route::get('/GetStatisticsRating','PagesController@GetStatisticsRating');
+
+          Route::get('/GetStatisticsVisited','PagesController@GetStatisticsVisited');
+
+          Route::get('/GetStatisticsSeason','PagesController@GetStatisticsSeason');
 //______________
 //AuthController
 //______________
@@ -243,6 +249,8 @@ Route::get('/', function () {
           Route::get('ApproveBooking','BookingController@ApproveBooking');
 
           Route::get('countRemainingBooking','BookingController@countRemainingBooking');
+
+          Route::get('selectReportForBooking','BookingController@selectReportForBooking');
 //______________
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
@@ -257,6 +265,14 @@ Route::get('/', function () {
           Route::get('deleteProduct','ProductsController@deleteProduct');
 
           Route::get('selectProductForUpdate','ProductsController@selectProductForUpdate');
+//______________
+
+//StatisticsController
+         //Route::post('insertProduct','ProductsController@insertProduct');
+
+         //Route::get('showProducts','ProductsController@showProducts');
+
+         //Route::post('updateProduct','ProductsController@updateProduct');
 //______________
 //Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');

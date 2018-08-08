@@ -172,8 +172,16 @@ class BookingController extends Controller
 
       $array = json_decode(json_encode($result), True);
 
-    
+
 
       return $array;
     }
+
+    public function selectReportForBooking(Request $request){
+
+        $result= DB::select("select v.Titulo,r.Cantidad_Personas,r.estadoRC_ID, r.CostoTotal,u.NombreUsuario
+        from reservacion r, usuario u,viaje v where  r.viaje_ID=v.ID_Viaje");
+        $array = json_decode(json_encode($result), True);
+      return $array;
+  }
 }

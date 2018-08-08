@@ -105,7 +105,7 @@ class PagesController extends Controller
     public function GetMailBlade(){
        return view('sections.mail');
     }
-
+    //______________________
     //Reports
     public function GetTourReport(){
        return view('Reports.tourReport');
@@ -120,7 +120,17 @@ class PagesController extends Controller
        return view('Reports.productReport');
     }
     //______________________
-
+    //Statistics
+    public function GetStatisticsRating(){
+       return view('Internal.statisticsRating');
+    }
+    public function GetStatisticsVisited(){
+       return view('Internal.statisticsVisited');
+    }
+    public function GetStatisticsSeason(){
+       return view('Internal.statisticsSeason');
+    }
+    //______________________
     //Login Views
     public function Login(){
       return view('Login.login');

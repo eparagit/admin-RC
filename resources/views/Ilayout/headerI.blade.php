@@ -90,13 +90,13 @@
                 </a>
                 <ul class="sb-drp">
                     <li>
-                        <a href="gallery1.html" title="">Viajes por Calificación</a>
+                        <a href="/Admin-RC/public//GetStatisticsRating" title="">Viajes por Calificación</a>
                     </li>
                     <li>
-                        <a href="/Admin-RC/public//GetTheMostVisited" title="">Viajes más Visitados</a>
+                        <a href="/Admin-RC/public//GetStatisticsVisited" title="">Viajes más Visitados</a>
                     </li>
                     <li>
-                        <a href="gallery3.html" title="">Más Visitados X Temporada</a>
+                        <a href="/Admin-RC/public//GetStatisticsSeason" title="">Más Visitados X Temporada</a>
                     </li>
                 </ul>
             </li>
