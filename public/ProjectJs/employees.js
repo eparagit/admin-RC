@@ -11,18 +11,18 @@ $(document).ready(function(){
       $.ajax({
                  type:"GET",
                  data: {},
-                 url:"selectSystemLogReport",
+                 url:"selectUsersReportByRol",
                  success:function(data)
                  {// console.log(data);
-                   $('#systemLogTableReport').dataTable( {
+                   $('#employeesTableReport').dataTable( {
                            data: data,
                            dom: 'Bfrtip',
                            "columns": [
-                                             { "data": "ID_Bitacora" },
-                                             { "data": "NombreUsuario" },
-                                             { "data": "CorreoElectronico" },
-                                             { "data": "FechaHora" },
-                                             { "data": "CambioRealizado" }
+                                             { "data": "NumeroIdentificacion" },
+                                             { "data": "NombreCompleto" },
+                                             { "data": "PrimerApellido" },
+                                             { "data": "SegundoApellido" },
+                                             { "data": "Descripcion_Rol" }
                                          ],
                            //"sDom": '<"H"ilr><"clear">t<"F"p>',
                              language: {

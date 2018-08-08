@@ -107,6 +107,18 @@ class PagesController extends Controller
     }
     //______________________
     //Reports
+    public function GetApprovedBookingReport(){
+       return view('Reports.approvedBookingByCustomer');
+    }
+    public function GetRemainingBookingReport(){
+       return view('Reports.remainingBookingByCustomer');
+    }
+    public function GetSystemLogReport(){
+       return view('Reports.systemLogReport');
+    }
+    public function GetEmployeesReport(){
+       return view('Reports.employees');
+    }
     public function GetTourReport(){
        return view('Reports.tourReport');
     }

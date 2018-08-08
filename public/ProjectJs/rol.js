@@ -51,7 +51,7 @@ $(document).ready(function(){
                         tab+="<td>"+val['SegundoApellido']+"</td>";
                         tab+="<td>"+val['CorreoElectronico']+"</td>";
                         tab+="<td>"+'<label id="con_rolde">'+val['Descripcion_Rol']+'</label>'+"</td>";
-                        tab+="<td>"+'<button id="con_ur" class="btn btn-success" data-toggle="modal" data-target="#rolChange"   data-id="'+val['ID_Usuario']+'" type="button">Modificar</button>'+"</td>";
+                        tab+="<td>"+'<button id="con_ur" class="btn btn-success"  data-id="'+val['ID_Usuario']+'" type="button">Modificar</button>'+"</td>";
                         tab+="<tr>";
 
 
@@ -62,7 +62,7 @@ $(document).ready(function(){
                       }
 
                     });
-                    $("#t_ubr").on('click','#con_ur',function(){
+                    /*$("#t_ubr").on('click','#con_ur',function(){
                       var id = $(this).data('id');
 
                       $.ajax({
@@ -94,24 +94,58 @@ $(document).ready(function(){
                           }
 
                       });
+                    });*/
+                    $("#tusxrol").on('click','#con_ur',function(){
+                      var id=$(this).data('id');                    
+                      $('#rolChanges').modal('show');
+                      $('#con_upRol').data('id',id);
+                      $.ajax({
+                          type:"GET",
+                          data: {'id':id},
+                          url:"selectUserByID",
+                          success:function(data){
+                            var id_u="";
+                            var name_u="";
+                            var ln_u="";
+                            var ro_u="";
+                            $.each(data,function(v){
+                                var val=data[v];
+                                id_u=val['ID_Usuario'];
+                                name_u=val['NombreCompleto']+' '+val['PrimerApellido'];
+                                //ln_u=val['PrimerApellido'];
+                                ro_u=val['Descripcion_Rol'];
+
+                            })
+                            $("#id_iuser").val(id_u);
+                            $("#c_name").val(name_u);
+                          //  $("#l_name").val(ln_u);
+                            $("#curr_r").val(ro_u);
+
+
+                          //  $('#rolChange').modal('toggle');
+                          //  $('#rmodal-footer').modal('show');
+
+                          }
+
+                      });
                     });
 
-                    $("#rolChange").on('click','#con_addp',function(){
-                      var id_u=$("#id_iuser").val();
+                    $("#rolChanges").on('click','#con_upRol',function(){
+                      var id=$(this).data('id');
                       var nr=$("#con_rols").val();
-                      var userid=$("#con_iduse").val();
                       var chang="Cambio de Rol";
                       $.ajax({
                         type:"GET",
-                        data: {'id_us':id_u,
+                        data: {'id_us':id,
                                 'n_ru':nr},
                         url:"updateURol",
                         success: function(data) {
                           if(data = 1){
                             alert("Rol actualizado exitosamente!");
+                            window.location.replace("GetUserByRol");
                             $.ajax({
                                     type:"GET",
-                                    data: {'u_id':userid,
+                                    data: {'u_id':id,
                                     'chg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
@@ -120,11 +154,11 @@ $(document).ready(function(){
                                       }
                                       }
                               });
-                            $('#rolChange').modal('hide');
-                            return false;
+
 
                           }else{
                             alert("No se logró actualizar el rol!");
+                            window.location.replace("GetUserByRol");
                           }
                         }
                       });

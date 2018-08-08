@@ -18,4 +18,9 @@ class SystemLogController extends Controller
 
     return 1;
   }
+  public function selectSystemLogReport(){
+    $result= DB::select("select b.ID_Bitacora,u.NombreUsuario,u.CorreoElectronico,b.FechaHora,b.CambioRealizado from bitacora b, usuario u where b.usuario_ID=u.ID_Usuario");
+          $array = json_decode(json_encode($result), True);
+    return $array;
+  }
 }
