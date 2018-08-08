@@ -83,8 +83,10 @@
   <div class="panel-content">
     <div class="widget pad50-65">
     <div class="col-md-12 col-sm-12 col-lg-12" >
-          <div >
-        <canvas id="myChart" width="50" height="50"></canvas>
+          <div class="row">
+            <div class="col-lg-6">
+             <canvas id="myChart" width="50" height="50"></canvas>
+            </div>
          </div>
     </div>
     </div>
