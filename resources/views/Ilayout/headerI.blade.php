@@ -9,7 +9,8 @@
             <li class="has-drp">
                 <a href="#" title="">
                     <i class="ion-home"></i>
-                    <span>Viajes</span>
+                    <span id="rtours">Viajes</span>
+
                 </a>
                 <ul class="sb-drp">
                     <li>
@@ -21,6 +22,10 @@
                     <li>
                         <a href="/Admin-RC/public//GetTourReport" title="">Reporte</a>
                     </li>
+                    <li>
+                        <a href="/Admin-RC/public//GetFirstPasswordChange" title="">Test</a>
+                    </li>
+
                 </ul>
             </li>
         </ul>
@@ -29,7 +34,7 @@
           <li class="has-drp">
               <a href="#" title="">
                   <i class="ion-briefcase"></i>
-                  <span>Reservaciones</span>
+                  <span id="rbooking">Reservaciones</span>
               </a>
               <ul class="sb-drp">
                   <li>
@@ -54,7 +59,7 @@
             <li class="has-drp">
                 <a href="#" title="">
                     <i class="ion-briefcase"></i>
-                    <span>Contrataciones</span>
+                    <span id="rcontracts">Contrataciones</span>
                 </a>
                 <ul class="sb-drp">
                     <li>
@@ -68,7 +73,9 @@
                     <li>
                         <a href="/Admin-RC/public//GetHiringReport" title="">Reporte</a>
                     </li>
-
+                    <li>
+                        <a href="/Admin-RC/public//GetContractNotification " title="">Reporte</a>
+                    </li>
                 </ul>
             </li>
             <li class="has-drp">

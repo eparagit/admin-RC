@@ -38,7 +38,7 @@ $(document).ready(function(){
 
         $("#con_contentR").on('click','#con_approveC',function(){
                 var id=$(this).data('id');
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Aprobación de contratación pendiente";
                     $.ajax({
                       type:"GET",
@@ -60,8 +60,7 @@ $(document).ready(function(){
                               alert("Contratación aprobada exitosamente!");
                               $.ajax({
                                     type:"GET",
-                                    data: {'u_id':userid,
-                                    'chg':chang},
+                                    data: {'chg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
                                      if(data==1){
@@ -102,7 +101,7 @@ $(document).ready(function(){
         $("#processModal").on('click','#btn_proNC',function(){
                 var id=$(this).data('id');
                 var just=$("#p_justDesc").val();
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Procesar contratación pendiente";
                     $.ajax({
                       type:"GET",
@@ -124,8 +123,7 @@ $(document).ready(function(){
                               alert("La contratación cambió a estdo  'Pendiente'");
                               $.ajax({
                                       type:"GET",
-                                      data: {'u_id':userid,
-                                      'chg':chang},
+                                      data: {'chg':chang},
                                       url:"SystemLogRegistry",
                                        success:function(data){
                                        if(data==1){
@@ -172,7 +170,7 @@ $(document).ready(function(){
         $("#rejectModal").on('click','#btn_rejNC',function(){
                 var id=$(this).data('id');
                 var just=$("#r_justDesc").val();
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Rechazar contratación pendiente";
                     $.ajax({
                       type:"GET",
@@ -194,12 +192,11 @@ $(document).ready(function(){
                               alert("La contratación ha sido rechazada");
                               $.ajax({
                                     type:"GET",
-                                    data: {'u_id':userid,
-                                    'chg':chang},
+                                    data: {'chg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
                                      if(data==1){
-                                                                    
+
                                       }
                                       }
                               });

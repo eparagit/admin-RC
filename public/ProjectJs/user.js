@@ -1,5 +1,6 @@
 $(document).ready(function(){
   //Admin User Secction-Start//
+
   $.ajax({
           type:"GET",
           data:{},
@@ -124,7 +125,8 @@ $(document).ready(function(){
              if(email== ""){
                 alert('Digite su correo');
               return false;
-             }
+
+            }
              if(username == ""){
            alert('Digite el nombre de usuario');
              return false;
@@ -137,42 +139,93 @@ $(document).ready(function(){
                 alert('Seleccione el rol');
               return false;
              }
-
-
-            $.ajax({
-                  type:'GET',
-                  data: {'name':name,
-                          'firstLastName':LastName,
-                          'secondLastName':secondLastName,
-                          'idNumber':id,
-                          'age':age,
-                          'email':email,
-                          'telephone':phone,
-                          'userName':username,
-                          'password':password,
-                           'rol':rol},
-
-                  url:'validateNewUser',
-                  success: function(data) {
-                    if(data = 1){
-                      alert("El usuario que intenta ingresar ya existe!");
+             var validEmail=email_Validation(email);
+                  if(validEmail==false){
+                     alert('Correo Inválido');
+                  }else{
+                  var phoneVal=phone_Validation(phone);
+                  if(phoneVal==false){
+                    alert("Número de teléfono inválido!");
+                      }else{
+                  var idVal=idNumber_Validation(id);
+                  if(idVal==false){
+                    alert("Número de identificación inválido!");
+                  }else{
+                    var nameVal=text_Validation(name);
+                    var flastnameVal=text_Validation(LastName);
+                    var slastnameVal=text_Validation(secondLastName);
+                    if(nameVal==false){
+                      alert("El campo nombre solo permite letras!");
                     }else{
-                      alert("Usuario Ingresado con éxito!");
-                      $.ajax({
-                              type:"GET",
-                              data: {'u_id':userid,
-                              'chg':chang},
-                              url:"SystemLogRegistry",
-                               success:function(data){
-                               if(data==1){
-                                                              
-                                }
-                                }
-                        });
+                      if(flastnameVal==false){
+                        alert("El campo primer apellido solo permite letras!");
+                      }else{
+                        if(slastnameVal==false){
+                          alert("El campo segundo apellido solo permite letras!");
+                        }else{
 
-                    }
+
+
+                    $.ajax({
+                          type:'GET',
+                          data: {
+                                  'email':email,
+                                  'userName':username
+                                  },
+
+                          url:'validateNewUser',
+                          success: function(data) {
+                            if(data == 1){
+                              alert(data);
+                              alert("El usuario que intenta ingresar ya existe!");
+                              return false;
+                            }if(data==0){
+                              $.ajax({
+                                    type:'GET',
+                                    data: {'name':name,
+                                            'firstLastName':LastName,
+                                            'secondLastName':secondLastName,
+                                            'idNumber':id,
+                                            'age':age,
+                                            'email':email,
+                                            'telephone':phone,
+                                            'userName':username,
+                                            'password':password,
+                                             'rol':rol},
+
+                                    url:'registerUser',
+                                    success: function(data) {
+                                      if(data = 1){
+                                        alert("Usuario registrado con éxito!!");
+                                        $.ajax({
+                                                type:"GET",
+                                                data: {'chg':chang},
+                                                url:"SystemLogRegistry",
+                                                 success:function(data){
+                                                 if(data==1){
+
+                                                  }
+                                                  }
+                                          });
+                                      }else{
+                                        alert("Nose logró registrar el usuario!");
+
+                                      }
+
+                                    }
+                                  });
+                              }
+                          }
+                        });
+                        }
+                        }
+                        }
+                        }
                   }
-                });
+
+
+                }
+
   });
          $("#con_edcn").click(function(){
            $("#con_cname").prop('disabled',false);
@@ -290,5 +343,49 @@ $(document).ready(function(){
             }
           });
           });
+function email_Validation(emailA){
+  var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(emailA) ? true : false;
+}
+function phone_Validation(phoneV){
+  var regex = /^[0-9-+](\d{7})$/;
+  return regex.test(phoneV) ? true : false;
+}
+function idNumber_Validation(id_Number){
+  var regex = /^([0-9])+$/;
+  return regex.test(id_Number) ? true : false;
+}
+function text_Validation(text_data){
+  var regex = /^([a-zA-Z])+$/;
+  return regex.test(text_data) ? true : false;
+}
+$("#con_refresha").click(function(){
+  var id=$("#con_idu").val();
+  var pass=$("#con_passra").val();
+  var chang="Cambio de contraseña a usuario:"+$("#con_unam").val();
+        $.ajax({
+                type:"GET",
+                data:{'id':id,
+                      'pass':pass},
+                url:"PasswordReset",
+                success:function(data){
+                  if(data==1){
+                    alert("La contraseña se refrescó exitosamente!!");
+                    $.ajax({
+                            type:"GET",
+                            data: {'chg':chang},
+                            url:"SystemLogRegistry",
+                             success:function(data){
+
+                              }
+                      });
+                  }else{
+                    alert("No se logró refrescar la ocntraseña!");
+                  }
+
+                }
+        });
+})
+
 
 });

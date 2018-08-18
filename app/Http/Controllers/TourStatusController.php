@@ -45,4 +45,11 @@ class TourStatusController extends Controller
 
       return 1;
     }
+    public function selectRejectedTourStatus(Request $request){
+
+      $result= DB::select("select ID_Estado_Viaje from estado_viaje where Descripcion='Rechazado'");
+            $array = json_decode(json_encode($result), True);
+      return $array;
+
+    }
 }

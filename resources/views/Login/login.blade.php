@@ -626,13 +626,14 @@
             <h4>Administración Ruta a la Cima</h4>
             <span>Ingrese</span>
           </div>
-          <form>
+          <form class="form-group">
+
             <div class="row mrg10">
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_usnm" class="brd-rd5" type="text" placeholder="Nombre de Usuario" />
+                <input id="con_usnm" name="con_username" class="form-control" type="text" placeholder="Nombre de Usuario" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_pas" class="brd-rd5" type="password" placeholder="Contraseña" />
+                <input id="con_pas" name="con_passw" class="form-control" type="password" placeholder="Contraseña" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <span class="chbx">
@@ -695,7 +696,8 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/login.js" type="text/javascript"></script>
+<script src="ProjectJs/login.js" type="text/javascript"></script>
+<script src="ProjectJs/logout.js" type="text/javascript"></script>
 </body>
 
 </html>

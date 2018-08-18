@@ -205,4 +205,9 @@ class BookingController extends Controller
       $array = json_decode(json_encode($result), True);
       return $array;
 }
+public function RemainingBookingCounter(){
+  $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
+  $array = json_decode(json_encode($result), True);
+  return $array;
+}
 }

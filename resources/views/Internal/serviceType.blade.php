@@ -74,14 +74,14 @@
        <form class="form-wrp">
          <div class="row mrg20">
                 <div class="col-md-6 col-sm-6 col-lg-6">
-                Nuevo Servicio: <input id="con_sevT" class="brd-rd5" type="text" placeholder="Estado*" />
+                Nuevo Servicio: <input id="con_sevT" class="brd-rd5" type="text" placeholder="Servicio*" />
                  <button id="con_addst" name="con_addst" class="green-bg brd-rd5" type="button">
                  <i class="fa fa-paper-plane"></i>Agregar</button>
                </div>
                <div class="col-md-6 col-sm-6 col-lg-6">
 
                </div>
-           <div class="col-md-8 col-sm-8 col-lg-8">
+           <div class="col-md-6 col-sm-6 col-lg-6">
                <div>
                    <h4>Tipo Servicio</h4>
                  <table class="table" id="t_sT">
@@ -180,6 +180,8 @@
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/serviceType.js" type="text/javascript"></script>
+    <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+    <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

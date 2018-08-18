@@ -74,14 +74,14 @@
        <form class="form-wrp">
          <div class="row mrg20">
                 <div class="col-md-6 col-sm-6 col-lg-6">
-                Nuevo Tipo Evento: <input id="con_evt" class="brd-rd5" type="text" placeholder="Estado*" />
+                Nuevo Tipo Evento: <input id="con_evt" class="brd-rd5" type="text" placeholder="Evento*" />
                  <button id="con_addevt" name="con_addevt" class="green-bg brd-rd5" type="button">
                  <i class="fa fa-paper-plane"></i>Agregar</button>
                </div>
                <div class="col-md-6 col-sm-6 col-lg-6">
 
                </div>
-           <div class="col-md-8 col-sm-8 col-lg-8">
+           <div class="col-md-6 col-sm-6 col-lg-6">
                <div>
                    <h4>Tipo Evento</h4>
                  <table class="table" id="t_eT">
@@ -181,6 +181,8 @@
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/eventType.js" type="text/javascript"></script>
       <script src="ProjectJs/headerData.js" type="text/javascript"></script>
+    <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+    <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

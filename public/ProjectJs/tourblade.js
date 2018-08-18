@@ -94,21 +94,43 @@ jQuery.datetimepicker.setLocale('es');
          });
          $("#t_tours").on('click','#btn_rech',function(){
                var id = $(this).data('id');
+               var chang="Rechazo de viaje";
+               //var userid=$_Session["ID_Usuario"];
+               //var userid=$("#con_iduse").val();
                $.ajax({
                 type:"GET",
                 data: {'id':id},
-                url:"deleteTour",
+                url:"selectRejectedTourStatus",
                 success:function(data){
-                    $.ajax({
-                         type:"GET",
-                         data: {},
-                         url:"selectNewTours",
-                         success:function(data)
-                         {
-                              $("#toursDiv").html(data);
-                         }
+                  var est_idv="";
+                  $.each(data,function(v){
+                    var val=data[v];
+                    est_idv=val['ID_Estado_Viaje'];
+                  });
+                  $.ajax({
+                    type:"GET",
+                    data: {'id':id,
+                            'idst':est_idv},
+                    url:"rejectTour",
+                    success:function(data){
+                      if(data==1){
+                        alert("Viaje rechazado exitosamente!");
+                        $.ajax({
+                                type:"GET",
+                                data: {'chg':chang},
+                                url:"SystemLogRegistry",
+                                 success:function(data){
+                                 alert(data);
+                                  }
+                          });
+                      //  window.location.replace("GetTourToApprove");
+                      }else{
+                          alert("No se logró rechazar el viaje!");
+                      //  window.location.replace("GetTourToApprove");
+                      }
+                    }
+                  });
 
-                      });
                 }
               });
         });

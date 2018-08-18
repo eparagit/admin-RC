@@ -50,7 +50,7 @@
                <div class="col-md-6 col-sm-6 col-lg-6">
 
                </div>
-           <div class="col-md-8 col-sm-8 col-lg-8">
+           <div class="col-md-6 col-sm-6 col-lg-6">
                <div>
                    <h4>Categoría Tour</h4>
                  <table class="table" id="t_caT">
@@ -147,6 +147,8 @@
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/tourCategory.js" type="text/javascript"></script>
+      <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+      <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

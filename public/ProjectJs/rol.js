@@ -1,40 +1,38 @@
 $(document).ready(function(){
 
        $.ajax({
-               type:"GET",
-               data: {},
-               url:"selectRol",
-               success:function(data)
-               {
-                   var slec="";
-                   $.each(data,function(v){
-                     var val=data[v];
-                     slec+="<option value='"+val['ID_Rol']+"'>"+val['Descripcion']+"</option>";
-                   });
-                    $("#rol").append(slec);
-                    $("#con_rols").append(slec);
-                 }
+                 type:"GET",
+                 data: {},
+                 url:"selectRol",
+                 success:function(data)
+                 {
+                     var slec="";
+                     $.each(data,function(v){
+                       var val=data[v];
+                       slec+="<option value='"+val['ID_Rol']+"'>"+val['Descripcion']+"</option>";
+                     });
+                      $("#rol").append(slec);
+                      $("#con_rols").append(slec);
+                   }
                });
         $.ajax({
-                type:"GET",
-                data: {},
-                url:"selectAllRol",
-                success:function(data)
-                    {
-                      var tab="";
-                        $.each(data,function(v){
-                          var val=data[v];
-                          tab+="<tr>";
-                          tab+="<td>"+val['ID_Rol']+"</td>";
-                          tab+="<td>"+val['Codigo_Rol']+"</td>";
-                          tab+="<td>"+val['Descripcion']+"</td>";
-                          tab+="<tr>";
-                      });
-                         $("#trol").append(tab);
-
-                      }
-
-                 });
+                    type:"GET",
+                    data: {},
+                    url:"selectAllRol",
+                    success:function(data)
+                        {
+                          var tab="";
+                            $.each(data,function(v){
+                              var val=data[v];
+                              tab+="<tr>";
+                              tab+="<td>"+val['ID_Rol']+"</td>";
+                              tab+="<td>"+val['Codigo_Rol']+"</td>";
+                              tab+="<td>"+val['Descripcion']+"</td>";
+                              tab+="<tr>";
+                          });
+                             $("#trol").append(tab);
+                          }
+                     });
           $.ajax({
                   type:"GET",
                   data: {},
@@ -42,8 +40,9 @@ $(document).ready(function(){
                   success:function(data)
                   {
                     var tab="";
+                      var val="";
                       $.each(data,function(v){
-                        var val=data[v];
+                         val=data[v];
                         tab+="<tr>";
                         tab+="<td>"+'<label id="con_iduser">'+val['ID_Usuario']+'</label>'+"</td>";
                         tab+="<td>"+val['NombreCompleto']+"</td>";
@@ -52,51 +51,15 @@ $(document).ready(function(){
                         tab+="<td>"+val['CorreoElectronico']+"</td>";
                         tab+="<td>"+'<label id="con_rolde">'+val['Descripcion_Rol']+'</label>'+"</td>";
                         tab+="<td>"+'<button id="con_ur" class="btn btn-success"  data-id="'+val['ID_Usuario']+'" type="button">Modificar</button>'+"</td>";
-                        tab+="<tr>";
-
-
-                      //  data-toggle="modal" data-target="#rolChange"
+                        tab+="</tr>";
                     });
-                       $("#tusxrol").append(tab);
-
-                      }
+                    $("#tusxrol").append(tab);
+                    }
 
                     });
-                    /*$("#t_ubr").on('click','#con_ur',function(){
-                      var id = $(this).data('id');
 
-                      $.ajax({
-                          type:"GET",
-                          data: {'id':id},
-                          url:"selectUserByID",
-                          success:function(data){
-                            var id_u="";
-                            var name_u="";
-                            var ln_u="";
-                            var ro_u="";
-                            $.each(data,function(v){
-                                var val=data[v];
-                                id_u=val['ID_Usuario'];
-                                name_u=val['NombreCompleto']+' '+val['PrimerApellido'];
-                                //ln_u=val['PrimerApellido'];
-                                ro_u=val['Descripcion_Rol'];
-
-                            })
-                            $("#id_iuser").val(id_u);
-                            $("#c_name").val(name_u);
-                          //  $("#l_name").val(ln_u);
-                            $("#curr_r").val(ro_u);
-
-                            $('#rolChange').modal('show');
-                            $('#rolChange').modal('toggle');
-                          //  $('#rmodal-footer').modal('show');
-
-                          }
-
-                      });
-                    });*/
-                    $("#tusxrol").on('click','#con_ur',function(){
-                      var id=$(this).data('id');                    
+      $("#tusxrol").on('click','#con_ur',function(){
+                      var id=$(this).data('id');
                       $('#rolChanges').modal('show');
                       $('#con_upRol').data('id',id);
                       $.ajax({
@@ -118,15 +81,8 @@ $(document).ready(function(){
                             })
                             $("#id_iuser").val(id_u);
                             $("#c_name").val(name_u);
-                          //  $("#l_name").val(ln_u);
                             $("#curr_r").val(ro_u);
-
-
-                          //  $('#rolChange').modal('toggle');
-                          //  $('#rmodal-footer').modal('show');
-
                           }
-
                       });
                     });
 
@@ -145,8 +101,7 @@ $(document).ready(function(){
                             window.location.replace("GetUserByRol");
                             $.ajax({
                                     type:"GET",
-                                    data: {'u_id':id,
-                                    'chg':chang},
+                                    data: {'chg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
                                      if(data==1){
@@ -154,14 +109,12 @@ $(document).ready(function(){
                                       }
                                       }
                               });
-
-
                           }else{
                             alert("No se logró actualizar el rol!");
                             window.location.replace("GetUserByRol");
                           }
                         }
                       });
-                    });
+              });
 
   });

@@ -10,7 +10,7 @@ $(document).ready(function(){
               tserv+="<tr>";
               tserv+="<td>"+'<label id="con_iduser">'+val['ID_Tipo_Servicio']+'</label>'+"</td>";
               tserv+="<td>"+val['Descripcion']+"</td>";
-              tserv+="<td>"+'<button id="con_updateST" class="btn btn-primary" data-id="'+val['ID_Tipo_Servicio']+'" type="button">Modificar</button>'+' '+'<button id="con_delST" class="btn btn-danger" data-id="'+val['ID_Tipo_Servicio']+'" type="button">Eliminar</button>'+"</td>";
+              tserv+="<td>"+'<button id="con_updateST" class="btn btn-primary" data-id="'+val['ID_Tipo_Servicio']+'" type="button">Modificar</button>'+"</td>";
               tserv+="<tr>";
             });
               $("#t_sB").append(tserv);
@@ -19,7 +19,11 @@ $(document).ready(function(){
   //ServiceType
   $("#con_addst").click(function(){
     var desc=$("#con_sevT").val();
-    var userid=$("#con_iduse").val();
+    //var userid=$("#con_iduse").val();
+    if(desc== ""){
+      alert('Digite el nuevo tipo de servicio');
+    return false;
+    }
     var chang="Agregar nuevo tipo de servicio";
         $.ajax({
               type:"GET",
@@ -30,8 +34,7 @@ $(document).ready(function(){
                   alert("El nuevo tipo de servicio se agregó satisfactoriamente!");
                   $.ajax({
                           type:"GET",
-                          data: {'u_id':userid,
-                          'chg':chang},
+                          data: {'chg':chang},
                           url:"SystemLogRegistry",
                            success:function(data){
                            if(data==1){
@@ -47,36 +50,7 @@ $(document).ready(function(){
               }
         });
   });
-  $("#t_sT").on('click','#con_delST',function(){
-    var id_st=$(this).data('id');
-    var userid=$("#con_iduse").val();
-    var chang="Eliminar tipo de servicio";
-      $.ajax({
-        type:"GET",
-        data: {'id':id_st},
-        url:"deleteServiceType",
-        success:function(data){
-          if(data==1){
-            alert("El tipo de servicio se eliminó satisfactoriamente!");
-            $.ajax({
-                    type:"GET",
-                    data: {'u_id':userid,
-                    'chg':chang},
-                    url:"SystemLogRegistry",
-                     success:function(data){
-                     if(data==1){
 
-                      }
-                      }
-              });
-            window.location.replace("GetServiceType");
-          }else{
-            alert("No se logró eliminar el tipo de servicio!");
-            window.location.replace("GetServiceType");
-          }
-        }
-      });
-  });
   $("#t_sT").on('click','#con_updateST',function(){
     var id = $(this).data('id');
 
@@ -109,7 +83,7 @@ $(document).ready(function(){
   $("#servtModal").on('click','#btnservty',function(){
     var id=$(this).data('id');
     var desc=$("#con_dservty").val();
-    var userid=$("#con_iduse").val();
+    //var userid=$("#con_iduse").val();
     var chang="Actualizar tipo de servicio";
             $.ajax({
                 type:"GET",
@@ -121,8 +95,7 @@ $(document).ready(function(){
                     alert("Tipo de Servicio actualizado satisfactoriamente!");
                     $.ajax({
                           type:"GET",
-                          data: {'u_id':userid,
-                          'chg':chang},
+                          data: {'chg':chang},
                           url:"SystemLogRegistry",
                            success:function(data){
                            if(data==1){

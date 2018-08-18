@@ -35,7 +35,7 @@ $(document).ready(function(){
         });
         $("#con_Rcontent").on('click','#con_approveB',function(){
                 var id=$(this).data('id');
-                var userid=$("#con_iduse").val();
+              //  var userid=$("#con_iduse").val();
                 var chang="Aprobación de reservación pendiente";
                     $.ajax({
                       type:"GET",
@@ -57,8 +57,7 @@ $(document).ready(function(){
                               alert("Reservación aprobada exitosamente!");
                               $.ajax({
                                       type:"GET",
-                                      data: {'u_id':userid,
-                                      'chg':chang},
+                                      data: {'chg':chang},
                                       url:"SystemLogRegistry",
                                        success:function(data){
                                        if(data==1){
@@ -99,7 +98,7 @@ $(document).ready(function(){
         $("#processModal").on('click','#btn_proNB',function(){
                 var id=$(this).data('id');
                 var just=$("#p_justDesb").val();
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Procesar reservación pendiente";
                     $.ajax({
                       type:"GET",
@@ -121,8 +120,7 @@ $(document).ready(function(){
                               alert("La reservación cambió a estdo  'Pendiente'");
                               $.ajax({
                                       type:"GET",
-                                      data: {'u_id':userid,
-                                      'chg':chang},
+                                      data: {'chg':chang},
                                       url:"SystemLogRegistry",
                                        success:function(data){
                                        if(data==1){
@@ -165,7 +163,7 @@ $(document).ready(function(){
         $("#rejectModal").on('click','#btn_rejNB',function(){
                 var id=$(this).data('id');
                 var just=$("#r_justDesb").val();
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Rechazar reservación pendiente";
                     $.ajax({
                       type:"GET",
@@ -187,8 +185,7 @@ $(document).ready(function(){
                               alert("La reservación ha sido rechazada");
                               $.ajax({
                                           type:"GET",
-                                          data: {'u_id':userid,
-                                          'chg':chang},
+                                          data: {'chg':chang},
                                           url:"SystemLogRegistry",
                                            success:function(data){
                                            if(data==1){

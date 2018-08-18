@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\View;
 
 use Illuminate\Support\Facades\DB;
 
+use Pdf;
 use Mail;
+
+use Dompdf\Dompdf;
+
 class ContractController extends Controller
 {
     //
@@ -173,5 +177,44 @@ class ContractController extends Controller
         $message->to($maili)->subject('Contratación Rechazada');  // debe ser este rutaalacima@gmail.com
       });
       return 1;
+    }
+    public function selectNewContractToApprove(Request $request){
+      $id_c =$request['id'];
+
+      $result= DB::select("select c.ID_Contratacion,c.Descripcion,c.FechaTramite,c.FechaServicio
+      ,e.Descripcion Descripcion_ET,s.Descripcion Descripcion_S,u.NombreCompleto,u.PrimerApellido,
+      u.SegundoApellido from contratacion c, usuario u, tipo_evento e, tipo_servicio s, estados es
+      where es.Descripcion='Nuevo' and c.estado_ID=es.ID_Estado and
+      c.usuario_ID=u.ID_Usuario and c.tipoEvento_ID=e.ID_Tipo_Evento and
+      c.tipoServicioID=s.ID_Tipo_Servicio and c.ID_Contratacion='".$id_c."'");
+
+      $array = json_decode(json_encode($result), True);
+      $data = array(
+         "array" => $array
+      );
+      return view('sections.sectionApproveNContract')->with("array", $data);
+    }
+    public function pdfApprovalNewContract(Request $request){
+
+    $pdf->loadHtml($request::all());
+
+
+      $messageEmail="<p>Estimado(a):<br/><br/>
+      Le informa que la contratación por el siguiente servicio:  ha sido aprobada<br/>
+      Gracias</p>";
+      $name="Ruta a la Cima";
+      $email='rutaalacima@gmail.com';
+
+      Mail::send('sections.mail',['name'=>$name, 'email' => $email, 'messageEmail' => $messageEmail],
+      function($message){
+        $message->to('edwin.parajeles@gmail.com')->subject('Aprobación de Contratación');
+        $message->attachData($pdf-stream());  // debe ser este rutaalacima@gmail.com
+      });
+            return 1;
+    }
+    public function RemainingContractCounter(){
+      $result=DB::select("select count('ID_Contratacion') countContract from contratacion c, estados e where c.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
+      $array = json_decode(json_encode($result), True);
+      return $array;
     }
 }
