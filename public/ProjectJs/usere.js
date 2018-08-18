@@ -191,8 +191,7 @@ $(document).ready(function(){
         alert("Usuario actualizado exitosamente!");
         $.ajax({
         type:"GET",
-        data: {'u_id':userid,
-        'chg':chang},
+        data: {'chg':chang},
         url:"SystemLogRegistry",
          success:function(data){
          if(data==1){

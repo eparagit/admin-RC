@@ -11,7 +11,7 @@ $(document).ready(function(){
               tevt+="<tr>";
               tevt+="<td>"+'<label id="con_iduser">'+val['ID_Tipo_Evento']+'</label>'+"</td>";
               tevt+="<td>"+val['Descripcion']+"</td>";
-              tevt+="<td>"+'<button id="con_updateET" class="btn btn-primary" data-id="'+val['ID_Tipo_Evento']+'" type="button">Modificar</button>'+' '+'<button id="con_delET" class="btn btn-danger" data-id="'+val['ID_Tipo_Evento']+'" type="button">Eliminar</button>'+"</td>";
+              tevt+="<td>"+'<button id="con_updateET" class="btn btn-primary" data-id="'+val['ID_Tipo_Evento']+'" type="button">Modificar</button>'+"</td>";
               tevt+="<tr>";
             });
               $("#t_eB").append(tevt);
@@ -22,7 +22,11 @@ $(document).ready(function(){
   //Event Type
   $("#con_addevt").click(function(){
     var desc=$("#con_evt").val();
-    var userid=$("#con_iduse").val();
+    //var userid=$("#con_iduse").val();
+    if(desc== ""){
+      alert('Digite el nuevo tipo de evento');
+    return false;
+    }
     var chang="Agregar nuevo tipo de evento";
         $.ajax({
               type:"GET",
@@ -33,8 +37,7 @@ $(document).ready(function(){
                   alert("El nuevo tipo de evento se agregó satisfactoriamente!");
                   $.ajax({
                           type:"GET",
-                          data: {'u_id':userid,
-                          'chg':chang},
+                          data: {'chg':chang},
                           url:"SystemLogRegistry",
                            success:function(data){
                            if(data==1){
@@ -50,36 +53,7 @@ $(document).ready(function(){
               }
         });
   });
-  $("#t_eT").on('click','#con_delET',function(){
-    var id_et=$(this).data('id');
-    var userid=$("#con_iduse").val();
-    var chang="Eliminar Tipo de evento";
-      $.ajax({
-        type:"GET",
-        data: {'id':id_et},
-        url:"deleteEventType",
-        success:function(data){
-          if(data==1){
-            alert("El tipo de evento se eliminó satisfactoriamente!");
-            $.ajax({
-                    type:"GET",
-                    data: {'u_id':userid,
-                    'chg':chang},
-                    url:"SystemLogRegistry",
-                     success:function(data){
-                     if(data==1){
 
-                      }
-                      }
-                    });
-            window.location.replace("GetEventType");
-          }else{
-            alert("No se logró eliminar el tipo de evento!");
-            window.location.replace("GetEventType");
-          }
-        }
-      });
-  });
 
   $("#t_eT").on('click','#con_updateET',function(){
     var id = $(this).data('id');
@@ -112,7 +86,7 @@ $(document).ready(function(){
   $("#evtModal").on('click','#btnUpEvnt',function(){
     var id=$(this).data('id');
     var desc=$("#con_desevnt").val();
-    var userid=$("#con_iduse").val();
+    //var userid=$("#con_iduse").val();
     var chang="Actualizar tipo de evento";
             $.ajax({
                 type:"GET",
@@ -124,8 +98,7 @@ $(document).ready(function(){
                     alert("Tipo de Eevento actualizado satisfactoriamente!");
                     $.ajax({
                             type:"GET",
-                            data: {'u_id':userid,
-                            'chg':chang},
+                            data: {'chg':chang},
                             url:"SystemLogRegistry",
                              success:function(data){
                              if(data==1){

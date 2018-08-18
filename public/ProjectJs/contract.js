@@ -34,74 +34,31 @@ $(document).ready(function(){
                       window.location.replace("GetNoObjectInternal");
                   }
                 }
-        });
-
-        $("#con_content").on('click','#con_approveC',function(){
+              });
+              $("#con_content").on('click','#con_approveC',function(){
+                $('#newContractApp-Modal').modal('show');
                 var id=$(this).data('id');
-                var userid=$("#con_iduse").val();
-                var chang="Aprobación de nueva contratación";
-                    $.ajax({
-                      type:"GET",
-                      data: {},
-                      url:"selectApprovedStatus",
-                      success:function(data){
-                        var est_id="";
-                        $.each(data,function(v){
-                          var val=data[v];
-                          est_id=val['ID_Estado'];
-                        });
-                        $.ajax({
-                          type:"GET",
-                          data: {'id':id,
-                                  'id_s':est_id},
-                          url:"ApproveContract",
-                          success:function(data){
-                            if(data==1){
-                              alert("Contratación aprobada exitosamente!");
-                              $.ajax({
-                                      type:"GET",
-                                      data: {'u_id':userid,
-                                      'chg':chang},
-                                      url:"SystemLogRegistry",
-                                       success:function(data){
-                                       if(data==1){
-
-                                        }
-                                        }
-                                });
-                              $.ajax({
-                                    type:"GET",
-                                    data: {'id':id},
-                                    url:"NotifyContractApproval",
-                                    success:function(data){
-                                      if(data==1){
-                                        alert("Se realizaron las notificaciones a los interesados!");
-                                        window.location.replace("GetNewContract");
-                                      }else{
-                                        alert("No se logró notificar a los interesados!");
-                                        window.location.replace("GetNewContract");
-                                      }
-                                    }
-                                    });
-                            }else{
-                              alert("No se logró aprobar la contración!");
-                              window.location.replace("GetNewContract");
-                            }
-                          }
-                        });
-                        }
-                    });
+            $.ajax({
+              type:"GET",
+              data: {'id':id},
+              url:"selectNewContractToApprove",
+              success:function(data){
+                  $("#modalBodyNContract").html(data);
+              }
+            });
         });
-        $("#con_content").on('click','#con_processC',function(){
+
+
+      $("#con_content").on('click','#con_processC',function(){
           var id = $(this).data('id');
           $('#processModal').modal('show');
           //$('#processModal').modal('toggle');
           $("#btn_proNC").data('id',id);
           });
 
-        $("#processModal").on('click','#btn_proNC',function(){
+      $("#processModal").on('click','#btn_proNC',function(){
                 var id=$(this).data('id');
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Procesar nueva contratación";
                 var just=$("#p_justDesc").val();
                     $.ajax({
@@ -124,13 +81,10 @@ $(document).ready(function(){
                               alert("La contratación cambió a estdo  'Pendiente'");
                               $.ajax({
                                     type:"GET",
-                                    data: {'u_id':userid,
-                                    'chg':chang},
+                                    data: {'chg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
-                                     if(data==1){
 
-                                      }
                                       }
                                   });
 
@@ -161,18 +115,18 @@ $(document).ready(function(){
                         });
                         }
                     });
-        });
-        $("#con_content").on('click','#con_rejectC',function(){
+                  });
+      $("#con_content").on('click','#con_rejectC',function(){
           var id = $(this).data('id');
           $('#rejectModal').modal('show');
           //$('#processModal').modal('toggle');
           $("#btn_rejNC").data('id',id);
           });
 
-        $("#rejectModal").on('click','#btn_rejNC',function(){
+      $("#rejectModal").on('click','#btn_rejNC',function(){
                 var id=$(this).data('id');
                 var just=$("#r_justDesc").val();
-                var userid=$("#con_iduse").val();
+                //var userid=$("#con_iduse").val();
                 var chang="Rechazar nueva contratación";
                     $.ajax({
                       type:"GET",
@@ -194,13 +148,10 @@ $(document).ready(function(){
                               alert("La contratación ha sido rechazada");
                               $.ajax({
                                     type:"GET",
-                                    data: {'u_id':userid,
-                                    'chg':chang},
+                                    data: {'hg':chang},
                                     url:"SystemLogRegistry",
                                      success:function(data){
-                                     if(data==1){
 
-                                      }
                                       }
                                     });
                               $.ajax({
@@ -230,5 +181,5 @@ $(document).ready(function(){
                         });
                         }
                     });
-        });
+                  });
 });

@@ -127,7 +127,21 @@
        </div>
 
    <!-- Panel Content -->
+   <div class="modal fade" id="newContractApp-Modal" role="dialog">
+     <div class="modal-dialog">
 
+       <!-- Modal content-->
+       <div class="modal-content" style="width:600px;">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Aprobación de contratación Nueva</h4>
+         </div>
+           <div class="modal-body" id="modalBodyNContract">
+
+          </div>
+     </div>
+   </div>
+   </div>
  </body>
     <!-- Page Top -->
 
@@ -173,6 +187,8 @@
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/contract.js" type="text/javascript"></script>
       <script src="ProjectJs/headerData.js" type="text/javascript"></script>
+        <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+        <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

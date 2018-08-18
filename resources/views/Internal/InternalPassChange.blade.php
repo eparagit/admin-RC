@@ -25,10 +25,10 @@
 </head>
 
 <body class="expand-data panel-data">
-    @include('Ilayout.rightHeader')
+    @include('Alayout.rightHeaderA')
     <!-- Topbar -->
 
-  @include('Ilayout.headerI')
+    @include('Alayout.headerA')
     <!-- Side Header -->
 
     <div class="option-panel">
@@ -66,74 +66,34 @@
    </div>
    <!-- Page Top -->
 
-   <div class="panel-content" id="allUsers">
+   <div class="panel-content">
      <div class="widget pad50-65">
        <div class="widget-title2">
-         <h4>Administración de Tipos de Servicio</h4>
+         <h4>Cambio de Contraseña</h4>
        </div>
        <form class="form-wrp">
          <div class="row mrg20">
-                <div class="col-md-6 col-sm-6 col-lg-6">
-                Nuevo Servicio: <input id="con_sevT" class="brd-rd5" type="text" placeholder="Servicio*" />
-                 <button id="con_addst" name="con_addst" class="green-bg brd-rd5" type="button">
-                 <i class="fa fa-paper-plane"></i>Agregar</button>
-               </div>
-               <div class="col-md-6 col-sm-6 col-lg-6">
-
-               </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
-               <div>
-                   <h4>Tipo Servicio</h4>
-                 <table class="table" id="t_sT">
-                     <thead>
-                         <tr>
-                            <th>#</th>
-                             <th>Descripción</th>
-                             <th>Acción</th>
-                            <th></th>
-                           </tr>
-                     </thead>
-                   <tbody id="t_sB">
-                   </tbody>
-                 </table>
-               </div>
+           <div class="col-md-5 col-sm-5 col-lg-5">
+            Digite la Contraseña actual<input id="con_pcontra" class="brd-rd5" type="password"/>
+          </div>
+            <div class="col-md-5 col-sm-5 col-lg-5">
+             Digite la nueva Contraseña<input id="con_scontra" class="brd-rd5" type="password"/>
            </div>
-           <div class="widget pad50-65">
-            <div class="widget-title2">
+           <div <div class="col-md-12 col-sm-12 col-lg-12">
+             <input id="message" class="brd-rd5" type="text" disabled style="display:none"/>
+           </div>
+           <div class="col-md-12 col-sm-12 col-lg-12">
+             <button id="con_chan" name="con_chan" class="green-bg brd-rd5" type="button">
+               <i class="fa fa-paper-plane"></i>Cambiar</button>
+           </div>
 
-            </div>
 
-        </div>
 
          </div>
        </form>
      </div>
 
    </div>
-
-   <div class="modal fade" id="servtModal" tabindex="-1" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Tipo de Servicio</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
-           <div class="modal-body">
-             <div class="col-md-6 col-sm-6 col-lg-6" id="id_desevnt">
-             <input class="brd-rd5 validate[required]" name="con_dservty" id="con_dservty"  type="text"  />
-             <span class="error-box"></span>
-           </div>
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary" id="btnservty" data-id="">Save changes</button>
-           </div>
-         </div>
-       </div>
-     </div>
-
    <!-- Panel Content -->
 
  </body>
@@ -179,7 +139,6 @@
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
-    <script src="ProjectJs/serviceType.js" type="text/javascript"></script>
     <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
     <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">

@@ -24,12 +24,7 @@ class ServiceTypeController extends Controller
       return 1;
 
     }
-    public function deleteServiceType(Request $request){
-      $id_st=$request['id'];
 
-      $result=DB::delete("delete from tipo_servicio where ID_Tipo_Servicio='".$id_st."' ");
-      return 1;
-    }
     public function selectServiceTypeByID(Request $request){
       $id_st=$request['id'];
       $result= DB::select("select * from tipo_servicio where ID_Tipo_Servicio='".$id_st."'");

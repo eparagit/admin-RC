@@ -12,6 +12,23 @@ class UserController extends Controller
     //
     public function validateNewUser(Request $request)
     {
+
+      $email = $request['email'];
+      $userName = $request['userName'];
+
+      $result= DB::select("select * from usuario where NombreUsuario='".$userName."' and CorreoElectronico='".$email."'");
+      //  var_dump($result);die;
+      $array = json_decode(json_encode($result), True);
+      $data=0;
+        if(empty($array)){
+          $data=0;
+        }else{
+          $data=1;
+        }
+
+        return $data;
+    }
+    public function registerUser(Request $request){
       $firstName = $request['name'];
       $firstLastName = $request['firstLastName'];
       $secondLastName = $request['secondLastName'];
@@ -23,15 +40,8 @@ class UserController extends Controller
       $password = $request['password'];
       $rolID = $request['rol'];
 
-      $result= DB::select("select * from usuario where NumeroIdentificacion='".$idNumber."'");
-      $array = json_decode(json_encode($result), True);
-        if(!empty($array)){
-          return 1;
-        }else{
-
-          DB::insert('insert into usuario (rol_ID,NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena) values (?,?,?,?,?,?,?,?,?,?)',  [$rolID,$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password]);
-          return 0;
-        }
+      DB::insert('insert into usuario (rol_ID,NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,Tipo_Login) values (?,?,?,?,?,?,?,?,?,?,?)',  [$rolID,$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password,"Temporal"]);
+      return 1;
     }
     public function selectAdUser(){
       $result= DB::select("select NombreCompleto,PrimerApellido,SegundoApellido,CorreoElectronico,NombreUsuario from usuario where rol_ID = '1'");
@@ -120,5 +130,11 @@ return $array;
 
  return $array;
 
+    }
+    public function PasswordReset(Request $request){
+      $u_id=$request['id'];
+      $u_pass=$request['pass'];
+      $result=DB::update("update usuario set Contrasena='".$u_pass."',Tipo_Login='Temporal' where ID_Usuario='".$u_id."'");
+      return 1;
     }
 }

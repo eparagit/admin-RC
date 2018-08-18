@@ -32,7 +32,7 @@
       </div>
       <div class="topbar-data">
         <div class="usr-act">
-          @foreach(Session::get('datos') as $data)
+          @foreach(Session::get('admin') as $data)
             <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
             @endforeach
             <a id="con_logout" class="btn-danger" href="#" title="">

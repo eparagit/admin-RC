@@ -623,17 +623,20 @@
       <div class="lgn-innr">
         <div class="widget lgn-frm">
           <div class="frm-tl">
-            <h4>Administración Ruta a la Cima</h4>
-            <span>Ingrese</span>
+            <h4>Debe Cambiar su Contraseña</h4>
+            <span>Cambio</span>
           </div>
           <form class="form-group">
-
+                
             <div class="row mrg10">
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_usnm" name="con_username" class="form-control" type="text" placeholder="Nombre de Usuario" />
+                <input id="con_usname" name="con_susername" class="form-control" type="text" placeholder="Nombre de Usuario" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_pas" name="con_passw" class="form-control" type="password" placeholder="Contraseña" />
+                <input id="con_cpas" name="con_curpass" class="form-control" type="password" placeholder="Contraseña" />
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12">
+                <input id="con_pas" name="con_newpass" class="form-control" type="password" placeholder="Contraseña" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <span class="chbx">
@@ -641,9 +644,13 @@
                   <label for="chk1">Recordarme</label>
                 </span>
               </div>
+
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <button class="green-bg brd-rd5" type="button" id="con_logi">Ingresar</button>
+
+                <button class="green-bg brd-rd5" type="button" id="con_pchange">Cambiar</button>
+
               </div>
+
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <a href="#" title="" class="frgt">Olvido su contraseña?</a>
               </div>
@@ -696,8 +703,7 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-<script src="ProjectJs/login.js" type="text/javascript"></script>
-<script src="ProjectJs/logout.js" type="text/javascript"></script>
+  <script src="ProjectJs/login.js" type="text/javascript"></script>
 </body>
 
 </html>

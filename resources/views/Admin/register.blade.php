@@ -25,134 +25,7 @@
 </head>
 
 <body class="expand-data panel-data">
-    <div class="topbar">
-        <div class="logo">
-            <h1>
-                <a href="#" title="">
-                    <img src="images/rutacima.png" alt="" />
-                </a>
-            </h1>
-        </div>
-        <div class="topbar-data">
-          <div class="usr-act">
-            @foreach(Session::get('datos') as $data)
-              <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
-              @endforeach
-              <span>
-                  <img src="images/resource/topbar-usr1.jpg" alt="" />
-                  <i class="sts away"></i>
-              </span>
-              <div class="usr-inf">
-                  <div class="usr-thmb brd-rd50">
-                      <img class="brd-rd50" src="images/resource/usr.jpg" alt="" />
-                      <i class="sts away"></i>
-                      <a class="green-bg brd-rd5" href="#" title="">
-                          <i class="fa fa-envelope"></i>
-                      </a>
-                  </div>
-                  <h5>
-                      @foreach(Session::get('datos') as $data)
-                      <a href="#" title="">{{$data['NombreUsuario']}}</a>
-                      @endforeach
-                  </h5>
-                  <span>
-                    @foreach(Session::get('datos') as $data)
-                    <label>{{$data['NumeroTelefonico']}}</label>
-                    @endforeach
-                  </span>
-
-
-
-                  <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                          <i class="ion-forward"></i>Mi perfil</a>
-                  </div>
-                  <div class="usr-ft">
-                      <a id="con_logout" class="btn-danger" href="#" title="">
-                          <i class="fa fa-sign-out"></i> Logout</a>
-                  </div>
-                </div>
-            </div>
-
-            <ul class="tobar-links">
-                <li>
-                    <a href="#" title="">
-                        <i class="ion-ios-bell"></i>
-                        <span class="blue-bg">02</span>
-                    </a>
-                    <div class="nti-drp-wrp">
-                        <h5 class="blue-bg">
-                            <span>You Have</span> 7 Notifications</h5>
-                        <div class="nti-lst">
-                            <div class="nti-usr">
-                                <span class="brd-rd50 rd-bg">
-                                    <i class="fa fa-cog"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Sadi Orlaf</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Privacy settings changed</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 drkblu-bg">
-                                    <i class="ion-ios-personadd"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Katti Smith</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Mike has added you as friend</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 orng-bg">
-                                    <i class="ion-thumbsup"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Willimes Domson</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>like your timeline photo</i>
-                                </div>
-                            </div>
-                            <div class="nti-usr">
-                                <span class="brd-rd50 grn-bg">
-                                    <i class="ion-information-circled"></i>
-                                </span>
-                                <div class="nti-usr-inr">
-                                    <h5>
-                                        <a href="#" title="">Holli Doe</a>
-                                    </h5>
-                                    <span class="pst-tm">Just Now</span>
-                                    <i>Curabitur id eros limes suscipit blandit.</i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nt-ftr">
-                            <a href="#" title="">View All</a>
-                        </div>
-                    </div>
-                </li>
-
-
-
-            </ul>
-        </div>
-        <div class="topbar-bottom-colors">
-            <i style="background-color: #2c3e50;"></i>
-            <i style="background-color: #9857b2;"></i>
-            <i style="background-color: #2c81ba;"></i>
-            <i style="background-color: #5dc12e;"></i>
-            <i style="background-color: #feb506;"></i>
-            <i style="background-color: #e17c21;"></i>
-            <i style="background-color: #bc382a;"></i>
-        </div>
-    </div>
+    @include('Alayout.rightHeaderA')
     <!-- Topbar -->
 
     @include('Alayout.headerA')
@@ -201,38 +74,51 @@
        </div>
        <form class="form-wrp">
          <div class="row mrg20">
-           <div class="col-md-6 col-sm-6 col-lg-6">
+
+                <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_nombrecompleto" class="brd-rd5" type="text" placeholder="Nombre Completo*" />
-           </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
+               </div>
+               <label style="color: red">*</label>
+               <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
+               <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_primerapellido" class="brd-rd5" type="text" placeholder="Primer Apellido*" />
-           </div>
- 		   <div class="col-md-6 col-sm-6 col-lg-6">
+
+             </div>
+              <label style="color: red">*</label>
+              <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
+ 		           <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_segundoapellido" class="brd-rd5" type="text" placeholder="Segundo Apellido*" />
            </div>
-
-           <div class="col-md-6 col-sm-6 col-lg-6">
+            <label style="color: red">*</label>
+            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
+           <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_identificacion" class="brd-rd5" type="text" placeholder="Número de Identificación*" />
            </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
+            <label style="color: red">*</label>
+            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="'Solo numeros',Ejemplo: 000000000"></label>
+           <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_edad" class="brd-rd5" type="text" placeholder="Edad*" />
            </div>
-           <div class="col-md-6 col-sm-6 col-lg-6">
+            <label style="color: red">*</label>
+           <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_correoe" class="brd-rd5" type="text" placeholder="Correo Electrónico*" />
            </div>
- 		   <div class="col-md-6 col-sm-6 col-lg-6">
+            <label style="color: red">*</label>
+            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Ejemplo: correo@gmail.com"></label>
+     		   <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_numerotel" class="brd-rd5" type="text" placeholder="Número de Teléfono*" />
            </div>
- 		   <div class="col-md-6 col-sm-6 col-lg-6">
+            <label style="color: red">*</label>
+            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="'Solo Números', Ejemplo: 89178414"></label>
+ 		         <div class="col-md-5 col-sm-5 col-lg-5">
              <input id="con_nombreusuario" class="brd-rd5" type="text" placeholder="Nombre de Usuario*" />
            </div>
- 		   <div class="col-md-6 col-sm-6 col-lg-6">
-             <input id="con_contrasena" class="brd-rd5" type="text" placeholder="Contraseña*" />
+            <label style="color: red">*</label>
+ 		         <div class="col-md-5 col-sm-5 col-lg-5">
+             <input id="con_contrasena" class="brd-rd5" type="password" placeholder="Contraseña*" />
            </div>
-
-<!--/DropDownList Test/
-
---> <div class="col-md-6 col-sm-6 col-lg-6">
+           <label style="color: red">*</label>
+           <div class="col-md-5 col-sm-5 col-lg-5">
              <div  class="slct-bx">
                <span>
                  <select id="rol">
@@ -241,10 +127,12 @@
                </span>
              </div>
            </div>
+            <label style="color: red">*</label>
 
-           <!--/DropDownList Test/
-
-           -->
+           <div>
+              Campo requierido <label style="color: red">*</label></br>
+              Ayuda <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Ayuda"></label>
+           </div>
 
            <div class="col-md-12 col-sm-12 col-lg-12">
              <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
@@ -302,6 +190,7 @@
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
+    <script src="ProjectJs/passChange.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

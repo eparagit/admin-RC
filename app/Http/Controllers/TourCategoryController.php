@@ -31,12 +31,7 @@ class TourCategoryController extends Controller
     $array = json_decode(json_encode($result), True);
 return $array;
   }
-  public function deleteTourCategory(Request $request){
-    $id_tcat=$request['id'];
-
-    $result=DB::delete("delete from categoria_viaje where ID_Categoria='".$id_tcat."' ");
-    return 1;
-  }
+  
   public function selectTourCategoryByID(Request $request){
     $id_tc=$request['id'];
     $result= DB::select("select * from categoria_viaje where ID_Categoria='".$id_tc."'");
@@ -52,5 +47,5 @@ return $array;
 
     return 1;
   }
-  
+
 }
