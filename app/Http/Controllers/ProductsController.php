@@ -28,7 +28,7 @@ class ProductsController extends Controller
     public function insertProduct(Request $request){
           $titulo = $request->input('con_titulo_Producto');
           $descripcion = $request->input('con_descripcion_Producto');
-          $sesion = Session::get('datos');
+          $sesion = Session::get('standard');
           $usuarioID = $sesion[0]['ID_Usuario'];
 
                    //file upload

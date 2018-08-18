@@ -99,8 +99,23 @@ Route::get('/', function () {
           Route::get('/GetStatisticsVisited','PagesController@GetStatisticsVisited');
 
           Route::get('/GetStatisticsSeason','PagesController@GetStatisticsSeason');
+
+          Route::get('/GetFirstPasswordChange','PagesController@GetFirstPasswordChange');
+
+          Route::get('/GetNoObjectAdmin','PagesController@GetNoObjectAdmin');
+
+          Route::get('/GetAdminPassChange','PagesController@GetAdminPassChange');
+
+          Route::get('/GetInternalPassChange','PagesController@GetInternalPassChange');
+
+          Route::get('/GetContractNotification ','PagesController@GetContractNotification');
+
+            Route::get('/GetNotAllowedBlade','PagesController@GetNotAllowedBlade');
+
 //______________
 //AuthController
+          Route::get('/restorePassword','AuthController@restorePassword');
+          Route::get('/CheckSession','AuthController@CheckSession');
 //______________
 //UserController
           Route::get('selectAdUser','UserController@selectAdUser');
@@ -120,6 +135,11 @@ Route::get('/', function () {
           Route::get('createUser', 'UserController@validateNewUser');
 
           Route::get('selectUsersReportByRol', 'UserController@selectUsersReportByRol');
+
+          Route::get('registerUser', 'UserController@registerUser');
+
+          Route::get('PasswordReset', 'UserController@PasswordReset');
+
 //______________
 //RolController
           Route::get('selectRol','RolController@selectRol');
@@ -180,6 +200,8 @@ Route::get('/', function () {
           Route::get('updateTourStatus','TourStatusController@updateTourStatus');
 
           Route::get('selectTourStatus','TourStatusController@selectTourStatus');
+
+          Route::get('selectRejectedTourStatus','TourStatusController@selectRejectedTourStatus');
 //______________
 //TourController
           Route::post('insertTour','TourController@insertTour');
@@ -193,6 +215,10 @@ Route::get('/', function () {
           Route::post('updateTour','TourController@updateTour');
 
           Route::get('selectNewTours','TourController@selectNewTours');
+
+          Route::get('rejectTour','TourController@rejectTour');
+
+          Route::get('RemainingTourCounter','TourController@RemainingTourCounter');
 //______________
 //SessionController
 //Session Routes -Start//
@@ -219,6 +245,12 @@ Route::get('/', function () {
           Route::get('NotifyContractProcess','ContractController@NotifyContractProcess');
 
           Route::get('NotifyContractRejected','ContractController@NotifyContractRejected');
+
+          Route::get('selectNewContractToApprove','ContractController@selectNewContractToApprove');
+
+          Route::post('pdfApprovalNewContract','ContractController@pdfApprovalNewContract');
+
+          Route::get('RemainingContractCounter','ContractController@RemainingContractCounter');
 //______________
 //StatusController
           Route::get('selectApprovedStatus','StatusController@selectApprovedStatus');
@@ -267,6 +299,8 @@ Route::get('/', function () {
           Route::get('selectRemainingBookingByCustomer','BookingController@selectRemainingBookingByCustomer');
 
           Route::get('selectStatisticsForRating','BookingController@selectStatisticsForRating');
+
+          Route::get('RemainingBookingCounter','BookingController@RemainingBookingCounter');
 //______________
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
@@ -295,6 +329,7 @@ Route::get('/', function () {
 //Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');
 Route::get('logoutS','AuthController@logoutS');
+Route::get('passwordChange','AuthController@passwordChange');
 //Login and Logout Routes-End
 
 Route::get('login', ['as'=>'login','uses'=>'PagesController@Login']);
@@ -302,3 +337,4 @@ Route::get('login', ['as'=>'login','uses'=>'PagesController@Login']);
 Route::group(['middleware' => 'roles'], function () {
     Route::get('admin', ['as'=>'admin','uses'=>'PagesController@Admin']);
 });
+Route::get('invoice/{invoice}', 'PdfController');

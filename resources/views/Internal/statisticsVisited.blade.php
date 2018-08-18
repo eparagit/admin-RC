@@ -128,7 +128,8 @@
   <script src="js/main.js" type="text/javascript"></script>
   <script src="ProjectJs/statistics.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
-
+  <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+  <script src="ProjectJs/counters.js" type="text/javascript"></script>
 </body>
 
 </html>

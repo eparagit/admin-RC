@@ -4,150 +4,545 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Session;
 class PagesController extends Controller
 {
-    //Admin Views
-    public function Admin(){
-    //  $userName = Session::get('userName');
-      if(!empty($userName)){
 
-        return view('Admin.admin')->with('datos',$_Session);
-      }else{
-        return view('Admin.admin');
+
+
+      //Admin Views
+      public function Admin(){
+        if(Session::has('admin')){
+          $data=Session::get('admin');
+          if(!empty($data)){
+
+              return view('Admin.admin')->with('admin',$data);
+
+          }else{
+               redirect('/Admin-RC/public//GetNotAllowedBlade');
+
+          }
+
+        }
+
       }
-    }
     //GoAdminU
     public function GetAdminUserView(){
-      return view('Admin.adminUser');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.adminUser');
+
+        }else{
+
+               redirect('/Admin-RC/public//GetNotAllowedBlade');
+
+        }
+
+      }
     }
     public function GetStandardIUser(){
-      return view('Admin.standardIUser');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.standardIUser');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetStandardEUser(){
-      return view('Admin.standardEUser');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+              return view('Admin.standardEUser');
+        }else{
+            return view('Login.notAllowed');
+        }
+      }
     }
     public function GetRegisterUserAI(){
-      return view('Admin.register');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.register');
+
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetProfile(){
-      return view('Admin.profile');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.profile');
+        }else{
+              return view('Login.notAllowed');
+        }
+      }
     }
     public function GetRol(){
-      return view('Admin.rol');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.rol');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetUserByRol(){
-      return view('Admin.userByrol');
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+            return view('Admin.userByrol');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
+    public function GetSystemLogReport(){
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+              return view('Reports.systemLogReport');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
+    }
+    public function GetAdminPassChange(){
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+              return view('Admin.AdminPassChange');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
+    }
+    public function GetNoObjectAdmin(){
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+          return view('Admin.noObjectA');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
+    }
+
+
     //______________________
     //Internal Views
     public function Internal(){
-      return view('Internal.adminI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.adminI');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetTourUpload(){
-      return view('Internal.tourUpload');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.tourUpload');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetTourToApprove(){
-      return view('Internal.tourToApprove');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.tourToApprove');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetServiceType(){
-      return view('Internal.serviceType');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.serviceType');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetTourStatus(){
-       return view('Internal.tourStatus');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.tourStatus');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetEventType(){
-      return view('Internal.eventType');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.eventType');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetTourCategory(){
-      return view('Internal.tourCategory');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.tourCategory');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetNoObjectInternal(){
-       return view('Internal.noObjectI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.noObjectI');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetNewContract(){
-       return view('Internal.newContract');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.newContract');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetNewBooking(){
-       return view('Internal.newBooking');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.newBooking');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetRemainingBooking(){
-       return view('Internal.remainingBooking');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.remainingBooking');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetRemainingContract(){
-       return view('Internal.remainingContract');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.remainingContract');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
 
     }
     public function GetTheMostVisited(){
-       return view('Internal.theMostVisited');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.theMostVisited');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetProductInsertBlade(){
-       return view('Internal.insertProduct');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.insertProduct');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetProductUpdate(){
-       return view('Internal.updateProduct');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.updateProduct');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     //Layouts
     public function GetInternalLayout(){
-       return view('Internal.defaultLayoutI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.defaultLayoutI');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetInternalHeadLayout(){
-       return view('Internal.headI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.headI');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetInternalHeaderLayout(){
-       return view('Internal.headerI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.headerI');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetInternalFooterLayout(){
-       return view('Internal.footerI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.footerI');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetInternalSidebarLayout(){
-       return view('Internal.sidebarI');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.sidebarI');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetMailBlade(){
-       return view('sections.mail');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('sections.mail');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
+    public function GetContractNotification(){
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.contractNotification');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
+    }
+
     //______________________
     //Reports
     public function GetApprovedBookingReport(){
-       return view('Reports.approvedBookingByCustomer');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.approvedBookingByCustomer');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetRemainingBookingReport(){
-       return view('Reports.remainingBookingByCustomer');
-    }
-    public function GetSystemLogReport(){
-       return view('Reports.systemLogReport');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.remainingBookingByCustomer');
+        }else{
+              return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetEmployeesReport(){
-       return view('Reports.employees');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.employees');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetTourReport(){
-       return view('Reports.tourReport');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.tourReport');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetBookingReport(){
-       return view('Reports.bookingReport');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.bookingReport');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetHiringReport(){
-       return view('Reports.hiringReport');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Reports.hiringReport');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetProductReport(){
-       return view('Reports.productReport');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Reports.productReport');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     //______________________
     //Statistics
     public function GetStatisticsRating(){
-       return view('Internal.statisticsRating');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+            return view('Internal.statisticsRating');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetStatisticsVisited(){
-       return view('Internal.statisticsVisited');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.statisticsVisited');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
     public function GetStatisticsSeason(){
-       return view('Internal.statisticsSeason');
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.statisticsSeason');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
     }
+    public function GetInternalPassChange(){
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.InternalPassChange');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
+    }
+
     //______________________
     //Login Views
     public function Login(){
       return view('Login.login');
     }
-    //______________________
+    public function GetNotAllowedBlade(){
+      if(Session::has('admin')){
+        $dataa=Session::get('admin');
+        if(empty($dataa)){
+      return view('Login.notAllowed');
+    }
+  }
+  if(Session::has('standard')){
+    $datas=Session::get('standard');
+    if(empty($datas)){
+  return view('Login.notAllowed');
+}
+}
+}
 
+      public function GetFirstPasswordChange(){
+        if(Session::has('change')){
+        return view('Login.firstPasswordChange');
+      }
+    }
+
+
+
+    //______________________
+    //if(Session::has('datos'))
 
 }

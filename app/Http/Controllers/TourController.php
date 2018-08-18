@@ -41,7 +41,7 @@ class TourController extends Controller
          $fechaVencimiento = $request->input('con_dtfhv');
          $usuarioID = "";
          $rutaImagen = "";
-         $sesion = Session::get('datos');
+         $sesion = Session::get('standard');
          $usuarioID = $sesion[0]['ID_Usuario'];
          $estado = 1;
          $fecha_publicacion = date("Y/m/d");
@@ -159,6 +159,18 @@ class TourController extends Controller
        "array" => $array
     );
     return view('sections.sectionUpdateTour')->with("array", $data);
+  }
+  public function rejectTour(Request $request){
+    $id_tour=$request['id'];
+    $id_st=$request['idst'];
+
+    $result=DB::update("update viaje set estadoViaje_ID='".$id_st."' where ID_Viaje='".$id_tour."'");
+    return 1;
+  }
+  public function RemainingTourCounter(){
+    $result=DB::select("select count('ID_Viaje') tourCounter from viaje v, estado_viaje ev where v.estadoViaje_ID=ev.ID_Estado_Viaje and ev.Descripcion='Pendiente'");
+    $array = json_decode(json_encode($result), True);
+    return $array;
   }
 
 }
