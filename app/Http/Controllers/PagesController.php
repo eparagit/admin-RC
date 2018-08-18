@@ -491,15 +491,14 @@ class PagesController extends Controller
 
       }
     }
-    public function GetStatisticsSeason(){
-      if(Session::has('standard')){
+	    public function GetStatisticsNvsI(){
+		 if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-          return view('Internal.statisticsSeason');
+          return view('Internal.statisticsNacionalsvsInternationals');
         }else{
             return view('Login.notAllowed');
         }
-
       }
     }
     public function GetInternalPassChange(){

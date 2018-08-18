@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Session;
 
+use Mail;
+
 class TourController extends Controller
 {
 
@@ -132,11 +134,33 @@ class TourController extends Controller
   }
 
   public function ApproveTour(Request $request){
-    $id_t=$request['id'];
-    $estadoAprobado = 3;
-    $result=DB::update("update viaje set estadoViaje_ID='".$estadoAprobado."' where ID_Viaje='".$id_t."'");
+          $id_t=$request['id'];
+          $estadoAprobado = 2;
+          $result=DB::update("update viaje set estadoViaje_ID='".$estadoAprobado."' where ID_Viaje='".$id_t."'");
 
-    return 1;
+      /* Mail Notification to Customers*/
+          $resultSelect=DB::select("select * from viaje where ID_Viaje='".$id_t."'");
+          $array = json_decode(json_encode($resultSelect), True);
+          $titulo = "Nuevo viaje ".$array[0]['Titulo']." disponible!";
+          $descripcion = "Descripcion: ".$array[0]['Descripcion'];
+          $resultUsuarios= DB::select("select CorreoElectronico from usuario where rol_ID = 3 ");
+          $arrayUsuarios = json_decode(json_encode($resultUsuarios), True);
+          if(isset($arrayUsuarios[1])){
+            foreach($arrayUsuarios as $item){
+              Mail::send('sections.mailNotifications',['name'=>$titulo, 'messageEmail' => $descripcion],
+                    function($message) use ($item){
+                      $message->to($item['CorreoElectronico'])->subject('Información');
+                    });
+            }
+          }else{
+            Mail::send('sections.mailNotifications',['name'=>$titulo, 'messageEmail' => $descripcion],
+                  function($message) use ($arrayUsuarios){
+                    $message->to($arrayUsuarios[0]['CorreoElectronico'])->subject('Información');
+                  });
+          }
+      /* End Mail Notification to Customers*/
+
+          return 1;
   }
 
   public function deleteTour(Request $request){

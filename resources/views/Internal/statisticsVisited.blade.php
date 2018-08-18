@@ -75,7 +75,7 @@
   <div class="pg-tp">
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
-         <h4>Mas visitados</h4>
+         <h4>Estadisticas</h4>
          <span>Estadisticas de Viajes mas visitados</span>
        </div>
      </div>
@@ -83,8 +83,10 @@
   <div class="panel-content">
     <div class="widget pad50-65">
     <div class="col-md-12 col-sm-12 col-lg-12" >
-          <div >
-
+         <div class="row">
+            <div class="col-lg-6">
+             <canvas id="chartVisited" width="50" height="50"></canvas>
+            </div>
          </div>
     </div>
     </div>
@@ -103,7 +105,7 @@
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/select2.min.js" type="text/javascript"></script>
   <script src="js/slick.min.js" type="text/javascript"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <!-- Our Website Javascripts -->
   <script src="js/isotope.min.js" type="text/javascript"></script>
   <script src="js/isotope-int.js" type="text/javascript"></script>
@@ -126,7 +128,7 @@
   <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
   <script src="js/styleswitcher.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/statistics.js" type="text/javascript"></script>
+  <script src="ProjectJs/statisticsVisited.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
   <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
   <script src="ProjectJs/counters.js" type="text/javascript"></script>

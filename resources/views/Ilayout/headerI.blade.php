@@ -78,6 +78,17 @@
                     </li>
                 </ul>
             </li>
+			 <li class="has-drp">
+                <a href="#" title="">
+                    <i class="ion-ios-email"></i>
+                    <span>Notificaciones</span>
+                </a>
+                <ul class="sb-drp">
+                    <li>
+                        <a href="/Admin-RC/public//GetReminderNotifications" title="">Recordatorio</a>
+                    </li>
+                </ul>
+            </li>
             <li class="has-drp">
                 <a href="#" title="">
                     <i class="ion-fireball"></i>
@@ -105,10 +116,10 @@
                         <a href="/Admin-RC/public//GetStatisticsRating" title="">Viajes por Calificación</a>
                     </li>
                     <li>
-                        <a href="/Admin-RC/public//GetStatisticsVisited" title="">Viajes más Visitados</a>
+                         <a href="/Admin-RC/public//GetStatisticsNvsI" title="">Nacionales vs Internacionales</a>
                     </li>
                     <li>
-                        <a href="/Admin-RC/public//GetStatisticsSeason" title="">Más Visitados X Temporada</a>
+                         <a href="/Admin-RC/public//GetStatisticsVisited" title="">Viajes más Visitados</a>
                     </li>
                 </ul>
             </li>

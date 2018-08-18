@@ -96,11 +96,13 @@ Route::get('/', function () {
 
           Route::get('/GetStatisticsRating','PagesController@GetStatisticsRating');
 
+          Route::get('/GetStatisticsNvsI','PagesController@GetStatisticsNvsI');
+
           Route::get('/GetStatisticsVisited','PagesController@GetStatisticsVisited');
 
-          Route::get('/GetStatisticsSeason','PagesController@GetStatisticsSeason');
-
           Route::get('/GetFirstPasswordChange','PagesController@GetFirstPasswordChange');
+
+		  Route::get('/GetReminderNotifications','PagesController@GetReminderNotifications');
 
           Route::get('/GetNoObjectAdmin','PagesController@GetNoObjectAdmin');
 
@@ -320,11 +322,21 @@ Route::get('/', function () {
 //______________
 
 //StatisticsController
-         //Route::post('insertProduct','ProductsController@insertProduct');
+         Route::get('selectStatisticsForRating','StatisticsController@selectStatisticsForRating');
 
-         //Route::get('showProducts','ProductsController@showProducts');
+         Route::get('selectStatisticsNacionalvsInternational','StatisticsController@selectStatisticsNacionalvsInternational');
 
-         //Route::post('updateProduct','ProductsController@updateProduct');
+         Route::get('selectStatisticsMostVisited','StatisticsController@selectStatisticsMostVisited');
+//______________
+//NotificationsController
+         Route::get('selectToursNotifications','NotificationsController@selectToursNotifications');
+
+         Route::get('selectProductNotifications','NotificationsController@selectProductNotifications');
+
+         Route::post('massiveNotificationTour','NotificationsController@massiveNotificationTour');
+
+         Route::post('massiveNotificationProducto','NotificationsController@massiveNotificationProducto');
+
 //______________
 //Login and Logout Routes-Start
 Route::get('redirectPath','AuthController@redirectPath');

@@ -22,13 +22,15 @@ use Illuminate\Support\Facades\Storage;
 
 use Session;
 
+use Mail;
+
 class ProductsController extends Controller
 {
 
-    public function insertProduct(Request $request){
+     public function insertProduct(Request $request){
           $titulo = $request->input('con_titulo_Producto');
           $descripcion = $request->input('con_descripcion_Producto');
-          $sesion = Session::get('standard');
+          $sesion = Session::get('datos');
           $usuarioID = $sesion[0]['ID_Usuario'];
 
                    //file upload
@@ -41,6 +43,29 @@ class ProductsController extends Controller
                    }
                    DB::insert('insert into producto (usuario_ID,Nombre,Descripcion,Ruta_Imagen,Nombre_Imagen) values (?,?,?,?,?)',
                    [$usuarioID,$titulo,$descripcion,$fileName,$fileName]);
+
+                   /* Mail Notification to Customers*/
+                       $resultSelect=DB::select("select * from producto where Nombre='".$titulo."'");
+                       $array = json_decode(json_encode($resultSelect), True);
+                       $titulo = "Nuevo producto ".$array[0]['Nombre']." disponible!";
+                       $descripcion = "Descripcion: ".$array[0]['Descripcion'];
+                       $resultUsuarios= DB::select("select CorreoElectronico from usuario where rol_ID = 3 ");
+                       $arrayUsuarios = json_decode(json_encode($resultUsuarios), True);
+                       if(isset($arrayUsuarios[1])){
+                         foreach($arrayUsuarios as $item){
+                           Mail::send('sections.mailNotifications',['name'=>$titulo, 'messageEmail' => $descripcion],
+                                 function($message) use ($item){
+                                   $message->to($item['CorreoElectronico'])->subject('Información');
+                                 });
+                         }
+                       }else{
+                         Mail::send('sections.mailNotifications',['name'=>$titulo, 'messageEmail' => $descripcion],
+                               function($message) use ($arrayUsuarios){
+                                 $message->to($arrayUsuarios[0]['CorreoElectronico'])->subject('Información');
+                               });
+                       }
+                   /* End Mail Notification to Customers*/
+
                    return view('Internal.updateProduct');
     }
 

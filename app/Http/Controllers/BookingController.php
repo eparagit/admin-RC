@@ -199,12 +199,6 @@ class BookingController extends Controller
 
        return $array;
   }
-  public function selectStatisticsForRating(Request $request){
-
-      $result= DB::select(" select v.Titulo, c.Valor FROM calificacion c, viaje v where c.viaje_ID=v.ID_Viaje ");
-      $array = json_decode(json_encode($result), True);
-      return $array;
-}
 public function RemainingBookingCounter(){
   $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
   $array = json_decode(json_encode($result), True);
