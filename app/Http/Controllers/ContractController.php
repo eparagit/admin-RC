@@ -217,4 +217,9 @@ class ContractController extends Controller
       $array = json_decode(json_encode($result), True);
       return $array;
     }
+    public function NewContractCounter(){
+      $result=DB::select("select count('ID_Contratacion') countContract from contratacion c, estados e where c.estado_ID=e.ID_Estado and e.Descripcion='Nuevo'");
+      $array = json_decode(json_encode($result), True);
+      return $array;
+    }
 }
