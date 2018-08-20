@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\View;
 
 use Illuminate\Support\Facades\DB;
 
-use Pdf;
 use Mail;
 
 use Dompdf\Dompdf;
@@ -194,24 +193,26 @@ class ContractController extends Controller
       );
       return view('sections.sectionApproveNContract')->with("array", $data);
     }
-    public function pdfApprovalNewContract(Request $request){
+    public function approvalNewContract(Request $request){
+     $idContratacion = $request->input('con_id_modal');
+     $servicio = $request->input('con_servicio_modal');
+     $tipoEvento = $request->input('con_evento_modal');
+     $fechaSolicitud = $request->input('con_fsolicitud_modal');
+     $fechaEvento = $request->input('con_fevento_modal');
+     $costoTotal = $request->input('con_costoT_modal');
+     $nombreUsuario = $request->input('con_cliente_modal');
+     $resultUsuarioID=DB::select("select usuario_ID from contratacion where ID_Contratacion = '".$idContratacion."'");
+     $arrayUsuarioID = json_decode(json_encode($resultUsuarioID), True);
+     $resultCorreoUsuario=DB::select("select CorreoElectronico from usuario where ID_Usuario = '".$arrayUsuarioID[0]['usuario_ID']."'");
+     $resultCorreo = json_decode(json_encode($resultCorreoUsuario), True);
 
-    $pdf->loadHtml($request::all());
-
-
-      $messageEmail="<p>Estimado(a):<br/><br/>
-      Le informa que la contratación por el siguiente servicio:  ha sido aprobada<br/>
-      Gracias</p>";
-      $name="Ruta a la Cima";
-      $email='rutaalacima@gmail.com';
-
-      Mail::send('sections.mail',['name'=>$name, 'email' => $email, 'messageEmail' => $messageEmail],
-      function($message){
-        $message->to('edwin.parajeles@gmail.com')->subject('Aprobación de Contratación');
-        $message->attachData($pdf-stream());  // debe ser este rutaalacima@gmail.com
-      });
-            return 1;
-    }
+     Mail::send('sections.mailContractConfirmation',['servicio'=>$servicio, 'fechaEvento' => $fechaEvento, 'tipoEvento' => $tipoEvento, 'fechaSolicitud' => $fechaSolicitud, 'costoTotal' => $costoTotal, 'nombreUsuario' => $nombreUsuario],
+     function($message) use ($resultCorreo){
+       $message->to($resultCorreo[0]['CorreoElectronico'])->subject('Aprobación de Contratación');
+     });
+     DB::update("update contratacion set estado_ID = '7' where ID_Contratacion = '".$idContratacion."'");
+     return view('Internal.NewContract');
+   }
     public function RemainingContractCounter(){
       $result=DB::select("select count('ID_Contratacion') countContract from contratacion c, estados e where c.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
       $array = json_decode(json_encode($result), True);

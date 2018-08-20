@@ -515,6 +515,18 @@ class PagesController extends Controller
     }
 
     //______________________
+    //Notifications
+    public function GetReminderNotifications(){
+       if(Session::has('standard')){
+          $data=Session::get('standard');
+          if(!empty($data)){
+            return view('Internal.reminderNotifications');
+          }else{
+              return view('Login.notAllowed');
+          }
+        }
+    }
+    //______________________
     //Login Views
     public function Login(){
       return view('Login.login');

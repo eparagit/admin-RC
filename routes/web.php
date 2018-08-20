@@ -260,7 +260,7 @@ Route::get('/', function () {
 
           Route::get('selectNewContractToApprove','ContractController@selectNewContractToApprove');
 
-          Route::post('pdfApprovalNewContract','ContractController@pdfApprovalNewContract');
+          Route::post('approvalNewContract','ContractController@approvalNewContract');
 
           Route::get('RemainingContractCounter','ContractController@RemainingContractCounter');
 
@@ -301,8 +301,6 @@ Route::get('/', function () {
           Route::get('RejectBooking','BookingController@RejectBooking');
 
           Route::get('ProcessBooking','BookingController@ProcessBooking');
-
-          Route::get('ApproveBooking','BookingController@ApproveBooking');
 
           Route::get('selectReportForBooking','BookingController@selectReportForBooking');
 
