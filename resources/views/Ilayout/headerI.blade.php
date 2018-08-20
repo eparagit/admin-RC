@@ -35,16 +35,17 @@
                   <span id="rbooking">Reservaciones</span>
               </a>
               <ul class="sb-drp">
-                  <li>
-                      <a href="/Admin-RC/public//GetNewBooking" title=""><span id="b_ nbookingNew">Nuevas</span></a>
-                  </li>
 
                   <li>
-                      <a href="/Admin-RC/public//GetRemainingBooking" title=""><span id="b_ rbooking">Pendientes</span></a>
+                      <a href="/Admin-RC/public//GetNewBooking" title=""><span id="ngb">Nuevas</span></a>
+                  </li>
+                  <li>
+                      <a href="/Admin-RC/public//GetRemainingBooking" title=""><span id="b_rb">Pendientes</span></a>
                   </li>
                   <li>
                       <a href="/Admin-RC/public//GetBookingReport" title="">Reporte</a>
                   </li>
+
 
 
 

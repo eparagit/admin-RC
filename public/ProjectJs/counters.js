@@ -65,18 +65,19 @@ $(document).ready(function(){
     url:"RBookingCounter",
     success:function(data){
 
-      var countrb="";
+      var rbook="";
       $.each(data,function(v){
         var val=data[v];
 
-        countrb+=val['countBooking'];
+        rbook+=val['countBooking'];
 
       });
-      if(countrb>0){
-        
-        $("#b_rbooking").append("<span class='badge'>"+countrb+"</span>");
+      if(rbook>0){
+
+          $("#b_rb").append("<span class='badge'>"+rbook+"</span>");
+
       }else{
-        $("#b_rbooking").val();
+            $("#b_rb").val();
       }
 
     }
@@ -96,10 +97,10 @@ $(document).ready(function(){
       });
 
       if(countnb>0){
-        //alert(countnb);
-        $("#b_ nbookingNew").append("<span class='badge'>"+countnb+"</span>");
+
+        $("#ngb").append("<span class='badge'>"+countnb+"</span>");
       }else{
-        $("#b_ nbookingNew").val();
+        $("#ngb").val();
       }
 
     }

@@ -66,10 +66,10 @@
     <div class="pg-tp" >
         <i class="ion-cube"></i>
         <div class="pr-tp-inr" >
-            <h4>Bienvenido a
+            <h4 style="color:yellow;font-size:36px">Bienvenido a
                 <strong>Ruta a la Cima</strong>
                 <span></span></h4>
-            <span><h5>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</h5></span>
+            <span><h5 style="color:white;font-size:26px">Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</h5></span>
         </div>
 
 
@@ -110,7 +110,7 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
-    <script src="ProjectJs/logout.js" type="text/javascript"></script>    
+    <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
     <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">

@@ -61,10 +61,10 @@
     <div class="pg-tp" >
         <i class="ion-cube"></i>
         <div class="pr-tp-inr" >
-            <h4>Bienvenido a
+            <h4 style="color:black;font-size:40px">Bienvenido a
                 <strong>Ruta a la Cima</strong>
                 <span></span></h4>
-            <span><h5>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</h5></span>
+            <span><h5 style="color:black;font-size:30px">Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</h5></span>
         </div>
 
 
