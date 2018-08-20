@@ -33,14 +33,13 @@ class UserController extends Controller
       $firstLastName = $request['firstLastName'];
       $secondLastName = $request['secondLastName'];
       $idNumber = $request['idNumber'];
-      $age = $request['age'];
       $email = $request['email'];
       $telephone = $request['telephone'];
       $userName = $request['userName'];
       $password = $request['password'];
       $rolID = $request['rol'];
 
-      DB::insert('insert into usuario (rol_ID,NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,Tipo_Login) values (?,?,?,?,?,?,?,?,?,?,?)',  [$rolID,$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password,"Temporal"]);
+      DB::insert('insert into usuario (rol_ID,NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,Tipo_Login) values (?,?,?,?,?,?,?,?,?,?)',  [$rolID,$firstName, $firstLastName,$secondLastName,$idNumber,$email,$telephone,$userName,$password,"Temporal"]);
       return 1;
     }
     public function selectAdUser(){
@@ -60,14 +59,9 @@ class UserController extends Controller
     }
     public function selectUserByEmail(Request $request){
 
-    //  $email = $request['email'];
-    //  $result= DB::select("select ID_Usuario,rol_ID,NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario from usuario where CorreoElectronico ='".$email."'");
-          //  $array = json_decode(json_encode($result), True);
-//  return $array;
-
 
     $email = $request['email'];
-   $result= DB::select("select u.ID_Usuario,u.rol_ID,u.NombreCompleto,u.PrimerApellido,u.SegundoApellido,u.NumeroIdentificacion,u.Edad,
+   $result= DB::select("select u.ID_Usuario,u.rol_ID,u.NombreCompleto,u.PrimerApellido,u.SegundoApellido,u.NumeroIdentificacion,
    u.CorreoElectronico,u.NumeroTelefonico,u.NombreUsuario, r.Descripcion, r.Codigo_Rol from usuario u, rol r where u.CorreoElectronico ='".$email."' and u.rol_ID = r.ID_Rol");
     $array = json_decode(json_encode($result), True);
 return $array;
@@ -80,12 +74,11 @@ return $array;
       $firstLastName = $request['firstLastName'];
       $secondLastName = $request['secondLastName'];
       $idNumber = $request['idNumber'];
-      $age = $request['age'];
       $email = $request['email'];
       $telephone = $request['telephone'];
       $userName = $request['userName'];
       $reuslt = DB::update("update usuario set NombreCompleto='".$firstName."',PrimerApellido='".$firstLastName."',
-      SegundoApellido='".$secondLastName."',NumeroIdentificacion='".$idNumber."',Edad='".$age."',
+      SegundoApellido='".$secondLastName."',NumeroIdentificacion='".$idNumber."',
       CorreoElectronico='".$email."',NumeroTelefonico='".$telephone."',NombreUsuario='".$userName."'
       where ID_Usuario='".$id_user."' ");
       return 1;
@@ -136,5 +129,13 @@ return $array;
       $u_pass=$request['pass'];
       $result=DB::update("update usuario set Contrasena='".$u_pass."',Tipo_Login='Temporal' where ID_Usuario='".$u_id."'");
       return 1;
+    }
+    public function selectExternalUserReport(){
+      $result=DB::select("select u.NombreCompleto,u.PrimerApellido,u.CorreoElectronico,
+      count(r.ID_Reservacion) Resv, sum(r.Cantidad_Personas) cont
+      from reservacion r, usuario u where r.usuario_ID=u.ID_Usuario GROUP BY u.NombreCompleto,u.PrimerApellido,u.CorreoElectronico");
+      $array = json_decode(json_encode($result), True);
+
+      return $array;
     }
 }

@@ -55,18 +55,29 @@
         </div>
     </div>
     <!-- Options Panel -->
-<label>Admin</labbel>
-    <!-- Page Top -->
 
+    <!-- Page Top -->
+    <div class="panel-content"  >
+    <div class="pg-tp" >
+        <i class="ion-cube"></i>
+        <div class="pr-tp-inr" >
+            <h4>Bienvenido a
+                <strong>Ruta a la Cima</strong>
+                <span></span></h4>
+            <span><h5>Utilice el menú ubicado al lado izquerdo para igresar a las diferentes funcionalidades.</h5></span>
+        </div>
+
+
+    <!-- Page Top -->
+    <div class="bg-img" style="background-image: url(images/resource/rcimaii.jpg);" >
+    </div>
+    </div>
+    </div>
 
     <!-- Panel Content -->
-  
+
   </body>
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+@include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

@@ -32,7 +32,7 @@
       </div>
       <div class="topbar-data">
         <div class="usr-act">
-          @foreach(Session::get('datos') as $data)
+          @foreach(Session::get('standard') as $data)
             <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
             @endforeach
             <a id="con_logout" class="btn-danger" href="#" title="">
@@ -73,7 +73,7 @@
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
          <h4>Ruta a la Cima</h4>
-         <span>Reporte de Reservaciones</span>
+         <span>Reporte de Productos</span>
        </div>
      </div>
   <!-- Page Top -->
@@ -81,17 +81,23 @@
     <div class="widget">
 
 
-            <table class="table table-striped table-bordered table-hover" width="100%" id="productTableReport">
+            <table class="table table-striped table-bordered table-hover" width="100%" id="eusersTableReport">
+              <thead>
+                <tr>
+                   <th>Nombre</th>
+                   <th>Apellido</th>
+                   <th>Correo Electrónico</th>
+                   <th>Reservaciones</th>
+                   <th>Total de Personas</th>
+                 </tr>
+              </thead>
             </table>
 
 
     </div>
   </div>
   <!-- Panel Content -->
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+    @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->
@@ -107,9 +113,10 @@
   <!-- Our Website Javascripts -->
 
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/reportsProduct.js" type="text/javascript"></script>
+  <script src="ProjectJs/eusersReport.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
-
+  <script src="ProjectJs/counters.js" type="text/javascript"></script>
+    <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
 </body>
 
 </html>

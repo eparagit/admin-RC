@@ -37,7 +37,7 @@ $(document).ready(function(){
                 var id=$(this).data('id');
               //  var userid=$("#con_iduse").val();
                 var chang="Aprobación de nueva reservación";
-                alert(userid);
+
                     $.ajax({
                       type:"GET",
                       data: {},
@@ -56,40 +56,42 @@ $(document).ready(function(){
                           success:function(data){
                             if(data==1){
                               alert("Reservación aprobada exitosamente!");
-                              $.ajax({
-                                    type:"GET",
-                                    data: {'chg':chang},
-                                    url:"SystemLogRegistry",
-                                    success:function(data){
-                                      if(data==1){
-
-                                      }
-                                    }
-                                      });
+                                    $.ajax({
+                                          type:"GET",
+                                          data: {'chg':chang},
+                                          url:"SystemLogRegistry",
+                                          success:function(data){}
+                                            });
                               $.ajax({
                                     type:"GET",
                                     data: {'id':id},
                                     url:"NotifyBookingApproval",
                                     success:function(data){
+                                      alert(data);
                                       if(data==1){
+
                                             alert("Se realizaron las notificaciones a los interesados!");
-                                            window.location.replace("GetNewBooking");
+                                           window.location.replace("GetNewBooking");
 
                                       }else{
-                                        alert("No se logró notificar a los interesados!");
-                                          window.location.replace("GetNewBooking");
+
+                                            alert("No se logró notificar a los interesados!");
+                                           window.location.replace("GetNewBooking");
                                       }
                                     }
                                     });
 
                             }else{
                               alert("No se logró aprobar la reservación!");
-                              window.location.replace("GetNewBooking");
+                             window.location.replace("GetNewBooking");
                             }
                           }
                         });
+
                         }
+
                     });
+
         });
         $("#con_content").on('click','#con_processB',function(){
           var id = $(this).data('id');

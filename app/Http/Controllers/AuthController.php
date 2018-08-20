@@ -97,7 +97,13 @@ class AuthController extends Controller
       $OldPassword = $request['oldPass'];
       $NewPassword = $request['newPass'];
       $response = "";
-      $sesion = Session::get('datos');
+
+      if(Session::has('admin')){
+        $sesion = Session::get('admin');
+      }
+      if(Session::has('standard')){
+        $sesion = Session::get('standard');
+      }
       $userID = $sesion[0]['ID_Usuario'];
 
       $resultOldPass= DB::select("select Contrasena from usuario where ID_Usuario= ".$userID."");

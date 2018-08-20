@@ -139,7 +139,17 @@ class PagesController extends Controller
 
       }
     }
+    public function GetAdminAbout(){
+      if(Session::has('admin')){
+        $data=Session::get('admin');
+        if(!empty($data)){
+          return view('Admin.aboutA');
+        }else{
+              return view('Login.notAllowed');
+        }
 
+      }
+    }
 
     //______________________
     //Internal Views
@@ -309,6 +319,17 @@ class PagesController extends Controller
 
       }
     }
+    public function GetInternalAbout(){
+      if(Session::has('standard')){
+        $data=Session::get('standard');
+        if(!empty($data)){
+          return view('Internal.aboutI');
+        }else{
+            return view('Login.notAllowed');
+        }
+
+      }
+    }
     //Layouts
     public function GetInternalLayout(){
       if(Session::has('standard')){
@@ -390,33 +411,23 @@ class PagesController extends Controller
 
     //______________________
     //Reports
-    public function GetApprovedBookingReport(){
+    public function GetBookingReport(){
       if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-          return view('Reports.approvedBookingByCustomer');
+          return view('Internal.bookingReport');
         }else{
             return view('Login.notAllowed');
         }
 
       }
     }
-    public function GetRemainingBookingReport(){
-      if(Session::has('standard')){
-        $data=Session::get('standard');
-        if(!empty($data)){
-          return view('Reports.remainingBookingByCustomer');
-        }else{
-              return view('Login.notAllowed');
-        }
 
-      }
-    }
-    public function GetEmployeesReport(){
+    public function GetExternalUsersReport(){
       if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-          return view('Reports.employees');
+          return view('Internal.usersReport');
         }else{
             return view('Login.notAllowed');
         }
@@ -427,29 +438,19 @@ class PagesController extends Controller
       if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-          return view('Reports.tourReport');
+          return view('Internal.tourReport');
         }else{
             return view('Login.notAllowed');
         }
 
       }
     }
-    public function GetBookingReport(){
-      if(Session::has('standard')){
-        $data=Session::get('standard');
-        if(!empty($data)){
-          return view('Reports.bookingReport');
-        }else{
-            return view('Login.notAllowed');
-        }
 
-      }
-    }
-    public function GetHiringReport(){
+    public function GetContractReport(){
       if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-          return view('Reports.hiringReport');
+          return view('Internal.contractReport');
         }else{
             return view('Login.notAllowed');
         }
@@ -460,7 +461,7 @@ class PagesController extends Controller
       if(Session::has('standard')){
         $data=Session::get('standard');
         if(!empty($data)){
-            return view('Reports.productReport');
+            return view('Internal.productReport');
         }else{
             return view('Login.notAllowed');
         }

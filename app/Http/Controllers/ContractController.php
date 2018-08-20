@@ -222,4 +222,18 @@ class ContractController extends Controller
       $array = json_decode(json_encode($result), True);
       return $array;
     }
+    public function ContractCounter(){
+      $result=DB::select("select count('ID_Contratacion') countContract from contratacion c, estados e where c.estado_ID=e.ID_Estado and (e.Descripcion='Nuevo' or e.Descripcion='Pendiente')");
+      $array= json_decode(json_encode($result), True);
+
+      return $array;
+    }
+    public function selectContractReport(){
+      $result=DB::select("select t.Descripcion,u.NombreCompleto,u.PrimerApellido,
+      u.CorreoElectronico,c.FechaServicio from contratacion c, usuario u, tipo_servicio t,estados e  where
+       c.usuario_ID=u.ID_Usuario and c.tipoServicioID=t.ID_Tipo_Servicio
+       and c.estado_ID=e.ID_Estado and e.Descripcion='Aprobado'");
+       $array= json_decode(json_encode($result), True);
+       return $array;
+    }
 }

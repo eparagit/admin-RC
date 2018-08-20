@@ -96,8 +96,8 @@
            </div>
            </div>
            <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary" id="btn_proNC" data-id="">Save changes</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+             <button type="button" class="btn btn-primary" id="btn_proNC" data-id="">Enviar</button>
            </div>
          </div>
        </div>
@@ -107,7 +107,7 @@
          <div class="modal-dialog" role="document">
            <div class="modal-content">
              <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Tipo de Evento</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Justifique el cambio</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                  <span aria-hidden="true">&times;</span>
                </button>
@@ -119,8 +119,8 @@
              </div>
              </div>
              <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary" id="btn_rejNC" data-id="">Save changes</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerar</button>
+               <button type="button" class="btn btn-primary" id="btn_rejNC" data-id="">Enviar</button>
              </div>
            </div>
          </div>
@@ -133,11 +133,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+      @include('Ilayout.footerI')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

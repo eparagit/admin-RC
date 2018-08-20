@@ -56,10 +56,7 @@
   </div>
   <!-- Panel Content -->
 
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+    @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->

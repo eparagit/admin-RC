@@ -95,8 +95,8 @@
            </div>
            </div>
            <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary" id="btntourcat" data-id="">Save changes</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+             <button type="button" class="btn btn-primary" id="btntourcat" data-id="">Guardar</button>
            </div>
          </div>
        </div>
@@ -109,10 +109,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Todos los derechos a
-          Ruta a la Cima 2018</p>
-    </footer>
+      @include('Ilayout.footerI')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -147,8 +144,8 @@
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/tourCategory.js" type="text/javascript"></script>
-      <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
-      <script src="ProjectJs/counters.js" type="text/javascript"></script>
+    <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+    <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

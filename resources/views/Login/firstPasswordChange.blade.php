@@ -624,26 +624,21 @@
         <div class="widget lgn-frm">
           <div class="frm-tl">
             <h4>Debe Cambiar su Contraseña</h4>
-            <span>Cambio</span>
+
           </div>
           <form class="form-group">
-                
+
             <div class="row mrg10">
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <input id="con_usname" name="con_susername" class="form-control" type="text" placeholder="Nombre de Usuario" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_cpas" name="con_curpass" class="form-control" type="password" placeholder="Contraseña" />
+                <input id="con_cpas" name="con_curpass" class="form-control" type="password" placeholder="Contraseña Anterior" />
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <input id="con_pas" name="con_newpass" class="form-control" type="password" placeholder="Contraseña" />
+                <input id="con_pas" name="con_newpass" class="form-control" type="password" placeholder="Nueva Contraseña" />
               </div>
-              <div class="col-md-12 col-sm-12 col-lg-12">
-                <span class="chbx">
-                  <input type="checkbox" id="chk1" />
-                  <label for="chk1">Recordarme</label>
-                </span>
-              </div>
+              
 
               <div class="col-md-12 col-sm-12 col-lg-12">
 
@@ -651,9 +646,7 @@
 
               </div>
 
-              <div class="col-md-12 col-sm-12 col-lg-12">
-                <a href="#" title="" class="frgt">Olvido su contraseña?</a>
-              </div>
+
             </div>
           </form>
         </div>

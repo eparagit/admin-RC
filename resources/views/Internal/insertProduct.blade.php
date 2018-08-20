@@ -26,38 +26,9 @@
 </head>
 
 <body class="expand-data panel-data">
-  <div class="topbar">
-      <div class="logo">
-          <h1>
-              <a href="#" title="">
-                  <img src="images/rutacima.png" alt="" />
-              </a>
-          </h1>
-      </div>
-      <div class="topbar-data">
-        <div class="usr-act">
-          @foreach(Session::get('datos') as $data)
-            <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
-            @endforeach
-            <a id="con_logout" class="btn-danger" href="#" title="">
-                <i class="fa fa-sign-out"></i> Cerrar Sesión</a>
-          </div>
-
-          <ul class="tobar-links">
-              <li>
-    </div>
-    <div class="topbar-bottom-colors">
-      <i style="background-color: #2c3e50;"></i>
-      <i style="background-color: #9857b2;"></i>
-      <i style="background-color: #2c81ba;"></i>
-      <i style="background-color: #5dc12e;"></i>
-      <i style="background-color: #feb506;"></i>
-      <i style="background-color: #e17c21;"></i>
-      <i style="background-color: #bc382a;"></i>
-    </div>
-  </div>
+    @include('Ilayout.rightHeader')
   <!-- Topbar -->
-  @include('Ilayout.rightHeader')
+
 
   @include('Ilayout.headerI')
 
@@ -86,12 +57,14 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Imagen del producto</label>
+                       <label style="color: red">*</label>
                        <input type="file" name="image_Producto" id="image_Producto" accept="image/*"  class="form-control" required>
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Titulo</label>
+                       <label style="color: red">*</label>
                        <input class="form-control" name="con_titulo_Producto" id="con_titulo_Producto"  type="text" required />
                      </div>
                  </div>
@@ -101,7 +74,11 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                       <label>Descripción del Producto</label>
+                      <label style="color: red">*</label>
                       <textarea class="form-control" name="con_descripcion_Producto" id="con_descripcion_Producto" type="text" required ></textarea>
+                    </div>
+                    <div>
+                      Campo requierido <label style="color: red">*</label></br>
                     </div>
                 </div>
               </div>
@@ -119,10 +96,7 @@
     </div>
   </div>
   <!-- Panel Content -->
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+  @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->
@@ -156,18 +130,16 @@
   <script src="js/main.js" type="text/javascript"></script>
   <script src="ProjectJs/product.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
-
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
-
-
   <script src="ProjectJs/tourCharact.js" type="text/javascript"></script>
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
 <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
 <script src="ProjectJs/counters.js" type="text/javascript"></script>
+
 <!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
 
 </body>
