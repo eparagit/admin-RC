@@ -78,8 +78,6 @@ Route::get('/', function () {
 
           Route::get('/GetApprovedBookingReport','PagesController@GetApprovedBookingReport');
 
-          Route::get('/GetRemainingBookingReport','PagesController@GetRemainingBookingReport');
-
           Route::get('/GetSystemLogReport','PagesController@GetSystemLogReport');
 
           Route::get('/GetEmployeesReport','PagesController@GetEmployeesReport');
@@ -87,8 +85,6 @@ Route::get('/', function () {
           Route::get('/GetTheMostVisited','PagesController@GetTheMostVisited');
 
           Route::get('/GetTourReport','PagesController@GetTourReport');
-
-          Route::get('/GetBookingReport','PagesController@GetBookingReport');
 
           Route::get('/GetHiringReport','PagesController@GetHiringReport');
 
@@ -102,7 +98,7 @@ Route::get('/', function () {
 
           Route::get('/GetFirstPasswordChange','PagesController@GetFirstPasswordChange');
 
-		  Route::get('/GetReminderNotifications','PagesController@GetReminderNotifications');
+		      Route::get('/GetReminderNotifications','PagesController@GetReminderNotifications');
 
           Route::get('/GetNoObjectAdmin','PagesController@GetNoObjectAdmin');
 
@@ -112,8 +108,17 @@ Route::get('/', function () {
 
           Route::get('/GetContractNotification ','PagesController@GetContractNotification');
 
-            Route::get('/GetNotAllowedBlade','PagesController@GetNotAllowedBlade');
+          Route::get('/GetNotAllowedBlade','PagesController@GetNotAllowedBlade');
 
+          Route::get('/GetBookingReport','PagesController@GetBookingReport');
+
+          Route::get('/GetContractReport','PagesController@GetContractReport');
+
+          Route::get('/GetExternalUsersReport','PagesController@GetExternalUsersReport');
+
+          Route::get('/GetAdminAbout','PagesController@GetAdminAbout');
+
+          Route::get('/GetInternalAbout','PagesController@GetInternalAbout');
 //______________
 //AuthController
           Route::get('/restorePassword','AuthController@restorePassword');
@@ -141,6 +146,9 @@ Route::get('/', function () {
           Route::get('registerUser', 'UserController@registerUser');
 
           Route::get('PasswordReset', 'UserController@PasswordReset');
+
+          Route::get('selectExternalUserReport', 'UserController@selectExternalUserReport');
+
 
 //______________
 //RolController
@@ -221,6 +229,8 @@ Route::get('/', function () {
           Route::get('rejectTour','TourController@rejectTour');
 
           Route::get('RemainingTourCounter','TourController@RemainingTourCounter');
+
+          Route::get('selectTourReport','TourController@selectTourReport');
 //______________
 //SessionController
 //Session Routes -Start//
@@ -253,6 +263,12 @@ Route::get('/', function () {
           Route::post('pdfApprovalNewContract','ContractController@pdfApprovalNewContract');
 
           Route::get('RemainingContractCounter','ContractController@RemainingContractCounter');
+
+          Route::get('NewContractCounter','ContractController@NewContractCounter');
+
+          Route::get('ContractCounter','ContractController@ContractCounter');
+
+          Route::get('selectContractReport','ContractController@selectContractReport');
 //______________
 //StatusController
           Route::get('selectApprovedStatus','StatusController@selectApprovedStatus');
@@ -270,15 +286,11 @@ Route::get('/', function () {
 
           Route::get('NotifyBookingProcess','BookingController@NotifyBookingProcess');
 
-          Route::get('NotifyBookingApproval','BookingController@NotifyBookingApproval');
-
           Route::get('RejectBooking','BookingController@RejectBooking');
 
           Route::get('ProcessBooking','BookingController@ProcessBooking');
 
           Route::get('ApproveBooking','BookingController@ApproveBooking');
-
-          Route::get('countRemainingBooking','BookingController@countRemainingBooking');
 
           Route::get('NotifyBookingRejected','BookingController@NotifyBookingRejected');
 
@@ -292,8 +304,6 @@ Route::get('/', function () {
 
           Route::get('ApproveBooking','BookingController@ApproveBooking');
 
-          Route::get('countRemainingBooking','BookingController@countRemainingBooking');
-
           Route::get('selectReportForBooking','BookingController@selectReportForBooking');
 
           Route::get('selectApprovedBookingByCustomer','BookingController@selectApprovedBookingByCustomer');
@@ -303,6 +313,12 @@ Route::get('/', function () {
           Route::get('selectStatisticsForRating','BookingController@selectStatisticsForRating');
 
           Route::get('RemainingBookingCounter','BookingController@RemainingBookingCounter');
+
+          Route::get('NewBookingCounter','BookingController@NewBookingCounter');
+
+          Route::get('BookingCounter','BookingController@BookingCounter');
+
+          Route::get('selectBookingReport','BookingController@selectBookingReport');
 //______________
 //SystemLogController
           Route::get('SystemLogRegistry','SystemLogController@SystemLogRegistry');
@@ -319,6 +335,8 @@ Route::get('/', function () {
           Route::get('deleteProduct','ProductsController@deleteProduct');
 
           Route::get('selectProductForUpdate','ProductsController@selectProductForUpdate');
+
+          Route::get('selectProductReport','ProductsController@selectProductReport');
 //______________
 
 //StatisticsController

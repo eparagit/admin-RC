@@ -35,17 +35,17 @@ $(document).ready(function(){
                   }
                 }
               });
-              $("#con_content").on('click','#con_approveC',function(){
-                $('#newContractApp-Modal').modal('show');
-                var id=$(this).data('id');
-            $.ajax({
-              type:"GET",
-              data: {'id':id},
-              url:"selectNewContractToApprove",
-              success:function(data){
-                  $("#modalBodyNContract").html(data);
-              }
-            });
+      $("#con_content").on('click','#con_approveC',function(){
+              $('#newContractApp-Modal').modal('show');
+              var id=$(this).data('id');
+                $.ajax({
+                  type:"GET",
+                  data: {'id':id},
+                  url:"selectNewContractToApprove",
+                  success:function(data){
+                      $("#modalBodyNContract").html(data);
+                  }
+                });
         });
 
 

@@ -1,4 +1,4 @@
-<form class="form-group" accept-charset="UTF-8" action="pdfApprovalNewContract" method="POST" enctype="multipart/form-data">
+<form class="form-group" accept-charset="UTF-8" action="approvalNewContract" method="POST" enctype="multipart/form-data">
         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
         <div class="row">
            <div class="col-lg-2">
@@ -16,9 +16,11 @@
                </div>
            </div>
            </div>
-            <div class="row">
-           <h4>Detalles</h4>
-         </div>
+             <div class="row">
+               <div class="col-lg-12">
+               <h4>Detalles</h4>
+               </div>
+             </div>
              <div class="row">
            <div class="col-lg-6">
                <div class="form-group">
@@ -44,7 +46,7 @@
            <div class="col-lg-6">
                <div class="form-group">
                  <label >Fecha del Evento</label>
-                 <input class="form-control" name="con_fsolicitud_modal" id="con_fsolicitud_modal"  type="text" value="{{ $array['array'][0]['FechaServicio'] }}" required />
+                 <input class="form-control" name="con_fevento_modal" id="con_fevento_modal"  type="text" value="{{ $array['array'][0]['FechaServicio'] }}" required />
                </div>
            </div>
             </div>
@@ -62,5 +64,4 @@
              <button class="btn btn-success" style="width:100%;" type="submit">Guardar</button>
           </div>
         </div>
-
 </form>
