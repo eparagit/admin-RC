@@ -15,19 +15,4 @@ $("#con_logout").click(function(){
   });
 });
 
-        $.ajax({
-          type:"GET",
-          data:{},
-          url:"CheckSession",
-          success: function(data){
-            var val="";
-            if(data==0){
-              val=0;
-              if(val==0){
-                window.location.replace("GetNotAllowedBlade");
-              }
-
-            }
-          }
-});
 });

@@ -27,10 +27,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ayuda</a>
-        </li>
-        <li class="nav-item">
-          <a class="ion-home" href="/Admin-RC/public//Admin"></a>
-        </li>
+        </li>      
         </ul>
   </div>
   <div class="topbar-bottom-colors">

@@ -121,8 +121,7 @@ Route::get('/', function () {
           Route::get('/GetInternalAbout','PagesController@GetInternalAbout');
 //______________
 //AuthController
-          Route::get('/restorePassword','AuthController@restorePassword');
-          Route::get('/CheckSession','AuthController@CheckSession');
+          Route::get('/restorePassword','AuthController@restorePassword');        
 //______________
 //UserController
           Route::get('selectAdUser','UserController@selectAdUser');
@@ -310,7 +309,7 @@ Route::get('/', function () {
 
           Route::get('selectStatisticsForRating','BookingController@selectStatisticsForRating');
 
-          Route::get('RemainingBookingCounter','BookingController@RemainingBookingCounter');
+          Route::get('RBookingCounter','BookingController@RBookingCounter');
 
           Route::get('NewBookingCounter','BookingController@NewBookingCounter');
 

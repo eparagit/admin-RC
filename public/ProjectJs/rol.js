@@ -51,7 +51,7 @@ $(document).ready(function(){
                         tab+="<td>"+val['CorreoElectronico']+"</td>";
                         tab+="<td>"+'<label id="con_rolde">'+val['Descripcion_Rol']+'</label>'+"</td>";
                         tab+="<td>"+'<button id="con_ur" class="btn btn-success"  data-id="'+val['ID_Usuario']+'" type="button">Modificar</button>'+"</td>";
-                        tab+="</tr>";
+                        tab+="<tr>";
                     });
                     $("#tusxrol").append(tab);
                     }

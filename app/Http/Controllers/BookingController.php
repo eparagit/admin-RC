@@ -167,7 +167,7 @@ class BookingController extends Controller
       });
       return 1;
     }
-  
+
     public function selectReportForBooking(Request $request){
 
         $result= DB::select("select r.ID_Reservacion, v.Titulo,v.FechaHora_Salida,v.Lugar_Salida,u.NombreCompleto,
@@ -190,7 +190,7 @@ class BookingController extends Controller
 
        return $array;
   }
-public function RemainingBookingCounter(){
+public function RBookingCounter(){
   $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
   $array = json_decode(json_encode($result), True);
 

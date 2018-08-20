@@ -25,7 +25,7 @@
 </head>
 
 <body class="expand-data panel-data">
-    @include('Alayout.rightHeaderA')
+    @include('Alayout.mainrightHeader')
     <!-- Topbar -->
 
     @include('Alayout.headerA')

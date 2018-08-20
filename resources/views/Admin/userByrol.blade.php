@@ -185,8 +185,7 @@
     <script src="js/ion.rangeSlider.min.js" type="text/javascript"></script>
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-    <script src="ProjectJs/rol.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>    
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/rol.js" type="text/javascript"></script>

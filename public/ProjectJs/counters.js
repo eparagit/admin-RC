@@ -62,7 +62,7 @@ $(document).ready(function(){
   $.ajax({
     type:"GET",
     data: {},
-    url:"RemainingBookingCounter",
+    url:"RBookingCounter",
     success:function(data){
 
       var countrb="";
@@ -73,6 +73,7 @@ $(document).ready(function(){
 
       });
       if(countrb>0){
+        
         $("#b_rbooking").append("<span class='badge'>"+countrb+"</span>");
       }else{
         $("#b_rbooking").val();

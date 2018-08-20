@@ -8,7 +8,7 @@
         <ul class="drp-sec">
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-home"></i>
+                    <i class="ion-android-contacts"></i>
                     <span>Registro</span>
                 </a>
                 <ul class="sb-drp">
@@ -56,7 +56,7 @@
               <h4>Reportes</h4>
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-android-contact"></i>
+                    <i class="ion-android-clipboard"></i>
                     <span>Control de Cambios</span>
                 </a>
                 <ul class="sb-drp">
