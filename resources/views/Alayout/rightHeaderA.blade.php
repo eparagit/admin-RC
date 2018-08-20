@@ -21,12 +21,14 @@
         </div>
 
 
-        <ul class="tobar-links">
-
-            <li>
-
-            <li>
-
+        <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link Acerca de" href="/Admin-RC/public//GetAdminAbout">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ayuda</a>
+        </li>
+        </ul>
   </div>
   <div class="topbar-bottom-colors">
     <i style="background-color: #2c3e50;"></i>

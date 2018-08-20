@@ -61,10 +61,7 @@
   </div>
   <!-- Panel Content -->
 
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+    @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->
@@ -99,7 +96,7 @@
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
   <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
   <script src="ProjectJs/statisticsRating.js" type="text/javascript"></script>
-<script src="ProjectJs/counters.js" type="text/javascript"></script>
+  <script src="ProjectJs/counters.js" type="text/javascript"></script>
 </body>
 
 </html>

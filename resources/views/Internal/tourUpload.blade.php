@@ -59,12 +59,15 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Imagen y Datos principales</label>
+                        <label style="color: red">*</label>
                        <input type="file" name="image" id="image" accept="image/*"  class="form-control" required>
                      </div>
                  </div>
+
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Titulo</label>
+                       <label style="color: red">*</label>
                        <input class="form-control" name="con_titulo" id="con_titulo"  type="text" required />
                      </div>
                  </div>
@@ -74,12 +77,14 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Lugar de Salida</label>
+                        <label style="color: red">*</label>
                        <input class="form-control" name="con_lsalida" id="con_lsalida"  type="text" required />
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Destino</label>
+                        <label style="color: red">*</label>
                        <input class="form-control" name="con_destino" id="con_destino"  type="text" required />
                      </div>
                  </div>
@@ -89,12 +94,14 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Descripción del tour</label>
+                        <label style="color: red">*</label>
                        <textarea class="form-control" name="con_descripcion" id="con_descripcion" type="text" required ></textarea>
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Tipo de viaje</label>
+                        <label style="color: red">*</label>
                        <select class="form-control" id="tviaje" name="tviaje">
                         <option value="0">Seleccione</option>
                        </select>
@@ -106,15 +113,17 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Categoría</label>
+                        <label style="color: red">*</label>
                        <select class="form-control"  id="cviaje" name="cviaje">
                         <option value="0">Seleccione</option>
                        </select>
-                       <button class="btn btn-info" data-toggle="modal" data-target="#cat-Modal" type="button">Agregar Nueva Categoría</button>
+
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Requisitos</label>
+                        <label style="color: red">*</label>
                        <textarea  class="form-control" id="con_requisitos" name="con_requisitos" type="text" required></textarea>
                      </div>
                  </div>
@@ -124,12 +133,14 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Incluye</label>
+                        <label style="color: red">*</label>
                         <textarea class="form-control" id="con_incluye"  name="con_incluye"  type="email" required /></textarea>
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Cupo</label>
+                        <label style="color: red">*</label>
                        <input class="form-control"  id="con_cupo" name="con_cupo" type="number" required />
                      </div>
                  </div>
@@ -139,12 +150,14 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Costo en colones</label>
+                        <label style="color: red">*</label>
                        <input class="form-control" name="con_costo" id="con_costo" type="number" required>
                      </div>
                  </div>
                  <div class="col-lg-6">
                      <div class="form-group">
                        <label>Fecha de salida</label>
+                        <label style="color: red">*</label>
                        <input type="text" id="con_dtfhs" name="con_dtfhs" class="form-control" required />
                      </div>
                  </div>
@@ -154,17 +167,21 @@
                   <div class="col-lg-6">
                       <div class="form-group">
                         <label>Fecha de regreso</label>
+                         <label style="color: red">*</label>
                          <input type="text" id="con_dtfhr"  name="con_dtfhr" class="form-control" required />
                       </div>
                   </div>
                   <div class="col-lg-6">
                       <div class="form-group">
                         <label>Fecha de vencimiento del tour</label>
+                         <label style="color: red">*</label>
                         <input type="text" id="con_dtfhv"  name="con_dtfhv" class="form-control" required />
                       </div>
                   </div>
               </div>
-
+                <div>
+                  Campo requierido <label style="color: red">*</label></br>
+                </div>
 
 
               <div class="row">
@@ -197,10 +214,7 @@
    </div>
  </div>
 </div>
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+  @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->
@@ -245,8 +259,8 @@
   <script src="ProjectJs/dt.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
   <script src="js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
-<script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
-<script src="ProjectJs/counters.js" type="text/javascript"></script>
+  <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
+  <script src="ProjectJs/counters.js" type="text/javascript"></script>
 <!--    <script src="ProjectJs/dt.js" type="text/javascript"></script>-->
 
 </body>

@@ -635,18 +635,11 @@
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <input id="con_pas" name="con_passw" class="form-control" type="password" placeholder="Contraseña" />
               </div>
-              <div class="col-md-12 col-sm-12 col-lg-12">
-                <span class="chbx">
-                  <input type="checkbox" id="chk1" />
-                  <label for="chk1">Recordarme</label>
-                </span>
-              </div>
+              
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <button class="green-bg brd-rd5" type="button" id="con_logi">Ingresar</button>
               </div>
-              <div class="col-md-12 col-sm-12 col-lg-12">
-                <a href="#" title="" class="frgt">Olvido su contraseña?</a>
-              </div>
+
             </div>
           </form>
         </div>

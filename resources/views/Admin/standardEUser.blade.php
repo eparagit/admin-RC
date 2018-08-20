@@ -152,17 +152,7 @@
                           </span>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Edad:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_age" value="">
-                              <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                            </span>
-                          </td>
-                        </tr>
+
                       </table>
                       <div  class="usr-gnrl-inf">
                     <h5 class="prf-edit-tl">Identificación:
@@ -227,19 +217,7 @@
               <!--//start//-->
               <div class="col-md-4 col-sm-12 col-lg-4">
                 <div class="profile-info-wrp">
-                 <div class="usr-cnt-inf">
-                    <h5 class="prf-edit-tl">Refrescar Contraseña:
-                    </h5>
-                    <ul class="usr-cnt-inf-lst">
-                      <li>
 
-                        <strong >Contraseña Temporal:</strong>
-                        <span>
-                        <input type="text" id="con_email" value="">
-                      </span>
-                      </li>
-                    </ul>
-                  </div>
 
                   <div class="usr-gnrl-inf">
                     <p>Presione guardar para salvar cualquier modificación realizada en este formulario.</p>
@@ -269,11 +247,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+    @include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

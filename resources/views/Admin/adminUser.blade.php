@@ -153,17 +153,7 @@
                           </span>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Edad:
-                          </td>
-                          <td>
-                            <span>
-                            <input type="text" id="con_age" value="">
-                              <a id="con_edage"   class="button button-small edit" title="Editar"><i class="fa fa-pencil"></i></a>
-                            </span>
-                          </td>
-                        </tr>
+
                       </table>
                       <div  class="usr-gnrl-inf">
                     <h5 class="prf-edit-tl">Identificación:
@@ -290,11 +280,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+    @include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

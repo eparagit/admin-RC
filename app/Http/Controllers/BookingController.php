@@ -73,7 +73,7 @@ class BookingController extends Controller
         u.CorreoElectronico,r.estado_ID,e.Descripcion Descripcion_Est,r.viaje_ID,v.Titulo, v.Descripcion Descripcion_Viaje,r.Cantidad_Personas,
         r.FechaHora from reservacion r, usuario u,estados e, viaje v where  r.estado_ID=ID_Estado  and
          r.usuario_ID = u.ID_Usuario and r.viaje_ID=v.ID_Viaje and ID_Reservacion='".$id_book."'");
-         var_dump($result);
+
         $array = json_decode(json_encode($result), True);
 
       foreach($array as $book){
@@ -98,6 +98,7 @@ class BookingController extends Controller
         $message->to($maili)->subject('Aprobación de Reservación');
 
     });
+
       return 1;
   }
     public function NotifyBookingProcess(Request $request){
@@ -166,17 +167,7 @@ class BookingController extends Controller
       });
       return 1;
     }
-    public function countRemainingBooking(){
-      $result= DB::select("select count(ID_Reservacion) from reservacion r, estados e where
-      r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
-
-      $array = json_decode(json_encode($result), True);
-
-
-
-      return $array;
-    }
-
+  
     public function selectReportForBooking(Request $request){
 
         $result= DB::select("select r.ID_Reservacion, v.Titulo,v.FechaHora_Salida,v.Lugar_Salida,u.NombreCompleto,
@@ -202,6 +193,26 @@ class BookingController extends Controller
 public function RemainingBookingCounter(){
   $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and e.Descripcion='Pendiente'");
   $array = json_decode(json_encode($result), True);
+
   return $array;
+}
+public function NewBookingCounter(){
+  $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and e.Descripcion='Nuevo'");
+  $array = json_decode(json_encode($result), True);
+  return $array;
+}
+public function BookingCounter(){
+  $result=DB::select("select count('ID_Reservacion') countBooking from reservacion r, estados e where r.estado_ID=e.ID_Estado and (e.Descripcion='Nuevo' or e.Descripcion='Pendiente')");
+  $array = json_decode(json_encode($result), True);
+
+  return $array;
+}
+public function selectBookingReport(){
+  $result=DB::select("select u.NombreCompleto,u.PrimerApellido,u.CorreoElectronico,
+  v.Titulo,r.Cantidad_Personas from usuario u,viaje v, reservacion r,
+   estados e where r.usuario_ID=ID_Usuario and r.viaje_ID=v.ID_Viaje
+   and e.Descripcion='Aprobado'");
+   $array = json_decode(json_encode($result), True);
+   return $array;
 }
 }

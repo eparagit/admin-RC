@@ -36,7 +36,6 @@ $(document).ready(function(){
                       var cnam ="";
                       var fln="";
                       var sln="";
-                      var ag="";
                       var cid ="";
                       var rn ="";
                       var corr ="";
@@ -49,7 +48,6 @@ $(document).ready(function(){
                     cnam = val['NombreCompleto'];
                     fln=val['PrimerApellido'];
                     sln=val['SegundoApellido'];
-                    ag=val['Edad'];
                     cid = val['NumeroIdentificacion'];
                     corr=val['CorreoElectronico'];
                     tel=val['NumeroTelefonico'];
@@ -63,8 +61,6 @@ $(document).ready(function(){
                   $("#con_flastn").prop('disabled',true);
                   $("#con_slastn").val(sln);
                   $("#con_slastn").prop('disabled',true);
-                  $("#con_age").val(ag);
-                  $("#con_age").prop('disabled',true);
                   $("#con_idn").val(cid);
                   $("#con_idn").prop('disabled',true);
                   $("#con_email").val(corr);
@@ -85,7 +81,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',false);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
@@ -95,7 +90,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',false);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
@@ -105,7 +99,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',false);
    $("#con_uphone").prop('disabled',true);
@@ -115,7 +108,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',false);
@@ -125,7 +117,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
@@ -136,7 +127,6 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',false);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
@@ -146,29 +136,26 @@ $(document).ready(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',false);
-   $("#con_age").prop('disabled',true);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
    $("#con_unam").prop('disabled',true);
  });
- $("#con_edage").click(function(){
+ /*$("#con_edage").click(function(){
    $("#con_cname").prop('disabled',true);
    $("#con_flastn").prop('disabled',true);
    $("#con_slastn").prop('disabled',true);
-   $("#con_age").prop('disabled',false);
    $("#con_idn").prop('disabled',true);
    $("#con_email").prop('disabled',true);
    $("#con_uphone").prop('disabled',true);
    $("#con_unam").prop('disabled',true);
- });
+ });*/
   $("#con_save").click(function(){
     var id=$("#con_idu").val();
     var name = $("#con_cname").val();
     var LastName = $("#con_flastn").val();
     var secondLastName = $("#con_slastn").val();
     var idNumber = $("#con_idn").val();
-    var age = $("#con_age").val();
     var email = $("#con_email").val();
     var telephone=$("#con_uphone").val();
     var userName = $("#con_unam").val();
@@ -180,8 +167,7 @@ $(document).ready(function(){
             'name':name,
             'firstLastName':LastName,
             'secondLastName':secondLastName,
-            'idNumber':idNumber,
-            'age':age,
+            'idNumber':idNumber,            
             'email':email,
             'telephone':telephone,
             'userName':userName},

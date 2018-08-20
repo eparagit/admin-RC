@@ -128,8 +128,8 @@
            </div>
            </div>
            <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary" id="btnUpEvnt" data-id="">Save changes</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+             <button type="button" class="btn btn-primary" id="btnUpEvnt" data-id="">Guardar</button>
            </div>
          </div>
        </div>
@@ -141,11 +141,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+    @include('Ilayout.footerI')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -180,9 +176,10 @@
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/eventType.js" type="text/javascript"></script>
-      <script src="ProjectJs/headerData.js" type="text/javascript"></script>
+    <script src="ProjectJs/headerData.js" type="text/javascript"></script>
     <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
     <script src="ProjectJs/counters.js" type="text/javascript"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

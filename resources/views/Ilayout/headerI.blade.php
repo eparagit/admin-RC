@@ -8,7 +8,7 @@
         <ul class="drp-sec">
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-home"></i>
+                    <i class="ion-android-bus"></i>
                     <span id="rtours">Viajes</span>
 
                 </a>
@@ -17,14 +17,12 @@
                         <a href="/Admin-RC/public//GetTourUpload" title="">Publicación</a>
                     </li>
                     <li>
-                        <a href="/Admin-RC/public//GetTourToApprove" title="">Aprobación</a>
+                        <a href="/Admin-RC/public//GetTourToApprove"  title=""><span id="b_rtours">Aprobación</span></a>
                     </li>
                     <li>
                         <a href="/Admin-RC/public//GetTourReport" title="">Reporte</a>
                     </li>
-                    <li>
-                        <a href="/Admin-RC/public//GetFirstPasswordChange" title="">Test</a>
-                    </li>
+
 
                 </ul>
             </li>
@@ -38,21 +36,17 @@
               </a>
               <ul class="sb-drp">
                   <li>
-                      <a href="/Admin-RC/public//GetNewBooking" title="">Nuevas</a>
+                      <a href="/Admin-RC/public//GetNewBooking" title=""><span id="b_ nbookingNew">Nuevas</span></a>
                   </li>
 
                   <li>
-                      <a href="/Admin-RC/public//GetRemainingBooking" title="">Pendientes <label id="count_r"></label></a>
-                  </li>
-                  <li>
-                      <a href="/Admin-RC/public//GetBookingReport" title="">Reporte Aprobaciones</a>
-                  </li>
-                  <li>
-                      <a href="/Admin-RC/public//GetRemainingBookingReport" title="">Reporte Pendientes</a>
+                      <a href="/Admin-RC/public//GetRemainingBooking" title=""><span id="b_ rbooking">Pendientes</span></a>
                   </li>
                   <li>
                       <a href="/Admin-RC/public//GetBookingReport" title="">Reporte</a>
                   </li>
+
+
 
               </ul>
           </li>
@@ -63,19 +57,17 @@
                 </a>
                 <ul class="sb-drp">
                     <li>
-                        <a href="/Admin-RC/public//GetNewContract" title="">Nuevas</a>
+                        <a href="/Admin-RC/public//GetNewContract" title=""><span id="b_ncontracts">Nuevas</span></a>
                     </li>
 
                     <li>
-                        <a href="/Admin-RC/public//GetRemainingContract" title="">Pendientes</a>
+                        <a href="/Admin-RC/public//GetRemainingContract" title=""><span id="b_rcontracts">Pendientes</span></a>
                     </li>
 
                     <li>
-                        <a href="/Admin-RC/public//GetHiringReport" title="">Reporte</a>
+                        <a href="/Admin-RC/public//GetContractReport" title="">Reporte</a>
                     </li>
-                    <li>
-                        <a href="/Admin-RC/public//GetContractNotification " title="">Reporte</a>
-                    </li>
+
                 </ul>
             </li>
 			 <li class="has-drp">
@@ -91,7 +83,7 @@
             </li>
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-fireball"></i>
+                    <i class="ion-home"></i>
                     <span>Tienda</span>
                 </a>
                 <ul class="sb-drp">
@@ -108,7 +100,7 @@
             </li>
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-images"></i>
+                    <i class="ion-podium"></i>
                     <span>Estádistica</span>
                 </a>
                 <ul class="sb-drp">
@@ -143,12 +135,12 @@
             </li>
             <li class="has-drp">
                 <a href="#" title="">
-                    <i class="ion-android-settings"></i>
-                    <span>Empleados</span>
+                    <i class="ion-android-clipboard"></i>
+                    <span>Usuarios</span>
                 </a>
                 <ul class="sb-drp">
                     <li>
-                        <a href="/Admin-RC/public//GetEmployeesReport" title="">Reporte</a>
+                        <a href="/Admin-RC/public//GetExternalUsersReport" title="">Cantidad Reservaciones</a>
                     </li>
                 </ul>
             </li>

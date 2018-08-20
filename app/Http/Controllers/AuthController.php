@@ -64,7 +64,7 @@ class AuthController extends Controller
       Session::flush();
       //Session::flush();
 
-
+      return 1;
     }
 
     public function passwordChange(Request $request){
@@ -73,7 +73,7 @@ class AuthController extends Controller
       $nPassword = $request['new_pass'];
       $sesion = Session::get('change');
       $userID = $sesion[0]['ID_Usuario'];
-        
+
       $return="";
       $uname=DB::select("select NombreUsuario from usuario where ID_Usuario='".$userID."'");
       $userNamex = json_decode(json_encode($uname), True);
@@ -97,7 +97,13 @@ class AuthController extends Controller
       $OldPassword = $request['oldPass'];
       $NewPassword = $request['newPass'];
       $response = "";
-      $sesion = Session::get('datos');
+
+      if(Session::has('admin')){
+        $sesion = Session::get('admin');
+      }
+      if(Session::has('standard')){
+        $sesion = Session::get('standard');
+      }
       $userID = $sesion[0]['ID_Usuario'];
 
       $resultOldPass= DB::select("select Contrasena from usuario where ID_Usuario= ".$userID."");

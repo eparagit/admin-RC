@@ -80,7 +80,7 @@
              Digite la nueva Contraseña<input id="con_scontra" class="brd-rd5" type="password"/>
            </div>
            <div <div class="col-md-12 col-sm-12 col-lg-12">
-             <input id="message" class="brd-rd5" type="text" disabled style="display:none"/>            
+             <input id="message" class="brd-rd5" type="text" disabled style="display:none"/>
            </div>
            <div class="col-md-12 col-sm-12 col-lg-12">
              <button id="con_chan" name="con_chan" class="green-bg brd-rd5" type="button">
@@ -101,11 +101,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+    @include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

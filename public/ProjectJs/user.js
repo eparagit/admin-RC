@@ -39,7 +39,6 @@ $(document).ready(function(){
                            var cnam ="";
                            var fln="";
                            var sln="";
-                           var ag="";
                            var cid ="";
                            var rn ="";
                            var corr ="";
@@ -51,7 +50,6 @@ $(document).ready(function(){
                      cnam = val['NombreCompleto'];
                      fln=val['PrimerApellido'];
                      sln=val['SegundoApellido'];
-                     ag=val['Edad'];
                      cid = val['NumeroIdentificacion'];
                      corr=val['CorreoElectronico'];
                      tel=val['NumeroTelefonico'];
@@ -65,8 +63,6 @@ $(document).ready(function(){
                      $("#con_flastn").prop('disabled',true);
                      $("#con_slastn").val(sln);
                      $("#con_slastn").prop('disabled',true);
-                     $("#con_age").val(ag);
-                     $("#con_age").prop('disabled',true);
                      $("#con_idn").val(cid);
                      $("#con_idn").prop('disabled',true);
                      $("#con_email").val(corr);
@@ -91,7 +87,6 @@ $(document).ready(function(){
       var secondLastName = $("#con_segundoapellido").val();
       var id = $("#con_identificacion").val();
       var phone = $("#con_numerotel").val();
-      var age = $("#con_edad").val();
       var email = $("#con_correoe").val();
       var username = $("#con_nombreusuario").val();
       var password = $("#con_contrasena").val();
@@ -114,14 +109,7 @@ $(document).ready(function(){
                 alert('Digite su número de identificación');
              return false;
             }
-             if(phone == ""){
-               alert('Digite el teléfono');
-             return false;
-             }
-             if(age == ""){
-               alert('Digite su edad');
-             return false;
-             }
+
              if(email== ""){
                 alert('Digite su correo');
               return false;
@@ -139,91 +127,171 @@ $(document).ready(function(){
                 alert('Seleccione el rol');
               return false;
              }
-             var validEmail=email_Validation(email);
-                  if(validEmail==false){
-                     alert('Correo Inválido');
-                  }else{
-                  var phoneVal=phone_Validation(phone);
-                  if(phoneVal==false){
-                    alert("Número de teléfono inválido!");
-                      }else{
+             if(phone== ""){
+               var validEmail=email_Validation(email);
+                    if(validEmail==false){
+                       alert('Correo Inválido');
+                    }else{             
                   var idVal=idNumber_Validation(id);
-                  if(idVal==false){
-                    alert("Número de identificación inválido!");
-                  }else{
-                    var nameVal=text_Validation(name);
-                    var flastnameVal=text_Validation(LastName);
-                    var slastnameVal=text_Validation(secondLastName);
-                    if(nameVal==false){
-                      alert("El campo nombre solo permite letras!");
+                    if(idVal==false){
+                      alert("Número de identificación inválido!");
                     }else{
-                      if(flastnameVal==false){
-                        alert("El campo primer apellido solo permite letras!");
+                      var nameVal=text_Validation(name);
+                      var flastnameVal=text_Validation(LastName);
+                      var slastnameVal=text_Validation(secondLastName);
+                      if(nameVal==false){
+                        alert("El campo nombre solo permite letras!");
                       }else{
-                        if(slastnameVal==false){
-                          alert("El campo segundo apellido solo permite letras!");
+                        if(flastnameVal==false){
+                          alert("El campo primer apellido solo permite letras!");
                         }else{
+                          if(slastnameVal==false){
+                            alert("El campo segundo apellido solo permite letras!");
+                          }else{
 
+                      $.ajax({
+                            type:'GET',
+                            data: {
+                                    'email':email,
+                                    'userName':username
+                                    },
 
+                            url:'validateNewUser',
+                            success: function(data) {
+                              if(data == 1){
+                                alert(data);
+                                alert("El usuario que intenta ingresar ya existe!");
+                                return false;
+                              }if(data==0){
+                                $.ajax({
+                                      type:'GET',
+                                      data: {'name':name,
+                                              'firstLastName':LastName,
+                                              'secondLastName':secondLastName,
+                                              'idNumber':id,
+                                              'email':email,
+                                              'telephone':phone,
+                                              'userName':username,
+                                              'password':password,
+                                               'rol':rol},
 
-                    $.ajax({
-                          type:'GET',
-                          data: {
-                                  'email':email,
-                                  'userName':username
-                                  },
+                                      url:'registerUser',
+                                      success: function(data) {
+                                        if(data = 1){
+                                          alert("Usuario registrado con éxito!!");
+                                          $.ajax({
+                                                  type:"GET",
+                                                  data: {'chg':chang},
+                                                  url:"SystemLogRegistry",
+                                                   success:function(data){
+                                                   if(data==1){
 
-                          url:'validateNewUser',
-                          success: function(data) {
-                            if(data == 1){
-                              alert(data);
-                              alert("El usuario que intenta ingresar ya existe!");
-                              return false;
-                            }if(data==0){
-                              $.ajax({
-                                    type:'GET',
-                                    data: {'name':name,
-                                            'firstLastName':LastName,
-                                            'secondLastName':secondLastName,
-                                            'idNumber':id,
-                                            'age':age,
-                                            'email':email,
-                                            'telephone':phone,
-                                            'userName':username,
-                                            'password':password,
-                                             'rol':rol},
+                                                    }
+                                                    }
+                                            });
+                                        }else{
+                                          alert("Nose logró registrar el usuario!");
 
-                                    url:'registerUser',
-                                    success: function(data) {
-                                      if(data = 1){
-                                        alert("Usuario registrado con éxito!!");
-                                        $.ajax({
-                                                type:"GET",
-                                                data: {'chg':chang},
-                                                url:"SystemLogRegistry",
-                                                 success:function(data){
-                                                 if(data==1){
-
-                                                  }
-                                                  }
-                                          });
-                                      }else{
-                                        alert("Nose logró registrar el usuario!");
+                                        }
 
                                       }
-
-                                    }
-                                  });
-                              }
+                                    });
+                                }
+                            }
+                          });
                           }
-                        });
+             }
+
                         }
                         }
-                        }
-                        }
+
                   }
 
 
+                }else{
+                  var validEmail=email_Validation(email);
+                       if(validEmail==false){
+                          alert('Correo Inválido');
+                       }else{
+
+                       var phoneVal=phone_Validation(phone);
+                       if(phoneVal==false){
+                         alert("Número de teléfono inválido!");
+                           }else{
+                       var idVal=idNumber_Validation(id);
+                       if(idVal==false){
+                         alert("Número de identificación inválido!");
+                       }else{
+                         var nameVal=text_Validation(name);
+                         var flastnameVal=text_Validation(LastName);
+                         var slastnameVal=text_Validation(secondLastName);
+                         if(nameVal==false){
+                           alert("El campo nombre solo permite letras!");
+                         }else{
+                           if(flastnameVal==false){
+                             alert("El campo primer apellido solo permite letras!");
+                           }else{
+                             if(slastnameVal==false){
+                               alert("El campo segundo apellido solo permite letras!");
+                             }else{
+
+                         $.ajax({
+                               type:'GET',
+                               data: {
+                                       'email':email,
+                                       'userName':username
+                                       },
+
+                               url:'validateNewUser',
+                               success: function(data) {
+                                 if(data == 1){
+                                   alert(data);
+                                   alert("El usuario que intenta ingresar ya existe!");
+                                   return false;
+                                 }if(data==0){
+                                   $.ajax({
+                                         type:'GET',
+                                         data: {'name':name,
+                                                 'firstLastName':LastName,
+                                                 'secondLastName':secondLastName,
+                                                 'idNumber':id,
+                                                 'email':email,
+                                                 'telephone':phone,
+                                                 'userName':username,
+                                                 'password':password,
+                                                  'rol':rol},
+
+                                         url:'registerUser',
+                                         success: function(data) {
+                                           if(data = 1){
+                                             alert("Usuario registrado con éxito!!");
+                                             $.ajax({
+                                                     type:"GET",
+                                                     data: {'chg':chang},
+                                                     url:"SystemLogRegistry",
+                                                      success:function(data){
+                                                      if(data==1){
+
+                                                       }
+                                                       }
+                                               });
+                                           }else{
+                                             alert("Nose logró registrar el usuario!");
+
+                                           }
+
+                                         }
+                                       });
+                                   }
+                               }
+                             });
+                             }
+                }
+
+                           }
+                           }
+                           }
+                     }
                 }
 
   });
@@ -231,7 +299,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',false);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
@@ -241,7 +308,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',false);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
@@ -251,7 +317,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',false);
            $("#con_uphone").prop('disabled',true);
@@ -261,7 +326,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',false);
@@ -271,7 +335,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
@@ -282,7 +345,6 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',false);
            $("#con_slastn").prop('disabled',true);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
@@ -292,13 +354,12 @@ $(document).ready(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',false);
-           $("#con_age").prop('disabled',true);
            $("#con_idn").prop('disabled',true);
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
            $("#con_unam").prop('disabled',true);
          });
-         $("#con_edage").click(function(){
+         /*$("#con_edage").click(function(){
            $("#con_cname").prop('disabled',true);
            $("#con_flastn").prop('disabled',true);
            $("#con_slastn").prop('disabled',true);
@@ -307,7 +368,7 @@ $(document).ready(function(){
            $("#con_email").prop('disabled',true);
            $("#con_uphone").prop('disabled',true);
            $("#con_unam").prop('disabled',true);
-         });
+         });*/
 
 
 
@@ -317,7 +378,6 @@ $(document).ready(function(){
             var LastName = $("#con_flastn").val();
             var secondLastName = $("#con_slastn").val();
             var idNumber = $("#con_idn").val();
-            var age = $("#con_age").val();
             var email = $("#con_email").val();
             var telephone=$("#con_uphone").val();
             var userName = $("#con_unam").val();
@@ -328,7 +388,6 @@ $(document).ready(function(){
                     'firstLastName':LastName,
                     'secondLastName':secondLastName,
                     'idNumber':idNumber,
-                    'age':age,
                     'email':email,
                     'telephone':telephone,
                     'userName':userName},

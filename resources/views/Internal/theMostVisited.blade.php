@@ -76,11 +76,7 @@
         </div>
     </div>
     <!-- Panel Content -->
-    <footer>
-        <p>Copyright
-            <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-        <span>10GB of 250GB Free.</span>
-    </footer>
+      @include('Ilayout.footerI')
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <!-- Vendor: Followed by our custom Javascripts -->
@@ -111,6 +107,7 @@
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="ProjectJs/counters.js" type="text/javascript"></script>
+      <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             'use strict';

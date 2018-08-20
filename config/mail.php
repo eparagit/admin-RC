@@ -86,7 +86,7 @@ return [
 
     'username' => env('MAIL_USERNAME', 'servicios.ruta.cima@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD', 'helechos1,5'),
+    'password' => env('MAIL_PASSWORD', 'Servicios123'),
 
     /*
     |--------------------------------------------------------------------------

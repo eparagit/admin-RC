@@ -196,5 +196,10 @@ class TourController extends Controller
     $array = json_decode(json_encode($result), True);
     return $array;
   }
+  public function selectTourReport(){
+    $result=DB::select("select Titulo,Cupo,Destino,FechaHora_Salida,Lugar_Salida from viaje v, estado_viaje e where v.estadoViaje_ID=ID_Estado_Viaje and e.Descripcion='Aprobado'");
+    $array = json_decode(json_encode($result), True);
+    return $array;
+  }
 
 }

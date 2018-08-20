@@ -111,11 +111,7 @@
 
 
     <!-- Panel Content -->
-    <footer>
-        <p>Kinesis
-            <a href="#" title="">Ruta ala Cima</a> &amp; 2017 - 2018</p>
-        <span></span>
-    </footer>
+    @include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
     <script src="js/jquery.min.js" type="text/javascript"></script>

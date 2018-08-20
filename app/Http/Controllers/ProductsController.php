@@ -125,4 +125,9 @@ class ProductsController extends Controller
 
       return view('sections.sectionUpdateProduct')->with("array", $data);
     }
+    public function selectProductReport(){
+      $result=DB::select("select u.NombreUsuario,p.Nombre,p.Descripcion from producto p, usuario u where p.usuario_ID=u.ID_Usuario");
+      $array = json_decode(json_encode($result), True);
+      return $array;
+    }
 }

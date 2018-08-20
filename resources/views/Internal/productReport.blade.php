@@ -32,7 +32,7 @@
       </div>
       <div class="topbar-data">
         <div class="usr-act">
-          @foreach(Session::get('datos') as $data)
+          @foreach(Session::get('standard') as $data)
             <i>Hola, <label id="con_regus">{{$data['NombreCompleto']}}</label></i>
             @endforeach
             <a id="con_logout" class="btn-danger" href="#" title="">
@@ -73,7 +73,7 @@
        <i class="ion-cube"></i>
        <div class="pr-tp-inr">
          <h4>Ruta a la Cima</h4>
-         <span>Reporte de Reservaciones</span>
+         <span>Reporte de Productos</span>
        </div>
      </div>
   <!-- Page Top -->
@@ -81,26 +81,21 @@
     <div class="widget">
 
 
-            <table class="table table-striped table-bordered table-hover" width="100%" id="employeesTableReport">
-                 <thead>
-                   <tr>
-                      <th>Cédula</th>
-                      <th>Nombre</th>
-                      <th>Primer Apellido</th>
-                      <th>Segundo Apellido</th>
-                      <th>Rol en Sistema</th>
-                   </tr>
-                 </thead>
+            <table class="table table-striped table-bordered table-hover" width="100%" id="productTableReport">
+              <thead>
+                <tr>
+                   <th>Producto</th>
+                   <th>Descripción</th>
+                   <th>Publicado Por</th>
+                </tr>
+              </thead>
             </table>
 
 
     </div>
   </div>
   <!-- Panel Content -->
-  <footer>
-      <p>Todos los derechos a
-        Ruta a la Cima 2018</p>
-  </footer>
+  @include('Ilayout.footerI')
 
 
   <!-- Vendor: Javascripts -->
@@ -116,9 +111,10 @@
   <!-- Our Website Javascripts -->
 
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="ProjectJs/employees.js" type="text/javascript"></script>
+  <script src="ProjectJs/productReport.js" type="text/javascript"></script>
   <script src="ProjectJs/logout.js" type="text/javascript"></script>
-
+  <script src="ProjectJs/counters.js" type="text/javascript"></script>
+  <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
 </body>
 
 </html>

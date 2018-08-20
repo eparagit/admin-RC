@@ -55,100 +55,36 @@
         </div>
     </div>
     <!-- Options Panel -->
-    <body>
 
-   <div class="pg-tp">
-     <i class="ion-cube"></i>
-     <div class="pr-tp-inr">
-       <h4>Ruta a la Cima</h4>
-       <span>Administración de Sistemas.</span>
+    <!-- Page Top -->
+    <div class="widget pad50-65">
+     <div class="widget-title2">
+         <h4>Sistema Ruta a la Cima</h4>
      </div>
-   </div>
-   <!-- Page Top -->
-
-   <div class="panel-content">
-     <div class="widget pad50-65">
-       <div class="widget-title2">
-         <h4>Registro de Usuarios Administrador y Estándar Interno</h4>
-         <span>Por favor llene el siguiente formulario.</span>
-       </div>
-       <form class="form-wrp">
-         <div class="row mrg20">
-
-                <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_nombrecompleto" class="brd-rd5" type="text" placeholder="Nombre Completo*" />
-               </div>
-               <label style="color: red">*</label>
-               <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
-               <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_primerapellido" class="brd-rd5" type="text" placeholder="Primer Apellido*" />
+     <div class="cards-wrp">
+         <div class="card mb-3">
+             <div class="card-header">RutaCima</div>
+             <div class="card-block">
+                 <h4 class="card-title">¿Cómo nace RutaCima?</h4>
+                 <p class="card-text">RutaCima es un proyecto de la Univerisdad Técnica Nacional y surgió como una necesidad tanto de Ruta a la Cima como de dos estudiantes para obtar por el grado de Bachiller en Ingeniería del Software. RutaCima es su nombre abreviado. El mismo consta de dos apliaciones Web. Una Cliente para todo el público y otra Administrador para gestionar el negocio.</p>
 
              </div>
-              <label style="color: red">*</label>
-              <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
- 		           <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_segundoapellido" class="brd-rd5" type="text" placeholder="Segundo Apellido*" />
-           </div>
-            <label style="color: red">*</label>
-            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Solo letras"></label>
-           <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_identificacion" class="brd-rd5" type="text" placeholder="Número de Identificación*" />
-           </div>
-            <label style="color: red">*</label>
-            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="'Solo numeros',Ejemplo: 000000000"></label>
-
-
-           <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_correoe" class="brd-rd5" type="text" placeholder="Correo Electrónico*" />
-           </div>
-            <label style="color: red">*</label>
-            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Ejemplo: correo@gmail.com"></label>
-     		   <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_numerotel" class="brd-rd5" type="text" placeholder="Número de Teléfono*" />
-           </div>
-            <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="'Solo Números', Ejemplo: 89178414"></label>
- 		         <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_nombreusuario" class="brd-rd5" type="text" placeholder="Nombre de Usuario*" />
-           </div>
-            <label style="color: red">*</label>
- 		         <div class="col-md-5 col-sm-5 col-lg-5">
-             <input id="con_contrasena" class="brd-rd5" type="password" placeholder="Contraseña*" />
-           </div>
-           <label style="color: red">*</label>
-           <div class="col-md-5 col-sm-5 col-lg-5">
-             <div  class="slct-bx">
-               <span>
-                 <select id="rol">
-                   <option value="0">Seleccione</option>
-                 </select>
-               </span>
+         </div>
+         <div class="card mb-3 text-center">
+             <div class="card-header">Desarrollado por:</div>
+             <div class="card-block">
+                 <h4 class="card-title">Estudiantes:</h4>
+                 <p class="card-text">Edwin Parajeles Fernández</br>edwin.parajeles@gmail.com</br>
+                 Diego Antonio Nuñez Montero</br>diegonez5@gmail.com</p>
              </div>
-           </div>
-            <label style="color: red">*</label>
-
-           <div>
-              Campo requierido <label style="color: red">*</label></br>
-              Ayuda <label class="ion-help" style="color: green" data-toggle="tooltip" data-placement="bottom" title="Ayuda"></label>
-           </div>
-
-           <div class="col-md-12 col-sm-12 col-lg-12">
-             <button id="con_regist" name="con_regist" class="green-bg brd-rd5" type="button">
-               <i class="fa fa-paper-plane"></i>Registrar</button>
-           </div>
-
 
          </div>
-       </form>
      </div>
-
-   </div>
-   <!-- Panel Content -->
-
- </body>
-    <!-- Page Top -->
-
+ </div>
 
     <!-- Panel Content -->
+
+  </body>
     @include('Alayout.footerA')
 
     <!-- Vendor: Javascripts -->
@@ -180,8 +116,6 @@
     <script src="js/jquery.poptrox.min.js" type="text/javascript"></script>
     <script src="js/styleswitcher.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
-    <script src="ProjectJs/rol.js" type="text/javascript"></script>
-    <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
     <script src="ProjectJs/passChange.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -519,9 +453,6 @@
             if ($.isFunction($.fn.tooltip)) {
                 $('[data-toggle="tooltip"]').tooltip();
             }
-
-
-
         });
     </script>
 </body>
