@@ -67,7 +67,7 @@ $(document).ready(function(){
                                     data: {'id':id},
                                     url:"NotifyBookingApproval",
                                     success:function(data){
-                                      alert(data);
+                                    
                                       if(data==1){
 
                                             alert("Se realizaron las notificaciones a los interesados!");
