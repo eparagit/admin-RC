@@ -31,7 +31,7 @@ class TourCategoryController extends Controller
     $array = json_decode(json_encode($result), True);
 return $array;
   }
-  
+
   public function selectTourCategoryByID(Request $request){
     $id_tc=$request['id'];
     $result= DB::select("select * from categoria_viaje where ID_Categoria='".$id_tc."'");
@@ -43,9 +43,22 @@ return $array;
     $id_tc=$request['id'];
     $desc_tc=$request['des'];
 
-    $result=DB::update("update categoria_viaje set Descripcion='".$desc_tc."' where ID_Categoria='".$id_tc."'");
 
-    return 1;
+    $result_r=DB::select("select r.ID_Reservacion from reservacion r, viaje v,
+    categoria_viaje c where r.viaje_ID=ID_Viaje and v.categoria_viaje_ID='".$id_tc."'");
+    $array = json_decode(json_encode($result_r), True);
+      $response=0;
+
+      if(empty($array)){
+        $result=DB::update("update categoria_viaje set Descripcion='".$desc_tc."' where ID_Categoria='".$id_tc."'");
+
+        $response=1;
+      }else{
+        $response=0;
+      }
+
+
+    return $response;
   }
 
 }

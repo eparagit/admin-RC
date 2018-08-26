@@ -119,7 +119,7 @@
              <div  class="slct-bx">
                <span>
                  <select id="rol">
-                   <option value="0">Seleccione</option>
+                   <option value="0">Seleccione el Rol</option>
                  </select>
                </span>
              </div>

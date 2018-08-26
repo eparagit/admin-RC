@@ -121,7 +121,7 @@ Route::get('/', function () {
           Route::get('/GetInternalAbout','PagesController@GetInternalAbout');
 //______________
 //AuthController
-          Route::get('/restorePassword','AuthController@restorePassword');        
+          Route::get('/restorePassword','AuthController@restorePassword');
 //______________
 //UserController
           Route::get('selectAdUser','UserController@selectAdUser');
@@ -365,3 +365,8 @@ Route::group(['middleware' => 'roles'], function () {
     Route::get('admin', ['as'=>'admin','uses'=>'PagesController@Admin']);
 });
 Route::get('invoice/{invoice}', 'PdfController');
+//GuideDownloadController
+Route::get('AdminGuide','GuideDownloadController@adminGuide');
+
+Route::get('InternalGuide','GuideDownloadController@internalGuide');
+//________________________

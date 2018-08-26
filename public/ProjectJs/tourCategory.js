@@ -106,7 +106,7 @@ $(document).ready(function(){
                     });
                     window.location.replace("GetTourCategory");
                   }else{
-                    alert("No se logró actualizar la categoría de viajes!");
+                    alert("La categoría que intenta actualizar pertenece a un viaje que ya tiene reservaciones. No se puede modificar!");
                     window.location.replace("GetTourCategory");
                   }
                 }
