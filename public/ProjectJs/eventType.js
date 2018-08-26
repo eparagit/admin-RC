@@ -108,7 +108,7 @@ $(document).ready(function(){
                       });
                     window.location.replace("GetEventType");
                   }else{
-                    alert("No se logró actualizar el Tipo de Evento!");
+                    alert("No se puede actualizar el Tipo de Evento porque el mismo está asignado a una contratación!");
                     window.location.replace("GetEventType");
                   }
                 }

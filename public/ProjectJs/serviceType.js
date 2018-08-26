@@ -105,7 +105,7 @@ $(document).ready(function(){
                     });
                     window.location.replace("GetServiceType");
                   }else{
-                    alert("No se logró actualizar el Tipo de Servicio!");
+                    alert("No se puede actualizar el Tipo de Servicio porque ya está asignado a una contratación!");
                     window.location.replace("GetServiceType");
                   }
                 }

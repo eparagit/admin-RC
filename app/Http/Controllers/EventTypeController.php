@@ -35,8 +35,17 @@ class EventTypeController extends Controller
       $id_et=$request['id'];
       $desc_et=$request['des'];
 
-      $result=DB::update("update tipo_evento set Descripcion='".$desc_et."' where ID_Tipo_Evento='".$id_et."'");
 
-      return 1;
+      $result_e=DB::select("select c.ID_Contratacion from contratacion c, tipo_evento
+      t where c.tipoEvento_ID=t.ID_Tipo_Evento and t.ID_Tipo_Evento='".$id_et."' ");
+      $array = json_decode(json_encode($result_e), True);
+      $response=0;
+      if(empty($array)){
+        $result=DB::update("update tipo_evento set Descripcion='".$desc_et."' where ID_Tipo_Evento='".$id_et."'");
+        $response=1;
+      }else{
+        $response=0;
+      }
+      return $response;
     }
 }
