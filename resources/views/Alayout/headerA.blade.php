@@ -34,7 +34,7 @@
                         <a href="/Admin-RC/public//GetStandardIUser" title="">Estándar Interno</a>
                     </li>
                     <li>
-                        <a href="/Admin-RC/public//GetStandardEUser" title="">Estandar Externo</a>
+                        <a href="/Admin-RC/public//GetStandardEUser" title="">Estándar Externo</a>
                     </li>
                 </ul>
             </li>

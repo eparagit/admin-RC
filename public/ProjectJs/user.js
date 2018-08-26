@@ -26,7 +26,6 @@ $(document).ready(function(){
               $("#tusers").on('click','#con_getprof',function(){
                 var email = $(this).data('id');
 
-                alert(email);
                 $("#allUsers").hide();
                 $("#selectedUser").show();
 
@@ -131,7 +130,7 @@ $(document).ready(function(){
                var validEmail=email_Validation(email);
                     if(validEmail==false){
                        alert('Correo Inválido');
-                    }else{             
+                    }else{
                   var idVal=idNumber_Validation(id);
                     if(idVal==false){
                       alert("Número de identificación inválido!");

@@ -29,9 +29,9 @@
                 <a class="nav-link Acerca de" href="/Admin-RC/public//GetInternalAbout">Acerca de</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Ayuda</a>
+                <a class="nav-link" href="/Admin-RC/public//InternalGuide">Descargar Guía de Usuario</a>
               </li>
-            
+
               </ul>
 
 

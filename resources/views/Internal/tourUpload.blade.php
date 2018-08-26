@@ -141,7 +141,7 @@
                      <div class="form-group">
                        <label>Cupo</label>
                         <label style="color: red">*</label>
-                       <input class="form-control"  id="con_cupo" name="con_cupo" type="number" required />
+                       <input class="form-control"  id="con_cupo" name="con_cupo" type="number"  required />
                      </div>
                  </div>
               </div>

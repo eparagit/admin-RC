@@ -26,8 +26,9 @@
           <a class="nav-link Acerca de" href="/Admin-RC/public//GetAdminAbout">Acerca de</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ayuda</a>
-        </li>      
+          <a class="nav-link" href="/Admin-RC/public//AdminGuide">Descargar Guía de Usuario</a>
+
+        </li>
         </ul>
   </div>
   <div class="topbar-bottom-colors">

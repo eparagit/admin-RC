@@ -102,7 +102,7 @@
             <li class="has-drp">
                 <a href="#" title="">
                     <i class="ion-podium"></i>
-                    <span>Estádistica</span>
+                    <span>Estadística</span>
                 </a>
                 <ul class="sb-drp">
                     <li>
