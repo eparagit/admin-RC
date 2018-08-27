@@ -105,53 +105,52 @@ $(document).ready(function(){
                       data: {},
                       url:"selectRemainingStatus",
                       success:function(data){
-                        var est_id="";
-                        $.each(data,function(v){
-                          var val=data[v];
-                          est_id=val['ID_Estado'];
-                        });
-                        $.ajax({
+                            var est_id="";
+                            $.each(data,function(v){
+                              var val=data[v];
+                              est_id=val['ID_Estado'];
+                            });
+                            $.ajax({
+                              type:"GET",
+                              data: {'id':id,
+                                      'id_s':est_id},
+                              url:"ProcessBooking",
+                              success:function(data){
+                                if(data==1){
+                                  alert("La reservación continua 'Pendiente'");
+                                }else{
+                                  alert("No se logró iniciar el proceso de reservación");
+                                  window.location.replace("GetRemainingBooking");
+                                }
+                              }
+                            });
+                        }
+                    });
+
+                    $.ajax({
                           type:"GET",
                           data: {'id':id,
-                                  'id_s':est_id},
-                          url:"ProcessBooking",
-                          success:function(data){
-                            if(data==1){
-                              alert("La reservación cambió a estdo  'Pendiente'");
-                              $.ajax({
-                                      type:"GET",
-                                      data: {'chg':chang},
-                                      url:"SystemLogRegistry",
-                                       success:function(data){
-                                       if(data==1){
-
-                                        }
-                                        }
-                                });
-                              $.ajax({
-                                    type:"GET",
-                                    data: {'id':id,
-                                          'just':just},
-                                        url:"NotifyBookingProcess",
-                                      success:function(data){
-                                        if(data==1){
-                                        alert("Se notificaron los involucrados en el proceso!");
-                                          window.location.replace("GetNewBooking");
-                                      }else{
-                                        alert("No se logró notificar a los involucrados en el proceso!");
-                                            window.location.replace("GetNewBooking");
-                                      }
-                                    }
-
-                              });
-                              window.location.replace("GetNewBooking");
+                                'just':just},
+                              url:"NotifyBookingProcess",
+                            success:function(data){
+                              if(data==1){
+                              alert("Se notificaron los involucrados en el proceso!");
                             }else{
-                              alert("No se logró iniciar el proceso de reservación");
-                              window.location.replace("GetNewBooking");
+                              alert("No se logró notificar a los involucrados en el proceso!");
+                                  window.location.replace("GetRemainingBooking");
                             }
                           }
-                        });
-                        }
+
+                    });
+
+                    $.ajax({
+                            type:"GET",
+                            data: {'chg':chang},
+                            url:"SystemLogRegistry",
+                             success:function(data){
+
+                                    window.location.replace("GetNewBooking");
+                              }
                     });
         });
         $("#con_Rcontent").on('click','#con_rejectB',function(){

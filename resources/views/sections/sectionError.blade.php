@@ -10,7 +10,7 @@
      <div class="widget pad50-65">
        <div class="alerts">
          <div class="alert alert-success">
-           <strong>Saludos!</strong> No existe nigún objecto relacionado con su consulta.</div>
+           <strong>Saludos!</strong> No existe nigún objeto relacionado con su consulta.</div>
 
          </div>
    </div>

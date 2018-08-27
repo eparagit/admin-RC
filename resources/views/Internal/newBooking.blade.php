@@ -3,7 +3,7 @@
 
 <head>
     <!-- Meta-Information -->
-    <title>Fuzen Admin Panel</title>
+    <title>Ruta Cima</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -167,7 +167,7 @@
     <script src="ProjectJs/rol.js" type="text/javascript"></script>
     <script src="ProjectJs/user.js" type="text/javascript"></script>
     <script src="ProjectJs/logout.js" type="text/javascript"></script>
-    <script src="ProjectJs/booking.js" type="text/javascript"></script>    
+    <script src="ProjectJs/booking.js" type="text/javascript"></script>
     <script src="ProjectJs/InternalPassChange.js" type="text/javascript"></script>
     <script src="ProjectJs/counters.js" type="text/javascript"></script>
     <script type="text/javascript">

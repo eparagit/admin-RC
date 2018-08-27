@@ -17,6 +17,7 @@ $(document).ready(function(){
                    $('#systemLogTableReport').dataTable( {
                            data: data,
                            dom: 'Bfrtip',
+                           "order": [[ 3, "desc" ]],
                            "columns": [
                                              { "data": "ID_Bitacora" },
                                              { "data": "NombreUsuario" },

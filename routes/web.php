@@ -291,15 +291,7 @@ Route::get('/', function () {
 
           Route::get('ApproveBooking','BookingController@ApproveBooking');
 
-          Route::get('NotifyBookingRejected','BookingController@NotifyBookingRejected');
-
-          Route::get('NotifyBookingProcess','BookingController@NotifyBookingProcess');
-
           Route::get('NotifyBookingApproval','BookingController@NotifyBookingApproval');
-
-          Route::get('RejectBooking','BookingController@RejectBooking');
-
-          Route::get('ProcessBooking','BookingController@ProcessBooking');
 
           Route::get('selectReportForBooking','BookingController@selectReportForBooking');
 

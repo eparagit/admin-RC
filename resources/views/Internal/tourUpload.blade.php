@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta Cima</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -141,7 +141,7 @@
                      <div class="form-group">
                        <label>Cupo</label>
                         <label style="color: red">*</label>
-                       <input class="form-control"  id="con_cupo" name="con_cupo" type="number"  required />
+                       <input class="form-control"  id="con_cupo" name="con_cupo" type="number" min="1" max="100"  required />
                      </div>
                  </div>
               </div>
@@ -151,7 +151,7 @@
                      <div class="form-group">
                        <label>Costo en colones</label>
                         <label style="color: red">*</label>
-                       <input class="form-control" name="con_costo" id="con_costo" type="number" required>
+                       <input class="form-control" name="con_costo" id="con_costo" min="1" type="number" required>
                      </div>
                  </div>
                  <div class="col-lg-6">

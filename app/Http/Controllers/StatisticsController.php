@@ -26,7 +26,7 @@ class StatisticsController extends Controller
 
   public function selectStatisticsMostVisited(Request $request){
 
-      $result=DB::select("select r.Cantidad_Personas,v.Titulo from reservacion r, viaje v where r.viaje_ID=v.ID_Viaje");
+      $result=DB::select("select r.Cantidad_Personas,v.Titulo from reservacion r, viaje v  where r.viaje_ID=v.ID_Viaje");
       $array = json_decode(json_encode($result), True);
       return $array;
   }

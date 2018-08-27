@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta-Information -->
-  <title>Fuzen Admin Panel</title>
+  <title>Ruta Cima</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -635,7 +635,7 @@
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <input id="con_pas" name="con_passw" class="form-control" type="password" placeholder="Contraseña" />
               </div>
-              
+
               <div class="col-md-12 col-sm-12 col-lg-12">
                 <button class="green-bg brd-rd5" type="button" id="con_logi">Ingresar</button>
               </div>

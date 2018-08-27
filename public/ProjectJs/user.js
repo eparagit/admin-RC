@@ -108,30 +108,29 @@ $(document).ready(function(){
                 alert('Digite su número de identificación');
              return false;
             }
-
-             if(email== ""){
+            if(email== ""){
                 alert('Digite su correo');
               return false;
 
             }
-             if(username == ""){
-           alert('Digite el nombre de usuario');
+            if(username == ""){
+             alert('Digite el nombre de usuario');
              return false;
              }
-             if(password == ""){
+            if(password == ""){
                 alert('Digite la contraseña');
               return false;
              }
-             if(rol == "0"){
+            if(rol == "0"){
                 alert('Seleccione el rol');
               return false;
              }
-             if(phone== ""){
+            if(phone== ""){
                var validEmail=email_Validation(email);
                     if(validEmail==false){
                        alert('Correo Inválido');
                     }else{
-                  var idVal=idNumber_Validation(id);
+                    var idVal=idNumber_Validation(id);
                     if(idVal==false){
                       alert("Número de identificación inválido!");
                     }else{
@@ -147,67 +146,64 @@ $(document).ready(function(){
                           if(slastnameVal==false){
                             alert("El campo segundo apellido solo permite letras!");
                           }else{
+                            $.ajax({
+                                  type:'GET',
+                                  data: {
+                                          'email':email,
+                                          'userName':username
+                                          },
 
-                      $.ajax({
-                            type:'GET',
-                            data: {
-                                    'email':email,
-                                    'userName':username
-                                    },
+                                  url:'validateNewUser',
+                                  success: function(data) {
+                                    if(data == 1){
+                                      alert(data);
+                                      alert("El usuario que intenta ingresar ya existe!");
+                                      return false;
+                                    }if(data==0){
+                                      $.ajax({
+                                            type:'GET',
+                                            data: {'name':name,
+                                                    'firstLastName':LastName,
+                                                    'secondLastName':secondLastName,
+                                                    'idNumber':id,
+                                                    'email':email,
+                                                    'telephone':phone,
+                                                    'userName':username,
+                                                    'password':password,
+                                                     'rol':rol},
 
-                            url:'validateNewUser',
-                            success: function(data) {
-                              if(data == 1){
-                                alert(data);
-                                alert("El usuario que intenta ingresar ya existe!");
-                                return false;
-                              }if(data==0){
-                                $.ajax({
-                                      type:'GET',
-                                      data: {'name':name,
-                                              'firstLastName':LastName,
-                                              'secondLastName':secondLastName,
-                                              'idNumber':id,
-                                              'email':email,
-                                              'telephone':phone,
-                                              'userName':username,
-                                              'password':password,
-                                               'rol':rol},
+                                            url:'registerUser',
+                                            success: function(data) {
+                                              if(data = 1){
+                                                alert("Usuario registrado con éxito!!");
+                                                $.ajax({
+                                                        type:"GET",
+                                                        data: {'chg':chang},
+                                                        url:"SystemLogRegistry",
+                                                         success:function(data){
+                                                         if(data==1){
 
-                                      url:'registerUser',
-                                      success: function(data) {
-                                        if(data = 1){
-                                          alert("Usuario registrado con éxito!!");
-                                          $.ajax({
-                                                  type:"GET",
-                                                  data: {'chg':chang},
-                                                  url:"SystemLogRegistry",
-                                                   success:function(data){
-                                                   if(data==1){
+                                                          }
+                                                          }
+                                                  });
+                                              }else{
+                                                alert("Nose logró registrar el usuario!");
 
-                                                    }
-                                                    }
-                                            });
-                                        }else{
-                                          alert("Nose logró registrar el usuario!");
+                                              }
 
-                                        }
-
+                                            }
+                                          });
                                       }
-                                    });
-                                }
-                            }
-                          });
+                                  }
+                                });
                           }
-             }
+                       }
 
                         }
-                        }
+                    }
 
                   }
-
-
-                }else{
+                  }else{
                   var validEmail=email_Validation(email);
                        if(validEmail==false){
                           alert('Correo Inválido');
@@ -274,6 +270,7 @@ $(document).ready(function(){
                                                        }
                                                        }
                                                });
+                                               window.location.href = "GetRegisterUserAI";
                                            }else{
                                              alert("Nose logró registrar el usuario!");
 

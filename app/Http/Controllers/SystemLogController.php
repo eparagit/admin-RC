@@ -23,7 +23,7 @@ class SystemLogController extends Controller
 
     $dateTime = date("Y/m/d h:i:s");
     $result=DB::insert('insert into bitacora (usuario_ID,FechaHora,CambioRealizado) values (?,?,?)',[$usuarioID,$dateTime,$change]);
-
+    var_dump($result);die;
     $array = json_decode(json_encode($result), True);
     return $array;
 
