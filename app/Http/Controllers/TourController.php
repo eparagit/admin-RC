@@ -142,7 +142,7 @@ class TourController extends Controller
           $resultSelect=DB::select("select * from viaje where ID_Viaje='".$id_t."'");
           $array = json_decode(json_encode($resultSelect), True);
           $titulo = "Nuevo viaje ".$array[0]['Titulo']." disponible!";
-          $descripcion = "Descripcion: ".$array[0]['Descripcion'];
+          $descripcion = "Cupo: ".$array[0]['Cupo'];
           $resultUsuarios= DB::select("select CorreoElectronico from usuario where rol_ID = 3 ");
           $arrayUsuarios = json_decode(json_encode($resultUsuarios), True);
           if(isset($arrayUsuarios[1])){

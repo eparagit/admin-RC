@@ -58,8 +58,8 @@
      <td></td>
      </tr>
      <tr>
-     <td>Titulo:</td>
-     <td colspan='5'>{{ $item['Titulo'] }}</td>
+     <td style="padding:0px">Titulo:</td>
+     <td colspan='10'>{{ $item['Titulo'] }}</td>
      <td></td>
      <td></td>
      <td></td>
@@ -67,7 +67,7 @@
      </tr>
      <tr>
      <td>Lugar de Salida:</td>
-     <td colspan='5'>{{ $item['Lugar_Salida'] }}</td>
+     <td colspan='10'>{{ $item['Lugar_Salida'] }}</td>
      <td></td>
      <td></td>
      <td></td>
@@ -75,7 +75,7 @@
      </tr>
      <tr>
      <td>Destino:</td>
-     <td colspan='5'>{{ $item['Destino'] }}</td>
+     <td colspan='10'>{{ $item['Destino'] }}</td>
      <td></td>
      <td></td>
      <td></td>
