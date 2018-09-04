@@ -52,8 +52,8 @@
     <div class="widget pad50-65">
     <div class="col-md-12 col-sm-12 col-lg-12" >
           <div class="row">
-            <div class="col-lg-7">
-             <canvas id="myChart" width="50" height="50"></canvas>
+            <div class="col-lg-8">
+             <canvas id="myChart" width="100" height="100"></canvas>
             </div>
          </div>
     </div>
