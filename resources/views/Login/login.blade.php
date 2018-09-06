@@ -645,18 +645,18 @@
         </div>
       </div>
       <footer>
-        <p>Copyright
-          <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-        <span>10GB of 250GB Free.</span>
+        <p>DERECHOS
+          <a href="#" title="">KINESIS</a> &amp; 2018</p>
+        <span></span>
       </footer>
     </div>
     <!-- Login Wrapper -->
   </div>
   <!-- Panel Content -->
   <footer>
-    <p>Copyright
-      <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-    <span>10GB of 250GB Free.</span>
+    <p>DERECHOS
+      <a href="#" title="">KINESIS</a> &amp; 2018</p>
+    <span></span>
   </footer>
 
 
